@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37795DC6-45C9-458C-A3A5-48DA6534C35C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>K9.Globalisation</RootNamespace>
+    <AssemblyName>K9.Globalisation</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dictionary.fr.Designer.cs">
+      <DependentUpon>Dictionary.fr.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Dictionary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dictionary.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dictionary.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Dictionary.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dictionary.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Dictionary.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Articles\en-gb\blessings-of-the-forest.htm" />
+    <Content Include="Articles\en-gb\blessings-of-the-forest-intro.htm" />
+    <Content Include="Articles\en-gb\simon-text.htm" />
+    <Content Include="Articles\en-gb\laurent-text.htm" />
+    <Content Include="Articles\en-gb\david-text.htm" />
+    <Content Include="Articles\en-gb\yann-text.htm" />
+    <Content Include="Articles\en-gb\simon-title.htm" />
+    <Content Include="Articles\en-gb\laurent-title.htm" />
+    <Content Include="Articles\en-gb\david-title.htm" />
+    <Content Include="Articles\en-gb\yann-title.htm" />
+    <Content Include="Articles\en-gb\iboga-title2.htm" />
+    <Content Include="Articles\en-gb\iboga-text2.htm" />
+    <Content Include="Articles\en-gb\iboga-text1.htm" />
+    <Content Include="Articles\en-gb\iboga-title1.htm" />
+    <Content Include="Articles\en-gb\mission-statement-and-aims-title1.htm" />
+    <Content Include="Articles\en-gb\mission-statement-and-aims-title2.htm" />
+    <Content Include="Articles\en-gb\mission-statement-and-aims1.htm" />
+    <Content Include="Articles\en-gb\mission-statement-and-aims2.htm" />
+    <Content Include="Articles\fr\david-text.htm" />
+    <Content Include="Articles\fr\david-title.htm" />
+    <Content Include="Articles\fr\iboga-text1.htm" />
+    <Content Include="Articles\fr\iboga-text2.htm" />
+    <Content Include="Articles\fr\iboga-title1.htm" />
+    <Content Include="Articles\fr\iboga-title2.htm" />
+    <Content Include="Articles\fr\laurent-text.htm" />
+    <Content Include="Articles\fr\laurent-title.htm" />
+    <Content Include="Articles\fr\mission-statement-and-aims1.htm" />
+    <Content Include="Articles\fr\mission-statement-and-aims-title2.htm" />
+    <Content Include="Articles\fr\mission-statement-and-aims-title1.htm" />
+    <Content Include="Articles\fr\mission-statement-and-aims2.htm" />
+    <Content Include="Articles\fr\blessings-of-the-forest.htm" />
+    <Content Include="Articles\fr\blessings-of-the-forest-intro.htm" />
+    <Content Include="Articles\fr\simon-text.htm" />
+    <Content Include="Articles\fr\simon-title.htm" />
+    <Content Include="Articles\fr\yann-text.htm" />
+    <Content Include="Articles\fr\yann-title.htm" />
+    <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
+    <Content Include="Templates\en-gb\SupportQuery.htm" />
+    <Content Include="Templates\en-gb\WelcomeEmail.htm" />
+    <Content Include="Templates\fr\PasswordResetEmail.htm" />
+    <Content Include="Templates\fr\SupportQuery.htm" />
+    <Content Include="Templates\fr\WelcomeEmail.htm" />
+    <Content Include="Text\en-gb\Keywords.txt" />
+    <Content Include="Text\fr\Keywords.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
