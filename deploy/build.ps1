@@ -3,9 +3,9 @@ param([String]$publishPassword='')
 $appName = "ninestar"
 $publishDir = "publish"
 $appDir = "webapp"
-$projectPath = "WebApplication\WebApplication.csproj"
-$webTestFile = "webapp\WebApplication.Tests\bin\Debug\K9.WebApplication.Tests.dll"
-$dataTestFile = "webapp\DataAccess.Tests\bin\Debug\K9.DataAccess.Tests.dll"
+$projectPath = ".\WebApplication\WebApplication.csproj"
+$webTestFile = ".\webapp\WebApplication.Tests\bin\Debug\K9.WebApplication.Tests.dll"
+$dataTestFile = ".\webapp\DataAccess.Tests\bin\Debug\K9.DataAccess.Tests.dll"
 	
 function ProcessErrors(){
   if($? -eq $false)
@@ -41,15 +41,15 @@ function _NugetRestore() {
 }
 
 function _Test() {
-  echo "Running dotnet test"
+  echo "Running tests"
   
   pushd $appDir  
   ProcessErrors
   
-  "packages\xunit.runner.console.2.2.0\tools\xunit.console.exe " + $webTestFile
+  packages\xunit.runner.console.2.2.0\tools\xunit.console.exe + $webTestFile
   ProcessErrors
   
-  "packages\xunit.runner.console.2.2.0\tools\xunit.console.exe " + $dataTestFile
+  packages\xunit.runner.console.2.2.0\tools\xunit.console.exe + $dataTestFile
   ProcessErrors
   popd
 }

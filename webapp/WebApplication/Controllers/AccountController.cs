@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using K9.DataAccess.Models;
+using K9.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
@@ -21,11 +21,7 @@ namespace K9.WebApplication.Controllers
 	{
 		private readonly IRepository<User> _repository;
 		private readonly ILogger _logger;
-		private readonly IMailer _mailer;
-		private readonly WebsiteConfiguration _websiteConfig;
-		private readonly IDataSetsHelper _dataSetsHelper;
-		private readonly IRoles _roles;
-		private readonly IAccountService _accountService;
+	    private readonly IAccountService _accountService;
 
 		#region Constructors
 
@@ -34,11 +30,7 @@ namespace K9.WebApplication.Controllers
 		{
 			_repository = repository;
 			_logger = logger;
-			_mailer = mailer;
-			_websiteConfig = websiteConfig.Value;
-			_dataSetsHelper = dataSetsHelper;
-			_roles = roles;
-			_accountService = accountService;
+		    _accountService = accountService;
 		}
 
 		#endregion

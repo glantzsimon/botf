@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-using K9.DataAccess.Config;
-using K9.DataAccess.Models;
+using K9.DataAccessLayer.Config;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.EventArgs;

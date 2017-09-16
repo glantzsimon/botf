@@ -3,7 +3,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using K9.DataAccess.Models;
+using K9.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;

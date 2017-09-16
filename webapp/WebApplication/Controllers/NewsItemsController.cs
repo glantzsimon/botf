@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
-using K9.DataAccess.Models;
+using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Attributes;
 using K9.WebApplication.UnitsOfWork;
 using WebMatrix.WebData;

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using K9.DataAccess.Extensions;
-using K9.DataAccess.Models;
+using K9.Base.DataAccessLayer.Extensions;
+using K9.DataAccessLayer.Models;
 
-namespace K9.DataAccess.Database.Seeds
+namespace K9.DataAccessLayer.Database.Seeds
 {
 	public static class SchoolSeeder
 	{
