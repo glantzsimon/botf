@@ -1,9 +1,9 @@
-﻿using System.Web.Mvc;
-using K9.WebApplication.Filters;
+﻿using K9.Base.WebApplication.Filters;
+using System.Web.Mvc;
 
 namespace K9.WebApplication
 {
-	public class FilterConfig
+    public class FilterConfig
 	{
 		public static void RegisterGlobalFilters(GlobalFilterCollection filters)
 		{

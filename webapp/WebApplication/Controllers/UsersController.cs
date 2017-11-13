@@ -1,17 +1,18 @@
-﻿using System.Linq;
-using System.Web.Mvc;
-using K9.DataAccessLayer.Config;
-using K9.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Config;
+using K9.Base.DataAccessLayer.Models;
+using K9.Base.WebApplication.Controllers;
+using K9.Base.WebApplication.EventArgs;
+using K9.Base.WebApplication.Filters;
+using K9.Base.WebApplication.UnitsOfWork;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.EventArgs;
-using K9.WebApplication.Filters;
-using K9.WebApplication.UnitsOfWork;
+using System.Linq;
+using System.Web.Mvc;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
-	[Authorize]
+    [Authorize]
 	[RequirePermissions(Role = RoleNames.Administrators)]
 	public class UsersController : BaseController<User>
 	{

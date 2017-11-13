@@ -1,12 +1,12 @@
-﻿using System;
+﻿using K9.Base.DataAccessLayer.Extensions;
+using K9.DataAccessLayer.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using K9.Base.DataAccessLayer.Extensions;
-using K9.DataAccessLayer.Models;
 
 namespace K9.DataAccessLayer.Database.Seeds
 {
-	public static class SchoolSeeder
+    public static class SchoolSeeder
 	{
 		public static void SeedSchool(DbContext context)
 		{

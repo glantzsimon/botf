@@ -1,25 +1,26 @@
-﻿using System;
+﻿using Autofac;
+using Autofac.Integration.Mvc;
+using K9.Base.DataAccessLayer.Config;
+using K9.Base.DataAccessLayer.Database;
+using K9.Base.DataAccessLayer.Helpers;
+using K9.Base.DataAccessLayer.Respositories;
+using K9.Base.WebApplication.Config;
+using K9.Base.WebApplication.DataSets;
+using K9.Base.WebApplication.Helpers;
+using K9.Base.WebApplication.Security;
+using K9.Base.WebApplication.Services;
+using K9.Base.WebApplication.UnitsOfWork;
+using K9.SharedLibrary.Helpers;
+using K9.SharedLibrary.Models;
+using NLog;
+using System;
 using System.Data.Entity;
 using System.IO;
 using System.Web.Mvc;
-using Autofac;
-using Autofac.Integration.Mvc;
-using K9.DataAccessLayer.Config;
-using K9.DataAccessLayer.Helpers;
-using K9.DataAccessLayer.Respositories;
-using K9.DataAccessLayer.Database;
-using K9.SharedLibrary.Helpers;
-using K9.SharedLibrary.Models;
-using K9.WebApplication.Config;
-using K9.WebApplication.DataSets;
-using K9.WebApplication.Helpers;
-using K9.WebApplication.Services;
-using K9.WebApplication.UnitsOfWork;
-using NLog;
 
 namespace K9.WebApplication
 {
-	public static class Startup
+    public static class Startup
 	{
 		public static void RegisterTypes()
 		{
@@ -38,11 +39,12 @@ namespace K9.WebApplication
 			builder.RegisterGeneric(typeof(DataTableAjaxHelper<>)).As(typeof(IDataTableAjaxHelper<>)).InstancePerRequest();
 			builder.RegisterType<ColumnsConfig>().As<IColumnsConfig>().SingleInstance();
 			builder.RegisterType<DataSetsHelper>().As<IDataSetsHelper>().InstancePerRequest();
-			builder.RegisterType<DataSets.DataSets>().As<IDataSets>().SingleInstance();
+			builder.RegisterType<DataSets>().As<IDataSets>().SingleInstance();
 			builder.RegisterType<Users>().As<IUsers>().InstancePerRequest();
 			builder.RegisterType<Roles>().As<IRoles>().InstancePerRequest();
 			builder.RegisterType<Mailer>().As<IMailer>().InstancePerRequest();
-			builder.RegisterType<PostedFileHelper>().As<IPostedFileHelper>().InstancePerRequest();
+		    builder.RegisterType<Authentication>().As<IAuthentication>().InstancePerRequest();
+            builder.RegisterType<PostedFileHelper>().As<IPostedFileHelper>().InstancePerRequest();
 			builder.RegisterType<FileSourceHelper>().As<IFileSourceHelper>().InstancePerRequest();
 			builder.RegisterGeneric(typeof(ControllerPackage<>)).As(typeof(IControllerPackage<>)).InstancePerRequest();
 			builder.RegisterType<AccountService>().As<IAccountService>().InstancePerRequest();

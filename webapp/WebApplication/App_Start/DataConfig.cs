@@ -1,7 +1,7 @@
 ﻿
+using K9.Base.DataAccessLayer.Database;
+using K9.DataAccessLayer.Database;
 using System.Data.Entity.Migrations;
-using K9.DataAccessLayer.Database;
-using K9.DataAccessLayer.Database;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication

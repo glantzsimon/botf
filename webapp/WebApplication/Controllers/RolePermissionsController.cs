@@ -1,15 +1,15 @@
-﻿using System.Web.Mvc;
-using K9.DataAccessLayer.Models;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.Base.WebApplication.Controllers;
+using K9.Base.WebApplication.Filters;
+using K9.Base.WebApplication.UnitsOfWork;
+using K9.Base.WebApplication.ViewModels;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Filters;
-using K9.WebApplication.UnitsOfWork;
-using K9.WebApplication.ViewModels;
-using Permission = K9.DataAccessLayer.Models.Permission;
+using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-	[Authorize]
+    [Authorize]
 	[RequirePermissions(Role = RoleNames.Administrators)]
 	public class RolePermissionsController : BaseController<RolePermission>
 	{

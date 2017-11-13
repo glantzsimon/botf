@@ -1,41 +1,37 @@
-﻿using System;
-using System.Linq;
-using System.Web.Mvc;
-using K9.DataAccessLayer.Models;
-using K9.Globalisation;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.Base.Globalisation;
+using K9.Base.WebApplication.Config;
+using K9.Base.WebApplication.Controllers;
+using K9.Base.WebApplication.Enums;
+using K9.Base.WebApplication.Filters;
+using K9.Base.WebApplication.Options;
+using K9.Base.WebApplication.Services;
 using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Config;
-using K9.WebApplication.Enums;
-using K9.WebApplication.Filters;
-using K9.WebApplication.Options;
-using K9.WebApplication.Services;
 using NLog;
+using System;
+using System.Linq;
+using System.Web.Mvc;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
-	public class AccountController : BaseController
+    public class AccountController : BaseController
 	{
 		private readonly IRepository<User> _repository;
 		private readonly ILogger _logger;
 	    private readonly IAccountService _accountService;
-
-		#region Constructors
-
-		public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService)
-			: base(logger, dataSetsHelper, roles)
+        
+		public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication)
+			: base(logger, dataSetsHelper, roles, authentication)
 		{
 			_repository = repository;
 			_logger = logger;
 		    _accountService = accountService;
 		}
-
-		#endregion
-
-
+        
 		#region Membership
 
 		public ActionResult Login(string returnUrl)

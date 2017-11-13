@@ -1,22 +1,23 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using K9.Base.WebApplication.Config;
+using K9.Base.WebApplication.Controllers;
+using K9.Base.WebApplication.ViewModels;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Config;
-using K9.WebApplication.ViewModels;
 using NLog;
+using System;
+using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-	public class SupportController : BaseController
+    public class SupportController : BaseController
 	{
 		private readonly ILogger _logger;
 		private readonly IMailer _mailer;
 		private readonly WebsiteConfiguration _config;
 
-		public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config)
-			: base(logger, dataSetsHelper, roles)
+		public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication)
+			: base(logger, dataSetsHelper, roles, authentication)
 		{
 			_logger = logger;
 			_mailer = mailer;
@@ -58,7 +59,7 @@ namespace K9.WebApplication.Controllers
 		
 		public override string GetObjectName()
 		{
-			throw new System.NotImplementedException();
+			throw new NotImplementedException();
 		}
 	}
 }
