@@ -1,4 +1,6 @@
-﻿using K9.Base.WebApplication.Controllers;
+﻿using System.Globalization;
+using System.Threading;
+using K9.Base.WebApplication.Controllers;
 using K9.SharedLibrary.Models;
 using NLog;
 using System.Web.Mvc;
@@ -21,7 +23,7 @@ namespace K9.WebApplication.Controllers
 		public ActionResult SetLanguage(string languageCode)
 		{
 			Session["languageCode"] = languageCode;
-			return RedirectToAction("Index");
+            return RedirectToAction("Index");
 		}
 		
 		public override string GetObjectName()

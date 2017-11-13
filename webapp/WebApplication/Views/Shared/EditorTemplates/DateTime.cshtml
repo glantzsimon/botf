@@ -1,7 +1,12 @@
-﻿@model Object
+﻿@using K9.SharedLibrary.Extensions
+@model Object
+@{
+    var dictionary = ViewData["viewDataDictionary"] as IDictionary<string, object>;
+    dictionary.MergeAttribute(K9.Base.WebApplication.Constants.Html.Attributes.Type, K9.Base.WebApplication.Constants.Html.Types.Email);
+}
 <div class="input-group date datetime">
-	@Html.TextBoxFor(model => model, ViewData["viewDataDictionary"] as IDictionary<string, object>)
-	<span class="input-group-addon">
+    @Html.TextBoxFor(model => model, dictionary)
+    <span class="input-group-addon">
         <span class="glyphicon glyphicon-calendar"></span>
     </span>
 </div>

@@ -37,7 +37,7 @@ namespace K9.WebApplication.Controllers
 		void UsersController_RecordCreated(object sender, CrudEventArgs e)
 		{
 			var user = e.Item as User;
-			WebSecurity.CreateAccount(user.Username, _dataConfig.Value.DefaultUserPassword, !user.AccountActivated);
+			WebSecurity.CreateAccount(user.Username, _dataConfig.Value.DefaultUserPassword);
 		}
 
 		private void DeleteLinkedRecords(User user)
