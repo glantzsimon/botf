@@ -1,6 +1,6 @@
 ﻿.field-validation-error
 {
-	display: inline-block;
+	display: block;
 	width: 100%;
 	min-height: 40px;
 	background-color: #a94442;
