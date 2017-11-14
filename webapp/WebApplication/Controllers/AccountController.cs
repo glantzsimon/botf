@@ -14,6 +14,7 @@ using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
+using K9.Base.WebApplication.Extensions;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -106,11 +107,20 @@ namespace K9.WebApplication.Controllers
 					return RedirectToAction("AccountCreated", "Account");
 				}
 
-				foreach (var registrationError in result.Errors)
-				{
-					ModelState.AddModelError(registrationError.FieldName, registrationError.ErrorMessage);
-				}
-			}
+			    foreach (var registrationError in result.Errors)
+			    {
+			        if (registrationError.Exception != null && registrationError.Exception.IsDuplicateIndexError())
+			        {
+			            var user = registrationError.Data.MapTo<User>();
+			            var serviceError = registrationError.Exception.GetServiceErrorFromException(user);
+			            ModelState.AddModelError("", serviceError.ErrorMessage);
+			        }
+			        else
+			        {
+			            ModelState.AddModelError(registrationError.FieldName, registrationError.ErrorMessage);
+			        }
+			    }
+            }
 
 			return View(model);
 		}
