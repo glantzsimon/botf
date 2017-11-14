@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-using System.Threading;
-using K9.Base.WebApplication.Controllers;
+﻿using K9.Base.WebApplication.Controllers;
 using K9.SharedLibrary.Models;
 using NLog;
 using System.Web.Mvc;

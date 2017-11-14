@@ -1,8 +1,6 @@
-function bootstrapControls(config)
-{
+function bootstrapControls(config) {
 
-    function initBootstrapDateTimePickers()
-    {
+    function initBootstrapDateTimePickers() {
         $("div.dateonly").datetimepicker({
             format: "L"
         });
@@ -10,10 +8,15 @@ function bootstrapControls(config)
         $("div.datetime").datetimepicker({
             format: "L"
         });
+
+        $("div.dateonly, div.datetime").on("dp.change", function (e) {
+            var linkId = e.target.firstElementChild.id;
+            var formattedDate = e.date.format("YYYY-MM-DD");
+            $("input[linkid=" + linkId + "]").val(formattedDate);
+        });
     }
 
-    function initBootstrapSelect()
-    {
+    function initBootstrapSelect() {
         $(".selectpicker").selectpicker({
             size: 8
         });
@@ -21,32 +24,27 @@ function bootstrapControls(config)
 
     function initTextScroller() {
         $(".scroller-container").scrollText({
-            "direction" : "down",
-            "loop" : true,
-            "duration" : 3000
+            "direction": "down",
+            "loop": true,
+            "duration": 3000
         });
     }
 
-    function initDateTimeValidation()
-    {
-        $.validator.methods.date = function (value, element)
-        {
+    function initDateTimeValidation() {
+        $.validator.methods.date = function (value, element) {
             return this.optional(element) || moment(value, config.dateFormat, true).isValid();
         }
     }
 
-    function selectFirstFormInput()
-    {
+    function selectFirstFormInput() {
         $("form").find("input[type=text], textarea, select").filter(":not(#main-search):visible:first").focus();
     }
 
-    function initToolTips()
-    {
+    function initToolTips() {
         $('[data-toggle="tooltip"]').tooltip();
     }
 
-    var init = function ()
-    {
+    var init = function () {
         initBootstrapDateTimePickers();
         initBootstrapSelect();
         initDateTimeValidation();

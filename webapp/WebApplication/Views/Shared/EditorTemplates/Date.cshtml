@@ -1,7 +1,14 @@
-﻿@model Object
+﻿@using K9.SharedLibrary.Extensions
+@model DateTime
+@{
+    var linkId = Guid.NewGuid().ToString();
+    var dictionary = ViewData["viewDataDictionary"] as IDictionary<string, object>;
+    dictionary.MergeAttribute(K9.Base.WebApplication.Constants.Html.Attributes.Id, linkId);
+}
+@Html.Hidden("", Model.ToString("yyyy-MM-dd"), new { linkId })
 <div class="input-group date dateonly">
-	@Html.TextBoxFor(model => model, ViewData["viewDataDictionary"] as IDictionary<string, object>)
-	<span class="input-group-addon">
+    @Html.TextBox(linkId, Model, dictionary)
+    <span class="input-group-addon">
         <span class="glyphicon glyphicon-calendar"></span>
     </span>
 </div>
