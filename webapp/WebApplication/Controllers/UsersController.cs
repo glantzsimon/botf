@@ -18,13 +18,15 @@ namespace K9.WebApplication.Controllers
 	{
 		private readonly IOptions<DatabaseConfiguration> _dataConfig;
 		private readonly IRepository<Message> _messageRepository;
+	    private readonly IRoles _roles;
 
-		public UsersController(IControllerPackage<User> controllerPackage, IOptions<DatabaseConfiguration> dataConfig, IRepository<Message> messageRepository)
+	    public UsersController(IControllerPackage<User> controllerPackage, IOptions<DatabaseConfiguration> dataConfig, IRepository<Message> messageRepository, IRoles roles)
 			: base(controllerPackage)
 		{
 			_dataConfig = dataConfig;
 			_messageRepository = messageRepository;
-			RecordCreated += UsersController_RecordCreated;
+		    _roles = roles;
+		    RecordCreated += UsersController_RecordCreated;
 			RecordBeforeDelete += UsersController_RecordBeforeDelete;
 		}
 
@@ -38,7 +40,8 @@ namespace K9.WebApplication.Controllers
 		{
 			var user = e.Item as User;
 			WebSecurity.CreateAccount(user.Username, _dataConfig.Value.DefaultUserPassword);
-		}
+		    _roles.AddUserToRole(user.Username, RoleNames.DefaultUsers);
+        }
 
 		private void DeleteLinkedRecords(User user)
 		{
