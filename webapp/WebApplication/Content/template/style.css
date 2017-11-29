@@ -55,6 +55,11 @@ body {
     background-size: cover;
 }
 
+.background-bwiti {
+    background: url(../../Images/home/bwiti1.jpg) no-repeat 0 0;
+    background-size: cover;
+}
+
 .main-section {
     padding: 4em 0 2em 0;
 }
@@ -102,7 +107,7 @@ body {
 }
 
 .main-section .main-heading {
-    margin: 0 0 2em 0;
+    margin: 0 0 3em 0;
 }
 
 .main-heading h3 {
@@ -600,4 +605,8 @@ img.img-responsive {
 
 article, p {
     line-height: 1.8em !important;
+}
+
+.our-partners {
+    background-color: burlywood;
 }
