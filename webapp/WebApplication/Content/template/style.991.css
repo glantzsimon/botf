@@ -75,6 +75,12 @@
     .top-nav ul li a {
         font-size: 0.8em !important;
     }
+    .clear-on-device {
+        clear: both !important;
+    }
+    .picture-frame-large-x.pull-right {
+        width: 100%;
+    }
 }
 
 @media (min-width:991px) {

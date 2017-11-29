@@ -7,6 +7,10 @@
 	background: #ffffff;
 }
 
+.main-section .page {
+    margin: 1em auto;
+}
+
 .mainContent {
 	position: relative;
 	width: 100%;
@@ -141,6 +145,26 @@ a.btn {
 .picture-frame-200 {
 	width: 100%;
 	height: 200px;
+}
+
+.picture-frame-medium-x {
+    width: 400px;
+    height: auto;
+}
+
+.picture-frame-large-x{
+    width: 600px;
+    height: auto;
+}
+
+.picture-frame-medium-y {
+    height: 400px;
+    width: auto;
+}
+
+.picture-frame-large-y {
+    height: 600px;
+    width: auto;
 }
 
 .navbar-nav:not(.navbar-login):not(.dropdown-menu) li.active a {

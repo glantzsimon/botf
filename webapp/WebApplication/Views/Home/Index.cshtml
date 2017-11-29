@@ -1,10 +1,10 @@
 ﻿@using K9.Base.WebApplication.Config
 @using K9.Base.WebApplication.Helpers
 @{
-	ViewBag.Title = Dictionary.Home;
+    ViewBag.Title = Dictionary.Home;
 }
 <div id="main-banner" class="banner-default main-menu">
-	@Html.Partial("_Navbar")
+    @Html.Partial("_Navbar")
 </div>
 <div class="main-section pink">
     <div class="container">
@@ -17,7 +17,7 @@
             <div class="col-md-5">
                 <div class="picture-frame">
                     <div>
-                        <img src="~/Images/home/wood1.jpg" alt=""/>
+                        <img src="~/Images/home/wood1.jpg" alt="" />
                     </div>
                 </div>
             </div>
@@ -32,31 +32,31 @@
     </div>
 </div>
 <div class="jarallax background-forest3 our-mission main-section">
-	<div class="container scrollFadeIn">
-		<div class="main-heading">
-			<h3 class="text-white">@Dictionary.OurMissionTitle</h3>
-		</div>
-	    <div class="">
-	        <div class="col-md-6">
-	            <div>
-	                <h4>@K9.Globalisation.Dictionary.mission_statement_and_aims_title1</h4>
-	            </div>
-	            @MvcHtmlString.Create(K9.Globalisation.Dictionary.mission_statement_and_aims1)
-	        </div>
-	        <div class="col-md-6">
-	            <div>
-	                <h4>@K9.Globalisation.Dictionary.mission_statement_and_aims_title2</h4>
-	            </div>
-	            @MvcHtmlString.Create(K9.Globalisation.Dictionary.mission_statement_and_aims2)
-	        </div>
-	        <div class="clearfix">
-	        </div>
-	    </div>
+    <div class="container scrollFadeIn">
+        <div class="main-heading">
+            <h3 class="text-white">@Dictionary.OurMissionTitle</h3>
+        </div>
+        <div class="">
+            <div class="col-md-6">
+                <div>
+                    <h4>@K9.Globalisation.Dictionary.mission_statement_and_aims_title1</h4>
+                </div>
+                @MvcHtmlString.Create(K9.Globalisation.Dictionary.mission_statement_and_aims1)
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <h4>@K9.Globalisation.Dictionary.mission_statement_and_aims_title2</h4>
+                </div>
+                @MvcHtmlString.Create(K9.Globalisation.Dictionary.mission_statement_and_aims2)
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
         <br />
-		<div class="text-center">
-			@Html.BootstrapActionLinkButton(Dictionary.SupportUs, "Index", "Home", null, "fa-thumbs-o-up", EButtonClass.Large)
-		</div>
-	</div>
+        <div class="text-center">
+            @Html.BootstrapActionLinkButton(Dictionary.SupportUs, "Index", "Home", null, "fa-thumbs-o-up", EButtonClass.Large)
+        </div>
+    </div>
 </div>
 <div class="main-section">
     <div class="container">
@@ -65,17 +65,15 @@
         </div>
         <div class="container">
             <div>
-                <div class="col-md-7 margin-top-minus-15">
-                    <article>
-                        @MvcHtmlString.Create(K9.Globalisation.Dictionary.botf_context)
-                    </article>
-                </div>
-                <div class="col-md-5">
-                    <div class="picture-frame">
+                <div class="col-md-12">
+                    <div class="picture-frame picture-frame-large-x pull-right margin-left-15">
                         <div>
-                            <img src="~/Images/home/slides/aims2.jpg" alt="" />
+                            <img src="~/Images/home/image8.jpg" alt="" />
                         </div>
                     </div>
+                    <article class="margin-top-minus-15 clear-on-device">
+                        @MvcHtmlString.Create(K9.Globalisation.Dictionary.botf_context)
+                    </article>
                 </div>
                 <div class="clearfix">
                 </div>
@@ -209,14 +207,14 @@
     </div>
 </div>
 <div class="jarallax background-waterfall">
-	<div class="fog-overlay main-section">
-		<div class="main-heading">
-			<h3 class="text-white">@Dictionary.GetInTouchTitle</h3>
-		</div>
-		<div class="container-fluid">
-			<div class="page shadow alphaBackground roundCorners small-form">
-				@Html.Partial("_ContactUs")
-			</div>
-		</div>
-	</div>
+    <div class="fog-overlay main-section">
+        <div class="main-heading">
+            <h3 class="text-white">@Dictionary.GetInTouchTitle</h3>
+        </div>
+        <div class="container-fluid">
+            <div class="page shadow alphaBackground roundCorners small-form">
+                @Html.Partial("_ContactUs")
+            </div>
+        </div>
+    </div>
 </div>

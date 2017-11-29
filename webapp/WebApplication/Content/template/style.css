@@ -132,7 +132,7 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
     }
 
 .main-section {
-    padding: 4em 0;
+    padding: 4em 0 2em 0;
 }
 
     .main-section ul {
@@ -178,7 +178,7 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
 }
 
 .main-section .main-heading {
-    margin: 0 0 4em 0;
+    margin: 0 0 2em 0;
 }
 
 .main-heading h3 {
@@ -289,6 +289,7 @@ button.btn1:hover {
 
 .our-mission ul li {
     color: #fff;
+    line-height: 1.8em !important;
 }
 
 .ih-item.circle {
@@ -866,4 +867,8 @@ div.small-logo {
     width: 88px;
     background-image: url(/Images/company/botf_logo_small_inverted.png);
     background-repeat: no-repeat;
+}
+
+article, p {
+    line-height: 1.8em !important;
 }

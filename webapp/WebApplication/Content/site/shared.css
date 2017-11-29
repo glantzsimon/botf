@@ -18,6 +18,11 @@
 	max-height: 500px;
 }
 
+.max-width-200 {
+    max-width: 200px;
+    height: auto;
+}
+
 .text-white {
 	color: white;
 }
@@ -66,8 +71,24 @@
 	margin: 0;
 }
 
+.margin-left-5 {
+    margin-left: 5px;
+}
+
+.margin-left-10 {
+    margin-left: 10px;
+}
+
+.margin-left-15 {
+    margin-left: 15px;
+}
+
 .padding-left-2 {
 	padding-left: 2px;
+}
+
+.padding-right-5 {
+    padding-right: 5px;
 }
 
 .padding-top-10 {
