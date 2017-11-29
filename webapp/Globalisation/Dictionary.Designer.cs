@@ -71,12 +71,13 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///	Iboga is now
-        ///	an endangered species, classified in July 2000 as a ‘National Cultural Heritage
-        ///	and Strategic Reserve’ by the Ex-President of Gabon, El Hadj Omar Bongo Ondimba.
-        ///	Our organisation has been set up to preserve, research and share knowledge about
-        ///	the medicinal plants and indigenous traditions of the Gabonese forest people for
-        ///	the benefit of all of humanity. We are a &lt;a href=&quot;https://www.gov.uk/government/publications/community-interest-companies-introduction&quot;&gt;community interest compa [rest of string was truncated]&quot;;.
+        ///Blessings of the Forest C.I.C is a charity that was set up in October of 2015 in London. It is a &lt;a href=&quot;https://www.gov.uk/government/publications/community-interest-companies-introduction&quot;&gt;community interest company (CIC)&lt;/a&gt; (Community Interest Company n° 9816364).
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    As a charity, it has a stated mission known as
+        ///    the ‘community interest statement’ and a clearly defined set of activities. There
+        ///    are also restrictions on how it can spend its money. The ‘asset lock’ for a CIC
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string blessings_of_the_forest {
             get {
@@ -85,13 +86,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There are many blessings of the forest, from the vast array of medicinal plants
-        ///	of the Amazon, to less exotic but no less valuable varieties much closer to home.
-        ///	However, few if any of nature&apos;s gifts are quite as precious as Iboga. .
+        ///   Looks up a localized string similar to .
         /// </summary>
         public static string blessings_of_the_forest_intro {
             get {
                 return ResourceManager.GetString("blessings_of_the_forest_intro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to    .
+        /// </summary>
+        public static string botf_context {
+            get {
+                return ResourceManager.GetString("botf_context", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to    .
+        /// </summary>
+        public static string botf_context_title {
+            get {
+                return ResourceManager.GetString("botf_context_title", resourceCulture);
             }
         }
         

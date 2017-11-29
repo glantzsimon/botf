@@ -50,6 +50,14 @@
 	margin-top: 10px;
 }
 
+.margin-top-15 {
+    margin-top: 15px;
+}
+
+.margin-top-minus-15 {
+    margin-top: -15px;
+}
+
 .margin-bottom-0 {
 	margin-top: 0;
 }

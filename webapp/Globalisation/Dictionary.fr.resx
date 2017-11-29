@@ -205,4 +205,10 @@
   <data name="OnTheBrinkOfExtinctionTitle" xml:space="preserve">
     <value>Au Bord De L'Extinction</value>
   </data>
+  <data name="botf_context" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\botf_context.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="botf_context_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\botf_context_title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

@@ -63,6 +63,8 @@
   <ItemGroup>
     <Content Include="Articles\en-gb\blessings-of-the-forest.htm" />
     <Content Include="Articles\en-gb\blessings-of-the-forest-intro.htm" />
+    <Content Include="Articles\en-gb\botf_context_title.htm" />
+    <Content Include="Articles\en-gb\botf_context.htm" />
     <Content Include="Articles\en-gb\simon-text.htm" />
     <Content Include="Articles\en-gb\laurent-text.htm" />
     <Content Include="Articles\en-gb\david-text.htm" />
@@ -79,6 +81,8 @@
     <Content Include="Articles\en-gb\mission-statement-and-aims-title2.htm" />
     <Content Include="Articles\en-gb\mission-statement-and-aims1.htm" />
     <Content Include="Articles\en-gb\mission-statement-and-aims2.htm" />
+    <Content Include="Articles\fr\botf_context.htm" />
+    <Content Include="Articles\fr\botf_context_title.htm" />
     <Content Include="Articles\fr\david-text.htm" />
     <Content Include="Articles\fr\david-title.htm" />
     <Content Include="Articles\fr\iboga-text1.htm" />
