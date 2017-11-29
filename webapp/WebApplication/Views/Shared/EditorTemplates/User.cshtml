@@ -3,4 +3,4 @@
 @{
 }
 
-@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectList<User>(Model, true, "FirstName + ' ' + LastName"))
+@Html.BootstrapDropdownFor(model => model, this.GetDropdownData().GetSelectList<User>(Model, true, "FullName"))

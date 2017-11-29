@@ -59,7 +59,7 @@ function fileUploader(config) {
 
         var docInfo = $(document.createElement("DIV"));
         docInfo.attr("class", "doc-info");
-        docInfo.html("<p>" + file.name + "</p>" +
+        docInfo.html("<p>" + $.fn.getShortFileName(file.name) + "</p>" +
             "<samp>(" + $.fn.formatBytes(file.size) + ")</samp>" +
             '<i class="glyphicon glyphicon-upload file-preview-upload"></i>');
 
@@ -69,8 +69,12 @@ function fileUploader(config) {
                 img.attr("class", "portrait");
             }
             img.attr("src", data.src);
+        } else if (type === "video") {
+            img.attr("src", "/Images/ui/video.png");
+        } else if (type === "audio") {
+            img.attr("src", "/Images/ui/audio.png");
         } else {
-            img.attr("src", "~/Images/ui/document.jpg");
+            img.attr("src", "/Images/ui/document.jpg");
         }
 
         fileContainer.append(img);
@@ -96,6 +100,10 @@ function fileUploader(config) {
                 displayFile(input, f, "image", image);
             };
             image.src = fileSrc;
+        } else if ($.fn.isVideo(f.name)) {
+            displayFile(input, f, "video");
+        } else if ($.fn.isAudio(f.name)) {
+            displayFile(input, f, "audio");
         } else {
             displayFile(input, f, "file");
         }

@@ -20,6 +20,11 @@ function bootstrapControls(config) {
         $(".selectpicker").selectpicker({
             size: 8
         });
+        $("select").each(function () {
+            this.getSelectedText = function () {
+                return $(this).parent().find("li[data-original-index=" + this.selectedIndex + "] span.text").html();
+            };
+        });
     }
 
     function initTextScroller() {
@@ -36,14 +41,14 @@ function bootstrapControls(config) {
         }
     }
 
-    function selectFirstFormInput() {
-        $("form").find("input[type=text], textarea, select").filter(":not(#main-search):visible:first").focus();
-    }
-
     function initToolTips() {
         $('[data-toggle="tooltip"]').tooltip();
     }
 
+    function selectFirstFormInput() {
+        $("form").find("input[type=text], textarea, select").filter(":not(#main-search):visible:first").focus();
+    }
+    
     var init = function () {
         initBootstrapDateTimePickers();
         initBootstrapSelect();

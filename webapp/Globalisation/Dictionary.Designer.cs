@@ -107,9 +107,27 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:9816364)..
         /// </summary>
+        public static string CompanyDescription {
+            get {
+                return ResourceManager.GetString("CompanyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:9816364)..
+        /// </summary>
         public static string CompanyLegalDescription {
             get {
                 return ResourceManager.GetString("CompanyLegalDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Charity comitted to preserving Gabon&apos;s heritage.
+        /// </summary>
+        public static string CompanyShortDescription {
+            get {
+                return ResourceManager.GetString("CompanyShortDescription", resourceCulture);
             }
         }
         

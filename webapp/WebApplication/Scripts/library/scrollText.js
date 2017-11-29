@@ -66,7 +66,6 @@
     }
 
     ST.up = function() {
-        console.log('UP');
         content.animate({
             marginTop: '-' + contentChildHeight
         });

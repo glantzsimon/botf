@@ -127,20 +127,11 @@
   <data name="WelcomeEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\fr\welcomeemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="CompanyLegalDescription" xml:space="preserve">
-    <value>Blessings Of The Forest est une Compagnie des intérêts communautaires, une entreprise sociale immatriculée en Angleterre en octobre de 2015 en tant que société limitée par actions (société numéro 9816364).</value>
-  </data>
   <data name="blessings_of_the_forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\blessings-of-the-forest.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="OnTheBrinkOfExtinctionTitle" xml:space="preserve">
-    <value>Au Bord De L'Extinction</value>
-  </data>
   <data name="Keywords" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>text\fr\keywords.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="Blessings" xml:space="preserve">
-    <value>Bénédictions</value>
   </data>
   <data name="blessings_of_the_forest_intro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\blessings-of-the-forest-intro.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -190,13 +181,28 @@
   <data name="yann_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\yann-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Blessings" xml:space="preserve">
+    <value>Bénédictions</value>
+  </data>
   <data name="CompanyBlurbFooter" xml:space="preserve">
     <value>Notre organisation est dédiée à la conservation, l’étude et le partage des connaissances au sujet de l’herboristerie traditionnelle gabonaise et des traditions des peuples du Gabon pour le bénéfice de toute l’humanité.</value>
+  </data>
+  <data name="CompanyDescription" xml:space="preserve">
+    <value>Blessings Of The Forest est une Compagnie des intérêts communautaires, une entreprise sociale immatriculée en Angleterre en octobre de 2015 en tant que société limitée par actions (société numéro 9816364).</value>
+  </data>
+  <data name="CompanyLegalDescription" xml:space="preserve">
+    <value>Blessings Of The Forest est une Compagnie des intérêts communautaires, une entreprise sociale immatriculée en Angleterre en octobre de 2015 en tant que société limitée par actions (société numéro 9816364).</value>
+  </data>
+  <data name="CompanyShortDescription" xml:space="preserve">
+    <value>Compagnie des intérêts communautaires dédiée à la protection du patrimoine gabonais</value>
   </data>
   <data name="MainTitleLeft" xml:space="preserve">
     <value>Bénédictions</value>
   </data>
   <data name="MainTitleRight" xml:space="preserve">
     <value>De La Forêt</value>
+  </data>
+  <data name="OnTheBrinkOfExtinctionTitle" xml:space="preserve">
+    <value>Au Bord De L'Extinction</value>
   </data>
 </root>

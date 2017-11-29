@@ -3,7 +3,9 @@ using K9.Base.Globalisation;
 using K9.Base.WebApplication.Config;
 using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.Enums;
+using K9.Base.WebApplication.Extensions;
 using K9.Base.WebApplication.Filters;
+using K9.Base.WebApplication.Models;
 using K9.Base.WebApplication.Options;
 using K9.Base.WebApplication.Services;
 using K9.SharedLibrary.Authentication;
@@ -14,7 +16,6 @@ using NLog;
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using K9.Base.WebApplication.Extensions;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
@@ -24,13 +25,15 @@ namespace K9.WebApplication.Controllers
 		private readonly IRepository<User> _repository;
 		private readonly ILogger _logger;
 	    private readonly IAccountService _accountService;
-        
-		public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication)
-			: base(logger, dataSetsHelper, roles, authentication)
+	    private readonly IAuthentication _authentication;
+
+	    public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper)
+			: base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
 		{
 			_repository = repository;
 			_logger = logger;
 		    _accountService = accountService;
+		    _authentication = authentication;
 		}
         
 		#region Membership
@@ -195,12 +198,52 @@ namespace K9.WebApplication.Controllers
 			return View("MyAccount", model);
 		}
 
-		#endregion
+	    [Authorize]
+	    [HttpPost]
+	    [ValidateAntiForgeryToken]
+	    public ActionResult DeleteAccount(ConfirmDeleteAccountModel model)
+	    {
+	        try
+	        {
+	            if (_accountService.DeleteAccount(model.UserId).IsSuccess)
+	            {
+	                return RedirectToAction("DeleteAccountSuccess");
+	            }
+	        }
+	        catch (Exception ex)
+	        {
+	            _logger.Error(ex.GetFullErrorMessage());
+	        }
+
+	        return RedirectToAction("DeleteAccountFailed");
+        }
+
+	    public ActionResult ConfirmDeleteAccount(int id)
+	    {
+	        var user = _repository.Find(id);    
+	        if (user == null || user.Username != _authentication.CurrentUserName)
+	        {
+	            return HttpNotFound();
+            }
+	        return View(new ConfirmDeleteAccountModel{UserId = id});
+	    }
+
+        public ActionResult DeleteAccountSuccess()
+	    {
+	        return View();
+	    }
+
+	    public ActionResult DeleteAccountFailed()
+	    {
+	        return View();
+	    }
+
+        #endregion
 
 
-		#region Password Reset
+        #region Password Reset
 
-		public ActionResult PasswordResetEmailSent()
+        public ActionResult PasswordResetEmailSent()
 		{
 			return View();
 		}

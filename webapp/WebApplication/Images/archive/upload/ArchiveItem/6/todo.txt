@@ -1,0 +1,2 @@
+DeleteLinkedREcords = All tables that have data for that user
+

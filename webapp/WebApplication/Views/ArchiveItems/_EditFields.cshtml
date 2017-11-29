@@ -1,0 +1,20 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model ArchiveItem
+@Html.BootstrapEditorFor(model => model.PublishedOn)
+@Html.HiddenFor(model => model.PublishedBy)
+@Html.BootstrapEditorFor(model => model.Language)
+@Html.BootstrapEditorFor(model => model.CategoryId)
+@Html.BootstrapEditorFor(model => model.FileSource)
+@Html.BootstrapEditorFor(model => model.Title)
+@Html.BootstrapEditorFor(model => model.DescriptionText)
+
+<script type="text/javascript">
+    
+    $(function () {
+        $("#CategoryId").change(function () {
+            var fileInput = $("#FileSource_PostedFile");
+            var type = this.getSelectedText();
+            $.fn.setAcceptedFileExtensions(fileInput, type);
+        });
+    })
+</script>

@@ -16,8 +16,8 @@ namespace K9.WebApplication.Controllers
 		private readonly IMailer _mailer;
 		private readonly WebsiteConfiguration _config;
 
-		public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication)
-			: base(logger, dataSetsHelper, roles, authentication)
+		public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper)
+			: base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
 		{
 			_logger = logger;
 			_mailer = mailer;

@@ -9,6 +9,7 @@ namespace K9.WebApplication
 		{
 			filters.Add(new HandleErrorAttribute());
 			filters.Add(new CultureAttribute());
-		}
+		    filters.Add(new ContentLoaderAttribute());
+        }
 	}
 }
