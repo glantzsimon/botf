@@ -569,6 +569,7 @@
     <Content Include="Images\flags\zm.png" />
     <Content Include="Images\flags\zw.png" />
     <Content Include="Images\home\bwiti1.jpg" />
+    <Content Include="Images\home\home1.jpg" />
     <Content Include="Images\home\smokefog-dark.png" />
     <Content Include="Images\home\wood1.jpg" />
     <Content Include="Images\home\slides\aims1.jpg" />

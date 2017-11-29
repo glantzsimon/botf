@@ -9,18 +9,6 @@ function menu() {
         });
     }
 
-    function displayMenu(direction) {
-        var elementsToToggle = $("#main-menu-container, #main-logo-container");
-        alert(direction);
-        //elementsToToggle.each(function() {
-        //    if (direction === "up") {
-        //        $(this).fadeIn();
-        //    } else {
-        //        $(this).fadeOut();
-        //    }
-        //});
-    }
-
     function growMenu(logoDiv, els) {
         logoDiv.addClass("main-logo");
         logoDiv.removeClass("small-logo");
@@ -44,7 +32,6 @@ function menu() {
             } else {
                 growMenu(logoDiv, els);
             }
-            displayMenu(direction);
         });
     }
 
