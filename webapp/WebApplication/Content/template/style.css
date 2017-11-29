@@ -7,7 +7,7 @@ body a, h4 {
 }
 
 html, body {
-    font-size: 103%;
+    font-size: 100%;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -214,6 +214,7 @@ button.btn1:hover {
 .our-mission ul li {
     color: #fff;
     line-height: 1.8em !important;
+    font-family: Roboto;
 }
 
 .ih-item.circle {

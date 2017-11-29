@@ -87,6 +87,13 @@
 	            break;
 	        }
 	        fileInput.attr("accept", accepted);
+        };
+
+	    $.fn.scrollToTopOf = function(el) {
+	        var offset = el.offset();
+	        $("html, body").animate({
+	            scrollTop: offset.top
+	        }, 40);
 	    };
 
 		bootstrapControls({
@@ -109,7 +116,10 @@
 
         navbar().init();
 
-	    revealText().init();
+	    revealText({
+            moreText: "@Dictionary.More",
+            lessText: "@Dictionary.Less"
+	    }).init();
 	});
 
 </script>
