@@ -70,15 +70,15 @@
 	    $.fn.setAcceptedFileExtensions = function(fileInput, type) {
 	        var accepted;
 	        switch (type) {
-            case "@Dictionary.Videos":
+            case "@MvcHtmlString.Create(Dictionary.Videos)":
 	            accepted = "@HelperMethods.GetVideoFileExtensions().ToDelimitedString()";
                 break;
 
-            case "@Dictionary.Audio":
+            case "@MvcHtmlString.Create(Dictionary.Audio)":
 	            accepted = "@HelperMethods.GetAudioFileExtensions().ToDelimitedString()";
                 break;
 
-            case "@Dictionary.Photos":
+            case "@MvcHtmlString.Create(Dictionary.Photos)":
 	            accepted = "@HelperMethods.GetImageFileExtensions().ToDelimitedString()";
 	            break;
 
@@ -103,8 +103,8 @@
 		scroller().init();
 
 		fileUploader({
-			deleteText: "@Dictionary.Delete",
-			filesSelectedText: "@Dictionary.FilesSelected"
+			deleteText: "@MvcHtmlString.Create(Dictionary.Delete)",
+			filesSelectedText: "@MvcHtmlString.Create(Dictionary.FilesSelected)"
         }).init();
 
 	    menu().init();

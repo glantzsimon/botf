@@ -9,12 +9,18 @@
 @Html.BootstrapEditorFor(model => model.DescriptionText)
 
 <script type="text/javascript">
-    
+
+    function setAcceptedFileExtensionsByCategory() {
+        var fileInput = $("#FileSource_PostedFile");
+        var type = $("#CategoryId")[0].getSelectedText();
+        $.fn.setAcceptedFileExtensions(fileInput, type);
+    }
+
     $(function () {
         $("#CategoryId").change(function () {
-            var fileInput = $("#FileSource_PostedFile");
-            var type = this.getSelectedText();
-            $.fn.setAcceptedFileExtensions(fileInput, type);
+            setAcceptedFileExtensionsByCategory();
         });
-    })
+
+        window.setTimeout(setAcceptedFileExtensionsByCategory, 500);
+    });
 </script>
