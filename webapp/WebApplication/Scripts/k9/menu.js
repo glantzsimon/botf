@@ -1,12 +1,24 @@
 function menu() {
 
-    function shrinkMenu(logoDiv, els) {
+    function shrinkMenu(logoDiv, els, direction) {
         logoDiv.removeClass("main-logo");
         logoDiv.addClass("small-logo");
         els.each(function () {
             $(this).removeClass("menu-main");
             $(this).addClass("menu-small");
         });
+    }
+
+    function displayMenu(direction) {
+        var elementsToToggle = $("#main-menu-container, #main-logo-container");
+        alert(direction);
+        //elementsToToggle.each(function() {
+        //    if (direction === "up") {
+        //        $(this).fadeIn();
+        //    } else {
+        //        $(this).fadeOut();
+        //    }
+        //});
     }
 
     function growMenu(logoDiv, els) {
@@ -21,13 +33,18 @@ function menu() {
     function init() {
         var logoDiv = $("div.default-logo");
         var els = $("#main-logo-container, #main-menu-container, #main-banner, #bs-navbar-collapse-1");
+        var lastmainMenuTop = 0;
         $(window).scroll(function () {
             var mainMenuTop = $("#main-logo-container").offset().top;
+            var direction = mainMenuTop > lastmainMenuTop ? "down" : "up";
+            lastmainMenuTop = mainMenuTop;
+
             if (mainMenuTop >= 140) {
                 shrinkMenu(logoDiv, els);
             } else {
                 growMenu(logoDiv, els);
             }
+            displayMenu(direction);
         });
     }
 

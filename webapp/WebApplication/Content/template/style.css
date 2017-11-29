@@ -15,6 +15,11 @@ body {
     background: #FFFFFF;
 }
 
+.banner-default {
+    background: url(../../Images/background/slides/jungle.jpg) no-repeat 0px 0px;
+    background-size: cover;
+}
+
 .banner-forest1 {
     background: url(../../Images/background/slides/forest1d.jpg) no-repeat 0px 0px;
     background-size: cover;
@@ -36,7 +41,7 @@ body {
 }
 
 .background-forest3 {
-    background: url(../../Images/background/slides/forest3d.jpg) no-repeat 0 0;
+    background: url(../../Images/background/slides/gabon_forest3.jpg) no-repeat 0 0;
     background-size: cover;
 }
 

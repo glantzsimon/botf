@@ -1,32 +1,37 @@
-﻿@using K9.Base.WebApplication.Helpers
+﻿@using K9.Base.WebApplication.Config
+@using K9.Base.WebApplication.Helpers
 @{
 	ViewBag.Title = Dictionary.Home;
 }
-<div id="main-banner" class="banner-forest1 main-menu">
+<div id="main-banner" class="banner-default main-menu">
 	@Html.Partial("_Navbar")
 </div>
 <div class="main-section pink">
-	<div class="container">
-		<div>
-			<div class="col-md-5">
-				<div class="picture-frame">
-					<div>
-						<img src="~/Images/home/wood1.jpg" alt="" />
-					</div>
-				</div>
-			</div>
-			<div class="col-md-7">
-				<h5>@K9.Globalisation.Dictionary.blessings_of_the_forest_intro</h5>
-				<article>
-					@MvcHtmlString.Create(K9.Globalisation.Dictionary.blessings_of_the_forest)
-				</article>
-			</div>
-			<div class="clearfix">
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="main-heading">
+            <h3>@WebsiteConfiguration.Instance.CompanyName C.I.C</h3>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <div class="col-md-5">
+                <div class="picture-frame">
+                    <div>
+                        <img src="~/Images/home/wood1.jpg" alt=""/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <article>
+                    @MvcHtmlString.Create(K9.Globalisation.Dictionary.blessings_of_the_forest)
+                </article>
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+    </div>
 </div>
-<div class="jarallax background-forest1 our-mission main-section">
+<div class="jarallax background-forest3 our-mission main-section">
 	<div class="container scrollFadeIn">
 		<div class="main-heading">
 			<h3 class="text-white">@Dictionary.OurMissionTitle</h3>

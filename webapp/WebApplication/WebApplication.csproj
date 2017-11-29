@@ -314,6 +314,8 @@
     <Content Include="Images\background\slides\forest1d.jpg" />
     <Content Include="Images\background\slides\forest3d.jpg" />
     <Content Include="Images\background\slides\forest4.jpg" />
+    <Content Include="Images\background\slides\gabon_forest3.jpg" />
+    <Content Include="Images\background\slides\jungle.jpg" />
     <Content Include="Images\company\botf_logo_small_inverted.png" />
     <Content Include="Images\company\botf_med.png" />
     <Content Include="Images\company\botf_small.png" />
