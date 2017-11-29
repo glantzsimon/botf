@@ -95,20 +95,46 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to    .
-        /// </summary>
-        public static string botf_context {
-            get {
-                return ResourceManager.GetString("botf_context", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to    .
+        ///   Looks up a localized string similar to LOCAL CONTEXT, GLOBAL IMPACT.
         /// </summary>
         public static string botf_context_title {
             get {
                 return ResourceManager.GetString("botf_context_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Le Gabon est situé au coeur même de l’Afrique, en bordure (sur plus de 800 km) de l’Océan Atlantique, à cheval sur l’Equateur comme son voisin le Congo, et au delà, le Congo Démocratique (ex-Zaïre). Au nord-ouest du pays en bordure de l’Océan, la petite Guinée Equatoriale est enchâssée dans le territoire gabonais. La frontière nord sépare ensuite le Gabon du Cameroun. Tout le reste du pays jouxte le Congo. A l’exception de l’Océan Atlantique à l’ouest, toutes les autres frontières gabonaises sont a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string botf_context1 {
+            get {
+                return ResourceManager.GetString("botf_context1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Au contact des pygmées, les bantous découvriront que ce peuple premier d&apos;Afrique pratique le culte des esprits-animaux et est constituée de « médiateurs du sacré » qui changent selon les rites.
+        ///    Au cours de l’initiation, une connaissance particulière s’acquiert sur la maîtrise de la forêt et des éléments météorologiques (pluie, foudre…) et rentre dans le cadre d’une conception chamanique du fonctionnement du monde où l’initié sait entrer en contact avec les esprits de la Nature pour agir sur le [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string botf_context2 {
+            get {
+                return ResourceManager.GetString("botf_context2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    L&apos;arrivée des premiers européens au Gabon au XVème siècle (portugais suivis des hollandais) sonna les débuts de l&apos;abandon des traditions initiatiques indigènes ancestrales du fait de l&apos;évangélisation forcée des peuples gabonais ainsi que des conséquences multiples de la traite négrière.
+        ///    La pratique du Bwiti est alors entrée en relative clandestinité...
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    La France occupe le Gabon progressivement à partir du milieu du XIXe siècle, après un traité signé avec le « roi Denis », en 18 [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string botf_context3 {
+            get {
+                return ResourceManager.GetString("botf_context3", resourceCulture);
             }
         }
         

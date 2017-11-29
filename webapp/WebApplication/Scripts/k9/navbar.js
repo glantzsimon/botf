@@ -1,4 +1,4 @@
-function menu() {
+function navbar() {
 
     function shrinkMenu(logoDiv, els, direction) {
         logoDiv.removeClass("main-logo");

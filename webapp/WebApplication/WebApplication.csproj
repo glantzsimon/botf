@@ -270,14 +270,10 @@
     <Content Include="Content\bootstrap\bootstrapValidator.css" />
     <Content Include="Content\k9\fadeIn.css" />
     <Content Include="Content\_botfColors.txt" />
-    <Content Include="Content\k9\breadCrumbs.css" />
-    <Content Include="Content\k9\menubar.css" />
     <Content Include="Content\k9\navbar.css" />
     <Content Include="Content\k9\tables.css" />
     <Content Include="Content\k9\pageSpinner.css" />
     <Content Include="Content\_colors.txt" />
-    <Content Include="Content\k9\imagePreloader.css" />
-    <Content Include="Content\k9\responsiveslides.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\archive\upload\ArchiveItem\2\sample.mkv" />
     <Content Include="Images\archive\upload\ArchiveItem\2\sample.mov" />
@@ -645,6 +641,7 @@
     <Content Include="Images\template\t3.jpg" />
     <Content Include="Images\ui\audio.png" />
     <Content Include="Images\ui\document.jpg" />
+    <Content Include="Images\ui\fade-out.png" />
     <Content Include="Images\ui\fail.png" />
     <Content Include="Images\ui\notfound.png" />
     <Content Include="Images\ui\locked.png" />
@@ -660,7 +657,8 @@
     <Content Include="Scripts\k9\bootstrapControls.js" />
     <Content Include="Scripts\k9\fileUploader.js" />
     <Content Include="Scripts\k9\fadePageIn.js" />
-    <Content Include="Scripts\k9\menu.js" />
+    <Content Include="Scripts\k9\revealText.js" />
+    <Content Include="Scripts\k9\navbar.js" />
     <Content Include="Scripts\library\easing.js" />
     <Content Include="Scripts\library\jarallax.js" />
     <Content Include="Scripts\library\scrollText.js" />

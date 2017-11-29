@@ -182,3 +182,17 @@ a.btn {
 .sub-section {
 	margin-top: 4em;
 }
+
+.reveal-text {
+    max-height: 500px !important;
+    overflow-y: hidden !important;
+}
+
+.reveal-text-overlay {
+    position: absolute;
+    bottom: 0;
+    widht: 100%;
+    background-image: url(/Images/ui/fade-out.png);
+    background-repeat: repeat-x;
+    background-size: 100px 1px;
+}
