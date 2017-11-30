@@ -22,18 +22,20 @@ function revealText(config) {
 
     function init() {
         $(".reveal-text").each(function () {
-            var fadeOutDiv = $("<div class='reveal-text-overlay'>&nbsp;</div>");
-            $(this).append(fadeOutDiv);
+            if ($(this).height() >= 900) {
+                var fadeOutDiv = $("<div class='reveal-text-overlay'>&nbsp;</div>");
+                $(this).append(fadeOutDiv);
 
-            var revealButton =
-                $(
-                    "<div class='reveal-text-button-container text-center'><a class='reveal-text-button'><i class='fa fa-arrow-down'></i> " +
-                    "<span>" + config.moreText + "</span></a></div>");
-            $(this).append(revealButton);
+                var revealButton =
+                    $(
+                        "<div class='reveal-text-button-container text-center'><a class='reveal-text-button'><i class='fa fa-arrow-down'></i> " +
+                        "<span>" + config.moreText + "</span></a></div>");
+                $(this).append(revealButton);
 
-            revealButton.click(function () {
-                expandCollapse(this);
-            });
+                revealButton.click(function () {
+                    expandCollapse(this);
+                });
+            }
         });
     }
 

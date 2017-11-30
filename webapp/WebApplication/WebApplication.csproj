@@ -565,7 +565,9 @@
     <Content Include="Images\flags\zm.png" />
     <Content Include="Images\flags\zw.png" />
     <Content Include="Images\home\bwiti1.jpg" />
+    <Content Include="Images\home\gabon_map.jpg" />
     <Content Include="Images\home\home1.jpg" />
+    <Content Include="Images\home\iboga.jpg" />
     <Content Include="Images\home\image8.jpg" />
     <Content Include="Images\home\smokefog-dark.png" />
     <Content Include="Images\home\wood1.jpg" />
@@ -901,6 +903,11 @@
     <Content Include="Views\Shared\DisplayTemplates\ArchiveCategory.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ArchiveCategory.cshtml" />
     <Content Include="Views\Shared\_UploadedFilesDisplay.cshtml" />
+    <Content Include="Views\Home\_Botf.cshtml" />
+    <Content Include="Views\Home\_Mission.cshtml" />
+    <Content Include="Views\Home\_Context.cshtml" />
+    <Content Include="Views\Home\_Partners.cshtml" />
+    <Content Include="Views\Home\_Contact.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

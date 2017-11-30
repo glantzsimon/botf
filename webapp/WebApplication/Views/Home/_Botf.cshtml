@@ -1,0 +1,27 @@
+﻿@using K9.Base.WebApplication.Config
+
+<div class="main-section pink">
+    <div class="container">
+        <div class="main-heading">
+            <h3>@WebsiteConfiguration.Instance.CompanyName C.I.C</h3>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <div class="col-md-5">
+                <div class="picture-frame">
+                    <div>
+                        <img src="~/Images/home/wood1.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 margin-top-minus-15">
+                <article>
+                    @MvcHtmlString.Create(K9.Globalisation.Dictionary.blessings_of_the_forest)
+                </article>
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+    </div>
+</div>
