@@ -309,8 +309,10 @@
     <Content Include="Images\background\slides\forest4.jpg" />
     <Content Include="Images\background\slides\gabon-elephant.jpg" />
     <Content Include="Images\background\slides\gabon_forest3.jpg" />
-    <Content Include="Images\company\botf_logo_small_inverted.png" />
+    <Content Include="Images\company\botf_logo_default_small_inv.png" />
     <Content Include="Images\company\botf_med.png" />
+    <Content Include="Images\company\botf_logo_small_inverted.png" />
+    <Content Include="Images\company\botf_new_med.png" />
     <Content Include="Images\company\botf_small.png" />
     <Content Include="Images\flags\ad.png" />
     <Content Include="Images\flags\ae.png" />
@@ -614,7 +616,7 @@
     <Content Include="Images\partners\parc-gabon.jpg" />
     <Content Include="Images\partners\plant-consciousness.jpg" />
     <Content Include="Images\projects\projects_bg.jpg" />
-    <Content Include="Images\shared\blessings_loaderl.gif" />
+    <Content Include="Images\shared\blessings_loader.gif" />
     <Content Include="Images\shared\botf_logo_animated.gif" />
     <Content Include="Images\team\david.jpg" />
     <Content Include="Images\team\laurent.jpg" />
