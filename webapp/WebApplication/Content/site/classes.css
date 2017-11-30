@@ -232,3 +232,7 @@ div.reveal-text-button-container {
         text-decoration: none;
         color: #ff9800;
     }
+
+.italic {
+    font-style: italic;
+}
