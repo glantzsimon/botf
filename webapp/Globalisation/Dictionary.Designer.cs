@@ -429,6 +429,49 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;ul&gt;
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Identification des associations gabonaises&lt;/strong&gt; désireuses de développer des projets agroforestiers de permaculture autour de la conservation de l&apos;iboga et des « plantes utiles » du Gabon (Produits Forestiers Non Ligneux à fort potentiel alimentaire, thérapeutique et cosmétique ainsi que grands arbres se raréfiant).&lt;/li&gt;
+        ///    
+        ///&lt;/ul&gt;
+        ///
+        ///.
+        /// </summary>
+        public static string projects_long_term {
+            get {
+                return ResourceManager.GetString("projects_long_term", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Medium to long-term projects:.
+        /// </summary>
+        public static string projects_long_term_title {
+            get {
+                return ResourceManager.GetString("projects_long_term_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;ul&gt;
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Identification des associations gabonaises&lt;/strong&gt; désireuses de développer des projets agroforestiers de permaculture autour de la conservation de l&apos;iboga et des « plantes utiles » du Gabon (Produits Forestiers Non Ligneux à fort potentiel alimentaire, thérapeutique et cosmétique ainsi que grands arbres se raréfiant).&lt;/li&gt;
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Financement&lt;/strong&gt; de plantations de P [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string projects_short_term {
+            get {
+                return ResourceManager.GetString("projects_short_term", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Short-term projects:.
+        /// </summary>
+        public static string projects_short_term_title {
+            get {
+                return ResourceManager.GetString("projects_short_term_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Simon Glantz is practitoner of holistic nutrition, musician and software developer.&lt;/h5&gt;
         ///&lt;p&gt;
         ///	Simon suffered with severe neurological dysfunction from an early age and continued to struggle well into his adult life. Simon used the principles of person-centered nutrition and supplementation,

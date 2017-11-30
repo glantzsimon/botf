@@ -23,10 +23,10 @@ function navbar() {
         var els = $("#main-logo-container, #main-menu-container, #main-banner, #bs-navbar-collapse-1");
         var lastmainMenuTop = 0;
         $(window).scroll(function () {
-            var mainMenuTop = $("#main-logo-container").offset().top;
+            var mainMenuTop = $("#main-menu-container").offset().top;
             var direction = mainMenuTop > lastmainMenuTop ? "down" : "up";
             lastmainMenuTop = mainMenuTop;
-
+            
             if (mainMenuTop >= 140) {
                 shrinkMenu(logoDiv, els);
             } else {

@@ -235,4 +235,16 @@
   <data name="Projects" xml:space="preserve">
     <value>Projets</value>
   </data>
+  <data name="projects_long_term" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\projects-long-term.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="projects_long_term_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\projects-long-term-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="projects_short_term" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\projects-short-term.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="projects_short_term_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\projects-short-term-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

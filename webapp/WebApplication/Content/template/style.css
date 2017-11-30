@@ -16,17 +16,7 @@ body {
 }
 
 .banner-default {
-    background: url(../../Images/background/slides/jungle.jpg) no-repeat 0px 0px;
-    background-size: cover;
-}
-
-.banner-forest1 {
-    background: url(../../Images/background/slides/forest1d.jpg) no-repeat 0px 0px;
-    background-size: cover;
-}
-
-.banner-forest3 {
-    background: url(../../Images/background/slides/forest3d.jpg) no-repeat 0px 0px;
+    background: url(../../Images/background/gabon_forest_wide.jpg) no-repeat 0px 0px;
     background-size: cover;
 }
 
@@ -232,6 +222,11 @@ button.btn1:hover {
 
 .our-mission ul li, .etats-lieux ul li, .etats-forest ul li {
     color: #fff;
+    line-height: 1.8em !important;
+    font-family: Roboto;
+}
+
+.projects ul li {
     line-height: 1.8em !important;
     font-family: Roboto;
 }

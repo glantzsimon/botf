@@ -71,6 +71,10 @@
     <Content Include="Articles\en-gb\etats-des-lieux-iboga-title.htm" />
     <Content Include="Articles\en-gb\etats-des-lieux-iboga.htm" />
     <Content Include="Articles\en-gb\etats-des-lieux-title.htm" />
+    <Content Include="Articles\en-gb\projects-long-term-title.htm" />
+    <Content Include="Articles\en-gb\projects-long-term.htm" />
+    <Content Include="Articles\en-gb\projects-short-term-title.htm" />
+    <Content Include="Articles\en-gb\projects-short-term.htm" />
     <Content Include="Articles\en-gb\simon-text.htm" />
     <Content Include="Articles\en-gb\laurent-text.htm" />
     <Content Include="Articles\en-gb\david-text.htm" />
@@ -93,6 +97,10 @@
     <Content Include="Articles\en-gb\etats-des-lieux-forest-title.htm" />
     <Content Include="Articles\fr\etats-des-lieux-forest-title.htm" />
     <Content Include="Articles\fr\etats-des-lieux-forest.htm" />
+    <Content Include="Articles\fr\projects-long-term.htm" />
+    <Content Include="Articles\fr\projects-long-term-title.htm" />
+    <Content Include="Articles\fr\projects-short-term.htm" />
+    <Content Include="Articles\fr\projects-short-term-title.htm" />
     <Content Include="Articles\fr\etats-des-lieux-iboga.htm" />
     <Content Include="Articles\fr\etats-des-lieux-iboga-title.htm" />
     <Content Include="Articles\fr\etats-des-lieux-title.htm" />

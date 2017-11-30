@@ -23,7 +23,7 @@
     .top-nav ul li {
         display: block;
         float: none;
-        width: 100%;
+        width: 100% !important;
     }
 
     .navbar-default .navbar-collapse, .navbar-default .navbar-form {
@@ -50,7 +50,7 @@
             background-color: #212121;
         }
 
-    #main-menu-container.menu-main, #main-menu-container.menu-small {
+    #main-menu-container.menu-small {
         height: 50px !important;
     }
 
