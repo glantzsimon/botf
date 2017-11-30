@@ -16,7 +16,7 @@ body {
 }
 
 .banner-default {
-    background: url(../../Images/background/gabon_forest_wide.jpg) no-repeat 0px 0px;
+    background: url(../../Images/background/slides/jungle-bg.jpg) no-repeat 0px 0px;
     background-size: cover;
 }
 
@@ -32,6 +32,11 @@ body {
 
 .background-forest3 {
     background: url(../../Images/background/slides/gabon_forest3.jpg) no-repeat 0 0;
+    background-size: cover;
+}
+
+.background-elephant {
+    background: url(../../Images/background/slides/gabon-elephant.jpg) no-repeat 0 0;
     background-size: cover;
 }
 

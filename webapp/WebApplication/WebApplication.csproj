@@ -301,12 +301,13 @@
     <Content Include="Images\archive\upload\ArchiveItem\4\sample.wma" />
     <Content Include="Images\archive\upload\ArchiveItem\6\botf 2.txt" />
     <Content Include="Images\archive\upload\ArchiveItem\6\todo.txt" />
-    <Content Include="Images\background\jungle.jpg" />
+    <Content Include="Images\background\slides\jungle-bg.jpg" />
     <Content Include="Images\background\slides\bwiti1.jpg" />
     <Content Include="Images\background\slides\forest1d.jpg" />
     <Content Include="Images\background\slides\forest2.jpg" />
     <Content Include="Images\background\slides\forest3d.jpg" />
     <Content Include="Images\background\slides\forest4.jpg" />
+    <Content Include="Images\background\slides\gabon-elephant.jpg" />
     <Content Include="Images\background\slides\gabon_forest3.jpg" />
     <Content Include="Images\company\botf_logo_small_inverted.png" />
     <Content Include="Images\company\botf_med.png" />
@@ -615,7 +616,6 @@
     <Content Include="Images\projects\projects_bg.jpg" />
     <Content Include="Images\shared\blessings_loaderl.gif" />
     <Content Include="Images\shared\botf_logo_animated.gif" />
-    <Content Include="Images\background\gabon_forest_wide.jpg" />
     <Content Include="Images\team\david.jpg" />
     <Content Include="Images\team\laurent.jpg" />
     <Content Include="Images\team\simon.jpg" />
