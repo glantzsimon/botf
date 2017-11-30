@@ -420,6 +420,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Projects.
+        /// </summary>
+        public static string Projects {
+            get {
+                return ResourceManager.GetString("Projects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Simon Glantz is practitoner of holistic nutrition, musician and software developer.&lt;/h5&gt;
         ///&lt;p&gt;
         ///	Simon suffered with severe neurological dysfunction from an early age and continued to struggle well into his adult life. Simon used the principles of person-centered nutrition and supplementation,

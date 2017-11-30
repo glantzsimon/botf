@@ -208,11 +208,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Config\OAuthConfiguration.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\ArchiveCategoriesController.cs" />
     <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\ArchiveItemsController.cs" />
     <Compile Include="Controllers\NewsItemsController.cs" />
-    <Compile Include="Controllers\IbogaController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -223,9 +223,7 @@
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\UserRolesController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="Controllers\EnrollmentsController.cs" />
     <Compile Include="Controllers\CountriesController.cs" />
-    <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -617,6 +615,7 @@
     <Content Include="Images\partners\ebando.jpg" />
     <Content Include="Images\partners\parc-gabon.jpg" />
     <Content Include="Images\partners\plant-consciousness.jpg" />
+    <Content Include="Images\projects\projects_bg.jpg" />
     <Content Include="Images\shared\blessings_loaderl.gif" />
     <Content Include="Images\shared\botf_logo_animated.gif" />
     <Content Include="Images\team\david.jpg" />
@@ -672,6 +671,7 @@
     <Content Include="Scripts\library\owl.carousel.js" />
     <Content Include="Scripts\library\SmoothScroll.min.js" />
     <Content Include="Scripts\template\scroller.js" />
+    <Content Include="Views\AboutUs\Team.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -734,7 +734,6 @@
     <Content Include="Views\Shared\Controls\_DataTablesJs.cshtml" />
     <Content Include="Views\Countries\Index.cshtml" />
     <Content Include="Nlog.config" />
-    <Content Include="Views\Enrollments\Index.cshtml" />
     <Content Include="Views\Countries\Edit.cshtml" />
     <Content Include="Views\Countries\Details.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Boolean.cshtml" />
@@ -747,14 +746,8 @@
     <Content Include="Views\Shared\DisplayTemplates\MultiLineText.cshtml" />
     <Content Include="Views\Countries\Delete.cshtml" />
     <Content Include="Views\Countries\Create.cshtml" />
-    <Content Include="Views\Enrollments\Create.cshtml" />
-    <Content Include="Views\Enrollments\Edit.cshtml" />
-    <Content Include="Views\Enrollments\Delete.cshtml" />
-    <Content Include="Views\Enrollments\Details.cshtml" />
     <Content Include="Views\Countries\_EditFields.cshtml" />
     <Content Include="Views\Countries\_DisplayFields.cshtml" />
-    <Content Include="Views\Enrollments\_EditFields.cshtml" />
-    <Content Include="Views\Enrollments\_DisplayFields.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Student.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Course.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Student.cshtml" />
@@ -803,9 +796,7 @@
     <Content Include="Views\Shared\_PopupAlert.cshtml" />
     <Content Include="Views\Shared\_BreadCrumbs.cshtml" />
     <Content Include="Config\appsettings.json" />
-    <Content Include="Views\AboutUs\Index.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
-    <Content Include="Views\AboutUs\Team.cshtml" />
     <Content Include="Views\Archive\Index.cshtml" />
     <Content Include="Views\Iboga\Index.cshtml" />
     <Content Include="Views\Shared\Controls\_Carousel.cshtml" />
@@ -828,7 +819,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutFormMaster.cshtml" />
     <Content Include="Images\home\animated-waterfalls.webp" />
-    <Content Include="Views\AboutUs\HelpUs.cshtml" />
     <Content Include="Views\NewsItems\_DisplayFields.cshtml" />
     <Content Include="Views\NewsItems\_EditFields.cshtml" />
     <Content Include="Views\NewsItems\Create.cshtml" />
@@ -870,13 +860,6 @@
     <None Include="Properties\PublishProfiles\Test.pubxml" />
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_LayoutColumns.cshtml" />
-    <Content Include="Views\Students\Create.cshtml" />
-    <Content Include="Views\Students\Index.cshtml" />
-    <Content Include="Views\Students\Delete.cshtml" />
-    <Content Include="Views\Students\Details.cshtml" />
-    <Content Include="Views\Students\Edit.cshtml" />
-    <Content Include="Views\Students\_EditFields.cshtml" />
-    <Content Include="Views\Students\_DisplayFields.cshtml" />
     <Content Include="Views\Shared\Scripts\Default.cshtml" />
     <Content Include="Views\Support\ContactUs.cshtml" />
     <Content Include="Views\UserRoles\Index.cshtml" />
@@ -912,6 +895,8 @@
     <Content Include="Views\Home\_Partners.cshtml" />
     <Content Include="Views\Home\_Contact.cshtml" />
     <Content Include="Views\Home\_EtatsLieux.cshtml" />
+    <Content Include="Views\Projects\Index.cshtml" />
+    <Content Include="Views\Projects\_Projects.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

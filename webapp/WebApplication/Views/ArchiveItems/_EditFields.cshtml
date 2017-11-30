@@ -8,19 +8,21 @@
 @Html.BootstrapEditorFor(model => model.Title)
 @Html.BootstrapEditorFor(model => model.DescriptionText)
 
-<script type="text/javascript">
+@section scripts {
+    <script type="text/javascript">
 
-    function setAcceptedFileExtensionsByCategory() {
-        var fileInput = $("#FileSource_PostedFile");
-        var type = $("#CategoryId")[0].getSelectedText();
-        $.fn.setAcceptedFileExtensions(fileInput, type);
-    }
+        function setAcceptedFileExtensionsByCategory() {
+            var fileInput = $("#FileSource_PostedFile");
+            var type = $("#CategoryId")[0].getSelectedText();
+            $.fn.setAcceptedFileExtensions(fileInput, type);
+        }
 
-    $(function () {
-        $("#CategoryId").change(function () {
-            setAcceptedFileExtensionsByCategory();
+        $(function() {
+            $("#CategoryId").change(function() {
+                setAcceptedFileExtensionsByCategory();
+            });
+
+            window.setTimeout(setAcceptedFileExtensionsByCategory, 500);
         });
-
-        window.setTimeout(setAcceptedFileExtensionsByCategory, 500);
-    });
-</script>
+    </script>
+}

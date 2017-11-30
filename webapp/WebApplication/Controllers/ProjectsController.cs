@@ -6,19 +6,19 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class AboutUsController : BaseController
+    public class ProjectsController : BaseController
 	{
 
-		public AboutUsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper)
+		public ProjectsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper)
 			: base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
 		{
 		}
-        
-		public ActionResult Team()
+
+		public ActionResult Index()
 		{
 			return View();
 		}
-        
+		
 		public override string GetObjectName()
 		{
 			return string.Empty;
