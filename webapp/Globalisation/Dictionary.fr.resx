@@ -217,6 +217,12 @@
   <data name="botf_context_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\botf_context_title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="etats_des_lieux_forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\etats-des-lieux-forest.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="etats_des_lieux_forest_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\etats-des-lieux-forest-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="etats_des_lieux_iboga" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\etats-des-lieux-iboga.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

@@ -565,10 +565,13 @@
     <Content Include="Images\flags\zm.png" />
     <Content Include="Images\flags\zw.png" />
     <Content Include="Images\home\bwiti1.jpg" />
+    <Content Include="Images\home\etat-forest.jpg" />
+    <Content Include="Images\home\etat-lieux2.jpg" />
+    <Content Include="Images\home\hand.jpg" />
     <Content Include="Images\home\gabon_map.jpg" />
     <Content Include="Images\home\home1.jpg" />
     <Content Include="Images\home\iboga.jpg" />
-    <Content Include="Images\home\image8.jpg" />
+    <Content Include="Images\home\iboga2.jpg" />
     <Content Include="Images\home\smokefog-dark.png" />
     <Content Include="Images\home\wood1.jpg" />
     <Content Include="Images\home\slides\aims1.jpg" />

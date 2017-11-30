@@ -60,6 +60,16 @@ body {
     background-size: cover;
 }
 
+.background-hand {
+    background: url(../../Images/home/hand.jpg) no-repeat 0 0;
+    background-size: cover;
+}
+
+.background-etat-forest {
+    background: url(../../Images/home/etat-forest.jpg) no-repeat 0 0;
+    background-size: cover;
+}
+
 .main-section {
     padding: 4em 0 4em 0;
 }
@@ -100,6 +110,10 @@ body {
 
 .text-white {
     color: #fff !important;
+}
+
+.text-black {
+    color: #111 !important;
 }
 
 .main-heading {
@@ -218,6 +232,11 @@ button.btn1:hover {
 
 .our-mission ul li, .etats-lieux ul li {
     color: #fff;
+    line-height: 1.8em !important;
+    font-family: Roboto;
+}
+
+.our-mission ul li, .etats-forest ul li {
     line-height: 1.8em !important;
     font-family: Roboto;
 }

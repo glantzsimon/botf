@@ -198,6 +198,26 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;La moitié des forêts de la planète a été détruite au cours du XXe siècle.&lt;/strong&gt;&lt;/li&gt;
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; En raison de l’exploitation (souvent non contrôlée) de matières premières telles que le bois, le diamant, l’or et les métaux rares mais aussi de l&apos;agriculture et de l&apos;élevage industriel, &lt;strong&gt;deux tiers des forêts du bassin du Congo pourraient être perdus d’ici 2040 si rien n’est fai [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string etats_des_lieux_forest {
+            get {
+                return ResourceManager.GetString("etats_des_lieux_forest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State of affairs with respect to the community forests:.
+        /// </summary>
+        public static string etats_des_lieux_forest_title {
+            get {
+                return ResourceManager.GetString("etats_des_lieux_forest_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;ul&gt;
         ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Malgré la déclaration publique du défunt président de la république gabonaise, El Hadj Omar Bongo Ondimba, faite en conseil des ministres du 6 juillet 2000 et classant l&apos;iboga « Patrimoine Culturel National » et « Réserve Stratégique » (« à protéger de l&apos;exploitation illicite »), aucun texte de lois n&apos;a été amendé dans ce sens laissant la porte ouverte à tout les trafics et biopirateries en cours.&lt;/li&gt;
         ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; a [rest of string was truncated]&quot;;.
         /// </summary>
