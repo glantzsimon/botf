@@ -230,13 +230,8 @@ button.btn1:hover {
         width: 100%;
     }
 
-.our-mission ul li, .etats-lieux ul li {
+.our-mission ul li, .etats-lieux ul li, .etats-forest ul li {
     color: #fff;
-    line-height: 1.8em !important;
-    font-family: Roboto;
-}
-
-.our-mission ul li, .etats-forest ul li {
     line-height: 1.8em !important;
     font-family: Roboto;
 }
