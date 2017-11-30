@@ -197,6 +197,35 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;ul&gt;
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Malgré la déclaration publique du défunt président de la république gabonaise, El Hadj Omar Bongo Ondimba, faite en conseil des ministres du 6 juillet 2000 et classant l&apos;iboga « Patrimoine Culturel National » et « Réserve Stratégique » (« à protéger de l&apos;exploitation illicite »), aucun texte de lois n&apos;a été amendé dans ce sens laissant la porte ouverte à tout les trafics et biopirateries en cours.&lt;/li&gt;
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; a [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string etats_des_lieux_iboga {
+            get {
+                return ResourceManager.GetString("etats_des_lieux_iboga", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State of affairs with respect to Iboga:.
+        /// </summary>
+        public static string etats_des_lieux_iboga_title {
+            get {
+                return ResourceManager.GetString("etats_des_lieux_iboga_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to STATE OF AFFAIRS.
+        /// </summary>
+        public static string etats_des_lieux_title {
+            get {
+                return ResourceManager.GetString("etats_des_lieux_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Iboga has been sold in western world since 1901.
         ///						Today, more and more advertising touts iboga as a “miracle cure” without any apparent regard as to the sustainability of the resource.
         ///						Bought with gold, Iboga is then sold on the Internet in violation of laws protecting it, without equitable sharing of its benefits and a risk of consumers who have no certainty as to its origin and quality.

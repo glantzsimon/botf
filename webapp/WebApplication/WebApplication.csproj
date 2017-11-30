@@ -908,6 +908,7 @@
     <Content Include="Views\Home\_Context.cshtml" />
     <Content Include="Views\Home\_Partners.cshtml" />
     <Content Include="Views\Home\_Contact.cshtml" />
+    <Content Include="Views\Home\_EtatsLieux.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

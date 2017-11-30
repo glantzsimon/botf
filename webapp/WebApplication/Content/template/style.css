@@ -216,7 +216,7 @@ button.btn1:hover {
         width: 100%;
     }
 
-.our-mission ul li {
+.our-mission ul li, .etats-lieux ul li {
     color: #fff;
     line-height: 1.8em !important;
     font-family: Roboto;

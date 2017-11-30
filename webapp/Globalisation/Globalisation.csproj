@@ -67,6 +67,9 @@
     <Content Include="Articles\en-gb\botf_context2.htm" />
     <Content Include="Articles\en-gb\botf_context3.htm" />
     <Content Include="Articles\en-gb\botf_context_title.htm" />
+    <Content Include="Articles\en-gb\etats-des-lieux-iboga-title.htm" />
+    <Content Include="Articles\en-gb\etats-des-lieux-iboga.htm" />
+    <Content Include="Articles\en-gb\etats-des-lieux-title.htm" />
     <Content Include="Articles\en-gb\simon-text.htm" />
     <Content Include="Articles\en-gb\laurent-text.htm" />
     <Content Include="Articles\en-gb\david-text.htm" />
@@ -86,6 +89,9 @@
     <Content Include="Articles\fr\botf_context3.htm" />
     <Content Include="Articles\fr\botf_context2.htm" />
     <Content Include="Articles\fr\botf_context1.htm" />
+    <Content Include="Articles\fr\etats-des-lieux-iboga.htm" />
+    <Content Include="Articles\fr\etats-des-lieux-iboga-title.htm" />
+    <Content Include="Articles\fr\etats-des-lieux-title.htm" />
     <Content Include="Articles\fr\botf_context_title.htm" />
     <Content Include="Articles\fr\david-text.htm" />
     <Content Include="Articles\fr\david-title.htm" />

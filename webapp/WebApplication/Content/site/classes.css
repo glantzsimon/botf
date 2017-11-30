@@ -150,22 +150,22 @@ a.btn {
 
 .picture-frame-medium-x {
     width: 400px;
-    height: auto;
+    height: 100%;
 }
 
 .picture-frame-large-x {
     width: 600px;
-    height: auto;
+    height: 100%;
 }
 
 .picture-frame-medium-y {
     height: 400px;
-    width: auto;
+    width: 100%;
 }
 
 .picture-frame-large-y {
     height: 600px;
-    width: auto;
+    width: 100%;
 }
 
 .navbar-nav:not(.navbar-login):not(.dropdown-menu) li.active a {
