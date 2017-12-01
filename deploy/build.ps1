@@ -3,9 +3,9 @@ param([String]$publishPassword='')
 $appName = "ninestar"
 $publishDir = "publish"
 $appDir = "webapp"
-$projectPath = ".\WebApplication\WebApplication.csproj"
+$projectPath = ".\webapp\WebApplication\K9.WebApplication.csproj"
 $webTestFile = ".\webapp\WebApplication.Tests\bin\Debug\K9.WebApplication.Tests.dll"
-$dataTestFile = ".\webapp\DataAccess.Tests\bin\Debug\K9.DataAccess.Tests.dll"
+$dataTestFile = ".\webapp\DataAccess.Tests\bin\Debug\K9.DataAccessLayer.Tests.dll"
 	
 function ProcessErrors(){
   if($? -eq $false)
