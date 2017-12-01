@@ -236,3 +236,18 @@ div.reveal-text-button-container {
 .italic {
     font-style: italic;
 }
+
+a#toTop {
+    display: block;
+    width: 100%;
+    background: #020202;
+    text-align: center;
+    color: white;
+    -webkit-transition: all 1.5s ease-out;
+    -moz-transition: all 1.5s ease-out;
+    transition: all 1.5s ease-out;
+}
+
+a#toTop:hover {
+    color: #ff9800;   
+}
