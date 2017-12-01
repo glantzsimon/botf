@@ -170,7 +170,15 @@ namespace K9.WebApplication.Controllers
 			return View(user);
 		}
 
-		[Authorize]
+	    [Authorize]
+	    [HttpGet]
+	    [ValidateAntiForgeryToken]
+	    public ActionResult UpdateAccount()
+	    {
+	        return RedirectToAction("MyAccount");
+	    }
+
+        [Authorize]
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public ActionResult UpdateAccount(User model)
