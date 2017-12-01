@@ -172,7 +172,6 @@ namespace K9.WebApplication.Controllers
 
 	    [Authorize]
 	    [HttpGet]
-	    [ValidateAntiForgeryToken]
 	    public ActionResult UpdateAccount()
 	    {
 	        return RedirectToAction("MyAccount");
