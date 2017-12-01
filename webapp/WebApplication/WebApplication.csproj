@@ -37,6 +37,7 @@
     <Prefer32Bit>false</Prefer32Bit>
     <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
     <LangVersion>default</LangVersion>
+	<IncludeSetACLProviderOnDestination>False</IncludeSetACLProviderOnDestination>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
