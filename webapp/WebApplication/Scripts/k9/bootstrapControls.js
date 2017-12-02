@@ -48,7 +48,7 @@ function bootstrapControls(config) {
     function selectFirstFormInput() {
         $("form").find("input[type=text], textarea, select").filter(":not(#main-search):visible:first").focus();
     }
-    
+
     var init = function () {
         initBootstrapDateTimePickers();
         initBootstrapSelect();
