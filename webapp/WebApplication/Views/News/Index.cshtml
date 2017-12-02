@@ -1,52 +1,38 @@
 ﻿@model List<NewsItem>
 @{
-	ViewBag.Title = Dictionary.Home;
+    ViewBag.Title = Dictionary.Home;
 }
 
 <div id="main-banner" class="banner-default main-menu">
-	@Html.Partial("_Navbar")
+    @Html.Partial("_Navbar")
 </div>
 
 <div class="main-section">
-	<div class="container">
-		<div class="main-heading">
-			<h3>@Dictionary.News</h3>
-		</div>
-		@foreach (var newsItem in Model)
+    <div class="container">
+        <div class="main-heading">
+            <h3>@Dictionary.News</h3>
+        </div>
+        @foreach (var newsItem in Model)
         {
-            if (newsItem.ImageFileSource.UploadedFiles.Any())
-            {
-                <div>
-                    <div class="col-md-5">
-                        <div class="picture-frame picture-frame-300">
-                            <div>
-                                @Html.Carousel(new CarouselOptions(newsItem.ImageFileSource.PathToFiles, "", 70)
-                                {
-                                    ImageSizing = EImageSizing.Vertical
-                                })
-                            </div>
+            <div>
+                <div class="col-md-5">
+                @if (!string.IsNullOrEmpty(newsItem.VideoUrl))
+                {
+                    @Html.Partial("_EmbeddedVideo", newsItem.VideoUrl)
+                }
+                else
+                {
+                    <div class="picture-frame picture-frame-300">
+                        <div>
+                            @Html.Carousel(new CarouselOptions(newsItem.ImageFileSource.PathToFiles, "", 70)
+                            {
+                                ImageSizing = EImageSizing.Vertical
+                            })
                         </div>
                     </div>
-                    <div class="col-md-7">
-                        <div class="news-item-title">
-                            <p><strong>@Dictionary.PublishedOnLabel</strong>: @newsItem.PublishedOn.ToLongDateString()</p>
-                            <p><strong>@Dictionary.PublishedByLabel</strong>: @newsItem.PublishedBy</p>
-                        </div>
-                        <h5>
-                            @MvcHtmlString.Create(newsItem.Subject)
-                        </h5>
-                        <article>
-                            <p>
-                                @MvcHtmlString.Create(newsItem.Body)
-                            </p>
-                        </article>
-                    </div>
-                    <div class="clearfix"> </div>
+                }
                 </div>
-            }
-            else
-            {
-                <div class="col-md-12">
+                <div class="col-md-7">
                     <div class="news-item-title">
                         <p><strong>@Dictionary.PublishedOnLabel</strong>: @newsItem.PublishedOn.ToLongDateString()</p>
                         <p><strong>@Dictionary.PublishedByLabel</strong>: @newsItem.PublishedBy</p>
@@ -61,9 +47,9 @@
                     </article>
                 </div>
                 <div class="clearfix"> </div>
-            }
-			<br/>			
-		}
-		<div class="clearfix"></div>
-	</div>
+            </div>
+            <br />
+        }
+        <div class="clearfix"></div>
+    </div>
 </div>
