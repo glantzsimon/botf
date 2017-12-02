@@ -251,3 +251,7 @@ a#toTop {
 a#toTop:hover {
     color: #ff9800;   
 }
+
+.hidden-date-field {
+    opacity: 0;
+}

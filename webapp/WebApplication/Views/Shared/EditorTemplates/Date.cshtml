@@ -6,7 +6,7 @@
     dictionary.MergeAttribute(K9.Base.WebApplication.Constants.Html.Attributes.Id, linkId);
     var value = Model.HasValue ? Model.Value.ToString("yyyy-MM-dd") : "";
 }
-@Html.Hidden("", value, new { linkId })
+@Html.TextBox("", value, new { linkId, @class = "hidden-date-field", @readonly = "true" })
 <div class="input-group date dateonly">
     @Html.TextBox(linkId, Model, dictionary)
     <span class="input-group-addon">

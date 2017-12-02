@@ -37,7 +37,7 @@ function bootstrapControls(config) {
 
     function initDateTimeValidation() {
         $.validator.methods.date = function (value, element) {
-            return this.optional(element) || moment(value, config.dateFormat, true).isValid();
+            return this.optional(element) || moment(value, config.dateFormat, true).isValid() || moment(value, "YYYY-MM-DD", true).isValid();
         }
     }
 
