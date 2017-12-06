@@ -175,9 +175,6 @@
   <data name="simon_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\simon-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="simon_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\en-gb\simon-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="yann_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\yann-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -249,5 +246,8 @@
   </data>
   <data name="projects_short_term_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\projects-short-term-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="simon_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\simon-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

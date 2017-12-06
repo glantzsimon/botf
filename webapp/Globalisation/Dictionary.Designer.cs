@@ -71,13 +71,12 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///Blessings of the Forest C.I.C is a charity that was set up in October of 2015 in London. It is a &lt;a href=&quot;https://www.gov.uk/government/publications/community-interest-companies-introduction&quot;&gt;community interest company (CIC)&lt;/a&gt; (Community Interest Company n° 9816364).
+        ///Blessings of the Forest C.I.C is a charity that was set up in October of 2015 in London. It is a &lt;a target=&quot;_blank&quot; href=&quot;https://www.gov.uk/government/publications/community-interest-companies-introduction&quot;&gt;community interest company (CIC)&lt;/a&gt; (Community Interest Company n° 9816364).
         ///&lt;/p&gt;
         ///&lt;p&gt;
         ///    As a charity, it has a stated mission known as
         ///    the ‘community interest statement’ and a clearly defined set of activities. There
-        ///    are also restrictions on how it can spend its money. The ‘asset lock’ for a CIC
-        ///  [rest of string was truncated]&quot;;.
+        ///    are also restrictions on how it can spend its money. The ‘asset lo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string blessings_of_the_forest {
             get {
@@ -105,7 +104,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Le Gabon est situé au coeur même de l’Afrique, en bordure (sur plus de 800 km) de l’Océan Atlantique, à cheval sur l’Equateur comme son voisin le Congo, et au delà, le Congo Démocratique (ex-Zaïre). Au nord-ouest du pays en bordure de l’Océan, la petite Guinée Equatoriale est enchâssée dans le territoire gabonais. La frontière nord sépare ensuite le Gabon du Cameroun. Tout le reste du pays jouxte le Congo. A l’exception de l’Océan Atlantique à l’ouest, toutes les autres frontières gabonaises sont a [rest of string was truncated]&quot;;.
+        ///    &lt;strong&gt; Le Gabon est situé au coeur même de l’Afrique&lt;/strong&gt;, en bordure (sur plus de 800 km) de l’Océan Atlantique, à cheval sur l’Equateur comme son voisin le Congo, et au delà, le Congo Démocratique (ex-Zaïre). Au nord-ouest du pays en bordure de l’Océan, la petite Guinée Equatoriale est enchâssée dans le territoire gabonais. La frontière nord sépare ensuite le Gabon du Cameroun. Tout le reste du pays jouxte le Congo. A l’exception de l’Océan Atlantique à l’ouest, toutes les autres frontières [rest of string was truncated]&quot;;.
         /// </summary>
         public static string botf_context1 {
             get {
@@ -198,8 +197,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
-        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;La moitié des forêts de la planète a été détruite au cours du XXe siècle.&lt;/strong&gt;&lt;/li&gt;
-        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; En raison de l’exploitation (souvent non contrôlée) de matières premières telles que le bois, le diamant, l’or et les métaux rares mais aussi de l&apos;agriculture et de l&apos;élevage industriel, &lt;strong&gt;deux tiers des forêts du bassin du Congo pourraient être perdus d’ici 2040 si rien n’est fai [rest of string was truncated]&quot;;.
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;La moitié des forêts de la planète a été détruite au cours du XXe siècle.&lt;/strong&gt;&lt;/li&gt;
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; En raison de l’exploitation (souvent non contrôlée) de matières premières telles que le bois, le diamant, l’or et les métaux rares mais aussi de l&apos;agriculture et de l&apos;élevage industriel, &lt;strong&gt;deux tiers des forêts du bassin du Congo pourraien [rest of string was truncated]&quot;;.
         /// </summary>
         public static string etats_des_lieux_forest {
             get {
@@ -218,8 +217,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
-        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Malgré la déclaration publique du défunt président de la république gabonaise, El Hadj Omar Bongo Ondimba, faite en conseil des ministres du 6 juillet 2000 et classant l&apos;iboga « Patrimoine Culturel National » et « Réserve Stratégique » (« à protéger de l&apos;exploitation illicite »), aucun texte de lois n&apos;a été amendé dans ce sens laissant la porte ouverte à tout les trafics et biopirateries en cours.&lt;/li&gt;
-        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; a [rest of string was truncated]&quot;;.
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Malgré la déclaration publique du défunt président de la république gabonaise, El Hadj Omar Bongo Ondimba, faite en conseil des ministres du 6 juillet 2000 et classant l&apos;iboga &lt;span class=&quot;italic bold&quot;&gt;« Patrimoine Culturel National »&lt;/span&gt; et &lt;span class=&quot;italic bold&quot;&gt;« Réserve Stratégique »&lt;/span&gt;&lt;span class=&quot;italic&quot;&gt; (« à protéger de l&apos;exploitation illicite »)&lt;/span&gt;, &lt;strong&gt;aucun texte de lois&lt;/strong&gt; n&apos;a été amen [rest of string was truncated]&quot;;.
         /// </summary>
         public static string etats_des_lieux_iboga {
             get {
@@ -357,8 +355,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
-        ///	&lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Providing a voice in the world to explain the impact of the growing international interest for iboga on Gabonese traditions as well as the flora and fauna of Gabon&lt;/li&gt;
-        ///	&lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Using legal expertise, in partnership with all Gabonese institutions and international organizations involved in the protection of biodiversity and traditional medicines, on ways and means to regulate the cultivation, ma [rest of string was truncated]&quot;;.
+        ///	&lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Providing a voice in the world to explain the impact of the growing international interest for iboga on Gabonese traditions as well as the flora and fauna of Gabon&lt;/li&gt;
+        ///	&lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Using legal expertise, in partnership with all Gabonese institutions and international organizations involved in the protection of biodiversity and traditional medicines, on ways [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mission_statement_and_aims1 {
             get {
@@ -368,9 +366,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
-        ///	&lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Creating an eco-village with zero environmental impact.
+        ///	&lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Creating an eco-village with zero environmental impact.
         ///		The village will be powered by renewable energy systems such as wind and solar. It will also collect, filter, store and distribute rainwater. One or more wells will be drilled to make the village self-sufficient for water.
-        ///		The houses in the village will be made with natural materials of the Gabonese forest. Some structures made out of mobile shipping containers equipt with ecological [rest of string was truncated]&quot;;.
+        ///		The houses in the village will be made with natural materials of the Gabonese forest. Some structures made out of mobile shipping containers e [rest of string was truncated]&quot;;.
         /// </summary>
         public static string mission_statement_and_aims2 {
             get {
@@ -430,11 +428,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
-        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Identification des associations gabonaises&lt;/strong&gt; désireuses de développer des projets agroforestiers de permaculture autour de la conservation de l&apos;iboga et des « plantes utiles » du Gabon (Produits Forestiers Non Ligneux à fort potentiel alimentaire, thérapeutique et cosmétique ainsi que grands arbres se raréfiant).&lt;/li&gt;
-        ///    
-        ///&lt;/ul&gt;
-        ///
-        ///.
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; En collaboration avec les praticiens traditionnels, &lt;strong&gt;collecte et partage des informations sur les bonnes pratiques&lt;/strong&gt; inhérentes à la culture et l&apos;usage traditionnel de l’iboga ainsi que des autres plantes médicinales présentes sur le territoire gabonais.&lt;/li&gt;
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Collecte des graines de chaque espèce d’iboga&lt;/strong&gt; en v [rest of string was truncated]&quot;;.
         /// </summary>
         public static string projects_long_term {
             get {
@@ -453,8 +448,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
-        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Identification des associations gabonaises&lt;/strong&gt; désireuses de développer des projets agroforestiers de permaculture autour de la conservation de l&apos;iboga et des « plantes utiles » du Gabon (Produits Forestiers Non Ligneux à fort potentiel alimentaire, thérapeutique et cosmétique ainsi que grands arbres se raréfiant).&lt;/li&gt;
-        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Financement&lt;/strong&gt; de plantations de P [rest of string was truncated]&quot;;.
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Identification des associations gabonaises&lt;/strong&gt; désireuses de développer des projets agroforestiers de permaculture autour de la conservation de l&apos;iboga et des « plantes utiles » du Gabon (Produits Forestiers Non Ligneux à fort potentiel alimentaire, thérapeutique et cosmétique ainsi que grands arbres se raréfiant).&lt;/li&gt;
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;stron [rest of string was truncated]&quot;;.
         /// </summary>
         public static string projects_short_term {
             get {
@@ -472,10 +467,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Simon Glantz is practitoner of holistic nutrition, musician and software developer.&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Simon Glantz est practicien de nutrition holistique, musicien et développeur de logiciels.&lt;/h5&gt;
         ///&lt;p&gt;
-        ///	Simon suffered with severe neurological dysfunction from an early age and continued to struggle well into his adult life. Simon used the principles of person-centered nutrition and supplementation,
-        ///	as well as many other holistic and traditional healing modalities, to fully recover his mental and physical health and now teaches holistic nutrition, which is taylored to the individual&apos;s genotype, circumstances [rest of string was truncated]&quot;;.
+        ///    Simon suffered with severe neurological dysfunction from an early age and continued to struggle well into his adult life. Simon used the principles of person-centered nutrition and supplementation, as well as many other holistic and traditional healing modalities, to fully recover his mental and physical health and now teaches holistic nutrition, which is taylored to the individual&apos;s genotype, circu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string simon_text {
             get {
