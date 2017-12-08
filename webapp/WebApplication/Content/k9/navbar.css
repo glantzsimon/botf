@@ -49,6 +49,11 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
     border: none !important;
 }
 
+    .navbar-default .navbar-nav > .active > a {
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+
 .top-nav {
     height: 100%;
     position: relative;
@@ -56,7 +61,8 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
 
     .top-nav ul li a {
         color: #ffffff;
-        font-size: 1em;
+        font-size: 1.2em;
+        font-weight: 400 !important;
         margin: 0;
         text-decoration: none;
         padding: 1em;
@@ -228,7 +234,7 @@ ul.admin-menu ul.dropdown-menu {
 
     #main-menu-container.menu-main {
         height: 180px;
-        background-color: rgba(10, 10, 10, 0.5);
+        background-color: rgba(50,50,50,0.6);
     }
 
     #main-menu-container.menu-small {

@@ -15,8 +15,12 @@ body {
     background: #FFFFFF;
 }
 
+.banner-plain{
+    background: #fff;
+}
+
 .banner-default {
-    background: url(../../Images/background/slides/jungle-bg.jpg) no-repeat 0px 0px;
+    background: url(../../Images/background/slides/creek_bg.jpg) no-repeat 0px 0px;
     background-size: cover;
 }
 

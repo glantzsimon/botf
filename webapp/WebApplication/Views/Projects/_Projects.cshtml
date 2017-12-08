@@ -4,19 +4,17 @@
             <h3>@K9.Globalisation.Dictionary.Projects</h3>
         </div>
         <div class="container">
-            <div>
-                <div class="col-md-6">
-                    <div>
-                        <h4 class="text-black">@K9.Globalisation.Dictionary.projects_short_term_title</h4>
-                    </div>
-                    @MvcHtmlString.Create(K9.Globalisation.Dictionary.projects_short_term)
+            <div class="col-md-6">
+                <div>
+                    <h4 class="text-black">@K9.Globalisation.Dictionary.projects_short_term_title</h4>
                 </div>
-                <div class="col-md-6">
-                    <div>
-                        <h4 class="text-black">@K9.Globalisation.Dictionary.projects_long_term_title</h4>
-                    </div>
-                    @MvcHtmlString.Create(K9.Globalisation.Dictionary.projects_long_term)
+                @MvcHtmlString.Create(K9.Globalisation.Dictionary.projects_short_term)
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <h4 class="text-black">@K9.Globalisation.Dictionary.projects_long_term_title</h4>
                 </div>
+                @MvcHtmlString.Create(K9.Globalisation.Dictionary.projects_long_term)
             </div>
         </div>
     </div>
