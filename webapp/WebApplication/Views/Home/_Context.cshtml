@@ -8,7 +8,7 @@
                 <div class="col-md-12 scrollFadeIn">
                     <div class="picture-frame picture-frame-large-x pull-right margin-left-15">
                         <div>
-                            <img src="~/Images/home/gabon_map.jpg" alt="" />
+                            <img src="~/Images/home/gabon-map.jpg" alt="" />
                         </div>
                     </div>
                     <article class="margin-top-minus-15 clear-on-device scrollFadeIn">
@@ -16,9 +16,12 @@
                     </article>
                 </div>
                 <div class="col-md-12 scrollFadeIn">
-                    <div class="picture-frame picture-frame-large-x pull-left margin-right-15">
+                    <div class="picture-frame picture-frame-large pull-left margin-right-15">
                         <div>
-                            <img src="~/Images/home/iboga2.jpg" alt="" />
+                           @Html.Carousel(new CarouselOptions("Images/home/context2", "", 70)
+                           {
+                               ImageSizing = EImageSizing.Vertical
+                           })
                         </div>
                     </div>
                     <article class="clear-on-device scrollFadeIn">
@@ -26,9 +29,12 @@
                     </article>
                 </div>
                 <div class="col-md-12 scrollFadeIn">
-                    <div class="picture-frame picture-frame-large-x pull-right margin-left-15">
+                    <div class="picture-frame picture-frame-large pull-right margin-left-15">
                         <div>
-                            <img src="~/Images/home/iboga.jpg" alt="" />
+                            @Html.Carousel(new CarouselOptions("Images/home/context3", "", 70)
+                            {
+                                ImageSizing = EImageSizing.Vertical
+                            })
                         </div>
                     </div>
                     <article class="clear-on-device scrollFadeIn">
