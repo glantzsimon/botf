@@ -306,6 +306,11 @@
     <Content Include="Images\archive\upload\ArchiveItem\4\sample.wma" />
     <Content Include="Images\archive\upload\ArchiveItem\6\botf 2.txt" />
     <Content Include="Images\archive\upload\ArchiveItem\6\todo.txt" />
+    <Content Include="Images\background\etats-lieux\gabon-wildlife1.jpg" />
+    <Content Include="Images\background\etats-lieux\ivory.jpg" />
+    <Content Include="Images\background\etats-lieux\poaching1.jpg" />
+    <Content Include="Images\background\etats-lieux\poaching2.jpg" />
+    <Content Include="Images\background\etats-lieux\poaching4.jpg" />
     <Content Include="Images\background\slides\creek_bg.jpg" />
     <Content Include="Images\background\slides\jungle-bg.jpg" />
     <Content Include="Images\background\slides\bwiti1.jpg" />
@@ -313,7 +318,7 @@
     <Content Include="Images\background\slides\forest2.jpg" />
     <Content Include="Images\background\slides\forest3d.jpg" />
     <Content Include="Images\background\slides\forest4.jpg" />
-    <Content Include="Images\background\slides\gabon-elephant.jpg" />
+    <Content Include="Images\background\etats-lieux\gabon-elephant.jpg" />
     <Content Include="Images\background\slides\gabon_forest3.jpg" />
     <Content Include="Images\company\botf_logo_default_small_inv.png" />
     <Content Include="Images\company\botf_med.png" />
@@ -674,6 +679,7 @@
     <Content Include="Scripts\k9\bootstrapControls.js" />
     <Content Include="Scripts\k9\fileUploader.js" />
     <Content Include="Scripts\k9\fadePageIn.js" />
+    <Content Include="Scripts\k9\backgroundImageSwitcher.js" />
     <Content Include="Scripts\k9\revealText.js" />
     <Content Include="Scripts\k9\navbar.js" />
     <Content Include="Scripts\library\easing.js" />
