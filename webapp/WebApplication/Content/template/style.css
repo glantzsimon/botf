@@ -690,6 +690,14 @@ img.img-responsive {
                     background: #45668e;
                 }
 
+                .agileinfo-social-grids ul li a i.fa.fa-linkedin:hover {
+                    background: #0077B5;
+                }
+
+                .agileinfo-social-grids ul li a i.fa.fa-globe:hover, .agileinfo-social-grids ul li a i.fa.fa-envelope-o:hover {
+                    background: #ff9800;
+                }
+
 #main-banner {
     -webkit-transition: all 0.35s ease-in-out;
     -moz-transition: all 0.35s ease-in-out;
