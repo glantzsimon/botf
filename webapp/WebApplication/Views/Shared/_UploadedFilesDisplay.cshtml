@@ -4,7 +4,7 @@
 @if (Model.AudioFiles.Any())
 {
     <br />
-    <div class="well">
+    <div class="well margin-bottom-0">
         @foreach (var group in Model.AudioFiles)
         {
             <p class="media-title">@group.FileNameNoExtension.ToProperCase()</p>
@@ -22,7 +22,7 @@
 @if (Model.VideoFiles.Any())
 {
     <br />
-    <div class="well">
+    <div class="well margin-bottom-0">
         @foreach (var group in Model.VideoFiles)
         {
             <p class="media-title">@group.FileNameNoExtension.ToProperCase()</p>
@@ -53,7 +53,7 @@
 @if (Model.Documents.Any())
 {
     <br />
-    <div class="well">
+    <div class="well margin-bottom-0">
         @foreach (var document in Model.Documents)
         {
             <div class="document-container">
