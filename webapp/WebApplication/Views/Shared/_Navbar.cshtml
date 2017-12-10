@@ -40,7 +40,7 @@
             </ul>
         }
         <ul class="site-controls">
-            <li class="@ViewContext.GetActiveClass("Index", "Shop")"><a href="@Url.Action("Index", "Shop")"><span class="glyphicon glyphicon-eur"></span> @Dictionary.SupportUs</a></li>
+            <li class="@ViewContext.GetActiveClass("Index", "Shop")"><a href="@Url.Action("Index", "Shop")"><span class="glyphicon glyphicon-shopping-cart"></span> @K9.Globalisation.Dictionary.Shop</a></li>
             @Html.LoginLogout()
             @if (WebSecurity.IsAuthenticated)
             {
