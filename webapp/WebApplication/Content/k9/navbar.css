@@ -106,7 +106,7 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
         background: black;
     }
 
-        #account-header ul.my-account-controls {
+        #account-header ul.site-controls {
             right: 0;
             margin-right: 10px;
         }
@@ -133,12 +133,12 @@ ul.nav.navbar-nav:not(.dropdown-menu) {
                 padding-left: 15px;
             }
 
-        #account-header ul.my-account-controls > li:hover a, #account-header ul#main-navbar > li:hover a {
+        #account-header ul.site-controls > li:hover a, #account-header ul#main-navbar > li:hover a {
             color: #ff9800 !important;
             background: none !important;
         }
 
-        #account-header ul.my-account-controls > li.active a, #account-header ul#main-navbar > li.active a {
+        #account-header ul.site-controls > li.active a, #account-header ul#main-navbar > li.active a {
             color: #ff9800;
             font-weight: bold;
             background: none !important;

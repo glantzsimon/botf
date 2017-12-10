@@ -802,3 +802,7 @@ article, p {
 .list-item-separator:last-of-type {
     display: none;
 }
+
+.news-ticker-item {
+    white-space: nowrap;
+}

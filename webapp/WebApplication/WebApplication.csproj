@@ -214,6 +214,7 @@
     <Compile Include="Config\OAuthConfiguration.cs" />
     <Compile Include="Constants\ViewDataConstants.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\ArchiveCategoriesController.cs" />
     <Compile Include="Controllers\ArchiveController.cs" />
@@ -921,6 +922,7 @@
     <Content Include="Views\Projects\_Projects.cshtml" />
     <Content Include="Views\Shared\_EmbeddedVideo.cshtml" />
     <Content Include="Views\Shared\_Separator.cshtml" />
+    <Content Include="Views\Shop\Index.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

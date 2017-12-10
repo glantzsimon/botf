@@ -104,7 +104,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    &lt;strong&gt; Le Gabon est situé au coeur même de l’Afrique&lt;/strong&gt;, en bordure (sur plus de 800 km) de l’Océan Atlantique, à cheval sur l’Equateur comme son voisin le Congo, et au delà, le Congo Démocratique (ex-Zaïre). Au nord-ouest du pays en bordure de l’Océan, la petite Guinée Equatoriale est enchâssée dans le territoire gabonais. La frontière nord sépare ensuite le Gabon du Cameroun. Tout le reste du pays jouxte le Congo. A l’exception de l’Océan Atlantique à l’ouest, toutes les autres frontières [rest of string was truncated]&quot;;.
+        ///    &lt;strong&gt; Gabon is situated at the very heart of Africa&lt;/strong&gt;, on the Atlantic coast with over 800km of coastline. It straddles the equator as does its neighbour The Republic of the Congo and The Democratic Republic of the Congo (formerly Zaire). In the northwest of the country, along the coastline and embedded within the Gabonese territory, is Equatorial Guinea. The northern border also separates Gabon from Cameroon. The rest of the country runs alongside the Congo, to the east and south. Apart  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string botf_context1 {
             get {
@@ -114,8 +114,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Au contact des pygmées, les bantous découvriront que ce peuple premier d&apos;Afrique pratique le culte des esprits-animaux et est constituée de « médiateurs du sacré » qui changent selon les rites.
-        ///    Au cours de l’initiation, une connaissance particulière s’acquiert sur la maîtrise de la forêt et des éléments météorologiques (pluie, foudre…) et rentre dans le cadre d’une conception chamanique du fonctionnement du monde où l’initié sait entrer en contact avec les esprits de la Nature pour agir sur le [rest of string was truncated]&quot;;.
+        ///    When the Bantu encountered the Pigmies, they discovered that this indigenous population of Africa practises the worship of animal spirits and is made up of “mediators of the sacred”, which change according to the rites.
+        ///    Throughout the initiation, specific knowledge about the mastery of the forest and the weather elements (rain, lightening…) is acquired, giving rise to a shamanic conception of the workings of the world where the initiated knows how to get in contact with the spirits of nature i [rest of string was truncated]&quot;;.
         /// </summary>
         public static string botf_context2 {
             get {
@@ -125,11 +125,10 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
-        ///    L&apos;arrivée des premiers européens au Gabon au XVème siècle (portugais suivis des hollandais) sonna les débuts de l&apos;abandon des traditions initiatiques indigènes ancestrales du fait de l&apos;évangélisation forcée des peuples gabonais ainsi que des conséquences multiples de la traite négrière.
-        ///    La pratique du Bwiti est alors entrée en relative clandestinité...
+        ///    The arrival of the first Europeans in Gabon during the 15th century (the Portuguese followed by the Dutch) marked the beginning of the abandonment of the indigenous ancestral initiatory traditions due to the forced evangelisation of the Gabonese peoples as well as to the many consequences of the Slave Trade. The practice of Bwiti was then driven underground.
         ///&lt;/p&gt;
         ///&lt;p&gt;
-        ///    La France occupe le Gabon progressivement à partir du milieu du XIXe siècle, après un traité signé avec le « roi Denis », en 18 [rest of string was truncated]&quot;;.
+        ///    France began its progressive occupation of Gabon during the middle of the 19th century, after a treaty signed with the “Roi De [rest of string was truncated]&quot;;.
         /// </summary>
         public static string botf_context3 {
             get {
@@ -197,8 +196,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
-        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;La moitié des forêts de la planète a été détruite au cours du XXe siècle.&lt;/strong&gt;&lt;/li&gt;
-        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; En raison de l’exploitation (souvent non contrôlée) de matières premières telles que le bois, le diamant, l’or et les métaux rares mais aussi de l&apos;agriculture et de l&apos;élevage industriel, &lt;strong&gt;deux tiers des forêts du bassin du Congo pourraien [rest of string was truncated]&quot;;.
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Half of the planet’s forests were destroyed during the 20th century.&lt;/strong&gt;&lt;/li&gt;
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Due to the (often unpoliced) use of raw materials such as wood, diamond, gold and precious metals and also due to agriculture and livestock farming, &lt;strong&gt;two thirds of the Congo Basin Forest could be lost by 2040 if nothing is done.&lt;/strong&gt;&lt;/li&gt;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string etats_des_lieux_forest {
             get {
@@ -207,7 +206,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to State of affairs with respect to the community forests:.
+        ///   Looks up a localized string similar to State of affairs regarding the community forests:.
         /// </summary>
         public static string etats_des_lieux_forest_title {
             get {
@@ -217,7 +216,7 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
-        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Malgré la déclaration publique du défunt président de la république gabonaise, El Hadj Omar Bongo Ondimba, faite en conseil des ministres du 6 juillet 2000 et classant l&apos;iboga &lt;span class=&quot;italic bold&quot;&gt;« Patrimoine Culturel National »&lt;/span&gt; et &lt;span class=&quot;italic bold&quot;&gt;« Réserve Stratégique »&lt;/span&gt;&lt;span class=&quot;italic&quot;&gt; (« à protéger de l&apos;exploitation illicite »)&lt;/span&gt;, &lt;strong&gt;aucun texte de lois&lt;/strong&gt; n&apos;a été amen [rest of string was truncated]&quot;;.
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Despite the public declaration of the late president of the Gabonese republic, El Hadj Omar Bongo Ondimba, made in the Council of Ministers on the 6th July 2000 which classified Iboga as a &lt;span class=&quot;italic bold&quot;&gt;&quot;national cultural heritage”&lt;/span&gt;  and &lt;span class=&quot;italic bold&quot;&gt;”strategic reserve”&lt;/span&gt;&lt;span class=&quot;italic&quot;&gt; (“to be protected from illegal exploitation”)&lt;/span&gt;, &lt;strong&gt;no legal texts&lt;/strong&gt; have bee [rest of string was truncated]&quot;;.
         /// </summary>
         public static string etats_des_lieux_iboga {
             get {
@@ -226,7 +225,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to State of affairs with respect to Iboga:.
+        ///   Looks up a localized string similar to State of affairs regarding Iboga:.
         /// </summary>
         public static string etats_des_lieux_iboga_title {
             get {
@@ -428,8 +427,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
-        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; En collaboration avec les praticiens traditionnels, &lt;strong&gt;collecte et partage des informations sur les bonnes pratiques&lt;/strong&gt; inhérentes à la culture et l&apos;usage traditionnel de l’iboga ainsi que des autres plantes médicinales présentes sur le territoire gabonais.&lt;/li&gt;
-        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Collecte des graines de chaque espèce d’iboga&lt;/strong&gt; en v [rest of string was truncated]&quot;;.
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; In collaboration with traditional practitioners, &lt;strong&gt;compiling and exchange of information on the best practices&lt;/strong&gt; that are an integral part of traditional culture and use of Iboga as well as other medicinal plants within the territory of Gabon.&lt;/li&gt;
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Collection of seeds of each species of Iboga&lt;/strong&gt; with a view to cr [rest of string was truncated]&quot;;.
         /// </summary>
         public static string projects_long_term {
             get {
@@ -448,8 +447,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
-        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Identification des associations gabonaises&lt;/strong&gt; désireuses de développer des projets agroforestiers de permaculture autour de la conservation de l&apos;iboga et des « plantes utiles » du Gabon (Produits Forestiers Non Ligneux à fort potentiel alimentaire, thérapeutique et cosmétique ainsi que grands arbres se raréfiant).&lt;/li&gt;
-        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;stron [rest of string was truncated]&quot;;.
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Identification of Gabonese associations&lt;/strong&gt; who wish to develop agroforestry and permaculture projects focussing on the conservation of Iboga and &quot;useful plants” of Gabon (Non-Timber Forest Products (NTFPs) with significant food, cosmetic and therapeutic potential, as well as dwindling large trees).&lt;/li&gt;
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Funding&lt;/stron [rest of string was truncated]&quot;;.
         /// </summary>
         public static string projects_short_term {
             get {
@@ -467,9 +466,18 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Simon Glantz est practicien de nutrition holistique, musicien et développeur de logiciels.&lt;/h5&gt;
+        ///   Looks up a localized string similar to Shop.
+        /// </summary>
+        public static string Shop {
+            get {
+                return ResourceManager.GetString("Shop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Simon Glantz is a holistic nutritionist, musician and software developer&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Simon suffered with severe neurological dysfunction from an early age and continued to struggle well into his adult life. Simon used the principles of person-centered nutrition and supplementation, as well as many other holistic and traditional healing modalities, to fully recover his mental and physical health and now teaches holistic nutrition, which is taylored to the individual&apos;s genotype, circu [rest of string was truncated]&quot;;.
+        ///    Simon suffered with severe neurological dysfunction from an early age and continued to struggle well into his adult life. Simon used the principles of person-centered nutrition and supplementation, as well as many other holistic and traditional healing modalities, to fully recover his mental and physical health and now teaches holistic nutrition, which is taylored to the individual&apos;s genotype, circumstances and lifes [rest of string was truncated]&quot;;.
         /// </summary>
         public static string simon_text {
             get {
