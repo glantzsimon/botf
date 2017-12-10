@@ -253,4 +253,7 @@
   <data name="Shop" xml:space="preserve">
     <value>Shop</value>
   </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
 </root>

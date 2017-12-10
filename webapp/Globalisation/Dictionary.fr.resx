@@ -250,4 +250,7 @@
   <data name="Shop" xml:space="preserve">
     <value>Boutique</value>
   </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Chargement...</value>
+  </data>
 </root>
