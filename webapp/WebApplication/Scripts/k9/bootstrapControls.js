@@ -28,11 +28,16 @@ function bootstrapControls(config) {
     }
 
     function initTextScroller() {
-        $(".scroller-container").scrollText({
-            "direction": "down",
-            "loop": true,
-            "duration": 3000
+        $(".scroller-container").vTicker({
+            speed: 500,
+            pause: 3000,
+            showItems: 3,
+            animation: 'fade',
+            mousePause: false,
+            height: 0,
+            direction: 'up'
         });
+
     }
 
     function initDateTimeValidation() {
