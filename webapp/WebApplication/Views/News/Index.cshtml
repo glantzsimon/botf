@@ -1,6 +1,8 @@
-﻿@model List<NewsItem>
+﻿@using K9.WebApplication.Helpers
+@model List<NewsItem>
 @{
     ViewBag.Title = Dictionary.Home;
+    var index = 0;
 }
 
 <div id="main-banner" class="banner-default main-menu">
@@ -12,27 +14,29 @@
         <div class="main-heading">
             <h3>@Dictionary.News</h3>
         </div>
+    </div>
+    <div>
         @foreach (var newsItem in Model)
         {
-            <div>
+            <div class="list-item-container container scrollFadeUp">
                 <div class="col-md-5">
-                @if (!string.IsNullOrEmpty(newsItem.VideoUrl))
-                {
-                    @Html.Partial("_EmbeddedVideo", newsItem.VideoUrl)
-                }
-                else
-                {
-                    <div class="picture-frame picture-frame-300">
-                        <div>
-                            @Html.Carousel(new CarouselOptions(newsItem.ImageFileSource.PathToFiles, "", 70)
-                            {
-                                ImageSizing = EImageSizing.Vertical
-                            })
+                    @if (!string.IsNullOrEmpty(newsItem.VideoUrl))
+                    {
+                        @Html.Partial("_EmbeddedVideo", newsItem.VideoUrl)
+                    }
+                    else
+                    {
+                        <div class="picture-frame picture-frame-300">
+                            <div>
+                                @Html.Carousel(new CarouselOptions(newsItem.ImageFileSource.PathToFiles, "", 70)
+                           {
+                               ImageSizing = EImageSizing.Vertical
+                           })
+                            </div>
                         </div>
-                    </div>
-                }
+                    }
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-7" id="@newsItem.Id">
                     <div class="news-item-title">
                         <p><strong>@Dictionary.PublishedOnLabel</strong>: @newsItem.PublishedOn.ToLongDateString()</p>
                         <p><strong>@Dictionary.PublishedByLabel</strong>: @newsItem.PublishedBy</p>
@@ -48,8 +52,18 @@
                 </div>
                 <div class="clearfix"> </div>
             </div>
-            <br />
+            @Html.Separator()
         }
-        <div class="clearfix"></div>
     </div>
 </div>
+
+@section scripts {
+    <script language="javascript">
+        $(function () {
+            var article = $("div#@ViewData[K9.WebApplication.Constants.ViewDataConstants.SelectedId]");
+            $("html, body").animate({
+                scrollTop: article.offset().top - 200
+            }, 1000);
+        })
+    </script>
+}

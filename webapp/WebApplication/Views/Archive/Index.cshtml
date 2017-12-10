@@ -1,4 +1,5 @@
-﻿@model K9.Base.WebApplication.ViewModels.ArchiveViewModel
+﻿@using K9.WebApplication.Helpers
+@model K9.Base.WebApplication.ViewModels.ArchiveViewModel
 @{
     ViewBag.Title = Dictionary.Archive;
 }
@@ -18,12 +19,15 @@
                 @Html.Partial("_ArchiveMenu")
             </div>
             <div class="col-md-9">
-                <div class="archive-content-container">
+                <div>
                     @if (Model.SelectedArchive != null)
                     {
                         foreach (var item in Model.SelectedArchive.Items)
                         {
-                            @Html.Partial("_ArchiveItem", item)
+                            <div class="list-item-container">
+                                @Html.Partial("_ArchiveItem", item)
+                            </div>
+                            @Html.Separator()
                         }
                     }
                 </div>

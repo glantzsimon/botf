@@ -212,6 +212,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Config\OAuthConfiguration.cs" />
+    <Compile Include="Constants\ViewDataConstants.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Controllers\ArchiveCategoriesController.cs" />
@@ -233,6 +234,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Separator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -684,11 +686,11 @@
     <Content Include="Scripts\k9\navbar.js" />
     <Content Include="Scripts\library\easing.js" />
     <Content Include="Scripts\library\jarallax.js" />
-    <Content Include="Scripts\library\scrollText.js" />
     <Content Include="Scripts\library\lsb.js" />
     <Content Include="Scripts\library\move-top.js" />
     <Content Include="Scripts\library\owl.carousel.js" />
     <Content Include="Scripts\library\SmoothScroll.min.js" />
+    <Content Include="Scripts\library\vticker-min.js" />
     <Content Include="Scripts\template\scroller.js" />
     <Content Include="Views\AboutUs\Team.cshtml" />
     <Content Include="Web.config">
@@ -918,6 +920,7 @@
     <Content Include="Views\Projects\Index.cshtml" />
     <Content Include="Views\Projects\_Projects.cshtml" />
     <Content Include="Views\Shared\_EmbeddedVideo.cshtml" />
+    <Content Include="Views\Shared\_Separator.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
