@@ -17,6 +17,7 @@ using System;
 using System.Data.Entity;
 using System.IO;
 using System.Web.Mvc;
+using K9.WebApplication.Services;
 
 namespace K9.WebApplication
 {
@@ -48,6 +49,7 @@ namespace K9.WebApplication
             builder.RegisterType<FileSourceHelper>().As<IFileSourceHelper>().InstancePerRequest();
             builder.RegisterGeneric(typeof(ControllerPackage<>)).As(typeof(IControllerPackage<>)).InstancePerRequest();
             builder.RegisterType<AccountService>().As<IAccountService>().InstancePerRequest();
+            builder.RegisterType<ShopService>().As<IShopService>().InstancePerRequest();
 
             RegisterConfiguration(builder);
 

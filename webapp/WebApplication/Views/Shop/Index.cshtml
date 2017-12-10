@@ -13,7 +13,7 @@
     var spread_shop_config = {
         shopName: "blessingsoftheforest",
         locale: "@ViewData[K9.WebApplication.Constants.ViewDataConstants.Locale]",
-        prefix: "//shop.spreadshirt.co.uk",
+        prefix: "@ViewData[K9.WebApplication.Constants.ViewDataConstants.ShopPrefix]",
         baseId: "myShop"
     };
 </script>
@@ -34,6 +34,4 @@
     .sprd-product-filter, .SprdHeader, .SprdMain {
         max-width: 100% !important;
     }
-
-    
 </style>
