@@ -26,19 +26,21 @@ namespace K9.WebApplication.Controllers
 		private readonly ILogger _logger;
 	    private readonly IAccountService _accountService;
 	    private readonly IAuthentication _authentication;
+	    private readonly IFacebookService _facebookService;
 
-	    public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper)
+	    public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService)
 			: base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
 		{
 			_repository = repository;
 			_logger = logger;
 		    _accountService = accountService;
 		    _authentication = authentication;
+		    _facebookService = facebookService;
 		}
-        
-		#region Membership
 
-		public ActionResult Login(string returnUrl)
+        #region Membership
+        
+        public ActionResult Login(string returnUrl)
 		{
 			if (WebSecurity.IsAuthenticated)
 			{
@@ -55,7 +57,7 @@ namespace K9.WebApplication.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				switch (_accountService.Login(model.UserName, model.Password, model.RememberMe))
+                switch (_accountService.Login(model.UserName, model.Password, model.RememberMe))
 				{
 					case ELoginResult.Success:
 						if (TempData["ReturnUrl"] != null)
@@ -80,7 +82,52 @@ namespace K9.WebApplication.Controllers
 			return View(model);
 		}
 
-		public ActionResult AccountLocked()
+	    public ActionResult Facebook()
+	    {
+	        return Redirect(_facebookService.GetLoginUrl().AbsoluteUri);
+	    }
+
+	    public ActionResult FacebookCallback(string code)
+	    {
+	        ServiceResult result = null;
+	        result = _facebookService.Authenticate(code);
+	        if (result.IsSuccess)
+	        {
+	            var user = result.Data as User;
+	            var regResult = _accountService.RegisterOrLoginAuth(new UserAccount.RegisterModel
+	            {
+	                UserName = user.Username,
+	                FirstName = user.FirstName,
+	                LastName = user.LastName,
+	                BirthDate = user.BirthDate,
+	                EmailAddress = user.EmailAddress
+	            });
+
+	            if (regResult.IsSuccess)
+	            {
+	                return RedirectToAction("Index", "Home");
+	            }
+	            result.Errors.AddRange(regResult.Errors);
+	        }
+
+	        foreach (var registrationError in result.Errors)
+	        {
+	            if (registrationError.Exception != null && registrationError.Exception.IsDuplicateIndexError())
+	            {
+	                var duplicateUser = registrationError.Data.MapTo<User>();
+	                var serviceError = registrationError.Exception.GetServiceErrorFromException(duplicateUser);
+	                ModelState.AddModelError("", serviceError.ErrorMessage);
+	            }
+	            else
+	            {
+	                ModelState.AddModelError(registrationError.FieldName, registrationError.ErrorMessage);
+	            }
+	        }
+
+	        return View("Login", new UserAccount.LoginModel());
+        }
+
+        public ActionResult AccountLocked()
 		{
 			return View();
 		}

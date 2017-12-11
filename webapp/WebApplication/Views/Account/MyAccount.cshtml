@@ -20,7 +20,10 @@
         @Html.BootstrapEditorFor(model => model.LastName)
         @Html.BootstrapEditorFor(model => model.PhoneNumber)
         @Html.BootstrapEditorFor(model => model.BirthDate)
-        <span>@Html.ActionLink(Dictionary.ChangePassword, "UpdatePassword")</span>
+        if (!Model.IsOAuth)
+        {
+            <span>@Html.ActionLink(Dictionary.ChangePassword, "UpdatePassword")</span>
+        }
         <hr />
         @Html.BootstrapButton(Dictionary.Update)
         @Html.BootstrapActionLinkButton(Dictionary.DeleteMyAccount, "ConfirmDeleteAccount", "Account", new { id = Model.Id }, "", EButtonClass.Danger)

@@ -256,4 +256,7 @@
   <data name="Loading" xml:space="preserve">
     <value>Loading...</value>
   </data>
+  <data name="SignInWithFacebook" xml:space="preserve">
+    <value>Sign In With Facebook</value>
+  </data>
 </root>

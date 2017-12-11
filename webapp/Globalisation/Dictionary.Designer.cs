@@ -484,6 +484,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sign In With Facebook.
+        /// </summary>
+        public static string SignInWithFacebook {
+            get {
+                return ResourceManager.GetString("SignInWithFacebook", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Simon Glantz is a holistic nutritionist, musician and software developer&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Simon suffered with severe neurological dysfunction from an early age and continued to struggle well into his adult life. Simon used the principles of person-centered nutrition and supplementation, as well as many other holistic and traditional healing modalities, to fully recover his mental and physical health and now teaches holistic nutrition, which is taylored to the individual&apos;s genotype, circumstances and lifes [rest of string was truncated]&quot;;.

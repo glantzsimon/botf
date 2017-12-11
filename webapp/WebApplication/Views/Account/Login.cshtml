@@ -14,6 +14,7 @@
 		<span>@Html.ActionLink(Dictionary.ResetPassword, "PasswordResetRequest") | @Html.ActionLink(Dictionary.Register, "Register")</span>
 		@Html.BootstrapEditorFor(model => model.RememberMe)
 		<hr/>
-		@Html.BootstrapButton(Dictionary.LogInVerb)
+		@Html.BootstrapButton(Dictionary.LogInVerb) 
+        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.SignInWithFacebook, "Facebook", "Account", null, "fa-facebook")
 	}
 }
