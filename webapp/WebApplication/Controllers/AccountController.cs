@@ -20,7 +20,7 @@ using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
-    public class AccountController : BaseController
+    public partial class AccountController : BaseController
 	{
 		private readonly IRepository<User> _repository;
 		private readonly ILogger _logger;
@@ -69,7 +69,11 @@ namespace K9.WebApplication.Controllers
 					case ELoginResult.AccountLocked:
 						return RedirectToAction("AccountLocked");
 
-					default:
+				    case ELoginResult.AccountNotActivated:
+				        ModelState.AddModelError("", Dictionary.AccountNotActivatedError);
+				        break;
+
+                    default:
 						ModelState.AddModelError("", Dictionary.UsernamePasswordIncorrectError);
 						break;
 				}

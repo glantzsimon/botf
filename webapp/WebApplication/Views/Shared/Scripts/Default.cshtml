@@ -95,6 +95,18 @@
 	            scrollTop: offset.top
 	        }, 40);
         };
+
+	    $.fn.displayValidationWarningFor = function(field, validationMessage) {
+	        var validationSpan = $("span[data-valmsg-for='" + field + "']");
+	        validationSpan.html("<span for='" + field + "' generated='true'>" + validationMessage + ".</span>");
+	        validationSpan.removeClass("field-validation-valid");
+	        validationSpan.addClass("field-validation-error warning");
+        };
+
+	    $.fn.hideValidationWarningFor = function(field) {
+	        var validationSpan = $("span[data-valmsg-for='" + field + "']");
+            validationSpan.removeClass("warning");
+	    };
         
 		bootstrapControls({
 			language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",

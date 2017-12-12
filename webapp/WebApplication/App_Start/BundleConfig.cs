@@ -49,7 +49,8 @@ namespace K9.WebApplication
             bundles.Add(new ScriptBundle("~/Scripts/js").Include(
                 "~/Scripts/imageSwitcher/*.js",
                 "~/Scripts/template/*.js",
-                "~/Scripts/k9/*.js"));
+                "~/Scripts/k9/*.js",
+                "~/Scripts/ajax/*.js"));
 
             bundles.Add(new ScriptBundle("~/Scripts/lib").Include(
                 "~/Scripts/library/*.js"));
