@@ -269,13 +269,13 @@
     <value>Don à</value>
   </data>
   <data name="DonationAmountLabel" xml:space="preserve">
-    <value>Combien souhaitez-vous contribuer ?</value>
+    <value>Combien voulez-vous donner ?</value>
   </data>
   <data name="MakeDonation" xml:space="preserve">
     <value>Faire un Don</value>
   </data>
   <data name="AmountToDonateLabel" xml:space="preserve">
-    <value>Vous souhaitez contribuer:</value>
+    <value>Vous voulez donner:</value>
   </data>
   <data name="DonationToBOTF" xml:space="preserve">
     <value>Don A Blessings Of The Forest</value>
@@ -291,5 +291,11 @@
   </data>
   <data name="CustomerEmailLabel" xml:space="preserve">
     <value>Adresse Email du Client</value>
+  </data>
+  <data name="DonationBlurb" xml:space="preserve">
+    <value>Faire un don à Blessings of The Forest nous aidera énormément à atteindre nos objectifs. Nous sommes profondément reconnaissants de votre soutien.</value>
+  </data>
+  <data name="DonationReceivedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\fr\donationreceivedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

@@ -1,0 +1,17 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model Donation
+@{
+	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+@Html.BootstrapTable(new DataTableOptions<Donation>
+{
+    AllowCreate = false,
+    AllowEdit = false,
+    VisibleColumns = new List<string>
+    {
+        "DonatedOn",
+        "DonationAmount",
+        "Currency",
+        "Customer"
+    }
+})

@@ -11,8 +11,10 @@
     using (Html.BeginBootstrapForm())
     {
         <p>
-            Making a donation to Blessings of The Forest will make an enormous impact on our ability to make a difference...
+            @K9.Globalisation.Dictionary.DonationBlurb
         </p>
+        <hr/>
+
         @Html.BootstrapEditorFor(model => model.DonationAmount)
         <hr/>
         @Html.BootstrapButton(Dictionary.Next)

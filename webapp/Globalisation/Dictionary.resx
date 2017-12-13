@@ -295,4 +295,10 @@
   <data name="CustomerEmailLabel" xml:space="preserve">
     <value>Customer Email Address</value>
   </data>
+  <data name="DonationBlurb" xml:space="preserve">
+    <value>Making a donation to Blessings of The Forest will make an enormous impact on our ability to sucessfully complete our mission. We are tremendously grateful for your support.</value>
+  </data>
+  <data name="DonationReceivedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\donationreceivedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

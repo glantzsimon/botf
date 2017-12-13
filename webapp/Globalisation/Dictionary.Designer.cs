@@ -258,6 +258,47 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Making a donation to Blessings of The Forest will make an enormous impact on our ability to sucessfully complete our mission. We are tremendously grateful for your support..
+        /// </summary>
+        public static string DonationBlurb {
+            get {
+                return ResourceManager.GetString("DonationBlurb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///    html
+        ///    {
+        ///        margin: 0;
+        ///		padding: 0;
+        ///		font-family: &quot;Segoe UI&quot; , Verdana, Helvetica, Sans-Serif;
+        ///		font-size: 100%;
+        ///		text-rendering: optimizeLegibility !important;
+        ///		-webkit-font-smoothing: antialiased !important;
+        ///        margin: 0; 
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear {FirstName},&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Thank you for registering with {Comp [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DonationReceivedEmail {
+            get {
+                return ResourceManager.GetString("DonationReceivedEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your donation was received. Thank you!.
         /// </summary>
         public static string DonationSuccessful {
