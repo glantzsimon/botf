@@ -12,6 +12,7 @@ using K9.Base.WebApplication.Services;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
+using K9.WebApplication.Config;
 using K9.WebApplication.Services;
 using NLog;
 using System;
@@ -51,6 +52,7 @@ namespace K9.WebApplication
             builder.RegisterType<AccountService>().As<IAccountService>().InstancePerRequest();
             builder.RegisterType<ShopService>().As<IShopService>().InstancePerRequest();
             builder.RegisterType<FacebookService>().As<IFacebookService>().InstancePerRequest();
+            builder.RegisterType<StripeService>().As<IStripeService>().InstancePerRequest();
 
             RegisterConfiguration(builder);
 
@@ -70,6 +72,7 @@ namespace K9.WebApplication
             builder.Register(c => ConfigHelper.GetConfiguration<SmtpConfiguration>(json)).SingleInstance();
             builder.Register(c => ConfigHelper.GetConfiguration<DatabaseConfiguration>(json)).SingleInstance();
             builder.Register(c => ConfigHelper.GetConfiguration<OAuthConfiguration>(json)).SingleInstance();
+            builder.Register(c => ConfigHelper.GetConfiguration<StripeConfiguration>(json)).SingleInstance();
 
             var websiteConfig = ConfigHelper.GetConfiguration<WebsiteConfiguration>(json);
             builder.Register(c => websiteConfig).SingleInstance();

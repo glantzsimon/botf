@@ -188,10 +188,10 @@
     <value>Our organisation has been set up to preserve, research and share knowledge about the medicinal plants and indigenous traditions of the Gabonese forest people for the benefit of all of humanity.</value>
   </data>
   <data name="CompanyDescription" xml:space="preserve">
-    <value>Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:9816364).</value>
+    <value>Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:09816364).</value>
   </data>
   <data name="CompanyLegalDescription" xml:space="preserve">
-    <value>Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:9816364).</value>
+    <value>Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:09816364).</value>
   </data>
   <data name="CompanyShortDescription" xml:space="preserve">
     <value>Charity comitted to preserving Gabon's heritage</value>
@@ -258,5 +258,41 @@
   </data>
   <data name="SignInWithFacebook" xml:space="preserve">
     <value>Sign In With Facebook</value>
+  </data>
+  <data name="Donate" xml:space="preserve">
+    <value>Donate</value>
+  </data>
+  <data name="DonationAmountLabel" xml:space="preserve">
+    <value>How much would you like to donate?</value>
+  </data>
+  <data name="DonationSuccessful" xml:space="preserve">
+    <value>Your donation was received. Thank you!</value>
+  </data>
+  <data name="DonationSuccessfulTitle" xml:space="preserve">
+    <value>Donation Received</value>
+  </data>
+  <data name="DonationTo" xml:space="preserve">
+    <value>Donation To</value>
+  </data>
+  <data name="MakeDonation" xml:space="preserve">
+    <value>Make a Donation</value>
+  </data>
+  <data name="AmountToDonateLabel" xml:space="preserve">
+    <value>You would like to donate:</value>
+  </data>
+  <data name="DonationToBOTF" xml:space="preserve">
+    <value>Donation To Blessings Of The Forest</value>
+  </data>
+  <data name="CustomerLabel" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="DonatedOnLabel" xml:space="preserve">
+    <value>Donated On</value>
+  </data>
+  <data name="CurrencyLabel" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="CustomerEmailLabel" xml:space="preserve">
+    <value>Customer Email Address</value>
   </data>
 </root>

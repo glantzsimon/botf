@@ -61,6 +61,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You would like to donate:.
+        /// </summary>
+        public static string AmountToDonateLabel {
+            get {
+                return ResourceManager.GetString("AmountToDonateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blessings.
         /// </summary>
         public static string Blessings {
@@ -146,7 +155,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:9816364)..
+        ///   Looks up a localized string similar to Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:09816364)..
         /// </summary>
         public static string CompanyDescription {
             get {
@@ -155,7 +164,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:9816364)..
+        ///   Looks up a localized string similar to Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:09816364)..
         /// </summary>
         public static string CompanyLegalDescription {
             get {
@@ -169,6 +178,33 @@ namespace K9.Globalisation {
         public static string CompanyShortDescription {
             get {
                 return ResourceManager.GetString("CompanyShortDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Currency.
+        /// </summary>
+        public static string CurrencyLabel {
+            get {
+                return ResourceManager.GetString("CurrencyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer Email Address.
+        /// </summary>
+        public static string CustomerEmailLabel {
+            get {
+                return ResourceManager.GetString("CustomerEmailLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer.
+        /// </summary>
+        public static string CustomerLabel {
+            get {
+                return ResourceManager.GetString("CustomerLabel", resourceCulture);
             }
         }
         
@@ -191,6 +227,69 @@ namespace K9.Globalisation {
         public static string david_title {
             get {
                 return ResourceManager.GetString("david_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Donate.
+        /// </summary>
+        public static string Donate {
+            get {
+                return ResourceManager.GetString("Donate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Donated On.
+        /// </summary>
+        public static string DonatedOnLabel {
+            get {
+                return ResourceManager.GetString("DonatedOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How much would you like to donate?.
+        /// </summary>
+        public static string DonationAmountLabel {
+            get {
+                return ResourceManager.GetString("DonationAmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your donation was received. Thank you!.
+        /// </summary>
+        public static string DonationSuccessful {
+            get {
+                return ResourceManager.GetString("DonationSuccessful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Donation Received.
+        /// </summary>
+        public static string DonationSuccessfulTitle {
+            get {
+                return ResourceManager.GetString("DonationSuccessfulTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Donation To.
+        /// </summary>
+        public static string DonationTo {
+            get {
+                return ResourceManager.GetString("DonationTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Donation To Blessings Of The Forest.
+        /// </summary>
+        public static string DonationToBOTF {
+            get {
+                return ResourceManager.GetString("DonationToBOTF", resourceCulture);
             }
         }
         
@@ -340,6 +439,15 @@ namespace K9.Globalisation {
         public static string MainTitleRight {
             get {
                 return ResourceManager.GetString("MainTitleRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Make a Donation.
+        /// </summary>
+        public static string MakeDonation {
+            get {
+                return ResourceManager.GetString("MakeDonation", resourceCulture);
             }
         }
         

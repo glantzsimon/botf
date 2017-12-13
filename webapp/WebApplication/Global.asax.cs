@@ -1,11 +1,14 @@
-﻿using System.Web;
+﻿using K9.SharedLibrary.Helpers;
+using System;
+using System.IO;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
 namespace K9.WebApplication
 {
-	public class MvcApplication : HttpApplication
+    public class MvcApplication : HttpApplication
 	{
 		protected void Application_Start()
 		{
@@ -21,6 +24,10 @@ namespace K9.WebApplication
 			DataConfig.InitialiseDatabase();
 			AuthConfig.InitialiseWebSecurity();
 			DataConfig.InitialiseUsersAndRoles();
+
+		    var json = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config/appsettings.json"));
+		    var stripeConfig = ConfigHelper.GetConfiguration<K9.WebApplication.Config.StripeConfiguration>(json).Value;
+            Stripe.StripeConfiguration.SetApiKey(stripeConfig.SecretKey);
 		}
 		
 	}

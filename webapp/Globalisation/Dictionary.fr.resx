@@ -185,10 +185,10 @@
     <value>Notre organisation est dédiée à la conservation, l’étude et le partage des connaissances au sujet de l’herboristerie traditionnelle gabonaise et des traditions des peuples du Gabon pour le bénéfice de toute l’humanité.</value>
   </data>
   <data name="CompanyDescription" xml:space="preserve">
-    <value>Blessings Of The Forest est une Compagnie des intérêts communautaires, une entreprise sociale immatriculée en Angleterre en octobre de 2015 en tant que société limitée par actions (société numéro 9816364).</value>
+    <value>Blessings Of The Forest est une Compagnie des intérêts communautaires, une entreprise sociale immatriculée en Angleterre en octobre de 2015 en tant que société limitée par actions (société numéro 09816364).</value>
   </data>
   <data name="CompanyLegalDescription" xml:space="preserve">
-    <value>Blessings Of The Forest est une Compagnie des intérêts communautaires, une entreprise sociale immatriculée en Angleterre en octobre de 2015 en tant que société limitée par actions (société numéro 9816364).</value>
+    <value>Blessings Of The Forest est une Compagnie des intérêts communautaires, une entreprise sociale immatriculée en Angleterre en octobre de 2015 en tant que société limitée par actions (société numéro 09816364).</value>
   </data>
   <data name="CompanyShortDescription" xml:space="preserve">
     <value>Compagnie des intérêts communautaires dédiée à la protection du patrimoine gabonais</value>
@@ -255,5 +255,41 @@
   </data>
   <data name="SignInWithFacebook" xml:space="preserve">
     <value>Se Connecter Avec Facebook</value>
+  </data>
+  <data name="Donate" xml:space="preserve">
+    <value>Faire Un Don</value>
+  </data>
+  <data name="DonationSuccessful" xml:space="preserve">
+    <value>Nous avons bien reçu votre don. Merci !</value>
+  </data>
+  <data name="DonationSuccessfulTitle" xml:space="preserve">
+    <value>Réception de Don</value>
+  </data>
+  <data name="DonationTo" xml:space="preserve">
+    <value>Don à</value>
+  </data>
+  <data name="DonationAmountLabel" xml:space="preserve">
+    <value>Combien souhaitez-vous contribuer ?</value>
+  </data>
+  <data name="MakeDonation" xml:space="preserve">
+    <value>Faire un Don</value>
+  </data>
+  <data name="AmountToDonateLabel" xml:space="preserve">
+    <value>Vous souhaitez contribuer:</value>
+  </data>
+  <data name="DonationToBOTF" xml:space="preserve">
+    <value>Don A Blessings Of The Forest</value>
+  </data>
+  <data name="CustomerLabel" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="DonatedOnLabel" xml:space="preserve">
+    <value>Donné Le</value>
+  </data>
+  <data name="CurrencyLabel" xml:space="preserve">
+    <value>Devise</value>
+  </data>
+  <data name="CustomerEmailLabel" xml:space="preserve">
+    <value>Adresse Email du Client</value>
   </data>
 </root>

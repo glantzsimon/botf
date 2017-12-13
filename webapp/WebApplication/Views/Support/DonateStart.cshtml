@@ -1,0 +1,20 @@
+﻿@model K9.WebApplication.Models.StripeModel
+@{
+    ViewBag.Title = K9.Globalisation.Dictionary.Donate;
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.MakeDonation;
+    ViewBag.BackgroundClass = "background-poaching1";
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm("Donate", "Support", FormMethod.Post))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        <p>
+            Making a donation to Blessings of The Forest will make an enormous impact on our ability to make a difference...
+        </p>
+        @Html.BootstrapEditorFor(model => model.DonationAmount)
+        <hr/>
+        @Html.BootstrapButton(Dictionary.Next)
+    }
+}
