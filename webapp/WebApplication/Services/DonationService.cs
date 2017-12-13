@@ -16,7 +16,7 @@ namespace K9.WebApplication.Services
         private readonly ILogger _logger;
         private readonly IMailer _mailer;
         private readonly WebsiteConfiguration _config;
-        private UrlHelper _urlHelper;
+        private readonly UrlHelper _urlHelper;
 
         public DonationService(IRepository<Donation> donationRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> config)
         {
@@ -42,9 +42,9 @@ namespace K9.WebApplication.Services
                     LinkToSummary = _urlHelper.AsboluteAction("Inde", "Donations")
                 }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                _logger.Error($"StripService => Charge => {ex.Message}");
+                _logger.Error($"DonationService => CreateDonation => {ex.Message}");
             }
         }
     }
