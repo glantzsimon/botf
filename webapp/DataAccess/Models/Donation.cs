@@ -7,6 +7,7 @@ using K9.Base.Globalisation;
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
+    [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Donations, PluralName = Globalisation.Strings.Names.Donations)]
     public class Donation : ObjectBase
 	{
         [Required]
@@ -15,7 +16,7 @@ namespace K9.DataAccessLayer.Models
 		public string Customer { get; set; }
 
 	    [Required]
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.DonationAmountLabel)]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountDonatedLabel)]
 	    [DataType(DataType.Currency)]
 	    public double DonationAmount { get; set; }
         

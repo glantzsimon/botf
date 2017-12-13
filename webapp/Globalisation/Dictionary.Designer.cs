@@ -61,6 +61,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount Donated.
+        /// </summary>
+        public static string AmountDonatedLabel {
+            get {
+                return ResourceManager.GetString("AmountDonatedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You would like to donate:.
         /// </summary>
         public static string AmountToDonateLabel {
@@ -289,12 +298,21 @@ namespace K9.Globalisation {
         ///&lt;/style&gt;
         ///
         ///&lt;body&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Dear {FirstName},&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Thank you for registering with {Comp [rest of string was truncated]&quot;;.
+        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;We have received a donation from {Customer} [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DonationReceivedEmail {
             get {
                 return ResourceManager.GetString("DonationReceivedEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Donations.
+        /// </summary>
+        public static string Donations {
+            get {
+                return ResourceManager.GetString("Donations", resourceCulture);
             }
         }
         
