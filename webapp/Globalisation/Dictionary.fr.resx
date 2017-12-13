@@ -293,7 +293,7 @@
     <value>Adresse Email du Client</value>
   </data>
   <data name="DonationBlurb" xml:space="preserve">
-    <value>Faire un don à Blessings of The Forest nous aidera énormément à atteindre nos objectifs. Nous sommes profondément reconnaissants de votre soutien.</value>
+    <value>Votre don à Blessings of The Forest nous aidera énormément à atteindre nos objectifs. Nous sommes profondément reconnaissants de votre soutien.</value>
   </data>
   <data name="DonationReceivedEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\fr\donationreceivedemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

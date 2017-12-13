@@ -53,6 +53,7 @@ namespace K9.WebApplication
             builder.RegisterType<ShopService>().As<IShopService>().InstancePerRequest();
             builder.RegisterType<FacebookService>().As<IFacebookService>().InstancePerRequest();
             builder.RegisterType<StripeService>().As<IStripeService>().InstancePerRequest();
+            builder.RegisterType<DonationService>().As<IDonationService>().InstancePerRequest();
 
             RegisterConfiguration(builder);
 
