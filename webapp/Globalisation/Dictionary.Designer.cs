@@ -155,6 +155,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change Amount.
+        /// </summary>
+        public static string ChangeAmount {
+            get {
+                return ResourceManager.GetString("ChangeAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Our organisation has been set up to preserve, research and share knowledge about the medicinal plants and indigenous traditions of the Gabonese forest people for the benefit of all of humanity..
         /// </summary>
         public static string CompanyBlurbFooter {

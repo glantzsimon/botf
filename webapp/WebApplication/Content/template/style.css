@@ -806,3 +806,7 @@ article, p {
 .news-ticker-item {
     white-space: nowrap;
 }
+
+div.text-center > h3 {
+    font-size: 1.2em;
+}
