@@ -1,4 +1,6 @@
-﻿@using K9.Base.WebApplication.Helpers
+﻿@using K9.Base.WebApplication.Controllers
+@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Authentication
 @model Donation
 @{
 	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
@@ -7,7 +9,7 @@
 {
     AllowCreate = false,
     AllowEdit = false,
-    AllowDelete = false,
+    AllowDelete = ((BaseController<Donation>)ViewContext.Controller).Roles.CurrentUserIsInRoles(RoleNames.Administrators),
     VisibleColumns = new List<string>
     {
         "DonatedOn",
