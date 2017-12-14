@@ -1,5 +1,6 @@
 ﻿using K9.SharedLibrary.Helpers;
 using System;
+using System.Configuration;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
@@ -25,9 +26,7 @@ namespace K9.WebApplication
 			AuthConfig.InitialiseWebSecurity();
 			DataConfig.InitialiseUsersAndRoles();
 
-		    var json = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Config/appsettings.json"));
-		    var stripeConfig = ConfigHelper.GetConfiguration<K9.WebApplication.Config.StripeConfiguration>(json).Value;
-            Stripe.StripeConfiguration.SetApiKey(stripeConfig.SecretKey);
+		    Stripe.StripeConfiguration.SetApiKey(ConfigurationManager.AppSettings["SecretKey"]);
 		}
 		
 	}
