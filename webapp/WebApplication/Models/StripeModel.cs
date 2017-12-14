@@ -1,6 +1,7 @@
 ﻿using K9.Globalisation;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
+using System.Threading;
 
 namespace K9.WebApplication.Models
 {
@@ -19,7 +20,9 @@ namespace K9.WebApplication.Models
 
         public double DonationAmountInCents => DonationAmount * 100;
 
-        public string LocalisedCurrencyThreeLetters => new RegionInfo(System.Threading.Thread.CurrentThread.CurrentUICulture.LCID).ISOCurrencySymbol;
+        public string LocalisedCurrencyThreeLetters => new RegionInfo(Thread.CurrentThread.CurrentUICulture.LCID).ISOCurrencySymbol;
+
+        public string Locale => Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
 
         public string Description { get; set; }
         
