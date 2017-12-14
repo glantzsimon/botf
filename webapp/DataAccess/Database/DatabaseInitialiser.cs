@@ -9,7 +9,7 @@ namespace K9.DataAccessLayer.Database
 		{
             base.Seed(db);
 
-			SchoolSeeder.SeedSchool(db);
+			PermissionsSeeder.Seed(db);
 		}
 	}
 }

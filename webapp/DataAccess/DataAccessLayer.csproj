@@ -151,11 +151,8 @@
   <ItemGroup>
     <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
-    <Compile Include="Database\Seeds\SchoolSeeder.cs" />
-    <Compile Include="Models\Course.cs" />
-    <Compile Include="Models\Enrollment.cs" />
+    <Compile Include="Database\Seeds\UsersAndRolesSeeder.cs" />
     <Compile Include="Models\Donation.cs" />
-    <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

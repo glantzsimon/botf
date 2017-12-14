@@ -3,10 +3,12 @@ using K9.Base.DataAccessLayer.Models;
 using System;
 using System.ComponentModel.DataAnnotations;
 using K9.Base.Globalisation;
+using K9.SharedLibrary.Authentication;
 
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
+    [DefaultPermissions(Role = RoleNames.Administrators)]
     [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Donations, PluralName = Globalisation.Strings.Names.Donations)]
     public class Donation : ObjectBase
 	{
