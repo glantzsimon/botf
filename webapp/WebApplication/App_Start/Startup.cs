@@ -69,17 +69,13 @@ namespace K9.WebApplication
 
         public static void RegisterConfiguration(ContainerBuilder builder)
         {
-#if Production
-            var jsonFile = "Config/appsettings.prod.json";
-#else
             var jsonFile = "Config/appsettings.json";
-#endif
             var json = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, jsonFile));
 
             builder.Register(c => ConfigHelper.GetConfiguration<SmtpConfiguration>(json)).SingleInstance();
             builder.Register(c => ConfigHelper.GetConfiguration<DatabaseConfiguration>(json)).SingleInstance();
             builder.Register(c => ConfigHelper.GetConfiguration<OAuthConfiguration>(json)).SingleInstance();
-            builder.Register(c => ConfigHelper.GetConfiguration<StripeConfiguration>(json)).SingleInstance();
+            builder.Register(c => ConfigHelper.GetConfiguration<StripeConfiguration>(ConfigurationManager.AppSettings)).SingleInstance();
 
             var websiteConfig = ConfigHelper.GetConfiguration<WebsiteConfiguration>(json);
             builder.Register(c => websiteConfig).SingleInstance();
