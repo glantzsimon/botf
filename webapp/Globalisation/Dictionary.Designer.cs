@@ -267,6 +267,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Donation.
+        /// </summary>
+        public static string Donation {
+            get {
+                return ResourceManager.GetString("Donation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to How much would you like to donate?.
         /// </summary>
         public static string DonationAmountLabel {
@@ -293,22 +302,21 @@ namespace K9.Globalisation {
         ///&lt;/head&gt;
         ///
         ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    html
-        ///    {
+        ///    html {
         ///        margin: 0;
-        ///		padding: 0;
-        ///		font-family: &quot;Segoe UI&quot; , Verdana, Helvetica, Sans-Serif;
-        ///		font-size: 100%;
-        ///		text-rendering: optimizeLegibility !important;
-        ///		-webkit-font-smoothing: antialiased !important;
-        ///        margin: 0; 
+        ///        padding: 0;
+        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
+        ///        font-size: 100%;
+        ///        text-rendering: optimizeLegibility !important;
+        ///        -webkit-font-smoothing: antialiased !important;
+        ///        margin: 0;
         ///        color: #333;
         ///    }
         ///&lt;/style&gt;
         ///
         ///&lt;body&gt;
         ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;We have received a donation from {Customer} [rest of string was truncated]&quot;;.
+        ///    &lt;p class=&quot;text&quot;&gt;We have received a d [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DonationReceivedEmail {
             get {

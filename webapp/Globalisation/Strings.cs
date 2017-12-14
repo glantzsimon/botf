@@ -15,6 +15,7 @@
 
         public static class Names
         {
+            public const string Donation = "Donation";
             public const string Donations = "Donations";
         }
     }
