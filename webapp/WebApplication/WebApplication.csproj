@@ -344,6 +344,7 @@
     <Content Include="Images\background\etats-lieux\gabon-elephant.jpg" />
     <Content Include="Images\background\slides\gabon_forest3.jpg" />
     <Content Include="Images\company\botf_logo_default_small_inv.png" />
+    <Content Include="Images\company\botf_logo_med.png" />
     <Content Include="Images\company\botf_med.png" />
     <Content Include="Images\company\botf_logo_small_inverted.png" />
     <Content Include="Images\company\botf_new_med.png" />
