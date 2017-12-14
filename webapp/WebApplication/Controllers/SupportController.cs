@@ -100,7 +100,7 @@ namespace K9.WebApplication.Controllers
                 _stripeService.Charge(model);
                 _donationService.CreateDonation(new Donation
                 {
-                    Currency = model.LocalisedCurrencySymbol,
+                    Currency = model.LocalisedCurrencyThreeLetters,
                     Customer = model.StripeBillingName,
                     CustomerEmail = model.StripeEmail,
                     DonationDescription = model.Description,

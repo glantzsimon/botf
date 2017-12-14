@@ -21,7 +21,7 @@ namespace K9.WebApplication.Services
             {
                 Amount = (int)model.DonationAmountInCents,
                 Description = model.Description,
-                Currency = model.LocalisedCurrencySymbol,
+                Currency = model.LocalisedCurrencyThreeLetters,
                 CustomerId = customer.Id
             });
         }

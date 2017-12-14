@@ -19,7 +19,7 @@ namespace K9.WebApplication.Models
 
         public double DonationAmountInCents => DonationAmount * 100;
 
-        public string LocalisedCurrencySymbol => new RegionInfo(System.Threading.Thread.CurrentThread.CurrentUICulture.LCID).ISOCurrencySymbol;
+        public string LocalisedCurrencyThreeLetters => new RegionInfo(System.Threading.Thread.CurrentThread.CurrentUICulture.LCID).ISOCurrencySymbol;
 
         public string Description { get; set; }
         
