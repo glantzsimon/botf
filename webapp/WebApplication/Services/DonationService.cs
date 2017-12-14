@@ -39,7 +39,7 @@ namespace K9.WebApplication.Services
                     donation.CustomerEmail,
                     Amount = donation.DonationAmount,
                     donation.Currency,
-                    LinkToSummary = _urlHelper.AsboluteAction("Inde", "Donations"),
+                    LinkToSummary = _urlHelper.AsboluteAction("Index", "Donations"),
                     Company = _config.CompanyName,
                     ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
                 }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
