@@ -334,6 +334,21 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h3&gt;Your generosity well help us to fund:&lt;/h3&gt;
+        ///
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;The tools necessary for the upkeep of the village plantations (wheelbarrow, brush cutters, machetes, axes, watering cans, etc.),&lt;/li&gt;
+        ///    &lt;li&gt;the living wages of the villagers maintaining the plantations (15 euros per week per person)&lt;/li&gt;
+        ///    &lt;li&gt;Proper administration of village associations dedicated to permaculture&lt;/li&gt;
+        ///    &lt;li&gt;Gabonese lawyers working on the creation of a legal framework for the conservation and sustainable use of Iboga&lt; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string donations_text {
+            get {
+                return ResourceManager.GetString("donations_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your donation was received. Thank you!.
         /// </summary>
         public static string DonationSuccessful {

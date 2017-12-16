@@ -42,6 +42,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult ContactUs(ContactUsViewModel model)
         {
             try
@@ -78,6 +79,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Donate(StripeModel model)
         {
             model.PublishableKey = _stripeConfig.PublishableKey;
@@ -92,6 +94,7 @@ namespace K9.WebApplication.Controllers
 
         [HttpPost]
         [Route("donate/processing")]
+        [ValidateAntiForgeryToken]
         public ActionResult DonateProcess(StripeModel model)
         {
             try

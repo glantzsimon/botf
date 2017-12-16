@@ -10,9 +10,9 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        <p>
-            @K9.Globalisation.Dictionary.DonationBlurb
-        </p>
+        <div class="donations">
+            @MvcHtmlString.Create(K9.Globalisation.Dictionary.donations_text)
+        </div>
         <hr/>
 
         @Html.BootstrapEditorFor(model => model.DonationAmount)

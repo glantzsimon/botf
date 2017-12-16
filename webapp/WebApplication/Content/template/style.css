@@ -132,7 +132,7 @@ body {
         line-height: 1.7em;
     }
 
-    .main-section ul li {
+    .main-section ul li, .donations ul li {
         display: block;
         margin-bottom: 20px;
         font-size: .9em;
@@ -339,7 +339,7 @@ button.btn1:hover {
     font-family: Roboto;
 }
 
-.projects ul li {
+.projects ul li, .donations ul li {
     line-height: 1.8em !important;
     font-family: Roboto;
 }
