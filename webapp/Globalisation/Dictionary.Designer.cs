@@ -334,13 +334,13 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h3&gt;Your generosity well help us to fund:&lt;/h3&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;&lt;strong&gt;Your generosity well help to fund:&lt;/strong&gt;&lt;/h4&gt;
+        ///&lt;br /&gt;
         ///
         ///&lt;ul&gt;
-        ///    &lt;li&gt;The tools necessary for the upkeep of the village plantations (wheelbarrow, brush cutters, machetes, axes, watering cans, etc.),&lt;/li&gt;
-        ///    &lt;li&gt;the living wages of the villagers maintaining the plantations (15 euros per week per person)&lt;/li&gt;
-        ///    &lt;li&gt;Proper administration of village associations dedicated to permaculture&lt;/li&gt;
-        ///    &lt;li&gt;Gabonese lawyers working on the creation of a legal framework for the conservation and sustainable use of Iboga&lt; [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; The tools necessary for the upkeep of the village plantations (wheelbarrow, brush cutters, machetes, axes, watering cans, etc.),&lt;/li&gt;
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; The living wages of the villagers maintaining the plantations (15 euros per week per person)&lt;/li&gt;
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Proper administra [rest of string was truncated]&quot;;.
         /// </summary>
         public static string donations_text {
             get {
@@ -507,6 +507,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Laurent Sazy.
+        /// </summary>
+        public static string LaurentSazy {
+            get {
+                return ResourceManager.GetString("LaurentSazy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loading....
         /// </summary>
         public static string Loading {
@@ -621,6 +630,15 @@ namespace K9.Globalisation {
         public static string PasswordResetEmail {
             get {
                 return ResourceManager.GetString("PasswordResetEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Photos by.
+        /// </summary>
+        public static string PhotographyBy {
+            get {
+                return ResourceManager.GetString("PhotographyBy", resourceCulture);
             }
         }
         

@@ -736,6 +736,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Options\" />
     <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
@@ -961,6 +962,7 @@
     <Content Include="Views\Donations\Details.cshtml" />
     <Content Include="Views\Donations\Edit.cshtml" />
     <Content Include="Views\Donations\Index.cshtml" />
+    <Content Include="Views\Shared\_PhotosBy.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

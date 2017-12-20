@@ -313,4 +313,10 @@
   <data name="donations_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>text\fr\donations-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="LaurentSazy" xml:space="preserve">
+    <value>Laurent Sazy</value>
+  </data>
+  <data name="PhotographyBy" xml:space="preserve">
+    <value>Photos par</value>
+  </data>
 </root>
