@@ -10,13 +10,12 @@
 {
     using (Html.BeginBootstrapForm())
     {
+        @Html.BootstrapEditorFor(model => model.DonationAmount)
+        @Html.BootstrapButton(Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
+
+        <hr />
         <div class="donations">
             @MvcHtmlString.Create(K9.Globalisation.Dictionary.donations_text)
         </div>
-        <hr/>
-
-        @Html.BootstrapEditorFor(model => model.DonationAmount)
-        <hr/>
-        @Html.BootstrapButton(Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
     }
 }
