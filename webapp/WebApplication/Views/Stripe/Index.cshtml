@@ -1,0 +1,21 @@
+﻿@using K9.Base.WebApplication.Controllers
+@using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Authentication
+@using K9.WebApplication.Services.Stripe
+@model K9.WebApplication.Services.Stripe.Charge
+@{
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+@Html.BootstrapTable(new DataTableOptions<Charge>
+{
+    AllowCreate = false,
+    AllowEdit = false,
+    AllowDelete = false,
+    VisibleColumns = new List<string>
+    {
+        "DonatedOn",
+        "DonationAmount",
+        "Currency",
+        "Customer"
+    }
+})

@@ -20,6 +20,7 @@ using System.Configuration;
 using System.Data.Entity;
 using System.IO;
 using System.Web.Mvc;
+using K9.WebApplication.Services.Stripe;
 
 namespace K9.WebApplication
 {

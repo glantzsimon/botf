@@ -1,10 +1,18 @@
-﻿using K9.WebApplication.Models;
+﻿using K9.SharedLibrary.Models;
+using K9.WebApplication.Models;
 using Stripe;
 
-namespace K9.WebApplication.Services
+namespace K9.WebApplication.Services.Stripe
 {
     public class StripeService : IStripeService
     {
+        private readonly Config.StripeConfiguration _stripeConfig;
+
+        public StripeService(IOptions<Config.StripeConfiguration> stripeConfig)
+        {
+            _stripeConfig = stripeConfig.Value;
+        }
+
         public void Charge(StripeModel model)
         {
             var customers = new StripeCustomerService();
@@ -24,6 +32,19 @@ namespace K9.WebApplication.Services
                 Currency = model.LocalisedCurrencyThreeLetters,
                 CustomerId = customer.Id
             });
+        }
+
+        public StripeList<StripeCharge> GetCharges()
+        {
+            StripeConfiguration.SetApiKey(_stripeConfig.SecretKey);
+
+            var chargeService = new StripeChargeService();
+            return chargeService.List(
+                new StripeChargeListOptions()
+                {
+                    Limit = 3
+                }
+            );
         }
     }
 }

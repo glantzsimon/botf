@@ -12,6 +12,7 @@ using NLog;
 using System;
 using System.Web.Mvc;
 using K9.DataAccessLayer.Models;
+using K9.WebApplication.Services.Stripe;
 
 namespace K9.WebApplication.Controllers
 {

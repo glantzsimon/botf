@@ -1,17 +1,17 @@
 ﻿using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.UnitsOfWork;
-using K9.DataAccessLayer.Models;
 using K9.WebApplication.Services.Stripe;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
     [Authorize]
-    public class DonationsController : BaseController<Donation>
+    [Route("donations/list")]
+    public class StripeController : BaseController<Charge>
     {
         private readonly IStripeService _stripeService;
 
-        public DonationsController(IControllerPackage<Donation> controllerPackage, IStripeService stripeService)
+        public StripeController(IControllerPackage<Charge> controllerPackage, IStripeService stripeService)
             : base(controllerPackage)
         {
             _stripeService = stripeService;

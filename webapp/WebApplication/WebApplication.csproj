@@ -228,6 +228,7 @@
     <Compile Include="Constants\ViewDataConstants.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\AccountControllerAjax.cs" />
+    <Compile Include="Controllers\StripeController.cs" />
     <Compile Include="Controllers\DonationsController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
@@ -250,14 +251,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Dynamic.cs" />
     <Compile Include="Helpers\Separator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IShopService.cs" />
     <Compile Include="Services\IDonationService.cs" />
     <Compile Include="Services\ShopService.cs" />
-    <Compile Include="Services\IStripeService.cs" />
+    <Compile Include="Services\Stripe\StripeCharge.cs" />
+    <Compile Include="Services\Stripe\IStripeService.cs" />
     <Compile Include="Services\DonationService.cs" />
-    <Compile Include="Services\StripeService.cs" />
+    <Compile Include="Services\Stripe\StripeRepository.cs" />
+    <Compile Include="Services\Stripe\StripeService.cs" />
     <Compile Include="Models\StripeModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -963,6 +967,7 @@
     <Content Include="Views\Donations\Edit.cshtml" />
     <Content Include="Views\Donations\Index.cshtml" />
     <Content Include="Views\Shared\_PhotosBy.cshtml" />
+    <Content Include="Views\Stripe\Index.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
