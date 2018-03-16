@@ -1,0 +1,36 @@
+﻿@using System.Globalization
+@using K9.SharedLibrary.Extensions
+@using K9.SharedLibrary.Helpers.Html
+@model List<K9.WebApplication.Models.DonationItem>
+@{
+    Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+
+<div>
+    @Html.Raw(Model.ToHtmlTable())
+</div>
+
+<script type="text/javascript">
+    $("table.k9-datatable").DataTable({
+        "stateSave": true,
+        "colReorder": true,
+        "autoWidth": true,
+        "searching": false,
+        "aLengthMenu": [[25, 50, 75, -1], [25, 50, 75, "100+"]],
+        "iDisplayLength": -1,
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/@string.Format("{0}.json", CultureInfo.CurrentUICulture.GetLocaleLanguage())"
+        },
+        "order": [[5, "desc"]],
+        "columnDefs": [
+            {
+                "type": "date",
+                "targets": 6
+            },
+            {
+                "targets": [ 4,5 ],
+                "visible": false
+            }
+        ]
+    });
+</script>

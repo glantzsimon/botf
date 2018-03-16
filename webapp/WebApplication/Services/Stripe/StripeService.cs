@@ -42,7 +42,7 @@ namespace K9.WebApplication.Services.Stripe
             return chargeService.List(
                 new StripeChargeListOptions()
                 {
-                    Limit = 3
+                    Limit = 30
                 }
             );
         }
