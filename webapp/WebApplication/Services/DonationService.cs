@@ -68,7 +68,7 @@ namespace K9.WebApplication.Services
                     DonationDescription = c.Description + (c.Refunded ? " (refunded)" : ""),
                     Date = c.Created,
                     DonationAmount =  (c.Amount / 100) * (c.Refunded ? -1 : 1)
-                }).ToList();
+                }).OrderBy(d => d.Date).ToList();
         }
     }
 }
