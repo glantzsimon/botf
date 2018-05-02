@@ -675,6 +675,7 @@
     <Content Include="Images\shared\blessings_loader.gif" />
     <Content Include="Images\shared\botf_logo_animated.gif" />
     <Content Include="Images\team\david.jpg" />
+    <Content Include="Images\team\george.jpg" />
     <Content Include="Images\team\laurent.jpg" />
     <Content Include="Images\team\simon.jpg" />
     <Content Include="Images\team\yann.jpg" />

@@ -11,9 +11,9 @@
             <h3>@Dictionary.OurTeam</h3>
         </div>
         <div>
-            <div class="col-md-4 col-xs-4 team-grids">
+            <div class="col-md-3 col-xs-6 team-grids">
                 <div class="team-agileimg">
-                    <img class="img-responsive" src="~/Images/team/yann.jpg" alt="">
+                    <img class="img-responsive" src="~/Images/team/yann2.jpg" alt="">
                     <div class="captn">
                         <div class="captn-top">
                             <h4 class="display-article" data-team-member="yann">Yann Guignon</h4>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-xs-4 team-grids">
+            <div class="col-md-3 col-xs-6 team-grids">
                 <div class="team-agileimg">
                     <img class="img-responsive" src="~/Images/team/david.jpg" alt="">
                     <div class="captn">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-xs-4 team-grids">
+            <div class="col-md-3 col-xs-6 team-grids">
                 <div class="team-agileimg">
                     <img class="img-responsive" src="~/Images/team/laurent.jpg" alt="">
                     <div class="captn">
@@ -63,13 +63,13 @@
                     </div>
                 </div>
             </div>
-            @*<div class="col-md-3 col-xs-6 team-grids">
+            <div class="col-md-3 col-xs-6 team-grids">
                 <div class="team-agileimg">
-                    <img class="img-responsive" src="~/Images/team/simon.jpg" alt="">
+                    <img class="img-responsive" src="~/Images/team/george.jpg" alt="">
                     <div class="captn">
                         <div class="captn-top">
-                            <h4 class="display-article" data-team-member="simon">Simon Glantz</h4>
-                            <p>@MvcHtmlString.Create(K9.Globalisation.Dictionary.simon_title)</p>
+                            <h4 class="display-article" data-team-member="george">George Gassita</h4>
+                            <p>@MvcHtmlString.Create(K9.Globalisation.Dictionary.george_title)</p>
                         </div>
                         <div class="social-w3lsicon agileinfo-social-grids">
                             <ul>
@@ -79,7 +79,24 @@
                         </div>
                     </div>
                 </div>
-            </div>*@
+            </div>
+            @*<div class="col-md-3 col-xs-6 team-grids">
+                    <div class="team-agileimg">
+                        <img class="img-responsive" src="~/Images/team/simon.jpg" alt="">
+                        <div class="captn">
+                            <div class="captn-top">
+                                <h4 class="display-article" data-team-member="simon">Simon Glantz</h4>
+                                <p>@MvcHtmlString.Create(K9.Globalisation.Dictionary.simon_title)</p>
+                            </div>
+                            <div class="social-w3lsicon agileinfo-social-grids">
+                                <ul>
+                                    <li><a target="_blank" href="https://www.facebook.com/peaceful.drwyd"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a target="_blank" href="mailto:simon@vibranthealthnow.co.uk"><i class="fa fa-envelope-o"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
             <div class="clearfix"> </div>
         </div>
         <div class="container">
@@ -98,9 +115,9 @@
                     @MvcHtmlString.Create(K9.Globalisation.Dictionary.laurent_text)
                 </article>
             </div>
-            <div class="sub-section display-none" id="simon">
+            <div class="sub-section display-none" id="george">
                 <article>
-                    @MvcHtmlString.Create(K9.Globalisation.Dictionary.simon_text)
+                    @MvcHtmlString.Create(K9.Globalisation.Dictionary.george_text)
                 </article>
             </div>
         </div>
@@ -109,8 +126,10 @@
 
 @section scripts {
     <script language="javascript">
-        $(function () {
-            $("h4.display-article").click(function () {
+        $(function ()
+        {
+            $("h4.display-article").click(function ()
+            {
                 $("div.sub-section").hide();
                 var teamMember = $(this).attr("data-team-member");
                 var article = $("div#" + teamMember);

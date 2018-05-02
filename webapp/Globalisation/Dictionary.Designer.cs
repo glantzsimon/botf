@@ -334,7 +334,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;&lt;strong&gt;Your generosity well help to fund:&lt;/strong&gt;&lt;/h4&gt;
+        ///   Looks up a localized string similar to &lt;h4&gt;&lt;strong&gt;Your generosity will help to fund:&lt;/strong&gt;&lt;/h4&gt;
         ///&lt;br /&gt;
         ///
         ///&lt;ul&gt;
@@ -429,6 +429,24 @@ namespace K9.Globalisation {
         public static string etats_des_lieux_title {
             get {
                 return ResourceManager.GetString("etats_des_lieux_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Software developer, holistic nutritionist and health coach.
+        /// </summary>
+        public static string george_text {
+            get {
+                return ResourceManager.GetString("george_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Software developer, holistic nutritionist and health coach.
+        /// </summary>
+        public static string george_title {
+            get {
+                return ResourceManager.GetString("george_title", resourceCulture);
             }
         }
         
