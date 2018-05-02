@@ -1,6 +1,9 @@
-﻿using K9.SharedLibrary.Models;
+﻿using K9.DataAccessLayer.Models;
+using K9.SharedLibrary.Models;
 using K9.WebApplication.Models;
 using Stripe;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace K9.WebApplication.Services.Stripe
 {
@@ -45,6 +48,21 @@ namespace K9.WebApplication.Services.Stripe
                     Limit = 30
                 }
             );
+        }
+
+        public List<Donation> GetDonations()
+        {
+            return GetCharges().Select(c =>
+                new Donation
+                {
+                    StripeId = c.Id,
+                    Customer = c.Customer?.Description ?? c.Source?.Card?.Name,
+                    Currency = c.Currency.ToUpper(),
+                    CustomerEmail = c.Customer?.Email,
+                    DonationDescription = c.Description + (c.Refunded ? " (refunded)" : ""),
+                    DonatedOn = c.Created,
+                    DonationAmount = (c.Amount / 100) * (c.Refunded ? -1 : 1)
+                }).ToList();
         }
     }
 }

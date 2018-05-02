@@ -10,6 +10,8 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Donations, PluralName = Globalisation.Strings.Names.Donations, Name = Globalisation.Strings.Names.Donation)]
     public class Donation : ObjectBase
 	{
+	    public string StripeId { get; set; }
+
         [Required]
 		[StringLength(128)]
 		[Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CustomerLabel)]

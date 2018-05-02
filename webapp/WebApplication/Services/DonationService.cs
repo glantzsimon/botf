@@ -3,12 +3,9 @@ using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
-using K9.WebApplication.Models;
 using K9.WebApplication.Services.Stripe;
 using NLog;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
@@ -54,21 +51,6 @@ namespace K9.WebApplication.Services
             {
                 _logger.Error($"DonationService => CreateDonation => {ex.Message}");
             }
-        }
-
-        public List<DonationItem> GetLiveFeed()
-        {
-            var stripeCharges = _stripeService.GetCharges();
-            return stripeCharges.Select(c =>
-                new DonationItem
-                {
-                    Customer = c.Customer?.Description ?? c.Source?.Card?.Name,
-                    Currency = c.Currency.ToUpper(),
-                    CustomerEmail = c.Customer?.Email,
-                    DonationDescription = c.Description + (c.Refunded ? " (refunded)" : ""),
-                    Date = c.Created,
-                    DonationAmount =  (c.Amount / 100) * (c.Refunded ? -1 : 1)
-                }).OrderBy(d => d.Date).ToList();
         }
     }
 }

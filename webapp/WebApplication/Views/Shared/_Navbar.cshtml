@@ -26,7 +26,7 @@
                     }
                     @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<Donation>(Permissions.View))
                     {
-                        <li class="@ViewContext.GetActiveClass("Index", "Donations") sub-item"><a href="@Url.Action("LiveFeed", "Donations")">@K9.Globalisation.Dictionary.Donations</a></li>
+                        <li class="@ViewContext.GetActiveClass("Index", "Donations") sub-item"><a href="@Url.Action("Index", "Donations")">@K9.Globalisation.Dictionary.Donations</a></li>
                     }
                     @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
                     {
@@ -86,4 +86,4 @@
 </div>
 <div id="main-menu-spacer">
     &nbsp;
-</div>
+</div> 

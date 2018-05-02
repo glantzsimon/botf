@@ -14,13 +14,15 @@ using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Services;
+using K9.WebApplication.Services.Stripe;
 using NLog;
 using System;
 using System.Configuration;
 using System.Data.Entity;
 using System.IO;
+using System.Web.Hosting;
 using System.Web.Mvc;
-using K9.WebApplication.Services.Stripe;
+using K9.DataAccessLayer.Models;
 
 namespace K9.WebApplication
 {
@@ -61,6 +63,13 @@ namespace K9.WebApplication
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
+            using (var scope = container.BeginLifetimeScope("AutofacWebRequest"))
+            {
+                HostingEnvironment.RegisterObject(new JobScheduler(
+                    scope.Resolve<IOptions<TaskConfiguration>>(),
+                    scope.Resolve<IStripeService>()));
+            }
         }
 
         public static void RegisterStaticTypes()
@@ -76,6 +85,7 @@ namespace K9.WebApplication
             builder.Register(c => ConfigHelper.GetConfiguration<SmtpConfiguration>(json)).SingleInstance();
             builder.Register(c => ConfigHelper.GetConfiguration<DatabaseConfiguration>(json)).SingleInstance();
             builder.Register(c => ConfigHelper.GetConfiguration<OAuthConfiguration>(json)).SingleInstance();
+            builder.Register(c => ConfigHelper.GetConfiguration<TaskConfiguration>(json)).SingleInstance();
             builder.Register(c => ConfigHelper.GetConfiguration<StripeConfiguration>(ConfigurationManager.AppSettings)).SingleInstance();
 
             var websiteConfig = ConfigHelper.GetConfiguration<WebsiteConfiguration>(json);
