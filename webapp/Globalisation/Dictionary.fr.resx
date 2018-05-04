@@ -325,4 +325,19 @@
   <data name="george_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\george-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="hubert_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\hubert-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="hubert_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\hubert-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="josephine_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\josephine-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="jeannoel_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\jeannoel-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="jeannoel_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\jeannoel-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

@@ -433,7 +433,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Software developer, holistic nutritionist and health coach.
+        ///   Looks up a localized string similar to &lt;h5&gt;George is passionate about the area of environmental and heritage conservation.&lt;/h5&gt;
+        ///&lt;p&gt;He is the grandson and spiritual heir of Professor Jean Noël Gassita, international authority on the scientific research on Iboga.&lt;/p&gt;.
         /// </summary>
         public static string george_text {
             get {
@@ -442,11 +443,38 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Software developer, holistic nutritionist and health coach.
+        ///   Looks up a localized string similar to Environmental lawyer in charge of legal studies of Blessings of The Forest in Gabon.
         /// </summary>
         public static string george_title {
             get {
                 return ResourceManager.GetString("george_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;Manager of a community forest of 14 000 hectares known for being the &quot;best managed in Gabon&quot;.&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    In charge of the first pilot iboga plantation site as well as other plants used medicinally, in cosmetcis or as food.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Expert in agroforestry and beekeeping.
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Master Initiator of Fang Bwiti (Ceremony &quot;Mbiri&quot; - Branch &quot;Mimbara&quot;).
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string hubert_text {
+            get {
+                return ResourceManager.GetString("hubert_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to President of the Village Association A2E (Gabon - Ogooué Ivindo), partner of Blessings Of The Forest.
+        /// </summary>
+        public static string hubert_title {
+            get {
+                return ResourceManager.GetString("hubert_title", resourceCulture);
             }
         }
         
@@ -490,6 +518,39 @@ namespace K9.Globalisation {
         public static string iboga_title2 {
             get {
                 return ResourceManager.GetString("iboga_title2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Doyen des pharmaciens du Gabon et de la recherche mondiale sur l&apos;iboga
+        ///&lt;/p&gt;
+        ///&lt;p&gt;
+        ///    Spécialiste des plantes tropicales et médecines traditionnelles.
+        ///&lt;/p&gt;
+        ///.
+        /// </summary>
+        public static string jeannoel_text {
+            get {
+                return ResourceManager.GetString("jeannoel_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Président d&apos;honneur de BOTF Gabon.
+        /// </summary>
+        public static string jeannoel_title {
+            get {
+                return ResourceManager.GetString("jeannoel_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Accountant, Blessings Of The Forest, Gabon.
+        /// </summary>
+        public static string josephine_title {
+            get {
+                return ResourceManager.GetString("josephine_title", resourceCulture);
             }
         }
         

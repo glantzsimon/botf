@@ -47,6 +47,23 @@
             </div>
             <div class="col-md-3 col-xs-6 team-grids">
                 <div class="team-agileimg">
+                    <img class="img-responsive" src="~/Images/team/george.jpg" alt="">
+                    <div class="captn">
+                        <div class="captn-top">
+                            <h4 class="display-article" data-team-member="george">George Gassita</h4>
+                            <p>@MvcHtmlString.Create(K9.Globalisation.Dictionary.george_title)</p>
+                        </div>
+                        <div class="social-w3lsicon agileinfo-social-grids">
+                            <ul>
+                                @*<li><a target="_blank" href="https://www.facebook.com/peaceful.drwyd"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a target="_blank" href="mailto:simon@vibranthealthnow.co.uk"><i class="fa fa-envelope-o"></i></a></li>*@
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6 team-grids">
+                <div class="team-agileimg">
                     <img class="img-responsive" src="~/Images/team/laurent.jpg" alt="">
                     <div class="captn">
                         <div class="captn-top">
@@ -63,13 +80,44 @@
                     </div>
                 </div>
             </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="margin-top-15">
             <div class="col-md-3 col-xs-6 team-grids">
                 <div class="team-agileimg">
-                    <img class="img-responsive" src="~/Images/team/george.jpg" alt="">
+                    <img class="img-responsive" src="~/Images/team/josephine.jpg" alt="">
                     <div class="captn">
                         <div class="captn-top">
-                            <h4 class="display-article" data-team-member="george">George Gassita</h4>
-                            <p>@MvcHtmlString.Create(K9.Globalisation.Dictionary.george_title)</p>
+                            <h4 class="" data-team-member="josephine">Joséphine Engoulou</h4>
+                            <p>@MvcHtmlString.Create(K9.Globalisation.Dictionary.josephine_title)</p>
+                        </div>
+                        <div class="social-w3lsicon agileinfo-social-grids">
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6 team-grids">
+                <div class="team-agileimg">
+                    <img class="img-responsive" src="~/Images/team/hubert.jpg" alt="">
+                    <div class="captn">
+                        <div class="captn-top">
+                            <h4 class="display-article" data-team-member="hubert">Hubert Bled ELIE NLOH</h4>
+                            <p>@MvcHtmlString.Create(K9.Globalisation.Dictionary.hubert_title)</p>
+                        </div>
+                        <div class="social-w3lsicon agileinfo-social-grids">
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6 team-grids">
+                <div class="team-agileimg">
+                    <img class="img-responsive" src="~/Images/team/simon.jpg" alt="">
+                    <div class="captn">
+                        <div class="captn-top">
+                            <h4 class="display-article" data-team-member="simon">Simon Glantz</h4>
+                            <p>@MvcHtmlString.Create(K9.Globalisation.Dictionary.simon_title)</p>
                         </div>
                         <div class="social-w3lsicon agileinfo-social-grids">
                             <ul>
@@ -80,26 +128,24 @@
                     </div>
                 </div>
             </div>
-            @*<div class="col-md-3 col-xs-6 team-grids">
-                    <div class="team-agileimg">
-                        <img class="img-responsive" src="~/Images/team/simon.jpg" alt="">
-                        <div class="captn">
-                            <div class="captn-top">
-                                <h4 class="display-article" data-team-member="simon">Simon Glantz</h4>
-                                <p>@MvcHtmlString.Create(K9.Globalisation.Dictionary.simon_title)</p>
-                            </div>
-                            <div class="social-w3lsicon agileinfo-social-grids">
-                                <ul>
-                                    <li><a target="_blank" href="https://www.facebook.com/peaceful.drwyd"><i class="fa fa-facebook"></i></a></li>
-                                    <li><a target="_blank" href="mailto:simon@vibranthealthnow.co.uk"><i class="fa fa-envelope-o"></i></a></li>
-                                </ul>
-                            </div>
+            <div class="col-md-3 col-xs-6 team-grids">
+                <div class="team-agileimg">
+                    <img class="img-responsive" src="~/Images/team/jeannoel.jpg" alt="">
+                    <div class="captn">
+                        <div class="captn-top">
+                            <h4 class="display-article" data-team-member="jeannoel">Professeur Jean Noël Gassita</h4>
+                            <p>@MvcHtmlString.Create(K9.Globalisation.Dictionary.simon_title)</p>
+                        </div>
+                        <div class="social-w3lsicon agileinfo-social-grids">
+                            <ul>
+                            </ul>
                         </div>
                     </div>
-                </div>*@
+                </div>
+            </div>
             <div class="clearfix"> </div>
         </div>
-        <div class="container">
+        <div class="container" id="profile-description-container">
             <div class="sub-section display-none" id="yann">
                 <article>
                     @MvcHtmlString.Create(K9.Globalisation.Dictionary.yann_text)
@@ -115,9 +161,23 @@
                     @MvcHtmlString.Create(K9.Globalisation.Dictionary.laurent_text)
                 </article>
             </div>
+            <div class="sub-section display-none" id="simon">
+                <article>
+                    @MvcHtmlString.Create(K9.Globalisation.Dictionary.simon_text)
+                </article>
+            </div>
             <div class="sub-section display-none" id="george">
                 <article>
                     @MvcHtmlString.Create(K9.Globalisation.Dictionary.george_text)
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                </article>
+            </div>
+            <div class="sub-section display-none" id="hubert">
+                <article>
+                    @MvcHtmlString.Create(K9.Globalisation.Dictionary.hubert_text)
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
                 </article>
             </div>
         </div>
