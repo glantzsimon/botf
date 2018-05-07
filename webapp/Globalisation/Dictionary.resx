@@ -334,10 +334,34 @@
   <data name="hubert_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\hubert-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="hugues_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\hugues-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="hugues_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\hugues-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="jeannoel_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\jeannoel-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="jeannoel_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\jeannoel-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="marie_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\marie-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="marie_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\marie-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="quevain_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\quevain-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="quevain_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\quevain-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="rudy_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\rudy-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="rudy_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\en-gb\rudy-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

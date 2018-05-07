@@ -675,11 +675,15 @@
     <Content Include="Images\shared\blessings_loader.gif" />
     <Content Include="Images\shared\botf_logo_animated.gif" />
     <Content Include="Images\team\david.jpg" />
+    <Content Include="Images\team\gassita.jpg" />
     <Content Include="Images\team\george.jpg" />
     <Content Include="Images\team\hubert.jpg" />
-    <Content Include="Images\team\jeannoel.jpg" />
+    <Content Include="Images\team\hugues.jpg" />
     <Content Include="Images\team\josephine.jpg" />
     <Content Include="Images\team\laurent.jpg" />
+    <Content Include="Images\team\marie.jpg" />
+    <Content Include="Images\team\quevain.jpg" />
+    <Content Include="Images\team\rudy.jpg" />
     <Content Include="Images\team\simon.jpg" />
     <Content Include="Images\team\yann.jpg" />
     <Content Include="Images\team\yann2.jpg" />

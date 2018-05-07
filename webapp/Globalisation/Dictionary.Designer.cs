@@ -433,7 +433,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;George is passionate about the area of environmental and heritage conservation.&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;George Gassita is passionate about the area of environmental and heritage conservation.&lt;/h5&gt;
         ///&lt;p&gt;He is the grandson and spiritual heir of Professor Jean Noël Gassita, international authority on the scientific research on Iboga.&lt;/p&gt;.
         /// </summary>
         public static string george_text {
@@ -452,7 +452,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h5&gt;Manager of a community forest of 14 000 hectares known for being the &quot;best managed in Gabon&quot;.&lt;/h5&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Hubert Bled ELIE NLOH is manager of a community forest of 14 000 hectares known for being the &quot;best managed in Gabon&quot;.&lt;/h5&gt;
         ///&lt;p&gt;
         ///    In charge of the first pilot iboga plantation site as well as other plants used medicinally, in cosmetcis or as food.
         ///&lt;/p&gt;
@@ -475,6 +475,27 @@ namespace K9.Globalisation {
         public static string hubert_title {
             get {
                 return ResourceManager.GetString("hubert_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Hugues is Cultural Mediateur and sponsor/partner of Blessings Of The Forest
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;He is also Master Initiator of &quot;Mboma Na Ditsuala&quot; Bwiti&lt;/p&gt;.
+        /// </summary>
+        public static string hugues_text {
+            get {
+                return ResourceManager.GetString("hugues_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Founding presiden of the NGO &quot;Ebando&quot; (Gabon).
+        /// </summary>
+        public static string hugues_title {
+            get {
+                return ResourceManager.GetString("hugues_title", resourceCulture);
             }
         }
         
@@ -522,11 +543,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Doyen des pharmaciens du Gabon et de la recherche mondiale sur l&apos;iboga
-        ///&lt;/p&gt;
+        ///   Looks up a localized string similar to &lt;h5&gt;Professor Jean Noël Gassita is senior pharmacist of Gabon and world authority on Iboga research&lt;/h5&gt;
         ///&lt;p&gt;
-        ///    Spécialiste des plantes tropicales et médecines traditionnelles.
+        ///    Expert on tropical plants and traditional medicines
         ///&lt;/p&gt;
         ///.
         /// </summary>
@@ -537,7 +556,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Président d&apos;honneur de BOTF Gabon.
+        ///   Looks up a localized string similar to Honorary President of Blessings of The Forest, Gabon.
         /// </summary>
         public static string jeannoel_title {
             get {
@@ -627,6 +646,29 @@ namespace K9.Globalisation {
         public static string MakeDonation {
             get {
                 return ResourceManager.GetString("MakeDonation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Marie Lou Miboka is president of Blessings of The Forest, Gabon
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    Marie is a qualified nurse and maker of traditional Bantu / Pygmy jewellery. She is in charge of promoting and developing traditional arts and crafts and is leading projects focussed on bringing financial autonomy to the women of Gabon.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string marie_text {
+            get {
+                return ResourceManager.GetString("marie_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to President of Blessings of The Forest, Gabon.
+        /// </summary>
+        public static string marie_title {
+            get {
+                return ResourceManager.GetString("marie_title", resourceCulture);
             }
         }
         
@@ -767,6 +809,49 @@ namespace K9.Globalisation {
         public static string projects_short_term_title {
             get {
                 return ResourceManager.GetString("projects_short_term_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Quevain is the liaison officer with the Village Communities
+        ///&lt;/h5&gt;.
+        /// </summary>
+        public static string quevain_text {
+            get {
+                return ResourceManager.GetString("quevain_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project Coordinator of NGO &quot;Conservation Justice&quot; (Partner of Blessings Of The Forest, Gabon).
+        /// </summary>
+        public static string quevain_title {
+            get {
+                return ResourceManager.GetString("quevain_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h5&gt;
+        ///    Rudy is Treasurer of the NGO Ebando (Gabon)
+        ///&lt;/h5&gt;
+        ///&lt;p&gt;
+        ///    He is also Tree Nursery Project Coordinator of Blessings Of The Forest
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string rudy_text {
+            get {
+                return ResourceManager.GetString("rudy_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preacher and Bwiti Ngondé Therapist.
+        /// </summary>
+        public static string rudy_title {
+            get {
+                return ResourceManager.GetString("rudy_title", resourceCulture);
             }
         }
         
