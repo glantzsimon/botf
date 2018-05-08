@@ -847,7 +847,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Preacher and Bwiti Ngondé Therapist.
+        ///   Looks up a localized string similar to Fisherman and Bwiti Ngondé Therapist.
         /// </summary>
         public static string rudy_title {
             get {
@@ -881,6 +881,15 @@ namespace K9.Globalisation {
         public static string simon_title {
             get {
                 return ResourceManager.GetString("simon_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sponsor an Iboga Tree.
+        /// </summary>
+        public static string SponsorIbogaTree {
+            get {
+                return ResourceManager.GetString("SponsorIbogaTree", resourceCulture);
             }
         }
         

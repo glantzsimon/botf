@@ -639,6 +639,8 @@
     <Content Include="Images\iboga\1\aims1.jpg" />
     <Content Include="Images\iboga\1\aims2.jpg" />
     <Content Include="Images\iboga\1\aims3.jpg" />
+    <Content Include="Images\iboga\plant-a-tree-med.png" />
+    <Content Include="Images\iboga\plant-a-tree-small.png" />
     <Content Include="Images\iboga\plant-a-tree.png" />
     <Content Include="Images\icons\favicon.ico" />
     <Content Include="Images\latest\full-size\image1.jpg" />
@@ -984,6 +986,7 @@
     <Content Include="Views\Donations\Index.cshtml" />
     <Content Include="Views\Shared\_PhotosBy.cshtml" />
     <Content Include="Views\Shared\_FileSource - Copy.cshtml" />
+    <Content Include="Views\Shared\_PlantIbogaBanner.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

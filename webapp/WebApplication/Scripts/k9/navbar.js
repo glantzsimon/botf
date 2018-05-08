@@ -20,7 +20,7 @@ function navbar() {
 
     function init() {
         var logoDiv = $("div.default-logo");
-        var els = $("#main-logo-container, #main-menu-container, #main-banner, #bs-navbar-collapse-1");
+        var els = $("#main-logo-container, #main-menu-container, #main-banner, #bs-navbar-collapse-1, #plant-iboga-banner");
         var lastmainMenuTop = 0;
         $(window).scroll(function () {
             var mainMenuTop = $("#main-menu-container").offset().top;

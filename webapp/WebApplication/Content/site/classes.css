@@ -181,10 +181,77 @@ a#toTop {
     transition: all 1.5s ease-out;
 }
 
-a#toTop:hover {
-    color: #ff9800;   
-}
+    a#toTop:hover {
+        color: #ff9800;
+    }
 
 .hidden-date-field {
     opacity: 0;
+}
+
+div#plant-iboga-banner {
+    position: fixed;
+    left: 10px;
+    height: auto;
+    z-index: 50000;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+    div#plant-iboga-banner img.plant-iboga {
+        position: absolute;
+        z-index: 2;
+    }
+
+    div#plant-iboga-banner div.iboga-text-container {
+        position: relative;
+        z-index: 1;
+        top: 7px;
+        left: 110px;
+        height: 70px;
+        width: 240px;
+        margin-left: -20px;
+        margin-top: 10px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border: 3px solid #8e8e8e;
+        border-left: none;
+        background-color: white;
+        -moz-box-shadow: 3px 3px 10px -3px #222;
+        -webkit-box-shadow: 3px 3px 10px -3px #222;
+        box-shadow: 3px 3px 10px -3px #222;
+    }
+
+        div#plant-iboga-banner div.iboga-text-container div#iboga-text {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            margin: auto;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        div#plant-iboga-banner div.iboga-text-container div#close-banner {
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            width: 14px;
+            height: 14px;
+        }
+
+    div#plant-iboga-banner.menu-main {
+        top: 240px;
+    }
+
+    div#plant-iboga-banner.menu-small {
+        top: 160px;
+    }
+
+img.iboga-small {
+    display: none;
 }
