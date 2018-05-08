@@ -6,6 +6,7 @@ using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using NLog;
 using System;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
@@ -42,6 +43,11 @@ namespace K9.WebApplication.Services
             }
         }
 
+        public int GetNumberOfIbogasPlanted()
+        {
+            return _donationRepository.List().Sum(d => d.NumberOfIbogas);
+        }
+
         private void SendEmailToBotf(Donation donation)
         {
             var template = donation.NumberOfIbogas > 0
@@ -50,7 +56,7 @@ namespace K9.WebApplication.Services
             var title = donation.NumberOfIbogas > 0
                 ? "We have received a donation to sponsor an iboga tree!"
                 : "We have received a donation!";
-            _mailer.SendEmail("New Donation", TemplateProcessor.PopulateTemplate(template, new
+            _mailer.SendEmail(title, TemplateProcessor.PopulateTemplate(template, new
             {
                 Title = title,
                 donation.Customer,
@@ -67,7 +73,7 @@ namespace K9.WebApplication.Services
         private void SendEmailToCustomer(Donation donation)
         {
             var template = donation.NumberOfIbogas > 0
-                ? Dictionary.IbogaSponsoredEmail
+                ? Dictionary.SponsorThankYouEmail
                 : Dictionary.DonationThankYouEmail;
             var title = donation.NumberOfIbogas > 0
                 ? Dictionary.ThankyouForSponorEmailTitle

@@ -106,8 +106,22 @@
 	    $.fn.hideValidationWarningFor = function(field) {
 	        var validationSpan = $("span[data-valmsg-for='" + field + "']");
             validationSpan.removeClass("warning");
+        };
+
+	    $.fn.displayCounter = function(selector, max, duration) {
+	        $(selector).each(function () {
+	            $(this).prop("Counter",0).animate({
+	                Counter: max
+	            }, {
+                    duration: duration || 2000,
+	                easing: "swing",
+	                step: function (value) {
+                        $(this).text(Math.ceil(value));
+	                }
+	            });
+	        });
 	    };
-        
+
 		bootstrapControls({
 			language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
             dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()"

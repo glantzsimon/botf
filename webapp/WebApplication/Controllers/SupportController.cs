@@ -85,7 +85,7 @@ namespace K9.WebApplication.Controllers
             return View(new StripeModel
             {
                 NumberOfTrees = 1,
-                LocalisedCurrencyThreeLetters = "EUR"
+                LocalisedCurrencyThreeLetters = "EUR" // We need to fix the currency to sponsor a tree
             });
         }
 
@@ -104,7 +104,7 @@ namespace K9.WebApplication.Controllers
         {
             if (model.NumberOfTrees < 1)
             {
-                // Silly, but you never know
+                // Silly, but you never know - may as well procedd with minimum one
                 model.NumberOfTrees = 1;
             }
             model.PublishableKey = _stripeConfig.PublishableKey;
@@ -181,6 +181,12 @@ namespace K9.WebApplication.Controllers
             }
 
             return View("SponsorIboga", model);
+        }
+
+        [OutputCache(Duration = 600, VaryByParam = "none")]
+        public JsonResult GetNumberOfIbogasPlanted()
+        {
+            return Json(_donationService.GetNumberOfIbogasPlanted(), JsonRequestBehavior.AllowGet);
         }
 
         public override string GetObjectName()
