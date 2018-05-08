@@ -987,6 +987,8 @@
     <Content Include="Views\Shared\_PhotosBy.cshtml" />
     <Content Include="Views\Shared\_FileSource - Copy.cshtml" />
     <Content Include="Views\Shared\_PlantIbogaBanner.cshtml" />
+    <Content Include="Views\Support\PlantIbogaStart.cshtml" />
+    <Content Include="Views\Support\PlantIboga.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -9,11 +9,18 @@ namespace K9.WebApplication.Models
     public class StripeModel
     {
         public string PublishableKey { get; set; }
+        private const string AutoLocale = "auto";
 
         [Required]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DonationAmountLabel)]
         [DataType(DataType.Currency)]
         public double DonationAmount { get; set; }
+
+        [DataType(DataType.Currency)]
+        public double TreeDonationAmount { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NumberOfTreesLabel)]
+        public int NumberOfTrees { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.AmountToDonateLabel)]
         [DataType(DataType.Currency)]
@@ -21,15 +28,17 @@ namespace K9.WebApplication.Models
 
         public double DonationAmountInCents => DonationAmount * 100;
 
+        public double TreeDonationAmountInCents => TreeDonationAmount * 100;
+
         public string LocalisedCurrencyThreeLetters => GetLocalisedCurrency();
 
-        public string Locale => Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
+        public string Locale => GetLocale();
 
         public string Description { get; set; }
 
         public string StripeToken { get; set; }
 
-        public string StripeTokenType	 { get; set; }
+        public string StripeTokenType { get; set; }
 
         public string StripeEmail { get; set; }
 
@@ -56,6 +65,19 @@ namespace K9.WebApplication.Models
             catch (Exception e)
             {
                 return "USD";
+            }
+        }
+
+        private static string GetLocale()
+        {
+            try
+            {
+                var locale = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower();
+                return string.IsNullOrEmpty(locale) ? AutoLocale : locale;
+            }
+            catch (Exception e)
+            {
+                return AutoLocale;
             }
         }
     }

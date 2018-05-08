@@ -1,0 +1,21 @@
+﻿@model K9.WebApplication.Models.StripeModel
+@{
+    ViewBag.Title = K9.Globalisation.Dictionary.SponsorIbogaTree;
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.SponsorIbogaTree;
+    ViewBag.BackgroundClass = "background-poaching1";
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm("PlantIboga", "Support", FormMethod.Post))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.BootstrapEditorFor(model => model.NumberOfTreesLabel)
+        @Html.BootstrapButton(Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
+
+        <hr />
+        <div class="donations">
+            @MvcHtmlString.Create(K9.Globalisation.Dictionary.iboga_sponsor_text)
+        </div>
+    }
+}

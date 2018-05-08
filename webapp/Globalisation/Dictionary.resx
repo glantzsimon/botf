@@ -340,6 +340,9 @@
   <data name="hugues_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\hugues-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="iboga_sponsor_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\en-gb\iboga-sponsor-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="jeannoel_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\jeannoel-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -351,6 +354,9 @@
   </data>
   <data name="marie_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\marie-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NumberOfTreesLabel" xml:space="preserve">
+    <value>How many Iboga trees would you like to sponsor?</value>
   </data>
   <data name="quevain_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\en-gb\quevain-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

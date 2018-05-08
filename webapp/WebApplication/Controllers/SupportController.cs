@@ -79,10 +79,32 @@ namespace K9.WebApplication.Controllers
             });
         }
 
+        [Route("donate/sponsor-iboga")]
+        public ActionResult PlantIbogaStart()
+        {
+            return View(new StripeModel
+            {
+                NumberOfTrees = 1
+            });
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Donate(StripeModel model)
         {
+            model.PublishableKey = _stripeConfig.PublishableKey;
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult PlantIboga(StripeModel model)
+        {
+            if (model.NumberOfTrees < 1)
+            {
+                // Silly, but you never know
+                model.NumberOfTrees = 1;
+            }
             model.PublishableKey = _stripeConfig.PublishableKey;
             return View(model);
         }

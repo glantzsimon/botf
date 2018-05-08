@@ -500,6 +500,19 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;&lt;strong&gt;Thank you for helping to save the Iboga tree&lt;/strong&gt;&lt;/h4&gt;
+        ///&lt;br /&gt;
+        ///
+        ///&lt;p&gt;
+        ///    Lorem ipsum dolor sit amet, id arcu nunc augue facilisis, lectus sit nam. Odio sed pharetra metus turpis sem, luctus etiam torquent parturient lacinia blandit, ut dolor, egestas et, ligula orci pellentesque faucibus nulla sapiente blandit. Potenti nisl vestibulum, consectetuer magna morbi iaculis. Parturient facilisi est mauris id. Cras wisi a nec tellus quisque dapibus, accumsan aliquet lobortis in, vulputate et, tur [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string iboga_sponsor_text {
+            get {
+                return ResourceManager.GetString("iboga_sponsor_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Iboga has been sold in western world since 1901.
         ///						Today, more and more advertising touts iboga as a “miracle cure” without any apparent regard as to the sustainability of the resource.
         ///						Bought with gold, Iboga is then sold on the Internet in violation of laws protecting it, without equitable sharing of its benefits and a risk of consumers who have no certainty as to its origin and quality.
@@ -710,6 +723,15 @@ namespace K9.Globalisation {
         public static string mission_statement_and_aims2 {
             get {
                 return ResourceManager.GetString("mission_statement_and_aims2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How many Iboga trees would you like to sponsor?.
+        /// </summary>
+        public static string NumberOfTreesLabel {
+            get {
+                return ResourceManager.GetString("NumberOfTreesLabel", resourceCulture);
             }
         }
         
