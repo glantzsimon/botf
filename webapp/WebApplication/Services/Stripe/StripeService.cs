@@ -16,7 +16,7 @@ namespace K9.WebApplication.Services.Stripe
             _stripeConfig = stripeConfig.Value;
         }
 
-        public void Charge(StripeModel model)
+        public string Charge(StripeModel model)
         {
             var customers = new StripeCustomerService();
             var charges = new StripeChargeService();
@@ -28,13 +28,15 @@ namespace K9.WebApplication.Services.Stripe
                 Description = model.Description
             });
 
-            charges.Create(new StripeChargeCreateOptions
+            var charge = charges.Create(new StripeChargeCreateOptions
             {
                 Amount = (int)model.DonationAmountInCents,
                 Description = model.Description,
                 Currency = model.LocalisedCurrencyThreeLetters,
                 CustomerId = customer.Id
             });
+
+            return charge.Id;
         }
 
         public StripeList<StripeCharge> GetCharges()
@@ -50,7 +52,7 @@ namespace K9.WebApplication.Services.Stripe
             );
         }
 
-        public List<Donation> GetDonations()
+        public List<Donation>  GetDonations()
         {
             return GetCharges().Select(c =>
                 new Donation

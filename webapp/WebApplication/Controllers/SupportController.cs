@@ -79,12 +79,13 @@ namespace K9.WebApplication.Controllers
             });
         }
 
-        [Route("donate/sponsor-iboga")]
+        [Route("sponsor-iboga/start")]
         public ActionResult SponsorIbogaStart()
         {
             return View(new StripeModel
             {
-                NumberOfTrees = 1
+                NumberOfTrees = 1,
+                LocalisedCurrencyThreeLetters = "EUR"
             });
         }
 
@@ -96,6 +97,7 @@ namespace K9.WebApplication.Controllers
             return View(model);
         }
 
+        [Route("sponsor-iboga")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult SponsorIboga(StripeModel model)
@@ -115,7 +117,7 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
-        [Route("donate/sponsor-iboga/success")]
+        [Route("sponsor-iboga/success")]
         public ActionResult SponsorSuccess()
         {
             return View();
@@ -158,27 +160,27 @@ namespace K9.WebApplication.Controllers
             try
             {
                 model.Description = Dictionary.SponsorIbogaTree;
-                _stripeService.Charge(model);
+                var transactionId = _stripeService.Charge(model);
                 _donationService.CreateDonation(new Donation
                 {
+                    StripeId = transactionId,
                     Currency = model.LocalisedCurrencyThreeLetters,
                     Customer = model.StripeBillingName,
                     CustomerEmail = model.StripeEmail,
                     DonationDescription = model.Description,
                     DonatedOn = DateTime.Now,
-                    DonationAmount = model.TreeDonationAmount,
+                    DonationAmount = model.DonationAmount,
                     NumberOfIbogas = model.NumberOfTrees
-
                 });
                 return RedirectToAction("SponsorSuccess");
             }
             catch (Exception ex)
             {
-                _logger.Error($"SupportController => Donate => Donation failed: {ex.Message}");
+                _logger.Error($"SupportController => Sponsor => Sponsor failed: {ex.Message}");
                 ModelState.AddModelError("", ex.Message);
             }
 
-            return View("Donate", model);
+            return View("SponsorIboga", model);
         }
 
         public override string GetObjectName()

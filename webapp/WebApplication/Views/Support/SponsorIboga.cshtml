@@ -12,8 +12,11 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.BootstrapDisplayFor(model => model.TreeDonationAmount)
+        @Html.LabelFor(model => model.TreeDonationAmount)
+        <div>&#128;@Model.TreeDonationAmount.ToString("0.00")</div>
+        @Html.HiddenFor(model => model.NumberOfTrees)
         @Html.HiddenFor(model => model.DonationAmount)
+        @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)
         <hr/>
 
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -23,9 +26,9 @@
                 data-description="@K9.Globalisation.Dictionary.SponsorIbogaTree"
                 data-billing-address="true"
                 data-image="@Url.AbsoluteContent("~/Images/company/botf_med.png")"
-                data-locale="auto"
+                data-locale="@Model.Locale"
                 data-zip-code="false"
-                data-currency="EUR">
+                data-currency="@Model.LocalisedCurrencyThreeLetters">
         </script>
 
         <hr/>

@@ -10,6 +10,7 @@
 {
     using (Html.BeginBootstrapForm())
     {
+        @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)
         @Html.BootstrapEditorFor(model => model.NumberOfTrees)
         @Html.BootstrapButton(Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
 
