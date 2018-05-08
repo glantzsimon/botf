@@ -35,5 +35,8 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CustomerLabel)]
         public string CustomerEmail { get; set; }
 
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfTreesLabel)]
+        public int NumberOfIbogas { get; set; }
+        
     }
 }

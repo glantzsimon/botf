@@ -80,7 +80,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [Route("donate/sponsor-iboga")]
-        public ActionResult PlantIbogaStart()
+        public ActionResult SponsorIbogaStart()
         {
             return View(new StripeModel
             {
@@ -98,7 +98,7 @@ namespace K9.WebApplication.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult PlantIboga(StripeModel model)
+        public ActionResult SponsorIboga(StripeModel model)
         {
             if (model.NumberOfTrees < 1)
             {
@@ -111,6 +111,12 @@ namespace K9.WebApplication.Controllers
 
         [Route("donate/success")]
         public ActionResult DonationSuccess()
+        {
+            return View();
+        }
+
+        [Route("donate/sponsor-iboga/success")]
+        public ActionResult SponsorSuccess()
         {
             return View();
         }
@@ -134,6 +140,36 @@ namespace K9.WebApplication.Controllers
                     DonationAmount = model.AmountToDonate
                 });
                 return RedirectToAction("DonationSuccess");
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"SupportController => Donate => Donation failed: {ex.Message}");
+                ModelState.AddModelError("", ex.Message);
+            }
+
+            return View("Donate", model);
+        }
+
+        [HttpPost]
+        [Route("sponsor-iboga/processing")]
+        [ValidateAntiForgeryToken]
+        public ActionResult SponsorProcess(StripeModel model)
+        {
+            try
+            {
+                model.Description = Dictionary.SponsorIbogaTree;
+                _stripeService.Charge(model);
+                _donationService.CreateDonation(new Donation
+                {
+                    Currency = model.LocalisedCurrencyThreeLetters,
+                    Customer = model.StripeBillingName,
+                    CustomerEmail = model.StripeEmail,
+                    DonationDescription = model.Description,
+                    DonatedOn = DateTime.Now,
+                    DonationAmount = model.TreeDonationAmount,
+
+                });
+                return RedirectToAction("SponsorSuccess");
             }
             catch (Exception ex)
             {

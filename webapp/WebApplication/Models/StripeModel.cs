@@ -10,14 +10,15 @@ namespace K9.WebApplication.Models
     {
         public string PublishableKey { get; set; }
         private const string AutoLocale = "auto";
+        private const int AmountPerTree = 10;
 
         [Required]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DonationAmountLabel)]
         [DataType(DataType.Currency)]
         public double DonationAmount { get; set; }
 
-        [DataType(DataType.Currency)]
-        public double TreeDonationAmount { get; set; }
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TreeDonationAmountLabel)]
+        [DataType(DataType.Currency)] public double TreeDonationAmount => NumberOfTrees * AmountPerTree;
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NumberOfTreesLabel)]
         public int NumberOfTrees { get; set; }

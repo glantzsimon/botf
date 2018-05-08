@@ -79,6 +79,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blessings.
         /// </summary>
         public static string Blessings {
@@ -367,6 +376,37 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///    html {
+        ///        margin: 0;
+        ///        padding: 0;
+        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
+        ///        font-size: 100%;
+        ///        text-rendering: optimizeLegibility !important;
+        ///        -webkit-font-smoothing: antialiased !important;
+        ///        margin: 0;
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear {CustomerName},&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Thank you  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DonationThankYouEmail {
+            get {
+                return ResourceManager.GetString("DonationThankYouEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Donation To.
         /// </summary>
         public static string DonationTo {
@@ -556,6 +596,37 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///    html {
+        ///        margin: 0;
+        ///        padding: 0;
+        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
+        ///        font-size: 100%;
+        ///        text-rendering: optimizeLegibility !important;
+        ///        -webkit-font-smoothing: antialiased !important;
+        ///        margin: 0;
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear Team,&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;We have received a d [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string IbogaSponsoredEmail {
+            get {
+                return ResourceManager.GetString("IbogaSponsoredEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Professor Jean Noël Gassita is senior pharmacist of Gabon and world authority on Iboga research&lt;/h5&gt;
         ///&lt;p&gt;
         ///    Expert on tropical plants and traditional medicines
@@ -723,6 +794,15 @@ namespace K9.Globalisation {
         public static string mission_statement_and_aims2 {
             get {
                 return ResourceManager.GetString("mission_statement_and_aims2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number Of Iboga Trees Sponsored.
+        /// </summary>
+        public static string NumberOfIbogasSponsoredLabel {
+            get {
+                return ResourceManager.GetString("NumberOfIbogasSponsoredLabel", resourceCulture);
             }
         }
         
@@ -939,6 +1019,15 @@ namespace K9.Globalisation {
         public static string SupportQuery {
             get {
                 return ResourceManager.GetString("SupportQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You would like to contribute:.
+        /// </summary>
+        public static string TreeDonationAmountLabel {
+            get {
+                return ResourceManager.GetString("TreeDonationAmountLabel", resourceCulture);
             }
         }
         

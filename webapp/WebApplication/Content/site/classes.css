@@ -217,7 +217,7 @@ div#plant-iboga-banner {
         border-bottom-right-radius: 20px;
         border: 3px solid #8e8e8e;
         border-left: none;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.8);
         -moz-box-shadow: 3px 3px 10px -3px #222;
         -webkit-box-shadow: 3px 3px 10px -3px #222;
         box-shadow: 3px 3px 10px -3px #222;
@@ -247,7 +247,7 @@ div#plant-iboga-banner {
             z-index: 1000;
         }
 
-        div#plant-iboga-banner div.iboga-text-container div#iboga-text a {
+        div#plant-iboga-banner a {
             color: black;
         }
 

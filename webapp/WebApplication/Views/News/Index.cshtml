@@ -5,6 +5,7 @@
     var index = 0;
 }
 
+@Html.Partial("_PlantIbogaBanner")
 <div id="main-banner" class="banner-default main-menu">
     @Html.Partial("_Navbar")
 </div>
@@ -29,9 +30,9 @@
                         <div class="picture-frame picture-frame-300">
                             <div>
                                 @Html.Carousel(new CarouselOptions(newsItem.ImageFileSource.PathToFiles, "", 70)
-                           {
-                               ImageSizing = EImageSizing.Vertical
-                           })
+                                {
+                                    ImageSizing = EImageSizing.Vertical
+                                })
                             </div>
                         </div>
                     }

@@ -334,11 +334,20 @@
   <data name="josephine_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\josephine-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="Back" xml:space="preserve">
+    <value>Précédent</value>
+  </data>
+  <data name="DonationThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\fr\donationthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="hugues_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\hugues-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="hugues_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\hugues-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="IbogaSponsoredEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\fr\ibogasponsoredemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="iboga_sponsor_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>text\fr\iboga-sponsor-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -354,6 +363,9 @@
   </data>
   <data name="marie_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\marie-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NumberOfIbogasSponsoredLabel" xml:space="preserve">
+    <value>Nombre d'Ibogas Parrainés</value>
   </data>
   <data name="NumberOfTreesLabel" xml:space="preserve">
     <value>Combien d'Ibogas voulez-vous parrainer ?</value>
@@ -378,5 +390,8 @@
   </data>
   <data name="SponsorIbogaTree" xml:space="preserve">
     <value>Parrainez Un Iboga</value>
+  </data>
+  <data name="TreeDonationAmountLabel" xml:space="preserve">
+    <value>Vous voulez contribuer:</value>
   </data>
 </root>

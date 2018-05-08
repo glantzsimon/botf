@@ -35,16 +35,21 @@ namespace K9.WebApplication.Services
             try
             {
                 _donationRepository.Create(donation);
-                _mailer.SendEmail("New Donation", TemplateProcessor.PopulateTemplate(Globalisation.Dictionary.DonationReceivedEmail, new
+                var template = donation.NumberOfIbogas > 0
+                    ? Globalisation.Dictionary.IbogaSponsoredEmail
+                    : Globalisation.Dictionary.DonationReceivedEmail;
+                var title = donation.NumberOfIbogas > 0 ? "We have received a donation to sponsor an iboga tree!" : "We have received a donation!"; 
+                _mailer.SendEmail("New Donation", TemplateProcessor.PopulateTemplate(template, new
                 {
-                    Title = "We have received a donation!",
+                    Title = title,
                     donation.Customer,
                     donation.CustomerEmail,
                     Amount = donation.DonationAmount,
                     donation.Currency,
                     LinkToSummary = _urlHelper.AsboluteAction("Index", "Donations"),
                     Company = _config.CompanyName,
-                    ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl)
+                    ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
+                    donation.NumberOfIbogas
                 }), _config.SupportEmailAddress, _config.CompanyName, _config.SupportEmailAddress, _config.CompanyName);
             }
             catch (Exception ex)

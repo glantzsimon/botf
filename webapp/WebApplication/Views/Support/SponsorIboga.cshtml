@@ -8,11 +8,11 @@
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 
-@using (Html.BeginForm("DonateProcess", "Support", FormMethod.Post))
+@using (Html.BeginForm("SponsorProcess", "Support", FormMethod.Post))
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.BootstrapDisplayFor(model => model.AmountToDonate)
+        @Html.BootstrapDisplayFor(model => model.TreeDonationAmount)
         @Html.HiddenFor(model => model.DonationAmount)
         <hr/>
 
@@ -22,13 +22,13 @@
                 data-name="@WebsiteConfiguration.Instance.CompanyName"
                 data-description="@K9.Globalisation.Dictionary.SponsorIbogaTree"
                 data-billing-address="true"
-                data-image="@Url.AbsoluteContent("Images/company/botf_med.png")"
+                data-image="@Url.AbsoluteContent("~/Images/company/botf_med.png")"
                 data-locale="auto"
                 data-zip-code="false"
                 data-currency="EUR">
         </script>
 
         <hr/>
-        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.ChangeAmount, "PlantIbogaStart", "Support", null, "fa-chevron-left")
+        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.Back, "SponsorIbogaStart", "Support", null, "fa-chevron-left")
     }
 }

@@ -6,11 +6,11 @@
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 
-@using (Html.BeginForm("PlantIboga", "Support", FormMethod.Post))
+@using (Html.BeginForm("SponsorIboga", "Support", FormMethod.Post))
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.BootstrapEditorFor(model => model.NumberOfTreesLabel)
+        @Html.BootstrapEditorFor(model => model.NumberOfTrees)
         @Html.BootstrapButton(Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
 
         <hr />
