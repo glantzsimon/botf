@@ -403,4 +403,7 @@
   <data name="TreeDonationAmountLabel" xml:space="preserve">
     <value>Vous voulez contribuer:</value>
   </data>
+  <data name="TreesPlanted" xml:space="preserve">
+    <value>Pieds d'Iboga ont déjà été parrainés</value>
+  </data>
 </root>

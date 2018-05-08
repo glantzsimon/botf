@@ -540,11 +540,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;&lt;strong&gt;Thank you for helping to save the Iboga tree&lt;/strong&gt;&lt;/h4&gt;
-        ///&lt;br /&gt;
-        ///
-        ///&lt;p&gt;
-        ///    Lorem ipsum dolor sit amet, id arcu nunc augue facilisis, lectus sit nam. Odio sed pharetra metus turpis sem, luctus etiam torquent parturient lacinia blandit, ut dolor, egestas et, ligula orci pellentesque faucibus nulla sapiente blandit. Potenti nisl vestibulum, consectetuer magna morbi iaculis. Parturient facilisi est mauris id. Cras wisi a nec tellus quisque dapibus, accumsan aliquet lobortis in, vulputate et, tur [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    Lorem ipsum dolor sit amet, id arcu nunc augue facilisis, lectus sit nam. Odio sed pharetra metus turpis sem, luctus etiam torquent parturient lacinia blandit, ut dolor, egestas et, ligula orci pellentesque faucibus nulla sapiente blandit. Potenti nisl vestibulum, consectetuer magna morbi iaculis. Parturient facilisi est mauris id. Cras wisi a nec tellus quisque dapibus, accumsan aliquet lobortis in, vulputate et, turpis praesent, conubia sodales dui. Felis dolor magnis in, ut sociosqu est, sed ege [rest of string was truncated]&quot;;.
         /// </summary>
         public static string iboga_sponsor_text {
             get {
@@ -1077,6 +1074,15 @@ namespace K9.Globalisation {
         public static string TreeDonationAmountLabel {
             get {
                 return ResourceManager.GetString("TreeDonationAmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Iboga trees have been sponsored so far.
+        /// </summary>
+        public static string TreesPlanted {
+            get {
+                return ResourceManager.GetString("TreesPlanted", resourceCulture);
             }
         }
         

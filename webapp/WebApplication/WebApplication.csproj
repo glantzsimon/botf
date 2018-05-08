@@ -285,6 +285,7 @@
     <Content Include="Content\site\shared.css" />
     <Content Include="Content\site\tablet.css" />
     <Content Include="Content\site\validation.css" />
+    <Content Include="Content\template\style.1650.css" />
     <Content Include="Content\template\style.1200.css" />
     <Content Include="Content\template\style.610.css" />
     <Content Include="Content\template\style.525.css" />
@@ -985,11 +986,11 @@
     <Content Include="Views\Donations\Edit.cshtml" />
     <Content Include="Views\Donations\Index.cshtml" />
     <Content Include="Views\Shared\_PhotosBy.cshtml" />
-    <Content Include="Views\Shared\_FileSource - Copy.cshtml" />
     <Content Include="Views\Shared\_PlantIbogaBanner.cshtml" />
     <Content Include="Views\Support\SponsorIbogaStart.cshtml" />
     <Content Include="Views\Support\SponsorIboga.cshtml" />
     <Content Include="Views\Support\SponsorSuccess.cshtml" />
+    <Content Include="Views\Shared\_TreeCounter.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

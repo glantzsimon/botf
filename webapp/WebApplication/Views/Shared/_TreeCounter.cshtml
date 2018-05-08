@@ -1,0 +1,21 @@
+﻿<div id="tree-counter">
+    <div id="iboga-tree-count"></div>
+    <div>@K9.Globalisation.Dictionary.TreesPlanted</div>
+</div>
+
+<script type="text/javascript">
+    function loadNumberOfIbogasPlanted() {
+        ajaxcontroller().get("@Url.Action("GetNumberOfIbogasPlanted", "Support")").done(
+            function(result) {
+                if (result.success && result.data) {
+                    $.fn.displayCounter("#iboga-tree-count", result.data);
+                } else {
+                    $("#iboga-tree-count").val("oops");
+                }
+            });
+    }
+
+    $(function() {
+        loadNumberOfIbogasPlanted();
+    });
+</script>

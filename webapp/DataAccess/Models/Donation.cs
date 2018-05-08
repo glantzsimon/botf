@@ -40,6 +40,12 @@ namespace K9.DataAccessLayer.Models
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfTreesLabel)]
         public int NumberOfIbogas { get; set; }
-        
-    }
+
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfIbogasSponsoredLabel)]
+        public int NumberOfIbogasSponsored => NumberOfIbogas;
+
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountDonatedLabel)]
+	    public double Amount => DonationAmount;
+
+	}
 }

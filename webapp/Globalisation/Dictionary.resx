@@ -397,4 +397,7 @@
   <data name="TreeDonationAmountLabel" xml:space="preserve">
     <value>You would like to contribute:</value>
   </data>
+  <data name="TreesPlanted" xml:space="preserve">
+    <value>Iboga trees have been sponsored so far</value>
+  </data>
 </root>

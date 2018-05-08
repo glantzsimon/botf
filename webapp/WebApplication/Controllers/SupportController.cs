@@ -183,7 +183,7 @@ namespace K9.WebApplication.Controllers
             return View("SponsorIboga", model);
         }
 
-        [OutputCache(Duration = 600, VaryByParam = "none")]
+        [OutputCache(Duration = 10, VaryByParam = "none")]
         public JsonResult GetNumberOfIbogasPlanted()
         {
             return Json(_donationService.GetNumberOfIbogasPlanted(), JsonRequestBehavior.AllowGet);

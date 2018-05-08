@@ -45,7 +45,7 @@ namespace K9.WebApplication.Services
 
         public int GetNumberOfIbogasPlanted()
         {
-            return _donationRepository.List().Sum(d => d.NumberOfIbogas);
+            return _donationRepository.List().Sum(d => d.NumberOfIbogas) + 34;
         }
 
         private void SendEmailToBotf(Donation donation)
