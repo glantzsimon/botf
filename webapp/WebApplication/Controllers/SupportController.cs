@@ -167,6 +167,7 @@ namespace K9.WebApplication.Controllers
                     DonationDescription = model.Description,
                     DonatedOn = DateTime.Now,
                     DonationAmount = model.TreeDonationAmount,
+                    NumberOfIbogas = model.NumberOfTrees
 
                 });
                 return RedirectToAction("SponsorSuccess");

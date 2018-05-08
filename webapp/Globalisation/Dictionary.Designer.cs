@@ -996,6 +996,37 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;title&gt;{Title}&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///
+        ///&lt;style type=&quot;text/css&quot;&gt;
+        ///    html {
+        ///        margin: 0;
+        ///        padding: 0;
+        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
+        ///        font-size: 100%;
+        ///        text-rendering: optimizeLegibility !important;
+        ///        -webkit-font-smoothing: antialiased !important;
+        ///        margin: 0;
+        ///        color: #333;
+        ///    }
+        ///&lt;/style&gt;
+        ///
+        ///&lt;body&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Dear {CustomerName},&lt;/p&gt;
+        ///    &lt;p class=&quot;text&quot;&gt;Thank you  [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SponsorThankYouEmail {
+            get {
+                return ResourceManager.GetString("SponsorThankYouEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; &gt;
         ///
@@ -1019,6 +1050,24 @@ namespace K9.Globalisation {
         public static string SupportQuery {
             get {
                 return ResourceManager.GetString("SupportQuery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you for your donation.
+        /// </summary>
+        public static string ThankyouForDonationEmailTitle {
+            get {
+                return ResourceManager.GetString("ThankyouForDonationEmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you for helping to save the Iboga tree.
+        /// </summary>
+        public static string ThankyouForSponorEmailTitle {
+            get {
+                return ResourceManager.GetString("ThankyouForSponorEmailTitle", resourceCulture);
             }
         }
         

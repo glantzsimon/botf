@@ -3,6 +3,7 @@ using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -16,6 +17,8 @@ namespace K9.DataAccessLayer.Models
 		[StringLength(128)]
 		[Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CustomerLabel)]
 		public string Customer { get; set; }
+
+	    public string CustomerName => Customer.Split(' ').FirstOrDefault();
 
 	    [Required]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountDonatedLabel)]

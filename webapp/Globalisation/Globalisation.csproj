@@ -154,13 +154,17 @@
     <Content Include="Articles\fr\simon-title.htm" />
     <Content Include="Articles\fr\yann-text.htm" />
     <Content Include="Articles\fr\yann-title.htm" />
+    <Content Include="Templates\en-gb\SponsorThankYouEmail.htm" />
+    <Content Include="Templates\en-gb\IbogaSponsoredEmail.htm" />
     <Content Include="Templates\en-gb\DonationThankYouEmail.htm" />
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
     <Content Include="Templates\en-gb\SupportQuery.htm" />
     <Content Include="Templates\en-gb\DonationReceivedEmail.htm" />
     <Content Include="Templates\en-gb\WelcomeEmail.htm" />
+    <Content Include="Templates\fr\SponsorThankYouEmail.htm" />
     <Content Include="Templates\fr\DonationThankYouEmail.htm" />
     <Content Include="Templates\fr\DonationReceivedEmail.htm" />
+    <Content Include="Templates\fr\IbogaSponsoredEmail.htm" />
     <Content Include="Templates\fr\PasswordResetEmail.htm" />
     <Content Include="Templates\fr\SupportQuery.htm" />
     <Content Include="Templates\fr\WelcomeEmail.htm" />

@@ -385,6 +385,15 @@
   <data name="SponsorIbogaTree" xml:space="preserve">
     <value>Sponsor an Iboga Tree</value>
   </data>
+  <data name="SponsorThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>templates\en-gb\sponsorthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ThankyouForDonationEmailTitle" xml:space="preserve">
+    <value>Thank you for your donation</value>
+  </data>
+  <data name="ThankyouForSponorEmailTitle" xml:space="preserve">
+    <value>Thank you for helping to save the Iboga tree</value>
+  </data>
   <data name="TreeDonationAmountLabel" xml:space="preserve">
     <value>You would like to contribute:</value>
   </data>
