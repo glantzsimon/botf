@@ -1,0 +1,146 @@
+﻿div#plant-iboga-banner {
+    position: fixed;
+    left: 10px;
+    height: auto;
+    z-index: 50000;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+    div#plant-iboga-banner img.plant-iboga {
+        position: absolute;
+        z-index: 2;
+    }
+
+    div#plant-iboga-banner div.iboga-text-container {
+        position: relative;
+        z-index: 1;
+        top: 20px;
+        left: 90px;
+        height: 70px;
+        width: 140px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border: 3px solid #8e8e8e;
+        border-left: none;
+        background-color: rgba(255, 255, 255, 0.8);
+        -moz-box-shadow: 3px 3px 10px -3px #222;
+        -webkit-box-shadow: 3px 3px 10px -3px #222;
+        box-shadow: 3px 3px 10px -3px #222;
+    }
+
+        div#plant-iboga-banner div.iboga-text-container div#iboga-text {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80%;
+            margin: auto;
+            padding: 5px 20px;
+            text-align: center;
+            font-size: 0.9em;
+            word-wrap: break-word;
+        }
+
+        div#plant-iboga-banner div.iboga-text-container div#close-banner {
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            width: 14px;
+            height: 14px;
+            z-index: 1000;
+        }
+
+    div#plant-iboga-banner a {
+        color: black;
+    }
+
+    div#plant-iboga-banner.menu-main {
+        top: 240px;
+    }
+
+    div#plant-iboga-banner.menu-small {
+        top: 160px;
+    }
+
+img.iboga-small {
+    display: none;
+}
+
+i#close-plant-iboga {
+    cursor: pointer;
+    width: 8px;
+    height: 8px;
+}
+
+    i#close-plant-iboga:hover {
+        color: #ff9800;
+    }
+
+#tree-counter {
+    width: 100%;
+    text-align: center;
+    color: #4e4e4e;
+}
+
+#iboga-tree-count {
+    font-family: 'Oranienbaum', serif;
+    font-weight: bold;
+    font-size: 2.2em;
+    color: #3cb371;
+}
+
+@media (max-width:991px) {
+    div#plant-iboga-banner.menu-main {
+        top: 6px;
+    }
+
+    div#plant-iboga-banner.menu-small {
+        top: 6px;
+    }
+}
+
+@media(max-width:1580px) {
+    div#plant-iboga-banner.menu-main {
+        top: 20px;
+    }
+
+    div#plant-iboga-banner.menu-small {
+        top: 12px;
+    }
+
+    div#plant-iboga-banner div.iboga-text-container {
+        top: 9px;
+        left: 80px;
+        height: 38px;
+        width: 200px;
+        margin-left: -20px;
+        margin-top: 10px;
+    }
+
+        div#plant-iboga-banner div.iboga-text-container div#iboga-text {
+            font-size: 0.8em;
+            font-weight: normal;
+            height: 20px;
+            padding: 0;
+        }
+
+            div#plant-iboga-banner div.iboga-text-container div#iboga-text span {
+                display: inline-block;
+            }
+
+        div#plant-iboga-banner div.iboga-text-container div#close-banner {
+            display: none;
+        }
+
+    img.iboga-med {
+        display: none;
+    }
+
+    img.iboga-small {
+        display: block;
+    }
+}

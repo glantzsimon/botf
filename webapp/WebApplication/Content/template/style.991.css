@@ -83,14 +83,6 @@
     .picture-frame {
         width: 100% !important;
     }
-
-    div#plant-iboga-banner.menu-main {
-        top: 6px;
-    }
-
-    div#plant-iboga-banner.menu-small {
-        top: 6px;
-    }
 }
 
 @media (min-width:991px) {

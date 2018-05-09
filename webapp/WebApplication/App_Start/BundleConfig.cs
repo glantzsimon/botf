@@ -35,7 +35,6 @@ namespace K9.WebApplication
                 "~/Content/template/style.css"));
 
             bundles.Add(new StyleBundle("~/Content/responsive").Include(
-                "~/Content/template/style.1650.css",
                 "~/Content/template/style.1200.css",
                 "~/Content/template/style.1080.css",
                 "~/Content/template/style.1024.css",

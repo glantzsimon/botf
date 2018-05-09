@@ -10,6 +10,10 @@ footer.sprd-footer, section.sprd-footer {
     max-width: 100% !important;
 }
 
+a.sprd-header-image {
+    display: none !important;
+}
+
 #myShop {
     min-height: 600px;
 }
