@@ -23,6 +23,8 @@ using System.IO;
 using System.Web.Hosting;
 using System.Web.Mvc;
 using K9.DataAccessLayer.Models;
+using K9.WebApplication.Helpers;
+using HtmlHelpers = K9.Base.WebApplication.Helpers.HtmlHelpers;
 
 namespace K9.WebApplication
 {
@@ -91,6 +93,11 @@ namespace K9.WebApplication
             var websiteConfig = ConfigHelper.GetConfiguration<WebsiteConfiguration>(json);
             builder.Register(c => websiteConfig).SingleInstance();
             WebsiteConfiguration.Instance = websiteConfig.Value;
+        }
+
+        public static void PreloadStaticData()
+        {
+            CurrencyTools.GetCultureInfoFromIso("GBP");
         }
     }
 }

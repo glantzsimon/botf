@@ -18,6 +18,7 @@ namespace K9.WebApplication
 			
 			Startup.RegisterTypes();
 			Startup.RegisterStaticTypes();
+            Startup.PreloadStaticData();
 
 			DataConfig.InitialiseDatabase();
 			AuthConfig.InitialiseWebSecurity();

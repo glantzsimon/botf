@@ -1,5 +1,6 @@
 ﻿@using K9.Base.WebApplication.Config
 @using K9.SharedLibrary.Extensions
+@using K9.SharedLibrary.Helpers
 @model K9.WebApplication.Models.StripeModel
 @{
     ViewBag.Title = K9.Globalisation.Dictionary.SponsorIbogaTree;
@@ -12,8 +13,10 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.LabelFor(model => model.TreeDonationAmount)
-        <div>&#128;@Model.TreeDonationAmount.ToString("0.00")</div>
+        @Html.BootstrapDisplayFor(model => model.TreeDonationAmount, new EditorOptions
+        {
+            CultureInfo = CurrencyTools.GetCultureInfoFromIso(Model.LocalisedCurrencyThreeLetters)
+        })
         @Html.HiddenFor(model => model.NumberOfTrees)
         @Html.HiddenFor(model => model.DonationAmount)
         @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)

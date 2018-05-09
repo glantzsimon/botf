@@ -45,7 +45,8 @@ namespace K9.DataAccessLayer.Models
         public int NumberOfIbogasSponsored => NumberOfIbogas;
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AmountDonatedLabel)]
-	    public double Amount => DonationAmount;
+	    [DataType(DataType.Currency)]
+        public double Amount => DonationAmount;
 
 	}
 }

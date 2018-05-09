@@ -1,4 +1,18 @@
-﻿@model Object
+﻿@using System.Globalization
+@using K9.Base.WebApplication.Constants.Html
+@using K9.SharedLibrary.Helpers
+@model double
+@{
+    var dictionary = ViewData["viewDataDictionary"] as IDictionary<string, object>;
+    var cultureInfo = dictionary[Attributes.CultureInfo];
+}
 <div>
-    @String.Format("{0:c}", Model)
+    @if (cultureInfo != null)
+    {
+        @Model.ToString("C2", cultureInfo as CultureInfo)
+    }
+    else
+    {
+        @String.Format("{0:c}", Model)
+    }
 </div>
