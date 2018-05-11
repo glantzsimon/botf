@@ -403,7 +403,16 @@
   <data name="TreeDonationAmountLabel" xml:space="preserve">
     <value>Vous voulez contribuer:</value>
   </data>
-  <data name="TreesPlanted" xml:space="preserve">
-    <value>Pieds d'Iboga ont déjà été parrainés</value>
+  <data name="IbogasSponsoredSoFarText" xml:space="preserve">
+    <value>Nombre d'Ibogas qui ont été parrainés jusqu'à maintenant</value>
+  </data>
+  <data name="IbogasPlantedSoFarText" xml:space="preserve">
+    <value>Nombre d'Ibogas plantés jusqu'à maintenant</value>
+  </data>
+  <data name="IbogasProjectedToBePlantedPerYearText" xml:space="preserve">
+    <value>Nombre prévu d'Ibogas qui seront plantés par an grace au parrainage et au bénévolat</value>
+  </data>
+  <data name="ProjectStats" xml:space="preserve">
+    <value>Statistiques du Projet</value>
   </data>
 </root>

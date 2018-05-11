@@ -3,7 +3,7 @@
 @{
     var roles = this.GetRoles();
 }
-@if (false && !roles.CurrentUserIsInRoles(RoleNames.Administrators) && !roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
+@if (!roles.CurrentUserIsInRoles(RoleNames.Administrators) && !roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
 {
     <div id="plant-iboga-banner" class="menu-main">
         <a href="@Url.Action("SponsorIbogaStart", "Support")">

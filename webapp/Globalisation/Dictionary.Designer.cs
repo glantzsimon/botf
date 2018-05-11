@@ -593,6 +593,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Number of Iboga trees planted so far.
+        /// </summary>
+        public static string IbogasPlantedSoFarText {
+            get {
+                return ResourceManager.GetString("IbogasPlantedSoFarText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
         ///
@@ -620,6 +629,24 @@ namespace K9.Globalisation {
         public static string IbogaSponsoredEmail {
             get {
                 return ResourceManager.GetString("IbogaSponsoredEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Projected number of Iboga trees to be planted per year thanks to sponsorship and voluntary work.
+        /// </summary>
+        public static string IbogasProjectedToBePlantedPerYearText {
+            get {
+                return ResourceManager.GetString("IbogasProjectedToBePlantedPerYearText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Iboga trees sponsored so far.
+        /// </summary>
+        public static string IbogasSponsoredSoFarText {
+            get {
+                return ResourceManager.GetString("IbogasSponsoredSoFarText", resourceCulture);
             }
         }
         
@@ -893,8 +920,8 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
-        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Identification of Gabonese associations&lt;/strong&gt; who wish to develop agroforestry and permaculture projects focussing on the conservation of Iboga and &quot;useful plants” of Gabon (Non-Timber Forest Products (NTFPs) with significant food, cosmetic and therapeutic potential, as well as dwindling large trees).&lt;/li&gt;
-        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Funding&lt;/stron [rest of string was truncated]&quot;;.
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Identification of Gabonese associations&lt;/strong&gt; who wish to develop agroforestry and permaculture projects focussing on the conservation of Iboga and &quot;useful plants” of Gabon (Non-Timber Forest Products (NTFPs) with significant food, cosmetic and therapeutic potential, as well as dwindling large trees), giving priority to those which are managing the Gabonese community forests.&lt;/li&gt;
+        ///    &lt;li class=&quot;scrollFadeUp&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string projects_short_term {
             get {
@@ -908,6 +935,15 @@ namespace K9.Globalisation {
         public static string projects_short_term_title {
             get {
                 return ResourceManager.GetString("projects_short_term_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project Stats.
+        /// </summary>
+        public static string ProjectStats {
+            get {
+                return ResourceManager.GetString("ProjectStats", resourceCulture);
             }
         }
         
@@ -1074,15 +1110,6 @@ namespace K9.Globalisation {
         public static string TreeDonationAmountLabel {
             get {
                 return ResourceManager.GetString("TreeDonationAmountLabel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Iboga trees have been sponsored so far.
-        /// </summary>
-        public static string TreesPlanted {
-            get {
-                return ResourceManager.GetString("TreesPlanted", resourceCulture);
             }
         }
         

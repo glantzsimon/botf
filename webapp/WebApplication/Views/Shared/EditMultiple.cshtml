@@ -2,7 +2,6 @@
 
 @{
     Layout = "~/Views/Shared/_LayoutForm.cshtml";
-    var attributes = Model.IsSystemStandard ? new { disabled = "disabled" } : null;
 }
 
 @using (Html.BeginForm())
@@ -17,6 +16,7 @@
 
         for (int i = 0; i < Model.Items.Count; i++)
         {
+            var attributes = Model.Items[i].IsSystemStandard ? new { disabled = "disabled" } : null;
             @Html.HiddenFor(model => Model.Items[i].Id)
             @Html.HiddenFor(model => Model.Items[i].ChildId)
             @Html.HiddenFor(model => Model.Items[i].Description)
@@ -26,7 +26,7 @@
         }
 
         <hr />
-        if (!Model.IsSystemStandard)
+        if (Model.Items.Any(_ => !_.IsSystemStandard))
         {
             @Html.BootstrapButton(Dictionary.Update)
         }

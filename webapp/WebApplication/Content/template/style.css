@@ -36,6 +36,12 @@ body {
     transition: background 0.5s linear;
 }
 
+.tree-counter-banner .project-statistic {
+    font-family: Lato, sans-serif;
+    font-size: 100px;
+    font-weight: 400;
+}
+
 .background-forest1 {
     background: url(../../Images/background/slides/forest1d.jpg) no-repeat 0 0;
     background-size: cover;

@@ -1,0 +1,15 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model ProjectDetail
+@{
+	Layout = "~/Views/Shared/_LayoutFormWide.cshtml";
+}
+@Html.BootstrapTable(new DataTableOptions<ProjectDetail>
+{
+    VisibleColumns = new List<string>
+    {
+        "NumberOfIbogasPlantedToDate",
+        "NumberOfIbogasProjectedToBePlantedPerYear"
+    },
+    AllowCreate = false,
+    AllowDelete = false
+})

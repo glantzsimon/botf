@@ -14,12 +14,16 @@
             public const string DonatedOnLabel = "DonatedOnLabel";
             public const string CurrencyLabel = "CurrencyLabel";
             public const string CustomerEmailLabel = "CustomerEmailLabel";
+            public const string NumberOfIbogasLabel = "CustomerEmailLabel";
+            public const string IbogasPlantedLabel = "IbogasPlantedSoFarText";
+            public const string IbogasToBePlantedLabel = "IbogasProjectedToBePlantedPerYearText";
         }
 
         public static class Names
         {
             public const string Donation = "Donation";
             public const string Donations = "Donations";
+            public const string ProjectStats = "ProjectStats";
         }
     }
 }

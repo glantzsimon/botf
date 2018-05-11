@@ -26,7 +26,9 @@ namespace K9.WebApplication
         public static void InitialiseUsersAndRoles()
         {
             UsersAndRolesInitialiser.Seed();
-            PermissionsSeeder.Seed(new LocalDb());
+            var dbContext = new LocalDb();
+            PermissionsSeeder.Seed(dbContext);
+            ProjectDetailsSeeder.Seed(dbContext);
         }
     }
 }

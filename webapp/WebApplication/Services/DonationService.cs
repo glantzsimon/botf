@@ -43,9 +43,19 @@ namespace K9.WebApplication.Services
             }
         }
 
-        public int GetNumberOfIbogasPlanted()
+        public int GetNumberOfIbogasSponsoredToDate()
         {
-            return _donationRepository.List().Sum(d => d.NumberOfIbogas) + 34;
+            return _donationRepository.List().Sum(d => d.NumberOfIbogas) + 33;
+        }
+
+        public int GetNumberOfIbogasSponsoredLast30Days()
+        {
+            return _donationRepository.List().Where(d => DateTime.Today.Subtract(d.DonatedOn).TotalDays <= 30).Sum(d => d.NumberOfIbogas);
+        }
+
+        public int GetProjectedNumberOfIbogasSponsoredPerYear()
+        {
+            return GetNumberOfIbogasSponsoredLast30Days() * 12;
         }
 
         private void SendEmailToBotf(Donation donation)

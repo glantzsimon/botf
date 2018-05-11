@@ -1,21 +1,29 @@
 ﻿<div id="tree-counter">
-    <div id="iboga-tree-count"></div>
-    <div>@K9.Globalisation.Dictionary.TreesPlanted</div>
+    <div>@K9.Globalisation.Dictionary.IbogasSponsoredSoFarText</div>
+    <div class="project-statistic" id="ibogas-sponsored-to-date">0</div>
+    <div>@K9.Globalisation.Dictionary.IbogasPlantedSoFarText</div>
+    <div class="project-statistic" id="ibogas-planted-to-date">0</div>
+    <div>@K9.Globalisation.Dictionary.IbogasProjectedToBePlantedPerYearText</div>
+    <div class="project-statistic" id="ibogas-projected">0</div>
 </div>
 
 <script type="text/javascript">
-    function loadNumberOfIbogasPlanted() {
-        ajaxcontroller().get("@Url.Action("GetNumberOfIbogasPlanted", "Support")").done(
+    function loadProjectStatistics() {
+        ajaxcontroller().get("@Url.Action("GetProjectStatistics", "ProjectDetails")").done(
             function(result) {
                 if (result.success && result.data) {
-                    $.fn.displayCounter("#iboga-tree-count", result.data);
+                    $.fn.displayCounter("#iboga-sponsored-to-date", result.data.NumberOfIbogasSponsoredToDate);
+                    $.fn.displayCounter("#iboga-planted-to-date", result.data.NumberOfIbogasPlantedToDate);
+                    $.fn.displayCounter("#iboga-projected", result.data.NumberOfIbogasProjectedToBePlantedPerYear);
                 } else {
-                    $("#iboga-tree-count").val("oops");
+                    $("#iboga-sponsored-to-date").text("0");
+                    $("#iboga-planted-to-date").text("0");
+                    $("#iboga-projected").text("0");
                 }
             });
     }
 
     $(function() {
-        loadNumberOfIbogasPlanted();
+        loadProjectStatistics();
     });
 </script>
