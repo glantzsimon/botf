@@ -404,7 +404,7 @@
     <value>Vous voulez contribuer:</value>
   </data>
   <data name="IbogasSponsoredSoFarText" xml:space="preserve">
-    <value>Nombre d'Ibogas qui ont été parrainés jusqu'à maintenant</value>
+    <value>Nombre d'Ibogas parrainés jusqu'à maintenant</value>
   </data>
   <data name="IbogasPlantedSoFarText" xml:space="preserve">
     <value>Nombre d'Ibogas plantés jusqu'à maintenant</value>

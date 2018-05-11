@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
-    [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.ProjectStats, PluralName = Globalisation.Strings.Names.ProjectStats, Name = Globalisation.Strings.Names.ProjectStats)]
+    [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = "ProjectDetails", PluralName = Globalisation.Strings.Names.ProjectStats, Name = Globalisation.Strings.Names.ProjectStats)]
     public class ProjectDetail : ObjectBase
 	{
 	    

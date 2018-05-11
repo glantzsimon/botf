@@ -1,10 +1,13 @@
 ﻿<div id="tree-counter">
-    <div>@K9.Globalisation.Dictionary.IbogasSponsoredSoFarText</div>
+    <div class="project-statistic-title">@K9.Globalisation.Dictionary.IbogasSponsoredSoFarText</div>
     <div class="project-statistic" id="ibogas-sponsored-to-date">0</div>
-    <div>@K9.Globalisation.Dictionary.IbogasPlantedSoFarText</div>
-    <div class="project-statistic" id="ibogas-planted-to-date">0</div>
-    <div>@K9.Globalisation.Dictionary.IbogasProjectedToBePlantedPerYearText</div>
-    <div class="project-statistic" id="ibogas-projected">0</div>
+    @if (ViewBag.ShowSponsorOnly != true)
+    {
+        <div class="project-statistic-title">@K9.Globalisation.Dictionary.IbogasPlantedSoFarText</div>
+        <div class="project-statistic" id="ibogas-planted-to-date">0</div>
+        <div class="project-statistic-title">@K9.Globalisation.Dictionary.IbogasProjectedToBePlantedPerYearText</div>
+        <div class="project-statistic" id="ibogas-projected">0</div>
+    }
 </div>
 
 <script type="text/javascript">
@@ -12,18 +15,21 @@
         ajaxcontroller().get("@Url.Action("GetProjectStatistics", "ProjectDetails")").done(
             function(result) {
                 if (result.success && result.data) {
-                    $.fn.displayCounter("#iboga-sponsored-to-date", result.data.NumberOfIbogasSponsoredToDate);
-                    $.fn.displayCounter("#iboga-planted-to-date", result.data.NumberOfIbogasPlantedToDate);
-                    $.fn.displayCounter("#iboga-projected", result.data.NumberOfIbogasProjectedToBePlantedPerYear);
+                    $.fn.displayCounter("#ibogas-sponsored-to-date", result.data.NumberOfIbogasSponsoredToDate);
+                    $.fn.displayCounter("#ibogas-planted-to-date", result.data.NumberOfIbogasPlantedToDate);
+                    $.fn.displayCounter("#ibogas-projected", result.data.NumberOfIbogasProjectedToBePlantedPerYear);
                 } else {
-                    $("#iboga-sponsored-to-date").text("0");
-                    $("#iboga-planted-to-date").text("0");
-                    $("#iboga-projected").text("0");
+                    $("#ibogas-sponsored-to-date").text("0");
+                    $("#ibogas-planted-to-date").text("0");
+                    $("#ibogas-projected").text("0");
                 }
             });
     }
 
-    $(function() {
-        loadProjectStatistics();
-    });
+    @if (ViewBag.DelayLoad != true)
+    {
+        @:$(function() {
+            @:loadProjectStatistics();
+        @:});
+    }
 </script>

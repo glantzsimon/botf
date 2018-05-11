@@ -29,7 +29,7 @@ namespace K9.WebApplication.Controllers
         }
 
         [OutputCache(Duration = 10, VaryByParam = "none")]
-        public JsonResult GetProjectDetails()
+        public JsonResult GetProjectStatistics()
         {
             return Json(new
             {
