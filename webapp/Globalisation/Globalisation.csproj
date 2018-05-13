@@ -168,12 +168,14 @@
     <Content Include="Templates\fr\PasswordResetEmail.htm" />
     <Content Include="Templates\fr\SupportQuery.htm" />
     <Content Include="Templates\fr\WelcomeEmail.htm" />
+    <Content Include="Text\en-gb\tree-counter-text.htm" />
     <Content Include="Text\en-gb\iboga-sponsor-text.htm" />
     <Content Include="Text\en-gb\donations-text.htm" />
     <Content Include="Text\en-gb\Keywords.txt" />
     <Content Include="Text\fr\iboga-sponsor-text.htm" />
     <Content Include="Text\fr\donations-text.htm" />
     <Content Include="Text\fr\Keywords.txt" />
+    <Content Include="Text\fr\tree-counter-text.htm" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

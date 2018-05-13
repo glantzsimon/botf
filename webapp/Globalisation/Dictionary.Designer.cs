@@ -540,8 +540,16 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;p&gt;
-        ///    Lorem ipsum dolor sit amet, id arcu nunc augue facilisis, lectus sit nam. Odio sed pharetra metus turpis sem, luctus etiam torquent parturient lacinia blandit, ut dolor, egestas et, ligula orci pellentesque faucibus nulla sapiente blandit. Potenti nisl vestibulum, consectetuer magna morbi iaculis. Parturient facilisi est mauris id. Cras wisi a nec tellus quisque dapibus, accumsan aliquet lobortis in, vulputate et, turpis praesent, conubia sodales dui. Felis dolor magnis in, ut sociosqu est, sed ege [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;h4&gt;&lt;strong&gt;Your donation enables Blessings of The Forest to finance several things:&lt;/strong&gt;&lt;/h4&gt;
+        ///&lt;br /&gt;
+        ///
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;
+        ///        &lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+        ///        The running costs of BOTF (local administrative costs, website hosting and development, accountancy fees, legal costs, business cards, logistics, key appointments, occasional support of local correspondants and mediators, communications and raising awareness)
+        ///    &lt;/li&gt;
+        ///    &lt;li&gt;
+        ///        &lt;i class=&quot;fa fa-angle-righ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string iboga_sponsor_text {
             get {
@@ -1101,6 +1109,24 @@ namespace K9.Globalisation {
         public static string ThankyouForSponorEmailTitle {
             get {
                 return ResourceManager.GetString("ThankyouForSponorEmailTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;h4&gt;&lt;strong&gt;Your donation enables Blessings of The Forest to finance several things:&lt;/strong&gt;&lt;/h4&gt;
+        ///&lt;br /&gt;
+        ///
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;
+        ///        &lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
+        ///        The running costs of BOTF (local administrative costs, website hosting and development, accountancy fees, legal costs, business cards, logistics, key appointments, occasional support of local correspondants and mediators, communications and raising awareness)
+        ///    &lt;/li&gt;
+        ///    &lt;li&gt;
+        ///        &lt;i class=&quot;fa fa-angle-righ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string tree_counter_text {
+            get {
+                return ResourceManager.GetString("tree_counter_text", resourceCulture);
             }
         }
         

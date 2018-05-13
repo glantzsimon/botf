@@ -11,13 +11,15 @@ function fadePageIn(config)
 
     function initScrollReveal()
     {
+        var beforeReveal = function (el)
+        {
+            $(el).trigger("reveal");
+        };
+
         window.sr = ScrollReveal();
         if (window.matchMedia("(min-width: 992px)").matches)
         {
-            var beforeReveal = function (el)
-            {
-                $(el).trigger("reveal");
-            };
+
             sr.reveal(".scrollFadeUp",
                 {
                     duration: 1200,
@@ -38,6 +40,9 @@ function fadePageIn(config)
                         beforeReveal(el);
                     }
                 });
+        } else
+        {
+            beforeReveal(".scrollFadeUp");
         }
     }
 

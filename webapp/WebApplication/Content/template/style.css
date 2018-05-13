@@ -46,6 +46,11 @@ body {
     font-weight: 400;
 }
 
+.tree-counter-description p {
+    color: white;
+    font-size: 0.8em !important;
+}
+
 .background-forest1 {
     background: url(../../Images/background/slides/forest1d.jpg) no-repeat 0 0;
     background-size: cover;
