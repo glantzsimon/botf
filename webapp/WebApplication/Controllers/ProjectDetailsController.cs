@@ -34,9 +34,10 @@ namespace K9.WebApplication.Controllers
             return Json(new
             {
                 ProjectDetails?.NumberOfIbogasPlantedToDate,
-                NumberOfIbogasProjectedToBePlantedPerYear = ProjectDetails?.NumberOfIbogasProjectedToBePlantedPerYear + _donationService.GetProjectedNumberOfIbogasSponsoredPerYear(),
-                NumberOfIbogasSponsoredToDate = _donationService.GetNumberOfIbogasSponsoredToDate(),
-                ProjectedNumberOfIbogasToBeSponsoredPerYear = _donationService.GetProjectedNumberOfIbogasSponsoredPerYear()
+                NumberOfIbogasProjectedToBePlantedPerYear = ProjectDetails?.NumberOfIbogasProjectedToBePlantedThisYear + _donationService.GetProjectedNumberOfIbogasSponsoredPerYear(),
+                NumberOfIbogasSponsoredToDate = _donationService.GetNumberOfIbogasSponsoredToDate() + ProjectDetails?.NumberOfIbogasSponsoredToDate,
+                NumberOfIbogasProjectedToBePlantedThisYear = ProjectDetails?.NumberOfIbogasProjectedToBePlantedThisYear,
+                NumberOfIbogasProjectedToBePlantedTwoYears = ProjectDetails?.NumberOfIbogasProjectedToBePlantedTwoYears
             }, JsonRequestBehavior.AllowGet);
         }
 

@@ -15,7 +15,7 @@ namespace K9.DataAccessLayer.Database.Seeds
             {
                 context.Set<ProjectDetail>().AddOrUpdate(new ProjectDetail
                 {
-                    NumberOfIbogasProjectedToBePlantedPerYear = 100,
+                    NumberOfIbogasProjectedToBePlantedThisYear = 100,
                     NumberOfIbogasPlantedToDate = 500,
                     Name = Guid.NewGuid().ToString(),
                     CreatedBy = SystemUser.System,

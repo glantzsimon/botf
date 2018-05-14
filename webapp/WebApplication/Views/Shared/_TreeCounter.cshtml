@@ -5,8 +5,10 @@
     {
         <div class="project-statistic-title">@K9.Globalisation.Dictionary.IbogasPlantedSoFarText</div>
         <div class="project-statistic" id="ibogas-planted-to-date">0</div>
-        <div class="project-statistic-title">@K9.Globalisation.Dictionary.IbogasProjectedToBePlantedPerYearText</div>
+        <div class="project-statistic-title">@(string.Format(K9.Globalisation.Dictionary.IbogasProjectedToBePlantedThisYearText, DateTime.Now.Year))</div>
         <div class="project-statistic" id="ibogas-projected">0</div>
+        <div class="project-statistic-title">@(string.Format(K9.Globalisation.Dictionary.IbogasProjectedToBePlantedTwoYearsText, DateTime.Now.Year + 2))</div>
+        <div class="project-statistic" id="ibogas-projected-twoyears">0</div>
     }
 </div>
 
@@ -17,7 +19,8 @@
                 if (result.success && result.data) {
                     $.fn.displayCounter("#ibogas-sponsored-to-date", result.data.NumberOfIbogasSponsoredToDate);
                     $.fn.displayCounter("#ibogas-planted-to-date", result.data.NumberOfIbogasPlantedToDate);
-                    $.fn.displayCounter("#ibogas-projected", result.data.NumberOfIbogasProjectedToBePlantedPerYear);
+                    $.fn.displayCounter("#ibogas-projected", result.data.NumberOfIbogasProjectedToBePlantedThisYear);
+                    $.fn.displayCounter("#ibogas-projected-twoyears", result.data.NumberOfIbogasProjectedToBePlantedTwoYears);
                 } else {
                     $("#ibogas-sponsored-to-date").text("0");
                     $("#ibogas-planted-to-date").text("0");

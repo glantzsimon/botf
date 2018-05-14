@@ -1,4 +1,12 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @model ProjectDetail
 @Html.BootstrapDisplayFor(model => model.NumberOfIbogasPlantedToDate)
-@Html.BootstrapDisplayFor(model => model.NumberOfIbogasProjectedToBePlantedPerYear)
+@Html.BootstrapDisplayFor(model => model.NumberOfIbogasSponsoredToDate)
+@Html.BootstrapDisplayFor(model => model.NumberOfIbogasProjectedToBePlantedThisYear, new EditorOptions
+{
+    Label = String.Format(K9.Globalisation.Dictionary.IbogasProjectedToBePlantedThisYearText, DateTime.Now.Year)
+})
+@Html.BootstrapDisplayFor(model => model.NumberOfIbogasProjectedToBePlantedTwoYears, new EditorOptions
+{
+    Label = String.Format(K9.Globalisation.Dictionary.IbogasProjectedToBePlantedTwoYearsText, DateTime.Now.Year + 2)
+})

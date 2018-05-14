@@ -45,7 +45,7 @@ namespace K9.WebApplication.Services
 
         public int GetNumberOfIbogasSponsoredToDate()
         {
-            return _donationRepository.List().Sum(d => d.NumberOfIbogas) + 33;
+            return _donationRepository.List().Sum(d => d.NumberOfIbogas);
         }
 
         public int GetNumberOfIbogasSponsoredLast30Days()

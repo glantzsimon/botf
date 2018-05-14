@@ -249,7 +249,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Co-director of Blessings Of The Forest and practitioner of Chinese medicine.
+        ///   Looks up a localized string similar to Practitioner of Chinese medicine
+        ///&lt;p&gt;&lt;strong&gt;Co-director of Blessings Of The Forest&lt;/strong&gt;&lt;/p&gt;
+        ///.
         /// </summary>
         public static string david_title {
             get {
@@ -483,7 +485,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Environmental lawyer in charge of legal studies of Blessings of The Forest in Gabon.
+        ///   Looks up a localized string similar to Environmental lawyer
+        ///&lt;p&gt;&lt;strong&gt;In charge of Blessings of The Forest&apos;s legal studies in Gabon&lt;/strong&gt;&lt;/p&gt;
+        ///.
         /// </summary>
         public static string george_title {
             get {
@@ -510,7 +514,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to President of the Village Association A2E (Gabon - Ogooué Ivindo), partner of Blessings Of The Forest.
+        ///   Looks up a localized string similar to President of the Village Association A2E (Ogooué Ivindo - Gabon) - Agroforestry Expert
+        ///&lt;p&gt;&lt;strong&gt;Partner of BOTF (in charge of the pilot plantation project)&lt;/strong&gt;&lt;/p&gt;
+        ///.
         /// </summary>
         public static string hubert_title {
             get {
@@ -531,7 +537,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Founding presiden of the NGO &quot;Ebando&quot; (Gabon).
+        ///   Looks up a localized string similar to Cultural Mediator - Founding president of the NGO &quot;Ebando&quot; (Gabon)
+        ///&lt;p&gt;&lt;strong&gt;Honorary President of BOTF Gabon&lt;/strong&gt;&lt;/p&gt;
+        ///
+        ///.
         /// </summary>
         public static string hugues_title {
             get {
@@ -641,11 +650,20 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Projected number of Iboga trees to be planted per year thanks to sponsorship and voluntary work.
+        ///   Looks up a localized string similar to Projected number of Iboga trees to be planted in {0}.
         /// </summary>
-        public static string IbogasProjectedToBePlantedPerYearText {
+        public static string IbogasProjectedToBePlantedThisYearText {
             get {
-                return ResourceManager.GetString("IbogasProjectedToBePlantedPerYearText", resourceCulture);
+                return ResourceManager.GetString("IbogasProjectedToBePlantedThisYearText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Projected number of Iboga trees to be planted by {0}.
+        /// </summary>
+        public static string IbogasProjectedToBePlantedTwoYearsText {
+            get {
+                return ResourceManager.GetString("IbogasProjectedToBePlantedTwoYearsText", resourceCulture);
             }
         }
         
@@ -672,7 +690,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Honorary President of Blessings of The Forest, Gabon.
+        ///   Looks up a localized string similar to Doctor of Pharmacy - World authority on Iboga research
+        ///&lt;p&gt;&lt;strong&gt;Honorary President of Blessings of The Forest, Gabon&lt;/strong&gt;&lt;/p&gt;
+        ///.
         /// </summary>
         public static string jeannoel_title {
             get {
@@ -681,7 +701,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Accountant, Blessings Of The Forest, Gabon.
+        ///   Looks up a localized string similar to Chartered Accountant
+        ///&lt;p&gt;&lt;strong&gt;Financial Director of BOTF Gabon&lt;/strong&gt;&lt;/p&gt;
+        ///.
         /// </summary>
         public static string josephine_title {
             get {
@@ -712,7 +734,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Photographer and French photojournalist.
+        ///   Looks up a localized string similar to Photographer and French photojournalist
+        ///&lt;p&gt;&lt;strong&gt;Head of Photography, BOTF&lt;/strong&gt;&lt;/p&gt;
+        ///.
         /// </summary>
         public static string laurent_title {
             get {
@@ -780,7 +804,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to President of Blessings of The Forest, Gabon.
+        ///   Looks up a localized string similar to Nurse
+        ///&lt;p&gt;&lt;strong&gt;President of Blessings of The Forest, Gabon&lt;/strong&gt;&lt;/p&gt;.
         /// </summary>
         public static string marie_title {
             get {
@@ -967,7 +992,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Project Coordinator of NGO &quot;Conservation Justice&quot; (Partner of Blessings Of The Forest, Gabon).
+        ///   Looks up a localized string similar to Project Coordinator of NGO &quot;Conservation Justice&quot; (Partner of BOTF, Gabon)
+        ///&lt;p&gt;&lt;strong&gt;Correspondant between BOTF and village associations&lt;/strong&gt;&lt;/p&gt;
+        ///.
         /// </summary>
         public static string quevain_title {
             get {
@@ -990,7 +1017,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fisherman and Bwiti Ngondé Therapist.
+        ///   Looks up a localized string similar to Fisherman and herbalist
+        ///&lt;p&gt;&lt;strong&gt;Advisor &amp; Planter, BOTF Gabon&lt;/strong&gt;&lt;/p&gt;
+        ///.
         /// </summary>
         public static string rudy_title {
             get {
@@ -1019,7 +1048,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Software developer, holistic nutritionist and health coach.
+        ///   Looks up a localized string similar to Software developer and nutritionist
+        ///&lt;p&gt;&lt;strong&gt;Webmaster, BOTF&lt;/strong&gt;&lt;/p&gt;
+        ///.
         /// </summary>
         public static string simon_title {
             get {
@@ -1113,16 +1144,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;h4&gt;&lt;strong&gt;Your donation enables Blessings of The Forest to finance several things:&lt;/strong&gt;&lt;/h4&gt;
-        ///&lt;br /&gt;
-        ///
-        ///&lt;ul&gt;
-        ///    &lt;li&gt;
-        ///        &lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;
-        ///        The running costs of BOTF (local administrative costs, website hosting and development, accountancy fees, legal costs, business cards, logistics, key appointments, occasional support of local correspondants and mediators, communications and raising awareness)
-        ///    &lt;/li&gt;
-        ///    &lt;li&gt;
-        ///        &lt;i class=&quot;fa fa-angle-righ [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    The Iboga trees planted directly as a result of your donations in the heart of the community forests supported by BOTF are listed separately from those planted by the village communities who have taken the initiative to invest in the Iboga plantations as a result of our awareness campaigns and without our financial support, but who wish to participate in time in the agricultural cooperative programme labelled &quot;equitable &amp; sustainable&quot;, which is just as committed to the Gabonese national market as i [rest of string was truncated]&quot;;.
         /// </summary>
         public static string tree_counter_text {
             get {
@@ -1183,7 +1206,8 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Director and founder of Blessings Of The Forest.
+        ///   Looks up a localized string similar to Intercultural mediation and sustainable development consultant
+        ///&lt;p&gt;&lt;strong&gt;Director and founder of Blessings Of The Forest&lt;/strong&gt;&lt;/p&gt;.
         /// </summary>
         public static string yann_title {
             get {

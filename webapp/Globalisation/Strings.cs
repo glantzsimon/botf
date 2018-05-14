@@ -15,8 +15,10 @@
             public const string CurrencyLabel = "CurrencyLabel";
             public const string CustomerEmailLabel = "CustomerEmailLabel";
             public const string NumberOfIbogasLabel = "CustomerEmailLabel";
-            public const string IbogasPlantedLabel = "IbogasPlantedSoFarText";
-            public const string IbogasToBePlantedLabel = "IbogasProjectedToBePlantedPerYearText";
+            public const string IbogasPlantedSoFarLabel = "IbogasPlantedSoFarText";
+            public const string IbogasSponsoredSoFarLabel = "IbogasSponsoredSoFarText";
+            public const string IbogasToBePlantedThisYearLabel = "IbogasProjectedToBePlantedThisYearText";
+            public const string IbogasToBePlantedTwoYearsLabel = "IbogasProjectedToBePlantedTwoYearsText";
         }
 
         public static class Names

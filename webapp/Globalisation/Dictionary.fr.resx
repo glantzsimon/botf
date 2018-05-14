@@ -404,18 +404,21 @@
     <value>Vous voulez contribuer:</value>
   </data>
   <data name="IbogasSponsoredSoFarText" xml:space="preserve">
-    <value>Nombre d'Ibogas parrainés jusqu'à maintenant</value>
+    <value>Nombre d'Ibogas parrainés à ce jour</value>
   </data>
   <data name="IbogasPlantedSoFarText" xml:space="preserve">
-    <value>Nombre d'Ibogas plantés jusqu'à maintenant</value>
+    <value>Nombre d'Ibogas plantés à ce jour</value>
   </data>
-  <data name="IbogasProjectedToBePlantedPerYearText" xml:space="preserve">
-    <value>Nombre prévu d'Ibogas qui seront plantés par an grace au parrainage et au bénévolat</value>
+  <data name="IbogasProjectedToBePlantedThisYearText" xml:space="preserve">
+    <value>Objectif d'ibogas à planter en {0}</value>
   </data>
   <data name="ProjectStats" xml:space="preserve">
     <value>Statistiques du Projet</value>
   </data>
   <data name="tree_counter_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>text\fr\tree-counter-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="IbogasProjectedToBePlantedTwoYearsText" xml:space="preserve">
+    <value>Objectif d'ibogas à planter à horizon {0}</value>
   </data>
 </root>
