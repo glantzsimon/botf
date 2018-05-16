@@ -28,7 +28,6 @@ namespace K9.WebApplication
             UsersAndRolesInitialiser.Seed();
             var dbContext = new LocalDb();
             PermissionsSeeder.Seed(dbContext);
-            ProjectDetailsSeeder.Seed(dbContext);
         }
     }
 }
