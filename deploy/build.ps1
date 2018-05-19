@@ -5,7 +5,7 @@ $appDir = "webapp"
 $projectPath = ".\WebApplication\WebApplication.csproj"
 $webTestFile = ".\WebApplication.Tests\bin\Debug\K9.WebApplication.Tests.dll"
 $dataTestFile = ".\DataAccess.Tests\bin\Debug\K9.DataAccessLayer.Tests.dll"
-$applicationExecutablePath - ".\WebApplication\bin\debug\K9.WebApplication.dll"
+$applicationExecutablePath = ".\WebApplication\bin\debug\K9.WebApplication.dll"
 	
 function ProcessErrors(){
   if($? -eq $false)
