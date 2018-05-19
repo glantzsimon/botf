@@ -3,7 +3,7 @@ param([String]$publishPassword='', [String]$env='')
 $publishDir = "publish"
 $appDir = "webapp"
 $projectPath = "WebApplication\WebApplication.csproj"
-$applicationExecutablePath = "WebApplication\bin\$env\K9.WebApplication.dll"
+$applicationExecutablePath = "WebApplication\bin\$env\K9.DataAccessLayer.dll"
 	
 function ProcessErrors(){
   if($? -eq $false)
