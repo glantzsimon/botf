@@ -4,8 +4,8 @@ $publishDir = "publish"
 $appDir = "webapp"
 $projectPath = "WebApplication\WebApplication.csproj"
 $migrationsExecutable = "K9.DataAccessLayer.dll"
-$configPath = Resolve-Path -Path ".\webapp\webapplication\web.config"
-$startupPath = ".\WebApplication\bin"
+$configPath = Resolve-Path -Path "webapp\webapplication\web.config"
+$startupPath = "WebApplication\bin"
 	
 function ProcessErrors(){
   if($? -eq $false)
@@ -27,7 +27,7 @@ function _MigrateDatabase() {
   ProcessErrors
     
   echo "Migrating database"  
-  ..\tools\migrate.exe $migrationsExecutable /startUpDirectory=$startupPath  /startUpConfigurationFile=$configPath
+  tools\migrate.exe $migrationsExecutable /startUpDirectory=$startupPath  /startUpConfigurationFile=$configPath
   ProcessErrors
   popd
 }
