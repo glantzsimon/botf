@@ -20,10 +20,11 @@ namespace K9.WebApplication.Controllers
         {
             _archiveCategoriesRepository = archiveCategoriesRepository;
             RecordBeforeCreate += ArchiveItemsController_RecordBeforeCreate;
+            RecordBeforeCreated += ArchiveItemsController_RecordBeforeUpdated;
             RecordBeforeUpdate += ArchiveItemsController_RecordBeforeUpdate;
             RecordBeforeUpdated += ArchiveItemsController_RecordBeforeUpdated;
         }
-
+        
         private void ArchiveItemsController_RecordBeforeUpdated(object sender, CrudEventArgs e)
         {
             var archiveItem = e.Item as ArchiveItem;

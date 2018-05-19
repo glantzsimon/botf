@@ -2,6 +2,7 @@
 using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.EventArgs;
 using K9.Base.WebApplication.UnitsOfWork;
+using K9.SharedLibrary.Helpers;
 using System;
 using System.Web.Mvc;
 using WebMatrix.WebData;
@@ -16,6 +17,17 @@ namespace K9.WebApplication.Controllers
             : base(controllerPackage)
         {
             RecordBeforeCreate += NewsItemsController_RecordBeforeCreate;
+            RecordBeforeUpdated += NewsItemsController_RecordBeforeUpdated;
+            RecordBeforeCreated += NewsItemsController_RecordBeforeUpdated;
+        }
+        
+        private void NewsItemsController_RecordBeforeUpdated(object sender, CrudEventArgs e)
+        {
+            var newsItem = e.Item as NewsItem;
+            if (!string.IsNullOrEmpty(newsItem.VideoUrl))
+            {
+                newsItem.VideoUrl = HelperMethods.GetEmbeddableUrl(newsItem.VideoUrl);
+            }
         }
 
         void NewsItemsController_RecordBeforeCreate(object sender, CrudEventArgs e)
