@@ -16,13 +16,13 @@
     div#plant-iboga-banner div.iboga-text-container {
         position: relative;
         z-index: 1;
-        top: 20px;
-        left: 90px;
-        height: 70px;
+        top: 10px;
+        left: 86px;
+        height: 90px;
         width: 140px;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
-        border: 3px solid #8e8e8e;
+        border: 3px solid #3d251d;
         border-left: none;
         background-color: rgba(255, 255, 255, 0.8);
         -moz-box-shadow: 3px 3px 10px -3px #222;
@@ -39,9 +39,9 @@
             width: 100%;
             height: 80%;
             margin: auto;
-            padding: 5px 20px;
+            padding: 0 15px 0 20px;
             text-align: center;
-            font-size: 0.9em;
+            font-size: 0.9em !important;
             word-wrap: break-word;
         }
 
@@ -116,16 +116,16 @@ i#close-plant-iboga {
         top: 9px;
         left: 80px;
         height: 38px;
-        width: 200px;
+        width: 264px;
         margin-left: -20px;
         margin-top: 10px;
     }
 
         div#plant-iboga-banner div.iboga-text-container div#iboga-text {
-            font-size: 0.8em;
+            font-size: 0.8em !important;
             font-weight: normal;
             height: 20px;
-            padding: 0;
+            padding: 0 0 0 20px;
         }
 
             div#plant-iboga-banner div.iboga-text-container div#iboga-text span {

@@ -610,6 +610,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1 Iboga tree costs {0} to sponsor.
+        /// </summary>
+        public static string IbogaPriceText {
+            get {
+                return ResourceManager.GetString("IbogaPriceText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number of Iboga trees planted so far.
         /// </summary>
         public static string IbogasPlantedSoFarText {

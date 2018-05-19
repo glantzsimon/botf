@@ -1,4 +1,5 @@
-﻿@using K9.WebApplication.Helpers
+﻿@using K9.SharedLibrary.Helpers
+@using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.StripeModel
 @{
     ViewBag.Title = K9.Globalisation.Dictionary.SponsorIbogaTree;
@@ -23,6 +24,8 @@
 
         @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)
         @Html.BootstrapEditorFor(model => model.NumberOfTrees)
+
+        <p>@String.Format(K9.Globalisation.Dictionary.IbogaPriceText, 10.ToString("C2", CurrencyTools.GetCultureInfoFromIso("EUR")))</p>
 
         <hr />
         <div class="text-right">

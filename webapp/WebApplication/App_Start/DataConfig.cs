@@ -11,8 +11,10 @@ namespace K9.WebApplication
     {
         public static void InitialiseDatabase()
         {
+            #if DEBUG
             var migrator = new DbMigrator(new DatabaseInitialiserLocal());
             migrator.Update();
+            #endif
         }
 
         public static void InitialiseWebsecurity()

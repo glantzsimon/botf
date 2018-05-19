@@ -421,4 +421,7 @@
   <data name="IbogasProjectedToBePlantedTwoYearsText" xml:space="preserve">
     <value>Objectif d'ibogas à planter à horizon {0}</value>
   </data>
+  <data name="IbogaPriceText" xml:space="preserve">
+    <value>Ça coûte {0} de parrainer un Iboga</value>
+  </data>
 </root>

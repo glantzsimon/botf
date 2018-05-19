@@ -1,0 +1,18 @@
+﻿@model K9.Base.WebApplication.ViewModels.LinkViewModel
+
+<style>
+    .center-cropped {
+        width: 100%;
+        height: 400px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+</style>
+
+<a target="_blank" href="@Model.Url">
+    <p>@Model.Url</p>
+    <br />
+    <div class="center-cropped link-image-preview" data-url="@Model.Url">
+    </div>
+</a>

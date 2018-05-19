@@ -37,7 +37,12 @@ function bootstrapControls(config) {
             height: 0,
             direction: 'up'
         });
+    }
 
+    function initImagePreviews() {
+        $(".link-image-preview").each(function() {
+            $.fn.loadLinkImagePreview($(this));
+        });
     }
 
     function initDateTimeValidation() {
@@ -60,6 +65,7 @@ function bootstrapControls(config) {
         initDateTimeValidation();
         initToolTips();
         initTextScroller();
+        initImagePreviews();
     };
 
     return {

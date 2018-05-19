@@ -122,6 +122,16 @@
 	        });
 	    };
 
+	    $.fn.loadLinkImagePreview = function($el) {
+	        var url = $el.attr("data-url");
+	        ajaxcontroller().get("@Url.Action("GetLinkPreview", "Archive")", { url: url }).done(
+	            function(result) {
+	                if (result.success && result.data) {
+	                    $el.attr("style", "background-image: url('" + result.data.ImageUrl + "');");
+	                }
+	            });
+	    }
+
 		bootstrapControls({
 			language: "@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName.ToLower()",
             dateFormat: "@CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern.ToUpper()"

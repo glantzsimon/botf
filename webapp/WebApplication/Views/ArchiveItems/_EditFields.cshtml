@@ -5,6 +5,10 @@
 @Html.BootstrapEditorFor(model => model.Language)
 @Html.BootstrapEditorFor(model => model.CategoryId)
 @Html.BootstrapEditorFor(model => model.FileSource)
+@Html.BootstrapEditorFor(model => model.Url, new EditorOptions
+{
+    IsHidden = !Model.IsDisplayUrl
+})
 @Html.BootstrapEditorFor(model => model.Title)
 @Html.BootstrapEditorFor(model => model.DescriptionText)
 
@@ -16,12 +20,41 @@
         $.fn.setAcceptedFileExtensions(fileInput, type);
     }
 
-    $(function () {
-        $("#CategoryId").change(function () {
+    function setInputVisibility() {
+        var type = $("#CategoryId")[0].getSelectedText();
+        var isUrlVisible = type === "@MvcHtmlString.Create(Dictionary.Videos)" || type === "@MvcHtmlString.Create(Dictionary.Links)";
+        var isFileSourceVisible = type !== "@MvcHtmlString.Create(Dictionary.Links)";
+        var urlField = $("div[data-input-id=Url]");
+        var fileSourceField = $("div[data-input-id=FileSource]");
+        isUrlVisible ? urlField.show() : urlField.hide();
+        isFileSourceVisible ? fileSourceField.show() : fileSourceField.hide();
+    }
+
+    function updateLinkMetaData(url) {
+        ajaxcontroller().get("@Url.Action("GetLinkPreview", "Archive")", { url: url }).done(
+            function(result) {
+                if (result.success && result.data) {
+                    $("#Title").val(result.data.Title);
+                    $("#DescriptionText").val(result.data.Description);
+                }
+                $("#pageSpinner").hide();
+            });
+    }
+
+    $(function() {
+        $("#CategoryId").change(function() {
             setAcceptedFileExtensionsByCategory();
+            setInputVisibility();
+        });
+
+        $("#Url").keyup(function() {
+            var url = $(this).val();
+            if (url.length > 5) {
+                $("#pageSpinner").show();
+                updateLinkMetaData(url);
+            }
         });
 
         window.setTimeout(setAcceptedFileExtensionsByCategory, 500);
     });
-
 </script>

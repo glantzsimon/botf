@@ -1,7 +1,7 @@
 ﻿@using K9.Base.WebApplication.ViewModels
 @model ArchiveItem
-    
-<div>
+
+<div class="archive-content-item scrollFadeUp">
     <div class="news-item-title">
         <p><strong>@Dictionary.PublishedOnLabel</strong>: @Model.PublishedOn.ToLongDateString()</p>
         <p><strong>@Dictionary.PublishedByLabel</strong>: @Model.PublishedBy</p>
@@ -15,6 +15,28 @@
         </p>
     </article>
     <div>
-        @Html.Partial("_UploadedFilesDisplay", new FileSourceViewModel(Model.FileSource))    
+        @if (!string.IsNullOrEmpty(Model.Url))
+        {
+            if (Model.ArchiveCategory.Name == Dictionary.Links)
+            {
+                @Html.Partial("_LinkDisplay", new LinkViewModel
+                {
+                    Url = Model.Url
+                })
+            }
+            else if (Model.ArchiveCategory.Name == Dictionary.Videos)
+            {
+                @Html.Partial("_VideoDisplay", new VideoViewModel
+                {
+                    Name = Model.Name,
+                    Url = Model.Url
+                })
+            }
+        }
+        else
+        {
+            @Html.Partial("_UploadedFilesDisplay", new FileSourceViewModel(Model.FileSource))
+        }
     </div>
+    <hr />
 </div>
