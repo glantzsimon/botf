@@ -9,3 +9,6 @@ logs
 .vs
 upload
 publish
+
+#Exceptions
+!tools/EntityFramework.dll
