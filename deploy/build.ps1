@@ -5,7 +5,9 @@ $appDir = "webapp"
 $projectPath = ".\WebApplication\WebApplication.csproj"
 $webTestFile = ".\WebApplication.Tests\bin\Debug\K9.WebApplication.Tests.dll"
 $dataTestFile = ".\DataAccess.Tests\bin\Debug\K9.DataAccessLayer.Tests.dll"
-$applicationExecutablePath = ".\WebApplication\bin\debug\K9.DataAccessLayer.dll"
+$migrationsExecutable = "K9.DataAccessLayer.dll"
+$configPath = Resolve-Path -Path ".\webapp\webapplication\web.config"
+$startupPath = ".\WebApplication\bin"
 	
 function ProcessErrors(){
   if($? -eq $false)
@@ -73,8 +75,8 @@ function _MigrateDatabase() {
   pushd $appDir  
   ProcessErrors
     
-  echo "Migrating database"
-  .\packages\EntityFramework.6.1.3\tools\migrate.exe $applicationExecutablePath /startupConfigurationFile=”..\\web.config”
+  echo "Migrating database"  
+  ..\tools\migrate.exe $migrationsExecutable /startUpDirectory=$startupPath  /startUpConfigurationFile=$configPath
   ProcessErrors
   popd
 }

@@ -1,8 +1,4 @@
-param([String]$publishPassword='', [String]$env='')
-
-$publishDir = "publish"
 $appDir = "webapp"
-$projectPath = "WebApplication\WebApplication.csproj"
 $migrationsExecutable = "K9.DataAccessLayer.dll"
 $configPath = Resolve-Path -Path ".\webapp\webapplication\web.config"
 $startupPath = ".\WebApplication\bin"
@@ -11,12 +7,6 @@ function ProcessErrors(){
   if($? -eq $false)
   {
     throw "The previous command failed (see above)";
-  }
-}
-
-function _CreateDirectory($dir) {
-  If (-Not (Test-Path $dir)) {
-    New-Item -ItemType Directory -Path $dir
   }
 }
 
@@ -32,24 +22,9 @@ function _MigrateDatabase() {
   popd
 }
 
-function _Publish() {
-  echo "Publishing App"
-  
-  pushd $appDir
-  ProcessErrors
-  
-  _CreateDirectory $publishDir
-  ProcessErrors
-  
-  Msbuild $projectPath /p:DeployOnBuild=true /p:PublishProfile=$env /p:AllowUntrustedCertificate=true /p:Password=$publishPassword
-  ProcessErrors
-  popd
-}
-
 function Main {
   Try {
 	_MigrateDatabase
-    _Publish
   }
   Catch {
     Write-Error $_.Exception
