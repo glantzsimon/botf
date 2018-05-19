@@ -66,6 +66,18 @@ function _Build() {
   popd
 }
 
+function _MigrateDatabase() {
+  echo "Preparing to migrate database"
+  
+  pushd $appDir  
+  ProcessErrors
+    
+  echo "Migrating database"
+  .\packages\EntityFramework.6.1.3\tools\migrate.exe $applicationExecutablePath /startupConfigurationFile=”..\\web.config”
+  ProcessErrors
+  popd
+}
+
 function _Publish() {
   echo "Publishing App"
   
@@ -86,6 +98,7 @@ function Main {
   Try {
     _Build
 	_Test
+	_MigrateDatabase
 	_Publish
   }
   Catch {
