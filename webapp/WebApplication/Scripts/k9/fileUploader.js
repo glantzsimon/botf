@@ -70,11 +70,11 @@ function fileUploader(config) {
             }
             img.attr("src", data.src);
         } else if (type === "video") {
-            img.attr("src", "/Images/ui/video.png");
+            img.attr("src", $.fn.getFullPathTo("Images/ui/video.png"));
         } else if (type === "audio") {
-            img.attr("src", "/Images/ui/audio.png");
+            img.attr("src", $.fn.getFullPathTo("Images/ui/audio.png"));
         } else {
-            img.attr("src", "/Images/ui/document.jpg");
+            img.attr("src", $.fn.getFullPathTo("Images/ui/document.jpg"));
         }
 
         fileContainer.append(img);

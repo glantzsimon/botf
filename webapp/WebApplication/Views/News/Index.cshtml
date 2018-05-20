@@ -1,4 +1,7 @@
-﻿@using K9.WebApplication.Helpers
+﻿@using System.Web.Mvc.Html
+@using K9.Base.DataAccessLayer.Enums
+@using K9.Base.WebApplication.ViewModels
+@using K9.WebApplication.Helpers
 @model List<NewsItem>
 @{
     ViewBag.Title = Dictionary.Home;
@@ -20,21 +23,28 @@
         @foreach (var newsItem in Model)
         {
             <div class="list-item-container container scrollFadeUp">
-                <div class="col-md-5">
-                    @if (!string.IsNullOrEmpty(newsItem.VideoUrl))
+                <div class="col-md-5 padding-top-6">
+                    @if (newsItem.Type == ENewsItemType.Article)
                     {
-                        @Html.Partial("_EmbeddedVideo", newsItem.VideoUrl)
+                        @Html.Partial("_ImageFilesDisplay", new FileSourceViewModel(newsItem.ImageFileSource))
                     }
-                    else
+                    else if (newsItem.Type == ENewsItemType.Video)
                     {
-                        <div class="picture-frame picture-frame-300">
-                            <div>
-                                @Html.Carousel(new CarouselOptions(newsItem.ImageFileSource.PathToFiles, "", 70)
-                                {
-                                    ImageSizing = EImageSizing.Vertical
-                                })
-                            </div>
-                        </div>
+                        if (!string.IsNullOrEmpty(newsItem.Url))
+                        {
+                            @Html.Partial("_EmbeddedVideo", newsItem.Url)
+                        }
+                        else
+                        {
+                            @Html.Partial("_VideoFilesDisplay", new FileSourceViewModel(newsItem.VideoFileSource))
+                        }
+                    }
+                    else if (newsItem.Type == ENewsItemType.Link)
+                    {
+                        @Html.Partial("_LinkPreview", new LinkViewModel
+                        {
+                            Url = newsItem.Url
+                        })
                     }
                 </div>
                 <div class="col-md-7" id="@newsItem.Id">
@@ -42,6 +52,10 @@
                         <p><strong>@Dictionary.PublishedOnLabel</strong>: @newsItem.PublishedOn.ToLongDateString()</p>
                         <p><strong>@Dictionary.PublishedByLabel</strong>: @newsItem.PublishedBy</p>
                         <p><strong>@Dictionary.LanguageLabel</strong>: @newsItem.LanguageName</p>
+                        @if (newsItem.Type == ENewsItemType.Link)
+                        {
+                            <p><strong>@Dictionary.Source</strong>: <a target="_blank" href="@newsItem.Url">@newsItem.Url</a></p>
+                        }
                     </div>
                     <h5>
                         @MvcHtmlString.Create(newsItem.Subject)

@@ -1,9 +1,66 @@
-﻿@using K9.Base.WebApplication.Helpers
+﻿@using K9.Base.DataAccessLayer.Enums
+@using K9.Base.WebApplication.Helpers
 @model NewsItem
 @Html.BootstrapEditorFor(model => model.PublishedOn)
 @Html.HiddenFor(model => model.PublishedBy)
 @Html.BootstrapEditorFor(model => model.Language)
-@Html.BootstrapEditorFor(model => model.ImageFileSource)
-@Html.BootstrapEditorFor(model => model.VideoUrl)
+@Html.BootstrapEditorFor(model => model.Type)
+@Html.BootstrapEditorFor(model => model.ImageFileSource, new EditorOptions
+{
+    IsHidden = !Model.IsDisplayImageFileSource
+})
+@Html.BootstrapEditorFor(model => model.VideoFileSource, new EditorOptions
+{
+    IsHidden = !Model.IsDisplayVideoFileSource
+})
+@Html.BootstrapEditorFor(model => model.Url, new EditorOptions
+{
+    IsHidden = !Model.IsDisplayUrl
+})
 @Html.BootstrapEditorFor(model => model.Subject)
 @Html.BootstrapEditorFor(model => model.Body)
+
+<script type="text/javascript">
+
+    function setInputVisibility() {
+        var type = parseInt($("#Type").val());
+        var isUrlVisible = type === @((int)ENewsItemType.Video) || type === @((int)ENewsItemType.Link);
+        var isImageFileSourceVisible = type === @((int)ENewsItemType.Article);
+        var isVideoFileSourceVisible = type === @((int)ENewsItemType.Video);
+        var urlField = $("div[data-input-id=Url]");
+        var imageFileSourceField = $("div[data-input-id=ImageFileSource]");
+        var videoFileSourceField = $("div[data-input-id=VideoFileSource]");
+        isUrlVisible ? urlField.show() : urlField.hide();
+        isImageFileSourceVisible ? imageFileSourceField.show() : imageFileSourceField.hide();
+        isVideoFileSourceVisible ? videoFileSourceField.show() : videoFileSourceField.hide();
+    }
+
+    function updateLinkMetaData(url) {
+        ajaxcontroller().get("@Url.Action("GetLinkPreview", "Archive")", { url: url }).done(
+            function(result) {
+                if (result.success && result.data) {
+                    if(result.data.Title)
+                        $("#Subject").val(result.data.Title);
+
+                    if(result.data.Description)
+                        $("#Body").val(result.data.Description);
+                }
+                $("#pageSpinner").hide();
+            });
+    }
+
+    $(function() {
+        $("#Type").change(function() {
+            setInputVisibility();
+        });
+
+        $("#Url").keyup(function() {
+            var url = $(this).val();
+            if (url.length > 5) {
+                $("#pageSpinner").show();
+                updateLinkMetaData(url);
+            }
+        });
+    });
+
+</script>

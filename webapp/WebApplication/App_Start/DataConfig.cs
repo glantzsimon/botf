@@ -1,5 +1,4 @@
-﻿
-using K9.Base.DataAccessLayer.Database;
+﻿using K9.Base.DataAccessLayer.Database;
 using K9.DataAccessLayer.Database;
 using K9.DataAccessLayer.Database.Seeds;
 using System.Data.Entity.Migrations;
@@ -16,7 +15,7 @@ namespace K9.WebApplication
             migrator.Update();
             #endif
         }
-
+        
         public static void InitialiseWebsecurity()
         {
             if (!WebSecurity.Initialized)

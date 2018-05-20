@@ -24,9 +24,9 @@ namespace K9.WebApplication.Controllers
         private void NewsItemsController_RecordBeforeUpdated(object sender, CrudEventArgs e)
         {
             var newsItem = e.Item as NewsItem;
-            if (!string.IsNullOrEmpty(newsItem.VideoUrl))
+            if (!string.IsNullOrEmpty(newsItem.Url))
             {
-                newsItem.VideoUrl = HelperMethods.GetEmbeddableUrl(newsItem.VideoUrl);
+                newsItem.Url = HelperMethods.GetEmbeddableUrl(newsItem.Url);
             }
         }
 

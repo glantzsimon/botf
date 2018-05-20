@@ -34,8 +34,11 @@
         ajaxcontroller().get("@Url.Action("GetLinkPreview", "Archive")", { url: url }).done(
             function(result) {
                 if (result.success && result.data) {
-                    $("#Title").val(result.data.Title);
-                    $("#DescriptionText").val(result.data.Description);
+                    if(result.data.Title)
+                        $("#Title").val(result.data.Title);
+
+                    if(result.data.Description)
+                        $("#DescriptionText").val(result.data.Description);
                 }
                 $("#pageSpinner").hide();
             });

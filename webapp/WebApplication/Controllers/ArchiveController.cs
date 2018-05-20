@@ -33,7 +33,7 @@ namespace K9.WebApplication.Controllers
                 {
                     a.ArchiveCategory = archiveCategories.FirstOrDefault(c => c.Id == a.CategoryId);
                     return a;
-                }).ToList();
+                }).OrderByDescending(a => a.PublishedOn).ToList();
             var archiveModel = new ArchiveViewModel
             {
                 CategoryId = categoryId ?? 0,

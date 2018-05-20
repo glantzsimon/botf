@@ -5,6 +5,10 @@
     <div class="news-item-title">
         <p><strong>@Dictionary.PublishedOnLabel</strong>: @Model.PublishedOn.ToLongDateString()</p>
         <p><strong>@Dictionary.PublishedByLabel</strong>: @Model.PublishedBy</p>
+        @if (Model.ArchiveCategory.Name == Dictionary.Links)
+        {
+            <p><strong>@Dictionary.Source</strong>: <a target="_blank" href="@Model.Url">@Model.Url</a></p>
+        }
     </div>
     <h5>
         @MvcHtmlString.Create(Model.Title.ToUpper())
@@ -19,18 +23,16 @@
         {
             if (Model.ArchiveCategory.Name == Dictionary.Links)
             {
-                @Html.Partial("_LinkDisplay", new LinkViewModel
+                <br />
+                @Html.Partial("_LinkPreview", new LinkViewModel
                 {
                     Url = Model.Url
                 })
             }
             else if (Model.ArchiveCategory.Name == Dictionary.Videos)
             {
-                @Html.Partial("_VideoDisplay", new VideoViewModel
-                {
-                    Name = Model.Name,
-                    Url = Model.Url
-                })
+                <br />
+                @Html.Partial("_EmbeddedVideo", Model.Url)
             }
         }
         else
