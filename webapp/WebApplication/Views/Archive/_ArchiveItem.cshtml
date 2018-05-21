@@ -6,7 +6,7 @@
         <p><strong>@Dictionary.PublishedOnLabel</strong>: @Model.PublishedOn.ToLongDateString()</p>
         <p><strong>@Dictionary.PublishedByLabel</strong>: @Model.PublishedBy</p>
         <p><strong>@Dictionary.LanguageLabel</strong>: @Model.LanguageName</p>
-        @if (Model.ArchiveCategory.Name == Dictionary.Links)
+        @if (Model.ArchiveCategory.GetLocalisedDescription() == Dictionary.Links)
         {
             <p><strong>@Dictionary.Source</strong>: <a target="_blank" href="@Model.Url">@Model.Url</a></p>
         }
@@ -22,7 +22,7 @@
     <div>
         @if (!string.IsNullOrEmpty(Model.Url))
         {
-            if (Model.ArchiveCategory.Name == Dictionary.Links)
+            if (Model.ArchiveCategory.GetLocalisedDescription() == Dictionary.Links)
             {
                 <br />
                 @Html.Partial("_LinkPreview", new LinkViewModel
@@ -30,7 +30,7 @@
                     Url = Model.Url
                 })
             }
-            else if (Model.ArchiveCategory.Name == Dictionary.Videos)
+            else if (Model.ArchiveCategory.GetLocalisedDescription() == Dictionary.Videos)
             {
                 <br />
                 @Html.Partial("_EmbeddedVideo", Model.Url)
