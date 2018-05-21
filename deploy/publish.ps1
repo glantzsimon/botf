@@ -5,7 +5,7 @@ $appDir = "webapp"
 $projectPath = "WebApplication\WebApplication.csproj"
 $migrationsExecutable = "K9.DataAccessLayer.dll"
 $configPath = Resolve-Path -Path ".\webapp\webapplication\web.config"
-$startupPath = ".\WebApplication\bin"
+$startupPath = ".\WebApplication\bin\$env"
 	
 function ProcessErrors(){
   if($? -eq $false)
@@ -18,6 +18,17 @@ function _CreateDirectory($dir) {
   If (-Not (Test-Path $dir)) {
     New-Item -ItemType Directory -Path $dir
   }
+}
+
+function _Build() {
+  echo "Building App"
+  
+  pushd $appDir
+  ProcessErrors
+  
+  Msbuild $projectPath /p:Configuration=$env
+  ProcessErrors
+  popd
 }
 
 function _MigrateDatabase() {
@@ -48,6 +59,7 @@ function _Publish() {
 
 function Main {
   Try {
+	_Build
 	_MigrateDatabase
     _Publish
   }
