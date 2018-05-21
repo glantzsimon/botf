@@ -26,7 +26,7 @@ function _Build() {
   pushd $appDir
   ProcessErrors
   
-  Msbuild $projectPath /p:Configuration=$env
+  Msbuild $projectPath /p:Configuration=$env /P:OutputPath=bin\$env
   ProcessErrors
   popd
 }
