@@ -5,9 +5,9 @@ using System.Configuration;
 
 namespace K9.DataAccessLayer.Database
 {
-    public class DatabaseInitialiserLocal : DatabaseInitialiser<LocalDb>
+    public class BaseDatabaseInitialiser : DatabaseInitialiser<LocalDb>
 	{
-	    public DatabaseInitialiserLocal()
+	    public BaseDatabaseInitialiser()
 	    {
 	        var dbConfig = ConfigHelper.GetConfiguration<DatabaseConfiguration>(ConfigurationManager.AppSettings).Value;
 	        AutomaticMigrationsEnabled = dbConfig.AutomaticMigrationsEnabled;
