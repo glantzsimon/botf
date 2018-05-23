@@ -13,7 +13,7 @@ namespace K9.DataAccessLayer.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201805231147279_InitialCreate"; }
+            get { return "201805231256293_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

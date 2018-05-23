@@ -10,8 +10,6 @@ namespace K9.DataAccessLayer.Database
 	    public BaseDatabaseInitialiser()
 	    {
 	        var dbConfig = ConfigHelper.GetConfiguration<DatabaseConfiguration>(ConfigurationManager.AppSettings).Value;
-	        AutomaticMigrationsEnabled = dbConfig.AutomaticMigrationsEnabled;
-	        AutomaticMigrationDataLossAllowed = dbConfig.AutomaticMigrationDataLossAllowed;
 	    }
 
         protected override void Seed(LocalDb db)
