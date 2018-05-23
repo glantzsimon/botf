@@ -1,7 +1,10 @@
-﻿using K9.Base.DataAccessLayer.Database;
+﻿using System.Configuration;
+using K9.Base.DataAccessLayer.Database;
 using K9.DataAccessLayer.Database;
 using K9.DataAccessLayer.Database.Seeds;
 using System.Data.Entity.Migrations;
+using K9.Base.DataAccessLayer.Config;
+using K9.SharedLibrary.Helpers;
 using WebMatrix.WebData;
 
 namespace K9.WebApplication
@@ -10,12 +13,14 @@ namespace K9.WebApplication
     {
         public static void InitialiseDatabase()
         {
-            #if DEBUG
-            var migrator = new DbMigrator(new DatabaseInitialiserLocal());
-            migrator.Update();
-            #endif
+            var dbConfig = ConfigHelper.GetConfiguration<DatabaseConfiguration>(ConfigurationManager.AppSettings).Value;
+            if (dbConfig.AutomaticMigrationsEnabled)
+            {
+                var migrator = new DbMigrator(new DatabaseInitialiserLocal());
+                migrator.Update();
+            }
         }
-        
+
         public static void InitialiseWebsecurity()
         {
             if (!WebSecurity.Initialized)

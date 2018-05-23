@@ -10,6 +10,7 @@ namespace K9.DataAccessLayer.Database
 	    public DatabaseInitialiserLocal()
 	    {
 	        var dbConfig = ConfigHelper.GetConfiguration<DatabaseConfiguration>(ConfigurationManager.AppSettings).Value;
+	        AutomaticMigrationsEnabled = dbConfig.AutomaticMigrationsEnabled;
 	        AutomaticMigrationDataLossAllowed = dbConfig.AutomaticMigrationDataLossAllowed;
 	    }
 
