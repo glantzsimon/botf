@@ -2,6 +2,7 @@ $appDir = "webapp"
 $migrationsExecutable = "K9.DataAccessLayer.dll"
 $configPath = Resolve-Path -Path ".\webapp\webapplication\web.config"
 $startupPath = ".\WebApplication\bin\"
+$migrationConfiguration = "LocalConfiguration"
 	
 function ProcessErrors(){
   if($? -eq $false)

@@ -152,14 +152,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\DatabaseInitialiser.cs" />
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\Seeds\PermissionsSeeder.cs" />
     <Compile Include="Migrations\201805231256293_InitialCreate.cs" />
     <Compile Include="Migrations\201805231256293_InitialCreate.Designer.cs">
       <DependentUpon>201805231256293_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\LocalConfiguration.cs" />
+    <Compile Include="Migrations\LocalMigrationsConfiguration.cs" />
     <Compile Include="Models\ProjectDetail.cs" />
     <Compile Include="Models\Donation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
