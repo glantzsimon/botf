@@ -365,10 +365,10 @@
     <value>articles\fr\marie-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="NumberOfIbogasSponsoredLabel" xml:space="preserve">
-    <value>Nombre d'Ibogas Parrainés</value>
+    <value>Nombre d'Ibogas Sponsorisés</value>
   </data>
   <data name="NumberOfTreesLabel" xml:space="preserve">
-    <value>Combien d'Ibogas voulez-vous parrainer ?</value>
+    <value>Combien d'Ibogas voulez-vous sponsoriser ?</value>
   </data>
   <data name="quevain_text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\quevain-text.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -389,7 +389,7 @@
     <value>articles\fr\rudy-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SponsorIbogaTree" xml:space="preserve">
-    <value>Parrainez Un Iboga</value>
+    <value>Sponsorisez Un Iboga</value>
   </data>
   <data name="SponsorThankYouEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\fr\sponsorthankyouemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -404,7 +404,7 @@
     <value>Vous voulez contribuer:</value>
   </data>
   <data name="IbogasSponsoredSoFarText" xml:space="preserve">
-    <value>Nombre d'Ibogas parrainés à ce jour</value>
+    <value>Nombre d'Ibogas sponsorisés à ce jour</value>
   </data>
   <data name="IbogasPlantedSoFarText" xml:space="preserve">
     <value>Nombre d'Ibogas plantés à ce jour</value>
@@ -422,6 +422,12 @@
     <value>Objectif d'ibogas à planter à horizon {0}</value>
   </data>
   <data name="IbogaPriceText" xml:space="preserve">
-    <value>Ça coûte {0} de parrainer un Iboga</value>
+    <value>Ça coûte {0} de sponsoriser un Iboga</value>
+  </data>
+  <data name="SponsorIbogaTrees" xml:space="preserve">
+    <value>Sponsorisez un/des Iboga(s)</value>
+  </data>
+  <data name="SponsorIbogaTreeSubTitle" xml:space="preserve">
+    <value>10 euros = 1 iboga sponsorisé</value>
   </data>
 </root>

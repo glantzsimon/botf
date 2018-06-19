@@ -418,4 +418,10 @@
   <data name="IbogaPriceText" xml:space="preserve">
     <value>1 Iboga tree costs {0} to sponsor</value>
   </data>
+  <data name="SponsorIbogaTrees" xml:space="preserve">
+    <value>Sponsor Iboga Tree(s)</value>
+  </data>
+  <data name="SponsorIbogaTreeSubTitle" xml:space="preserve">
+    <value>10 euros = 1 Iboga sponsored</value>
+  </data>
 </root>

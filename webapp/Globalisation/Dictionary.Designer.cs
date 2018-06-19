@@ -1077,6 +1077,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sponsor Iboga Tree(s).
+        /// </summary>
+        public static string SponsorIbogaTrees {
+            get {
+                return ResourceManager.GetString("SponsorIbogaTrees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 10 euros = 1 Iboga sponsored.
+        /// </summary>
+        public static string SponsorIbogaTreeSubTitle {
+            get {
+                return ResourceManager.GetString("SponsorIbogaTreeSubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
         ///
