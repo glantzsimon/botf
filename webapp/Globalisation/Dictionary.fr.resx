@@ -430,4 +430,10 @@
   <data name="SponsorIbogaTreeSubTitle" xml:space="preserve">
     <value>10 euros = 1 iboga sponsorisé</value>
   </data>
+  <data name="CookiesTitle" xml:space="preserve">
+    <value>L'utilisation de cookies</value>
+  </data>
+  <data name="cookies_blurb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\fr\cookies-blurb.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

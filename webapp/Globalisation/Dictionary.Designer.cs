@@ -209,6 +209,26 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;p&gt;
+        ///    We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we&apos;ll assume that you are happy to receive all cookies from this website. If you would like to change your preferences you may do so by following the instructions &lt;a href=&quot;http://www.aboutcookies.org/default.aspx?page=1&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;.
+        ///&lt;/p&gt;.
+        /// </summary>
+        public static string cookies_blurb {
+            get {
+                return ResourceManager.GetString("cookies_blurb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use of Cookies.
+        /// </summary>
+        public static string CookiesTitle {
+            get {
+                return ResourceManager.GetString("CookiesTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Currency.
         /// </summary>
         public static string CurrencyLabel {

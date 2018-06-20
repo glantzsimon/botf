@@ -264,6 +264,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IShopService.cs" />
     <Compile Include="Services\IDonationService.cs" />
+    <Compile Include="Services\CookieService.cs" />
     <Compile Include="Services\ShopService.cs" />
     <Compile Include="Services\Stripe\StripeCharge.cs" />
     <Compile Include="Services\Stripe\IStripeService.cs" />
@@ -284,6 +285,7 @@
     <Content Include="Content\site\elements.css" />
     <Content Include="Content\site\mobile.css" />
     <Content Include="Content\site\sections\iboga.css" />
+    <Content Include="Content\site\sections\cookies.css" />
     <Content Include="Content\site\sections\shop.css" />
     <Content Include="Content\site\sections\archive.css" />
     <Content Include="Content\site\shared.css" />
@@ -1013,6 +1015,7 @@
     <Content Include="Views\Shared\_ImageFilesDisplay.cshtml" />
     <Content Include="Views\Shared\_VideoFilesDisplay.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\NewsItemType.cshtml" />
+    <Content Include="Views\Shared\_CookieWarning.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
