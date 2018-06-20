@@ -131,9 +131,10 @@ namespace K9.WebApplication.Controllers
             try
             {
                 model.Description = Dictionary.DonationToBOTF;
-                _stripeService.Charge(model);
+                var transactionId = _stripeService.Charge(model);
                 _donationService.CreateDonation(new Donation
                 {
+                    StripeId = transactionId,
                     Currency = model.LocalisedCurrencyThreeLetters,
                     Customer = model.StripeBillingName,
                     CustomerEmail = model.StripeEmail,
