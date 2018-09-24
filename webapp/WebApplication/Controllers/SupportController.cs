@@ -10,6 +10,7 @@ using K9.WebApplication.Models;
 using K9.WebApplication.Services;
 using NLog;
 using System;
+using System.Threading;
 using System.Web.Mvc;
 using K9.DataAccessLayer.Models;
 using K9.WebApplication.Services.Stripe;
@@ -34,6 +35,11 @@ namespace K9.WebApplication.Controllers
             _donationService = donationService;
             _stripeConfig = stripeConfig.Value;
             _config = config.Value;
+        }
+
+        public ActionResult Index()
+        {
+            return View();
         }
 
         [HttpGet]
@@ -93,6 +99,7 @@ namespace K9.WebApplication.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Donate(StripeModel model)
         {
+            _logger.Debug($"SupportController => Donate => Current UI Thread: {Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName}");
             model.PublishableKey = _stripeConfig.PublishableKey;
             return View(model);
         }

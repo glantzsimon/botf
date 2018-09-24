@@ -8,11 +8,11 @@
 		filter: alpha(opacity=80);
 	}
 
-	.shadow {
-		-webkit-box-shadow: none;
-		-moz-box-shadow: none;
-		box-shadow: none;
-	}
+    .shadow, .shadow-hover, .shadow-deep, .shadow-light {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
 
 	.wide-form {
 		max-width: 100% !important;

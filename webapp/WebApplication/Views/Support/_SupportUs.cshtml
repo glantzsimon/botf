@@ -1,0 +1,45 @@
+﻿@using K9.Base.WebApplication.Config
+
+<div class="main-section">
+    <div class="container">
+        <div class="main-heading">
+            <h3>@MvcHtmlString.Create(K9.Globalisation.Dictionary.HowToHelp)</h3>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <div class="col-md-4 col-sm-12 support-us-container">
+                <div class="support-us-option shadow-light shadow-hover">
+                    <a href="@Url.Action("Index", "Shop")">
+                        <h4>@MvcHtmlString.Create(K9.Globalisation.Dictionary.Shop)</h4>
+                        <div class="support-item support-shop">
+                            &nbsp;
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 support-us-container">
+                <div class="support-us-option shadow-light shadow-hover">
+                    <a href="@Url.Action("SponsorIbogaStart")">
+                        <h4>@MvcHtmlString.Create(K9.Globalisation.Dictionary.SponsorIbogaTree)</h4>
+                        <div class="support-item support-iboga">
+                            &nbsp;
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-12 support-us-container">
+                <div class="support-us-option shadow-light shadow-hover">
+                    <a href="@Url.Action("DonateStart")">
+                        <h4>@MvcHtmlString.Create(K9.Globalisation.Dictionary.Donate)</h4>
+                        <div class="support-item support-donate">
+                            &nbsp;
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+    </div>
+</div>

@@ -286,6 +286,7 @@
     <Content Include="Content\site\mobile.css" />
     <Content Include="Content\site\sections\iboga.css" />
     <Content Include="Content\site\sections\cookies.css" />
+    <Content Include="Content\site\sections\support.css" />
     <Content Include="Content\site\sections\shop.css" />
     <Content Include="Content\site\sections\archive.css" />
     <Content Include="Content\site\shared.css" />
@@ -683,6 +684,9 @@
     <Content Include="Images\projects\projects_bg.jpg" />
     <Content Include="Images\shared\blessings_loader.gif" />
     <Content Include="Images\shared\botf_logo_animated.gif" />
+    <Content Include="Images\support\donate.jpg" />
+    <Content Include="Images\support\plant-a-tree-bw.jpg" />
+    <Content Include="Images\support\tshirt.jpg" />
     <Content Include="Images\team\david.jpg" />
     <Content Include="Images\team\gassita.jpg" />
     <Content Include="Images\team\george.jpg" />
@@ -968,7 +972,6 @@
     <Content Include="Views\Shared\EditorTemplates\ArchiveCategory.cshtml" />
     <Content Include="Views\Shared\_UploadedFilesDisplay.cshtml" />
     <Content Include="Views\Home\_Botf.cshtml" />
-    <Content Include="Views\Home\_Mission.cshtml" />
     <Content Include="Views\Home\_Context.cshtml" />
     <Content Include="Views\Home\_Partners.cshtml" />
     <Content Include="Views\Home\_Contact.cshtml" />
@@ -1016,6 +1019,8 @@
     <Content Include="Views\Shared\_VideoFilesDisplay.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\NewsItemType.cshtml" />
     <Content Include="Views\Shared\_CookieWarning.cshtml" />
+    <Content Include="Views\Support\Index.cshtml" />
+    <Content Include="Views\Support\_SupportUs.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1096,7 +1101,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>2625</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost/blessingsoftheforest</IISUrl>
+          <IISUrl>https://localhost:44301/blessingsoftheforest</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

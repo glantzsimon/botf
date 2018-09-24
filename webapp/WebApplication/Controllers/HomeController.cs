@@ -1,7 +1,9 @@
-﻿using K9.Base.WebApplication.Controllers;
+﻿using System.Threading;
+using K9.Base.WebApplication.Controllers;
 using K9.SharedLibrary.Models;
 using NLog;
 using System.Web.Mvc;
+using K9.Base.Globalisation;
 using K9.Base.WebApplication.Constants;
 using K9.SharedLibrary.Helpers;
 
@@ -17,6 +19,7 @@ namespace K9.WebApplication.Controllers
 
 		public ActionResult Index()
 		{
+		    FixFrenchBug();
 		    return View();
 		}
 
@@ -31,5 +34,14 @@ namespace K9.WebApplication.Controllers
 		{
 			return string.Empty;
 		}
+
+	    private void FixFrenchBug()
+	    {
+	        if (Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName.ToLower() == "fr")
+	        {
+	            Session[SessionConstants.LanguageCode] = Strings.LanguageCodes.France;
+	            Session[SessionConstants.CultureCode] = Strings.CultureCodes.French;
+	        }
+	    }
 	}
 }
