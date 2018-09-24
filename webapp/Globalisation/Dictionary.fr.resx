@@ -437,6 +437,6 @@
     <value>text\fr\cookies-blurb.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="HowToHelp" xml:space="preserve">
-    <value>Comment est-ce que vous pouvez nous aider ?</value>
+    <value>Comment pouvez-vous nous aider ?</value>
   </data>
 </root>
