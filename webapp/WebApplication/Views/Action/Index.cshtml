@@ -1,0 +1,85 @@
+﻿@using System.Web.Mvc.Html
+@using K9.Base.DataAccessLayer.Enums
+@using K9.Base.WebApplication.ViewModels
+@using K9.WebApplication.Helpers
+@model List<NewsItem>
+@{
+    ViewBag.Title = Dictionary.Home;
+    var index = 0;
+}
+
+@Html.Partial("_SponsorIbogaBanner")
+<div id="main-banner" class="banner-default main-menu">
+    @Html.Partial("_Navbar")
+</div>
+
+<div class="main-section">
+    <div class="container">
+        <div class="main-heading">
+            <h3>@Dictionary.News</h3>
+        </div>
+    </div>
+    <div>
+        @foreach (var newsItem in Model)
+        {
+            <div class="list-item-container container scrollFadeUp">
+                <div class="col-md-5 padding-top-6">
+                    @if (newsItem.Type == ENewsItemType.Article)
+                    {
+                        @Html.Partial("_ImageFilesDisplay", new FileSourceViewModel(newsItem.ImageFileSource))
+                    }
+                    else if (newsItem.Type == ENewsItemType.Video)
+                    {
+                        if (!string.IsNullOrEmpty(newsItem.Url))
+                        {
+                            @Html.Partial("_EmbeddedVideo", newsItem.Url)
+                        }
+                        else
+                        {
+                            @Html.Partial("_VideoFilesDisplay", new FileSourceViewModel(newsItem.VideoFileSource))
+                        }
+                    }
+                    else if (newsItem.Type == ENewsItemType.Link)
+                    {
+                        @Html.Partial("_LinkPreview", new LinkViewModel
+                        {
+                            Url = newsItem.Url
+                        })
+                    }
+                </div>
+                <div class="col-md-7" id="@newsItem.Id">
+                    <div class="news-item-title">
+                        <p><strong>@Dictionary.PublishedOnLabel</strong>: @newsItem.PublishedOn.ToLongDateString()</p>
+                        <p><strong>@Dictionary.PublishedByLabel</strong>: @newsItem.PublishedBy</p>
+                        <p><strong>@Dictionary.LanguageLabel</strong>: @newsItem.LanguageName</p>
+                        @if (newsItem.Type == ENewsItemType.Link)
+                        {
+                            <p><strong>@Dictionary.Source</strong>: <a target="_blank" href="@newsItem.Url">@newsItem.Url</a></p>
+                        }
+                    </div>
+                    <h5>
+                        @MvcHtmlString.Create(newsItem.Subject)
+                    </h5>
+                    <article>
+                        <p>
+                            @MvcHtmlString.Create(newsItem.Body)
+                        </p>
+                    </article>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            @Html.Separator()
+        }
+    </div>
+</div>
+
+@section scripts {
+    <script language="javascript">
+        $(function () {
+            var article = $("div#@ViewData[K9.WebApplication.Constants.ViewDataConstants.SelectedId]");
+            $("html, body").animate({
+                scrollTop: article.offset().top - 300
+            }, 1000);
+        })
+    </script>
+}

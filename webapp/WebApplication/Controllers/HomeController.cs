@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using K9.Base.Globalisation;
 using K9.Base.WebApplication.Constants;
 using K9.SharedLibrary.Helpers;
+using K9.WebApplication.Models;
 
 namespace K9.WebApplication.Controllers
 {
@@ -20,7 +21,7 @@ namespace K9.WebApplication.Controllers
 		public ActionResult Index()
 		{
 		    FixFrenchBug();
-		    return View();
+		    return View(new HomeViewModel());
 		}
 
 		public ActionResult SetLanguage(string languageCode, string cultureCode)

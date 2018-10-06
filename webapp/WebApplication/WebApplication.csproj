@@ -239,12 +239,12 @@
     <Compile Include="Controllers\DonationsController.cs" />
     <Compile Include="Controllers\ProjectDetailsController.cs" />
     <Compile Include="Controllers\ShopController.cs" />
-    <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\VisionController.cs" />
     <Compile Include="Controllers\ArchiveCategoriesController.cs" />
     <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\ArchiveItemsController.cs" />
     <Compile Include="Controllers\NewsItemsController.cs" />
-    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ActionController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\RolePermissionsController.cs" />
@@ -261,6 +261,7 @@
     </Compile>
     <Compile Include="Helpers\Dynamic.cs" />
     <Compile Include="Helpers\Separator.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IShopService.cs" />
     <Compile Include="Services\IDonationService.cs" />
@@ -617,8 +618,20 @@
     <Content Include="Images\flags\za.png" />
     <Content Include="Images\flags\zm.png" />
     <Content Include="Images\flags\zw.png" />
+    <Content Include="Images\home\botf\botf1.jpg" />
+    <Content Include="Images\home\botf\botf2.jpg" />
+    <Content Include="Images\home\botf\botf3.jpg" />
+    <Content Include="Images\home\botf\bwiti1.jpg" />
+    <Content Include="Images\home\botf\bwiti4.jpg" />
+    <Content Include="Images\home\botf\bwiti5.jpg" />
+    <Content Include="Images\home\botf\bwiti6.jpg" />
     <Content Include="Images\home\bwiti-bg.jpg" />
     <Content Include="Images\home\context2\aims1.jpg" />
+    <Content Include="Images\home\context2\bwiti1.jpg" />
+    <Content Include="Images\home\context2\bwiti2.jpg" />
+    <Content Include="Images\home\context2\bwiti3.jpg" />
+    <Content Include="Images\home\context2\bwiti4.jpg" />
+    <Content Include="Images\home\context2\iboga1.jpg" />
     <Content Include="Images\home\context2\iboga2.jpg" />
     <Content Include="Images\home\context2\wood1.jpg" />
     <Content Include="Images\home\context3\0024-2686_01.jpg" />
@@ -675,6 +688,7 @@
     <Content Include="Images\latest\image8.jpg" />
     <Content Include="Images\latest\image9.jpg" />
     <Content Include="Images\partners\bokaye.jpg" />
+    <Content Include="Images\partners\conservation-justice.jpg" />
     <Content Include="Images\partners\gabon-ministere.jpg" />
     <Content Include="Images\partners\global-ibogaine.jpg" />
     <Content Include="Images\partners\iceers.jpg" />
@@ -877,7 +891,7 @@
     <Content Include="Views\Shared\_PopupAlert.cshtml" />
     <Content Include="Views\Shared\_BreadCrumbs.cshtml" />
     <Content Include="Config\appsettings.json" />
-    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\Action\Index.cshtml" />
     <Content Include="Views\Archive\Index.cshtml" />
     <Content Include="Views\Iboga\Index.cshtml" />
     <Content Include="Views\Shared\Controls\_Carousel.cshtml" />
@@ -916,8 +930,7 @@
     <Content Include="Views\Shared\EditorTemplates\Html.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Html.cshtml" />
     <Content Include="Views\Shared\Controls\_LanguageSelector.cshtml" />
-    <Content Include="Views\Shared\_FooterNewsScroller.cshtml" />
-    <Content Include="Views\News\_NewsSummary.cshtml" />
+    <Content Include="Views\Action\_NewsSummary.cshtml" />
     <Content Include="Images\archive\upload\ArchiveItem\1\Copy-Angela Thomas Facilities and property management  CV 081117  V2 %281%29.doc" />
     <Content Include="Images\archive\upload\ArchiveItem\1\Copy-Angela Thomas Facilities and property management  CV 081117  V2.pdf" />
     <Content Include="Images\archive\upload\ArchiveItem\1\Dadaabc teaching profile.docx" />
@@ -976,8 +989,8 @@
     <Content Include="Views\Home\_Partners.cshtml" />
     <Content Include="Views\Home\_Contact.cshtml" />
     <Content Include="Views\Home\_EtatsLieux.cshtml" />
-    <Content Include="Views\Projects\Index.cshtml" />
-    <Content Include="Views\Projects\_Projects.cshtml" />
+    <Content Include="Views\Vision\Index.cshtml" />
+    <Content Include="Views\Vision\_Vision.cshtml" />
     <Content Include="Views\Shared\_EmbeddedVideo.cshtml" />
     <Content Include="Views\Shared\_Separator.cshtml" />
     <Content Include="Views\Shop\Index.cshtml" />
@@ -999,7 +1012,7 @@
     <Content Include="Views\Support\SponsorIboga.cshtml" />
     <Content Include="Views\Support\SponsorSuccess.cshtml" />
     <Content Include="Views\Shared\_TreeCounter.cshtml" />
-    <Content Include="Views\Projects\_TreeCounterBanner.cshtml" />
+    <Content Include="Views\Vision\_TreeCounterBanner.cshtml" />
     <Content Include="Views\ProjectDetails\_DisplayFields.cshtml" />
     <Content Include="Views\ProjectDetails\_EditFields.cshtml" />
     <Content Include="Views\ProjectDetails\Create.cshtml" />

@@ -439,4 +439,10 @@
   <data name="HowToHelp" xml:space="preserve">
     <value>Comment pouvez-vous nous aider ?</value>
   </data>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Vision" xml:space="preserve">
+    <value>Vision</value>
+  </data>
 </root>

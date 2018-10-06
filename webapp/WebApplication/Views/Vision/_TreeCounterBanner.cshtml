@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.DelayLoad = true;
+}
+<div class="background-forest3 jarallax main-section tree-counter-banner">
+    <div id="tree-counter-container" class="container scrollFadeUp">
+        @Html.Partial("_TreeCounter")
+        <div class="tree-counter-description">
+            @MvcHtmlString.Create(K9.Globalisation.Dictionary.tree_counter_text)
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#tree-counter-container").on("reveal", function() {
+            loadProjectStatistics();
+        });
+    });
+</script>

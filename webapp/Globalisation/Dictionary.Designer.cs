@@ -61,6 +61,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Action.
+        /// </summary>
+        public static string Action {
+            get {
+                return ResourceManager.GetString("Action", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Amount Donated.
         /// </summary>
         public static string AmountDonatedLabel {
@@ -1213,6 +1222,15 @@ namespace K9.Globalisation {
         public static string TreeDonationAmountLabel {
             get {
                 return ResourceManager.GetString("TreeDonationAmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vision.
+        /// </summary>
+        public static string Vision {
+            get {
+                return ResourceManager.GetString("Vision", resourceCulture);
             }
         }
         

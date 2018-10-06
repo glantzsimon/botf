@@ -11,7 +11,10 @@
             <div class="col-md-5">
                 <div class="picture-frame margin-bottom-30">
                     <div>
-                        <img src="~/Images/home/wood1.jpg" alt="" />
+                        @Html.Carousel(new CarouselOptions("Images/home/botf", "", 70)
+                        {
+                            ImageSizing = EImageSizing.Horizontal
+                        })
                     </div>
                     @Html.Partial("_PhotosBy")
                 </div>
