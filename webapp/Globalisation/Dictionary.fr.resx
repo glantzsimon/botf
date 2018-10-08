@@ -484,4 +484,13 @@
   <data name="Music" xml:space="preserve">
     <value>Musique</value>
   </data>
+  <data name="SignUpSuccessTitle" xml:space="preserve">
+    <value>Merci de votre inscription à notre newsletter !</value>
+  </data>
+  <data name="SignUpToNewsLetter" xml:space="preserve">
+    <value>Abonnez-vous à notre newsletter</value>
+  </data>
+  <data name="DuplicateContactError" xml:space="preserve">
+    <value>Il existe déjà un compte sous cette adresse e-mail.</value>
+  </data>
 </root>

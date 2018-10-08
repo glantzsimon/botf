@@ -478,4 +478,13 @@
   <data name="Music" xml:space="preserve">
     <value>Music</value>
   </data>
+  <data name="SignUpSuccessTitle" xml:space="preserve">
+    <value>Thank you for signing up to our newsletter!</value>
+  </data>
+  <data name="SignUpToNewsLetter" xml:space="preserve">
+    <value>Sign up to our newsletter</value>
+  </data>
+  <data name="DuplicateContactError" xml:space="preserve">
+    <value>Sorry, a contact with that email address already exists.</value>
+  </data>
 </root>

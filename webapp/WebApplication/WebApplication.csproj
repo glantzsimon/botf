@@ -84,7 +84,7 @@
       <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.69\lib\net461\K9.Base.DataAccessLayer.dll</HintPath>
     </Reference>
     <Reference Include="K9.Base.Globalisation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\K9.Base.DataAccessLayer.2.0.0.69\lib\net461\K9.Base.Globalisation.dll</HintPath>
+      <HintPath>..\packages\K9.Base.Globalisation.2.0.0.70\lib\net461\K9.Base.Globalisation.dll</HintPath>
     </Reference>
     <Reference Include="K9.Base.WebApplication, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\K9.Base.WebApplication.2.0.0.68\lib\net461\K9.Base.WebApplication.dll</HintPath>
@@ -1037,6 +1037,8 @@
     <Content Include="Views\ArchiveItemTypes\Index.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ArchiveItemType.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\ArchiveItemType.cshtml" />
+    <Content Include="Views\Contacts\SignUpToNewsletter.cshtml" />
+    <Content Include="Views\Contacts\SignUpSuccess.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

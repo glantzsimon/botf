@@ -482,6 +482,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sorry, a contact with that email address already exists..
+        /// </summary>
+        public static string DuplicateContactError {
+            get {
+                return ResourceManager.GetString("DuplicateContactError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email Address.
         /// </summary>
         public static string EmailAddressLabel {
@@ -1187,6 +1196,24 @@ namespace K9.Globalisation {
         public static string Shop {
             get {
                 return ResourceManager.GetString("Shop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Thank you for signing up to our newsletter!.
+        /// </summary>
+        public static string SignUpSuccessTitle {
+            get {
+                return ResourceManager.GetString("SignUpSuccessTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign up to our newsletter.
+        /// </summary>
+        public static string SignUpToNewsLetter {
+            get {
+                return ResourceManager.GetString("SignUpToNewsLetter", resourceCulture);
             }
         }
         
