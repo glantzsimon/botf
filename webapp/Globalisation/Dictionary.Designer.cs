@@ -61,11 +61,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Action.
+        ///   Looks up a localized string similar to Actions.
         /// </summary>
-        public static string Action {
+        public static string Actions {
             get {
-                return ResourceManager.GetString("Action", resourceCulture);
+                return ResourceManager.GetString("Actions", resourceCulture);
             }
         }
         
@@ -84,6 +84,15 @@ namespace K9.Globalisation {
         public static string AmountToDonateLabel {
             get {
                 return ResourceManager.GetString("AmountToDonateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Archive Item Types.
+        /// </summary>
+        public static string ArchiveItemTypes {
+            get {
+                return ResourceManager.GetString("ArchiveItemTypes", resourceCulture);
             }
         }
         
@@ -200,6 +209,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Company Name.
+        /// </summary>
+        public static string CompanyLabel {
+            get {
+                return ResourceManager.GetString("CompanyLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:09816364)..
         /// </summary>
         public static string CompanyLegalDescription {
@@ -214,6 +232,24 @@ namespace K9.Globalisation {
         public static string CompanyShortDescription {
             get {
                 return ResourceManager.GetString("CompanyShortDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact.
+        /// </summary>
+        public static string Contact {
+            get {
+                return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contacts.
+        /// </summary>
+        public static string Contacts {
+            get {
+                return ResourceManager.GetString("Contacts", resourceCulture);
             }
         }
         
@@ -405,29 +441,21 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html lang=&quot;en&quot;&gt;
-        ///
+        ///   Looks up a localized string similar to &lt;!doctype html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
         ///&lt;head&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
-        ///&lt;/head&gt;
-        ///
-        ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    html {
-        ///        margin: 0;
-        ///        padding: 0;
-        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
-        ///        font-size: 100%;
-        ///        text-rendering: optimizeLegibility !important;
-        ///        -webkit-font-smoothing: antialiased !important;
-        ///        margin: 0;
-        ///        color: #333;
-        ///    }
-        ///&lt;/style&gt;
-        ///
-        ///&lt;body&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Dear {CustomerName},&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Thank you  [rest of string was truncated]&quot;;.
+        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
+        ///    &lt;!--[if gte mso 15]&gt;
+        ///    &lt;xml&gt;
+        ///        &lt;o:OfficeDocumentSettings&gt;
+        ///        &lt;o:AllowPNG/&gt;
+        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        ///        &lt;/o:OfficeDocumentSettings&gt;
+        ///    &lt;/xml&gt;
+        ///    &lt;![endif]--&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DonationThankYouEmail {
             get {
@@ -450,6 +478,15 @@ namespace K9.Globalisation {
         public static string DonationToBOTF {
             get {
                 return ResourceManager.GetString("DonationToBOTF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email Address.
+        /// </summary>
+        public static string EmailAddressLabel {
+            get {
+                return ResourceManager.GetString("EmailAddressLabel", resourceCulture);
             }
         }
         
@@ -498,6 +535,15 @@ namespace K9.Globalisation {
         public static string etats_des_lieux_title {
             get {
                 return ResourceManager.GetString("etats_des_lieux_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find out what we have done.
+        /// </summary>
+        public static string FollowOurActions {
+            get {
+                return ResourceManager.GetString("FollowOurActions", resourceCulture);
             }
         }
         
@@ -799,6 +845,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Library.
+        /// </summary>
+        public static string Library {
+            get {
+                return ResourceManager.GetString("Library", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loading....
         /// </summary>
         public static string Loading {
@@ -859,6 +914,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Public Media.
+        /// </summary>
+        public static string Media {
+            get {
+                return ResourceManager.GetString("Media", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Multimedia.
+        /// </summary>
+        public static string MediaTheque {
+            get {
+                return ResourceManager.GetString("MediaTheque", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to These are our aims in relation to this plant considered as sacred by the Gabonese people.
         /// </summary>
         public static string mission_statement_and_aims_title1 {
@@ -900,11 +973,47 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Music.
+        /// </summary>
+        public static string Music {
+            get {
+                return ResourceManager.GetString("Music", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of Iboga plantations.
+        /// </summary>
+        public static string NumberOfIbogaPlantationsLabel {
+            get {
+                return ResourceManager.GetString("NumberOfIbogaPlantationsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number Of Iboga Trees Sponsored.
         /// </summary>
         public static string NumberOfIbogasSponsoredLabel {
             get {
                 return ResourceManager.GetString("NumberOfIbogasSponsoredLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number of adult Iboga trees under the protection of BOTF.
+        /// </summary>
+        public static string NumberOfIbogaTreesPreservedLabel {
+            get {
+                return ResourceManager.GetString("NumberOfIbogaTreesPreservedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preserved for the future and for their seeds.
+        /// </summary>
+        public static string NumberOfIbogaTreesPreservedText {
+            get {
+                return ResourceManager.GetString("NumberOfIbogaTreesPreservedText", resourceCulture);
             }
         }
         
@@ -927,30 +1036,21 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html lang=&quot;en&quot;&gt;
-        ///
+        ///   Looks up a localized string similar to &lt;!doctype html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
         ///&lt;head&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
-        ///&lt;/head&gt;
-        ///
-        ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    html
-        ///    {
-        ///        margin: 0;
-        ///		padding: 0;
-        ///		font-family: &quot;Segoe UI&quot; , Verdana, Helvetica, Sans-Serif;
-        ///		font-size: 100%;
-        ///		text-rendering: optimizeLegibility !important;
-        ///		-webkit-font-smoothing: antialiased !important;
-        ///        margin: 0; 
-        ///        color: #333;
-        ///    }
-        ///&lt;/style&gt;
-        ///
-        ///&lt;body&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Dear {FirstName},&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Your password has been reset. Please [rest of string was truncated]&quot;;.
+        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
+        ///    &lt;!--[if gte mso 15]&gt;
+        ///    &lt;xml&gt;
+        ///        &lt;o:OfficeDocumentSettings&gt;
+        ///        &lt;o:AllowPNG/&gt;
+        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        ///        &lt;/o:OfficeDocumentSettings&gt;
+        ///    &lt;/xml&gt;
+        ///    &lt;![endif]--&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PasswordResetEmail {
             get {
@@ -988,7 +1088,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Medium to long-term projects:.
+        ///   Looks up a localized string similar to Medium to long-term vision:.
         /// </summary>
         public static string projects_long_term_title {
             get {
@@ -1008,7 +1108,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Short-term projects:.
+        ///   Looks up a localized string similar to Short-term vision:.
         /// </summary>
         public static string projects_short_term_title {
             get {
@@ -1022,6 +1122,15 @@ namespace K9.Globalisation {
         public static string ProjectStats {
             get {
                 return ResourceManager.GetString("ProjectStats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Publications.
+        /// </summary>
+        public static string Publications {
+            get {
+                return ResourceManager.GetString("Publications", resourceCulture);
             }
         }
         
@@ -1131,60 +1240,25 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html lang=&quot;en&quot;&gt;
-        ///
+        ///   Looks up a localized string similar to &lt;!doctype html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
         ///&lt;head&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
-        ///&lt;/head&gt;
-        ///
-        ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    html {
-        ///        margin: 0;
-        ///        padding: 0;
-        ///        font-family: &quot;Segoe UI&quot;, Verdana, Helvetica, Sans-Serif;
-        ///        font-size: 100%;
-        ///        text-rendering: optimizeLegibility !important;
-        ///        -webkit-font-smoothing: antialiased !important;
-        ///        margin: 0;
-        ///        color: #333;
-        ///    }
-        ///&lt;/style&gt;
-        ///
-        ///&lt;body&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Dear {CustomerName},&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Thank you  [rest of string was truncated]&quot;;.
+        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
+        ///    &lt;!--[if gte mso 15]&gt;
+        ///    &lt;xml&gt;
+        ///        &lt;o:OfficeDocumentSettings&gt;
+        ///        &lt;o:AllowPNG/&gt;
+        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        ///        &lt;/o:OfficeDocumentSettings&gt;
+        ///    &lt;/xml&gt;
+        ///    &lt;![endif]--&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SponsorThankYouEmail {
             get {
                 return ResourceManager.GetString("SponsorThankYouEmail", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
-        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; &gt;
-        ///
-        ///&lt;head&gt;
-        ///    &lt;title&gt;Puppydog Software&lt;/title&gt;
-        ///&lt;/head&gt;
-        ///
-        ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    .text
-        ///    {{
-        ///        font-family: lucida grande, Segoe UI, arial, verdana, lucida sans unicode, tahoma, sans-serif; 
-        ///        margin: 0; 
-        ///        font-size: 10pt; 
-        ///        color: #333399;
-        ///        padding-bottom: 12px;
-        ///    }}
-        ///    .title
-        ///    {{
-        ///    [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string SupportQuery {
-            get {
-                return ResourceManager.GetString("SupportQuery", resourceCulture);
             }
         }
         
@@ -1235,30 +1309,21 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
-        ///&lt;html lang=&quot;en&quot;&gt;
-        ///
+        ///   Looks up a localized string similar to &lt;!doctype html&gt;
+        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
         ///&lt;head&gt;
-        ///    &lt;title&gt;{Title}&lt;/title&gt;
-        ///&lt;/head&gt;
-        ///
-        ///&lt;style type=&quot;text/css&quot;&gt;
-        ///    html
-        ///    {
-        ///        margin: 0;
-        ///		padding: 0;
-        ///		font-family: &quot;Segoe UI&quot; , Verdana, Helvetica, Sans-Serif;
-        ///		font-size: 100%;
-        ///		text-rendering: optimizeLegibility !important;
-        ///		-webkit-font-smoothing: antialiased !important;
-        ///        margin: 0; 
-        ///        color: #333;
-        ///    }
-        ///&lt;/style&gt;
-        ///
-        ///&lt;body&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Dear {FirstName},&lt;/p&gt;
-        ///    &lt;p class=&quot;text&quot;&gt;Thank you for registering with {Comp [rest of string was truncated]&quot;;.
+        ///    &lt;!-- NAME: 1:2:1 COLUMN --&gt;
+        ///    &lt;!--[if gte mso 15]&gt;
+        ///    &lt;xml&gt;
+        ///        &lt;o:OfficeDocumentSettings&gt;
+        ///        &lt;o:AllowPNG/&gt;
+        ///        &lt;o:PixelsPerInch&gt;96&lt;/o:PixelsPerInch&gt;
+        ///        &lt;/o:OfficeDocumentSettings&gt;
+        ///    &lt;/xml&gt;
+        ///    &lt;![endif]--&gt;
+        ///    &lt;meta charset=&quot;UTF-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+        ///    &lt;meta name=&quot;viewpo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string WelcomeEmail {
             get {

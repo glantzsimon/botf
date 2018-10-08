@@ -41,6 +41,7 @@ namespace K9.WebApplication
         {
             UsersAndRolesInitialiser.Seed();
             PermissionsSeeder.Seed(new LocalDb());
+            Base.DataAccessLayer.Database.Seeds.ArchiveItemTypesSeeder.Seed(new LocalDb());
         }
     }
 }

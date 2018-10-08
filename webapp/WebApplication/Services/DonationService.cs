@@ -17,14 +17,16 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Donation> _donationRepository;
         private readonly ILogger _logger;
         private readonly IMailer _mailer;
+        private readonly IRepository<Contact> _contactsRepository;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public DonationService(IRepository<Donation> donationRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> config)
+        public DonationService(IRepository<Donation> donationRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<Contact> contactsRepository)
         {
             _donationRepository = donationRepository;
             _logger = logger;
             _mailer = mailer;
+            _contactsRepository = contactsRepository;
             _config = config.Value;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
@@ -45,7 +47,7 @@ namespace K9.WebApplication.Services
 
         public int GetNumberOfIbogasSponsoredToDate()
         {
-            return _donationRepository.List().Sum(d => d.NumberOfIbogas);
+            return _donationRepository.List().Sum(d => (int)d.Amount) / 10;
         }
 
         public int GetNumberOfIbogasSponsoredLast30Days()
@@ -99,6 +101,28 @@ namespace K9.WebApplication.Services
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 donation.NumberOfIbogas
             }), donation.CustomerEmail, donation.Customer, _config.SupportEmailAddress, _config.CompanyName);
+            AddCustomerToContacts(donation.CustomerName, donation.CustomerEmail, "");
+        }
+
+        private void AddCustomerToContacts(string name, string emailAddress, string companyName)
+        {
+            if (!string.IsNullOrEmpty(emailAddress))
+            {
+                try
+                {
+                    _contactsRepository.Create(new Contact
+                    {
+                        FullName = name,
+                        EmailAddress = emailAddress,
+                        CompanyName = companyName
+                    });
+                }
+                catch (Exception e)
+                {
+                    _logger.Error($"DonationService => AddCustomerToContacts => {e.Message}");
+                    throw;
+                }
+            }
         }
     }
 }

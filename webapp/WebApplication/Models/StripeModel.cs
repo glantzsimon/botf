@@ -12,16 +12,11 @@ namespace K9.WebApplication.Models
         private const string AutoLocale = "auto";
         private const int AmountPerTree = 10;
 
-        public StripeModel()
-        {
-            LocalisedCurrencyThreeLetters = GetLocalisedCurrency();
-        }
-
         [Required]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DonationAmountLabel)]
         [DataType(DataType.Currency)]
         public double DonationAmount { get; set; }
-
+        
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TreeDonationAmountLabel)]
         [DataType(DataType.Currency)]
         public double TreeDonationAmount => DonationAmount;
@@ -43,10 +38,10 @@ namespace K9.WebApplication.Models
         public double AmountToDonate => DonationAmount;
 
         public double DonationAmountInCents => DonationAmount * 100;
+        
+        public string Locale => GetLocale();
 
         public string LocalisedCurrencyThreeLetters { get; set; }
-
-        public string Locale => GetLocale();
 
         public string Description { get; set; }
 
@@ -70,7 +65,7 @@ namespace K9.WebApplication.Models
 
         public string StripeBillingAddressState { get; set; }
 
-        private static string GetLocalisedCurrency()
+        public static string GetLocalisedCurrency()
         {
             try
             {

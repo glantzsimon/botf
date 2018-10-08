@@ -1,6 +1,8 @@
-﻿using K9.Base.WebApplication.Config;
+﻿using K9.Base.DataAccessLayer.Models;
+using K9.Base.WebApplication.Config;
 using K9.Base.WebApplication.Controllers;
 using K9.Base.WebApplication.ViewModels;
+using K9.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Helpers;
@@ -8,12 +10,13 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Models;
 using K9.WebApplication.Services;
+using K9.WebApplication.Services.Stripe;
 using NLog;
 using System;
+using System.Linq;
 using System.Threading;
 using System.Web.Mvc;
-using K9.DataAccessLayer.Models;
-using K9.WebApplication.Services.Stripe;
+using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
@@ -23,16 +26,18 @@ namespace K9.WebApplication.Controllers
         private readonly IMailer _mailer;
         private readonly IStripeService _stripeService;
         private readonly IDonationService _donationService;
+        private readonly IRepository<User> _userRepository;
         private readonly StripeConfiguration _stripeConfig;
         private readonly WebsiteConfiguration _config;
 
-        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService)
+        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService, IRepository<User> userRepository)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
             _logger = logger;
             _mailer = mailer;
             _stripeService = stripeService;
             _donationService = donationService;
+            _userRepository = userRepository;
             _stripeConfig = stripeConfig.Value;
             _config = config.Value;
         }
@@ -81,7 +86,8 @@ namespace K9.WebApplication.Controllers
         {
             return View(new StripeModel
             {
-                DonationAmount = 10
+                DonationAmount = 10,
+                LocalisedCurrencyThreeLetters = StripeModel.GetLocalisedCurrency()
             });
         }
 
@@ -195,5 +201,6 @@ namespace K9.WebApplication.Controllers
         {
             throw new NotImplementedException();
         }
+       
     }
 }

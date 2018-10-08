@@ -121,9 +121,6 @@
   <data name="PasswordResetEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\fr\passwordresetemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="SupportQuery" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>templates\fr\supportquery.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="WelcomeEmail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>templates\fr\welcomeemail.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -439,10 +436,52 @@
   <data name="HowToHelp" xml:space="preserve">
     <value>Comment pouvez-vous nous aider ?</value>
   </data>
-  <data name="Action" xml:space="preserve">
-    <value>Action</value>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
   </data>
   <data name="Vision" xml:space="preserve">
     <value>Vision</value>
+  </data>
+  <data name="FollowOurActions" xml:space="preserve">
+    <value>Suivez nos actions concrètes</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="Contacts" xml:space="preserve">
+    <value>Clients</value>
+  </data>
+  <data name="EmailAddressLabel" xml:space="preserve">
+    <value>Adresse Email</value>
+  </data>
+  <data name="CompanyLabel" xml:space="preserve">
+    <value>Nom d'Entreprise</value>
+  </data>
+  <data name="NumberOfIbogaPlantationsLabel" xml:space="preserve">
+    <value>Nombre de plantations d'Iboga</value>
+  </data>
+  <data name="NumberOfIbogaTreesPreservedLabel" xml:space="preserve">
+    <value>Nombre d'Ibogas adultes confiés en conservation a BOTF</value>
+  </data>
+  <data name="NumberOfIbogaTreesPreservedText" xml:space="preserve">
+    <value>Conservés pour l'avenir ainsi que pour leurs graines</value>
+  </data>
+  <data name="ArchiveItemTypes" xml:space="preserve">
+    <value>Types de Fichiers d'Archive</value>
+  </data>
+  <data name="MediaTheque" xml:space="preserve">
+    <value>Médiathèque</value>
+  </data>
+  <data name="Publications" xml:space="preserve">
+    <value>Publications</value>
+  </data>
+  <data name="Library" xml:space="preserve">
+    <value>Bibliothèque</value>
+  </data>
+  <data name="Media" xml:space="preserve">
+    <value>Médias Publiques</value>
+  </data>
+  <data name="Music" xml:space="preserve">
+    <value>Musique</value>
   </data>
 </root>

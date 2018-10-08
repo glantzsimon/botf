@@ -36,8 +36,13 @@ body {
     transition: background 0.5s linear;
 }
 
-.tree-counter-banner div.project-statistic-title {
+.tree-counter-banner div.project-statistic-title, .tree-counter-banner div.project-statistic-subtitle {
     color: white;
+}
+
+.tree-counter-banner div.project-statistic-subtitle {
+    font-size: 14px;
+    margin-top: 4px;
 }
 
 .tree-counter-banner .project-statistic {

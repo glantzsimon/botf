@@ -14,7 +14,8 @@
     {
         @Html.BootstrapDisplayFor(model => model.AmountToDonate)
         @Html.HiddenFor(model => model.DonationAmount)
-        <hr/>
+        @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)
+        <hr />
 
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="@Model.PublishableKey"
@@ -28,7 +29,7 @@
                 data-currency="@Model.LocalisedCurrencyThreeLetters">
         </script>
 
-        <hr/>
+        <hr />
         @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.ChangeAmount, "DonateStart", "Support", null, "fa-chevron-left")
     }
 }

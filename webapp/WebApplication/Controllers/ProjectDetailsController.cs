@@ -36,6 +36,8 @@ namespace K9.WebApplication.Controllers
                 ProjectDetails?.NumberOfIbogasPlantedToDate,
                 NumberOfIbogasProjectedToBePlantedPerYear = ProjectDetails?.NumberOfIbogasProjectedToBePlantedThisYear + _donationService.GetProjectedNumberOfIbogasSponsoredPerYear(),
                 NumberOfIbogasSponsoredToDate = _donationService.GetNumberOfIbogasSponsoredToDate() + ProjectDetails?.NumberOfIbogasSponsoredToDate,
+                ProjectDetails?.NumberOfIbogaPlantations,
+                ProjectDetails?.NumberOfIbogaTreesPreserved,
                 ProjectDetails?.NumberOfIbogasProjectedToBePlantedThisYear,
                 ProjectDetails?.NumberOfIbogasProjectedToBePlantedTwoYears
             }, JsonRequestBehavior.AllowGet);

@@ -31,11 +31,14 @@ namespace K9.WebApplication.Controllers
 	    public AccountController(IRepository<User> repository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> websiteConfig, IDataSetsHelper dataSetsHelper, IRoles roles, IAccountService accountService, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IFacebookService facebookService)
 			: base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
 		{
-			_repository = repository;
+		    _repository = repository;
 			_logger = logger;
 		    _accountService = accountService;
 		    _authentication = authentication;
 		    _facebookService = facebookService;
+
+		    websiteConfig.Value.RegistrationEmailTemplateText = Globalisation.Dictionary.WelcomeEmail;
+		    websiteConfig.Value.PasswordResetEmailTemplateText = Globalisation.Dictionary.PasswordResetEmail;
 		}
 
         #region Membership

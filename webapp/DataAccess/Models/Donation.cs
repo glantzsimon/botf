@@ -35,7 +35,7 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DescriptionLabel)]
         public string DonationDescription { get; set; }
 
-	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CustomerLabel)]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.CustomerEmailLabel)]
         public string CustomerEmail { get; set; }
 
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfTreesLabel)]

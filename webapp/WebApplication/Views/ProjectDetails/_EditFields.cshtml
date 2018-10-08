@@ -1,7 +1,9 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @model ProjectDetail
 @Html.BootstrapEditorFor(model => model.NumberOfIbogasPlantedToDate)
+@Html.BootstrapEditorFor(model => model.NumberOfIbogaPlantations)
 @Html.BootstrapEditorFor(model => model.NumberOfIbogasSponsoredToDate)
+@Html.BootstrapEditorFor(model => model.NumberOfIbogaTreesPreserved)
 @Html.BootstrapEditorFor(model => model.NumberOfIbogasProjectedToBePlantedThisYear, new EditorOptions
 {
     Label = String.Format(K9.Globalisation.Dictionary.IbogasProjectedToBePlantedThisYearText, DateTime.Now.Year)

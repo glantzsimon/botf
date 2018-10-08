@@ -158,7 +158,6 @@
     <Content Include="Templates\en-gb\IbogaSponsoredEmail.htm" />
     <Content Include="Templates\en-gb\DonationThankYouEmail.htm" />
     <Content Include="Templates\en-gb\PasswordResetEmail.htm" />
-    <Content Include="Templates\en-gb\SupportQuery.htm" />
     <Content Include="Templates\en-gb\DonationReceivedEmail.htm" />
     <Content Include="Templates\en-gb\WelcomeEmail.htm" />
     <Content Include="Templates\fr\SponsorThankYouEmail.htm" />
@@ -166,7 +165,6 @@
     <Content Include="Templates\fr\DonationReceivedEmail.htm" />
     <Content Include="Templates\fr\IbogaSponsoredEmail.htm" />
     <Content Include="Templates\fr\PasswordResetEmail.htm" />
-    <Content Include="Templates\fr\SupportQuery.htm" />
     <Content Include="Templates\fr\WelcomeEmail.htm" />
     <Content Include="Text\en-gb\cookies-blurb.htm" />
     <Content Include="Text\en-gb\tree-counter-text.htm" />

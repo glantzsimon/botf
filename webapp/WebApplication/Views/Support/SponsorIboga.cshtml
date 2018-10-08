@@ -22,7 +22,7 @@
         @Html.HiddenFor(model => model.NumberOfTrees)
         @Html.HiddenFor(model => model.DonationAmount)
         @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)
-        <hr/>
+        <hr />
 
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                 data-key="@Model.PublishableKey"
@@ -36,7 +36,7 @@
                 data-currency="@Model.LocalisedCurrencyThreeLetters">
         </script>
 
-        <hr/>
+        <hr />
         @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.Back, "SponsorIbogaStart", "Support", null, "fa-chevron-left")
     }
 }

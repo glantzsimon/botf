@@ -13,12 +13,12 @@ namespace K9.WebApplication.Controllers
     [Authorize]
     public class ArchiveItemsController : BaseController<ArchiveItem>
     {
-        private readonly IRepository<ArchiveCategory> _archiveCategoriesRepository;
+        private readonly IRepository<ArchiveItemCategory> _archiveItemCategoriesRepository;
 
-        public ArchiveItemsController(IControllerPackage<ArchiveItem> controllerPackage, IRepository<ArchiveCategory> archiveCategoriesRepository)
+        public ArchiveItemsController(IControllerPackage<ArchiveItem> controllerPackage, IRepository<ArchiveItemCategory> archiveItemCategoriesRepository)
             : base(controllerPackage)
         {
-            _archiveCategoriesRepository = archiveCategoriesRepository;
+            _archiveItemCategoriesRepository = archiveItemCategoriesRepository;
             RecordBeforeCreate += ArchiveItemsController_RecordBeforeCreate;
             RecordBeforeCreated += ArchiveItemsController_RecordBeforeUpdated;
             RecordBeforeUpdate += ArchiveItemsController_RecordBeforeUpdate;
@@ -44,7 +44,7 @@ namespace K9.WebApplication.Controllers
         private void ArchiveItemsController_RecordBeforeUpdate(object sender, CrudEventArgs e)
         {
             var archiveItem = e.Item as ArchiveItem;
-            archiveItem.ArchiveCategory = _archiveCategoriesRepository.Find(archiveItem.CategoryId);
+            archiveItem.ArchiveItemCategory = _archiveItemCategoriesRepository.Find(archiveItem.CategoryId);
         }
 
     }

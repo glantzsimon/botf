@@ -3,6 +3,7 @@
 @Html.BootstrapEditorFor(model => model.PublishedOn)
 @Html.HiddenFor(model => model.PublishedBy)
 @Html.BootstrapEditorFor(model => model.Language)
+@Html.BootstrapEditorFor(model => model.TypeId)
 @Html.BootstrapEditorFor(model => model.CategoryId)
 @Html.BootstrapEditorFor(model => model.FileSource)
 @Html.BootstrapEditorFor(model => model.Url, new EditorOptions
@@ -14,14 +15,14 @@
 
 <script type="text/javascript">
 
-    function setAcceptedFileExtensionsByCategory() {
+    function setAcceptedFileExtensionsByType() {
         var fileInput = $("#FileSource_PostedFile");
-        var type = $("#CategoryId")[0].getSelectedText();
+        var type = $("#TypeId")[0].getSelectedText();
         $.fn.setAcceptedFileExtensions(fileInput, type);
     }
 
     function setInputVisibility() {
-        var type = $("#CategoryId")[0].getSelectedText();
+        var type = $("#TypeId")[0].getSelectedText();
         var isUrlVisible = type === "@MvcHtmlString.Create(Dictionary.Videos)" || type === "@MvcHtmlString.Create(Dictionary.Links)";
         var isFileSourceVisible = type !== "@MvcHtmlString.Create(Dictionary.Links)";
         var urlField = $("div[data-input-id=Url]");
@@ -45,8 +46,8 @@
     }
 
     $(function() {
-        $("#CategoryId").change(function() {
-            setAcceptedFileExtensionsByCategory();
+        $("#TypeId").change(function() {
+            setAcceptedFileExtensionsByType();
             setInputVisibility();
         });
 
@@ -58,6 +59,6 @@
             }
         });
 
-        window.setTimeout(setAcceptedFileExtensionsByCategory, 500);
+        window.setTimeout(setAcceptedFileExtensionsByType, 500);
     });
 </script>

@@ -13,9 +13,17 @@ namespace K9.DataAccessLayer.Models
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IbogasSponsoredSoFarLabel)]
 	    public int NumberOfIbogasSponsoredToDate { get; set; }
 
+	    [Required]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfIbogaPlantationsLabel)]
+	    public int NumberOfIbogaPlantations { get; set; }
+
         [Required]
 		[Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IbogasPlantedSoFarLabel)]
 		public int NumberOfIbogasPlantedToDate { get; set; }
+
+	    [Required]
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.NumberOfIbogaTreesPreservedLabel)]
+	    public int NumberOfIbogaTreesPreserved { get; set; }
         
         [Required]
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.IbogasToBePlantedThisYearLabel)]
