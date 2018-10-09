@@ -112,7 +112,7 @@ namespace K9.WebApplication.Services
                 {
                     _contactsRepository.Create(new Contact
                     {
-                        FullName = name,
+                        FullName = string.IsNullOrEmpty(name) ? emailAddress : name,
                         EmailAddress = emailAddress,
                         CompanyName = companyName
                     });

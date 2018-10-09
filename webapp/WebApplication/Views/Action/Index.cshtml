@@ -17,8 +17,10 @@
     <div class="container">
         <div class="main-heading">
             <h3>@K9.Globalisation.Dictionary.Actions</h3>
+            <div class="text-center margin-top-30">
+                @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.SignUpToNewsLetter, "SignUpToNewsLetter", "Contacts", null, "fa-envelope", EButtonClass.Large)
+            </div>
         </div>
     </div>
+    @Html.Partial("_News")
 </div>
-
-@Html.Partial("_News")

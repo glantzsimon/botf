@@ -12,6 +12,7 @@ namespace K9.DataAccessLayer.Models
     public class Contact : ObjectBase
 	{
 	    
+	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 	    [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
         [StringLength(128)]
         public string FullName { get; set; }
