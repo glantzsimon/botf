@@ -7,8 +7,8 @@ namespace K9.DataAccessLayer.Migrations
     {
         public LocalMigrationsConfiguration()
         {
-            AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationDataLossAllowed = false;
         }
     }
 }
