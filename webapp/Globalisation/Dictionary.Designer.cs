@@ -557,6 +557,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Funds Received To Date.
+        /// </summary>
+        public static string FundsReceivedSoFar {
+            get {
+                return ResourceManager.GetString("FundsReceivedSoFar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Funds Received To Date.
+        /// </summary>
+        public static string FundsReceivedSoFarLabel {
+            get {
+                return ResourceManager.GetString("FundsReceivedSoFarLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;George Gassita is passionate about the area of environmental and heritage conservation.&lt;/h5&gt;
         ///&lt;p&gt;He is the grandson and spiritual heir of Professor Jean Noël Gassita, international authority on the scientific research on Iboga.&lt;/p&gt;.
         /// </summary>

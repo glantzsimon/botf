@@ -11,7 +11,6 @@ namespace K9.WebApplication.Controllers
         public DonationsController(IControllerPackage<Donation> controllerPackage)
             : base(controllerPackage)
         {
-            
         }
     }
 }

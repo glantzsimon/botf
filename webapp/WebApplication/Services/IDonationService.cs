@@ -8,5 +8,6 @@ namespace K9.WebApplication.Services
         int GetNumberOfIbogasSponsoredToDate();
         int GetNumberOfIbogasSponsoredLast30Days();
         int GetProjectedNumberOfIbogasSponsoredPerYear();
+        int GetFundsReceivedToDate();
     }
 }

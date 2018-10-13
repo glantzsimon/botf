@@ -34,6 +34,7 @@ namespace K9.WebApplication.Controllers
             return Json(new
             {
                 ProjectDetails?.NumberOfIbogasPlantedToDate,
+                FundsReceivedToDate = _donationService.GetFundsReceivedToDate(),
                 NumberOfIbogasProjectedToBePlantedPerYear = ProjectDetails?.NumberOfIbogasProjectedToBePlantedThisYear + _donationService.GetProjectedNumberOfIbogasSponsoredPerYear(),
                 NumberOfIbogasSponsoredToDate = _donationService.GetNumberOfIbogasSponsoredToDate() + ProjectDetails?.NumberOfIbogasSponsoredToDate,
                 ProjectDetails?.NumberOfIbogaPlantations,

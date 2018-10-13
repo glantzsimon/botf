@@ -487,4 +487,10 @@
   <data name="DuplicateContactError" xml:space="preserve">
     <value>Sorry, a contact with that email address already exists.</value>
   </data>
+  <data name="FundsReceivedSoFar" xml:space="preserve">
+    <value>Funds Received To Date</value>
+  </data>
+  <data name="FundsReceivedSoFarLabel" xml:space="preserve">
+    <value>Funds Received To Date</value>
+  </data>
 </root>

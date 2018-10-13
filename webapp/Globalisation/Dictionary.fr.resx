@@ -493,4 +493,10 @@
   <data name="DuplicateContactError" xml:space="preserve">
     <value>Il existe déjà un compte sous cette adresse e-mail.</value>
   </data>
+  <data name="FundsReceivedSoFar" xml:space="preserve">
+    <value>Fonds reçus à ce jour</value>
+  </data>
+  <data name="FundsReceivedSoFarLabel" xml:space="preserve">
+    <value>Fonds reçus à ce jour</value>
+  </data>
 </root>

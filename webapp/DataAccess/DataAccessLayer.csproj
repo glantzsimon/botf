@@ -159,6 +159,10 @@
     <Compile Include="Migrations\201810090045507_20181009.Designer.cs">
       <DependentUpon>201810090045507_20181009.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810131327505_ProjectDetailUpdate.cs" />
+    <Compile Include="Migrations\201810131327505_ProjectDetailUpdate.Designer.cs">
+      <DependentUpon>201810131327505_ProjectDetailUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\LocalMigrationsConfiguration.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ProjectDetail.cs" />
@@ -188,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810090045507_20181009.resx">
       <DependentUpon>201810090045507_20181009.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810131327505_ProjectDetailUpdate.resx">
+      <DependentUpon>201810131327505_ProjectDetailUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -60,6 +60,11 @@ namespace K9.WebApplication.Services
             return GetNumberOfIbogasSponsoredLast30Days() * 12;
         }
 
+        public int GetFundsReceivedToDate()
+        {
+            return _donationRepository.List().Sum(d => (int) d.Amount);
+        }
+
         private void SendEmailToBotf(Donation donation)
         {
             var template = donation.NumberOfIbogas > 0

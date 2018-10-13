@@ -23,6 +23,7 @@
             public const string IbogasToBePlantedTwoYearsLabel = "IbogasProjectedToBePlantedTwoYearsText";
             public const string NumberOfIbogaPlantationsLabel = "NumberOfIbogaPlantationsLabel";
             public const string CompanyLabel = "CompanyLabel";
+            public const string FundsReceivedSoFarLabel = "FundsReceivedSoFarLabel";
         }
 
         public static class Names
