@@ -1,5 +1,13 @@
-﻿@using K9.Base.WebApplication.Helpers
+﻿@using K9.Base.DataAccessLayer.Enums
+@using K9.Base.WebApplication.Extensions
+@using K9.SharedLibrary.Authentication
 @model ArchiveItem
+
+@{
+    var roles = this.GetRoles();
+}
+
+
 @Html.BootstrapEditorFor(model => model.PublishedOn)
 @Html.HiddenFor(model => model.PublishedBy)
 @Html.BootstrapEditorFor(model => model.Language)
@@ -12,6 +20,11 @@
 })
 @Html.BootstrapEditorFor(model => model.Title)
 @Html.BootstrapEditorFor(model => model.DescriptionText)
+@Html.BootstrapEditorFor(model => model.IsShowLocalOnly)
+@if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
+{
+    @Html.BootstrapEditorFor(model => model.IsHideMetaData)
+}
 
 <script type="text/javascript">
 
@@ -45,10 +58,31 @@
             });
     }
 
+    function updateDisplayLocalMessage() {
+        var language = $("#Language").val();
+        var $label = $("#IsShowLocalOnly").closest("label").find("span");
+        if (language === "@((int)ELanguage.French)") {
+            $label.html("@K9.Globalisation.Dictionary.ShowOnlyOnFrenchSite");
+        }
+        else
+        {
+            $label.html("@K9.Globalisation.Dictionary.ShowOnlyOnEnglishSite");
+        }
+    }
+
+    function init() {
+        setAcceptedFileExtensionsByType();
+        updateDisplayLocalMessage();
+    }
+
     $(function() {
         $("#TypeId").change(function() {
             setAcceptedFileExtensionsByType();
             setInputVisibility();
+        });
+
+        $("#Language").change(function () {
+            updateDisplayLocalMessage();
         });
 
         $("#Url").keyup(function() {
@@ -59,6 +93,6 @@
             }
         });
 
-        window.setTimeout(setAcceptedFileExtensionsByType, 500);
+        window.setTimeout(init, 500);
     });
 </script>

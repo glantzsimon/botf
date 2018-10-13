@@ -499,4 +499,10 @@
   <data name="FundsReceivedSoFarLabel" xml:space="preserve">
     <value>Fonds reçus à ce jour</value>
   </data>
+  <data name="ShowOnlyOnEnglishSite" xml:space="preserve">
+    <value>Afficher seulement sur la version anglaise du site</value>
+  </data>
+  <data name="ShowOnlyOnFrenchSite" xml:space="preserve">
+    <value>Afficher seulement sur la version française du site</value>
+  </data>
 </root>

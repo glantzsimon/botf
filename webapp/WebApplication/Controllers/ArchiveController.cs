@@ -7,6 +7,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
@@ -32,7 +33,7 @@ namespace K9.WebApplication.Controllers
         {
             var archiveItemCategories = _archiveItemCategoryRepo.List();
             var archiveItemTypes = _archiveItemTypeRepo.List();
-            var archiveItemsToDisplay = _archiveItemRepo.Find(item => item.CategoryId == categoryId).ToList()
+            var archiveItemsToDisplay = _archiveItemRepo.Find(item => item.CategoryId == categoryId).ToList().Where(item => !item.IsShowLocalOnly || item.IsShowLocalOnly && item.LanguageCode == Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName)
                 .Select(a =>
                 {
                     a.ArchiveItemCategory = archiveItemCategories.FirstOrDefault(c => c.Id == a.CategoryId);
@@ -46,24 +47,24 @@ namespace K9.WebApplication.Controllers
                     .OrderBy(_ => _.Name)
                     .Select(a =>
                     {
-                        var archiveItems = _archiveItemRepo.Find(item => item.CategoryId == a.Id).ToList();
+                        var archiveItems = _archiveItemRepo.Find(item => item.CategoryId == a.Id).ToList().Where(item => !item.IsShowLocalOnly || item.IsShowLocalOnly && item.LanguageCode == Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName).ToList();
                         return new ArchiveByItemCategoryViewModel
                         {
                             ArchiveItemCategory = a,
                             Items = archiveItems
                         };
                     }).ToList(),
-                ArchiveItemTypes =  _archiveItemTypeRepo.List()
-                    .OrderBy(_ => _.Name)
-                    .Select(e =>
-                    {
-                        var archiveItems = _archiveItemRepo.Find(item => item.TypeId == e.Id).ToList();
-                        return new ArchiveByItemTypeViewModel
-                        {
-                            ArchiveItemType = e,
-                            Items = archiveItems
-                        };
-                    }).ToList(),
+                //ArchiveItemTypes =  _archiveItemTypeRepo.List()
+                //    .OrderBy(_ => _.Name)
+                //    .Select(e =>
+                //    {
+                //        var archiveItems = _archiveItemRepo.Find(item => item.TypeId == e.Id).ToList().Where(item => !item.IsShowLocalOnly || item.IsShowLocalOnly && item.LanguageCode == Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName).ToList();
+                //        return new ArchiveByItemTypeViewModel
+                //        {
+                //            ArchiveItemType = e,
+                //            Items = archiveItems
+                //        };
+                //    }).ToList(),
                 SelectedArchive = categoryId > 0 ? new ArchiveByItemCategoryViewModel
                 {
                     ArchiveItemCategory = archiveItemCategories.FirstOrDefault(_ => _.Id == categoryId),

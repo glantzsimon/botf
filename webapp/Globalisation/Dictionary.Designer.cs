@@ -1218,6 +1218,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show on English version of the site only.
+        /// </summary>
+        public static string ShowOnlyOnEnglishSite {
+            get {
+                return ResourceManager.GetString("ShowOnlyOnEnglishSite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show on French version of the site only.
+        /// </summary>
+        public static string ShowOnlyOnFrenchSite {
+            get {
+                return ResourceManager.GetString("ShowOnlyOnFrenchSite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thank you for signing up to our newsletter!.
         /// </summary>
         public static string SignUpSuccessTitle {

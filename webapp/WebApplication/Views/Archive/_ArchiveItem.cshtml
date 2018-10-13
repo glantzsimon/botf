@@ -2,15 +2,18 @@
 @model ArchiveItem
 
 <div class="archive-content-item scrollFadeUp">
-    <div class="news-item-title">
-        <p><strong>@Dictionary.PublishedOnLabel</strong>: @Model.PublishedOn.ToLongDateString()</p>
-        <p><strong>@Dictionary.PublishedByLabel</strong>: @Model.PublishedBy</p>
-        <p><strong>@Dictionary.LanguageLabel</strong>: @Model.LanguageName</p>
-        @if (Model.ArchiveItemType.GetLocalisedDescription() == Dictionary.Links)
-        {
-            <p><strong>@Dictionary.Source</strong>: <a target="_blank" href="@Model.Url">@Model.Url</a></p>
-        }
-    </div>
+    @if (!Model.IsHideMetaData)
+    {
+        <div class="news-item-title">
+            <p><strong>@Dictionary.PublishedOnLabel</strong>: @Model.PublishedOn.ToLongDateString()</p>
+            <p><strong>@Dictionary.PublishedByLabel</strong>: @Model.PublishedBy</p>
+            <p><strong>@Dictionary.LanguageLabel</strong>: @Model.LanguageName</p>
+            @if (Model.ArchiveItemType.GetLocalisedDescription() == Dictionary.Links)
+            {
+                <p><strong>@Dictionary.Source</strong>: <a target="_blank" href="@Model.Url">@Model.Url</a></p>
+            }
+        </div>
+    }
     <h5>
         @MvcHtmlString.Create(Model.Title.ToUpper())
     </h5>

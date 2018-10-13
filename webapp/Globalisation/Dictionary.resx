@@ -493,4 +493,10 @@
   <data name="FundsReceivedSoFarLabel" xml:space="preserve">
     <value>Funds Received To Date</value>
   </data>
+  <data name="ShowOnlyOnEnglishSite" xml:space="preserve">
+    <value>Show on English version of the site only</value>
+  </data>
+  <data name="ShowOnlyOnFrenchSite" xml:space="preserve">
+    <value>Show on French version of the site only</value>
+  </data>
 </root>
