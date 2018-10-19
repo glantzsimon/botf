@@ -47,14 +47,14 @@ namespace K9.WebApplication.Services.Stripe
             return chargeService.List(
                 new StripeChargeListOptions()
                 {
-                    Limit = 30
+                    Limit = 0
                 }
             );
         }
 
         public List<Donation>  GetDonations()
         {
-            return GetCharges().Select(c =>
+            return GetCharges().Where(_ => _.LiveMode).Select(c =>
                 new Donation
                 {
                     StripeId = c.Id,

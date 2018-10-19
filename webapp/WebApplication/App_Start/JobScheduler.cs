@@ -39,7 +39,6 @@ namespace K9.WebApplication
 
         private void RunTasks(object state)
         {
-            UpdateDonations();
         }
 
         private void UpdateDonations()
