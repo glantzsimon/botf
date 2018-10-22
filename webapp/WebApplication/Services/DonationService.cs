@@ -68,7 +68,7 @@ namespace K9.WebApplication.Services
 
         private List<Donation> GetSuccessfulDonations()
         {
-            return _donationRepository.Find(d => d.Status == "successful").ToList();
+            return _donationRepository.Find(d => d.Status == "succeeded").ToList();
         }
 
         private void SendEmailToBotf(Donation donation)
