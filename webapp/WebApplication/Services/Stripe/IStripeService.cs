@@ -8,7 +8,7 @@ namespace K9.WebApplication.Services.Stripe
     public interface IStripeService
     {
         string Charge(StripeModel model);
-        StripeList<StripeCharge> GetCharges();
+        List<StripeCharge> GetCharges();
         List<Donation> GetDonations();
     }
 }

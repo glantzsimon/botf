@@ -505,4 +505,7 @@
   <data name="ShowOnlyOnFrenchSite" xml:space="preserve">
     <value>Afficher seulement sur la version française du site</value>
   </data>
+  <data name="StatusLabel" xml:space="preserve">
+    <value>Résultat</value>
+  </data>
 </root>

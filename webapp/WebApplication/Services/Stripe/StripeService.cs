@@ -39,22 +39,36 @@ namespace K9.WebApplication.Services.Stripe
             return charge.Id;
         }
 
-        public StripeList<StripeCharge> GetCharges()
+        public List<StripeCharge> GetCharges()
         {
             StripeConfiguration.SetApiKey(_stripeConfig.SecretKey);
-
+            var allCharges = new List<StripeCharge>();
+            var stripeCharges = new List<StripeCharge>();
             var chargeService = new StripeChargeService();
-            return chargeService.List(
-                new StripeChargeListOptions()
-                {
-                    Limit = 0
-                }
-            );
+            var total = 0;
+            var noItemsReturned = false;
+
+            while (total == 0 && !noItemsReturned || stripeCharges.Any())
+            {
+                stripeCharges = chargeService.List(
+                    new StripeChargeListOptions()
+                    {
+                        Limit = 100,
+                        StartingAfter = allCharges.LastOrDefault()?.Id
+                    }
+                ).ToList();
+                allCharges.AddRange(stripeCharges);
+                total += allCharges.Count;
+                noItemsReturned = total == 0;
+            }
+
+            return allCharges.ToList();
         }
 
-        public List<Donation>  GetDonations()
+        public List<Donation> GetDonations()
         {
-            return GetCharges().Where(_ => _.LiveMode).Select(c =>
+            var stripeCharges = GetCharges().ToList();
+            return stripeCharges.Select(c =>
                 new Donation
                 {
                     StripeId = c.Id,
@@ -63,7 +77,8 @@ namespace K9.WebApplication.Services.Stripe
                     CustomerEmail = c.Customer?.Email,
                     DonationDescription = c.Description + (c.Refunded ? " (refunded)" : ""),
                     DonatedOn = c.Created,
-                    DonationAmount = (c.Amount / 100) * (c.Refunded ? -1 : 1)
+                    DonationAmount = (c.Amount / 100) * (c.Refunded ? -1 : 1),
+                    Status = c.Status
                 }).ToList();
         }
     }

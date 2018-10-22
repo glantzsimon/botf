@@ -1326,6 +1326,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        public static string StatusLabel {
+            get {
+                return ResourceManager.GetString("StatusLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thank you for your donation.
         /// </summary>
         public static string ThankyouForDonationEmailTitle {

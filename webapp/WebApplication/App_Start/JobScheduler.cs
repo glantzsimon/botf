@@ -3,6 +3,7 @@ using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Services.Stripe;
 using System;
+using System.Linq;
 using System.Threading;
 using System.Web.Hosting;
 using K9.Base.DataAccessLayer.Respositories;
@@ -39,6 +40,7 @@ namespace K9.WebApplication
 
         private void RunTasks(object state)
         {
+            UpdateDonations();
         }
 
         private void UpdateDonations()
@@ -46,12 +48,23 @@ namespace K9.WebApplication
             using (var dbContext = new LocalDb())
             {
                 var repository = new BaseRepository<Donation>(dbContext);
-                var donations = repository.List();
-                foreach (var donation in _stripeService.GetDonations())
+                var existingDonations = repository.List();
+                var newDonations = _stripeService.GetDonations();
+                
+                foreach (var donation in newDonations)
                 {
-                    if (!donations.Exists(d => d.StripeId == donation.StripeId))
+                    if (!existingDonations.Exists(d => d.StripeId == donation.StripeId))
                     {
                         repository.Create(donation);
+                    }
+                    else
+                    {
+                        var entity = repository.Find(e => e.StripeId == donation.StripeId).FirstOrDefault();
+                        if (entity != null)
+                        {
+                            entity.Status = donation.Status;
+                            repository.Update(entity);
+                        }
                     }
                 }
             }

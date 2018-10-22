@@ -499,4 +499,7 @@
   <data name="ShowOnlyOnFrenchSite" xml:space="preserve">
     <value>Show on French version of the site only</value>
   </data>
+  <data name="StatusLabel" xml:space="preserve">
+    <value>Status</value>
+  </data>
 </root>

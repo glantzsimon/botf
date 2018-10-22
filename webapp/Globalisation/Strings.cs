@@ -24,6 +24,7 @@
             public const string NumberOfIbogaPlantationsLabel = "NumberOfIbogaPlantationsLabel";
             public const string CompanyLabel = "CompanyLabel";
             public const string FundsReceivedSoFarLabel = "FundsReceivedSoFarLabel";
+            public const string StatusLabel = "StatusLabel";
         }
 
         public static class Names

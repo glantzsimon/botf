@@ -6,6 +6,7 @@ using K9.SharedLibrary.Helpers;
 using K9.SharedLibrary.Models;
 using NLog;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -47,12 +48,12 @@ namespace K9.WebApplication.Services
 
         public int GetNumberOfIbogasSponsoredToDate()
         {
-            return _donationRepository.List().Sum(d => (int)d.Amount) / 10;
+            return GetSuccessfulDonations().Sum(d => (int)d.Amount) / 10;
         }
 
         public int GetNumberOfIbogasSponsoredLast30Days()
         {
-            return _donationRepository.List().Where(d => DateTime.Today.Subtract(d.DonatedOn).TotalDays <= 30).Sum(d => d.NumberOfIbogas);
+            return GetSuccessfulDonations().Where(d => DateTime.Today.Subtract(d.DonatedOn).TotalDays <= 30).Sum(d => d.NumberOfIbogas);
         }
 
         public int GetProjectedNumberOfIbogasSponsoredPerYear()
@@ -62,7 +63,12 @@ namespace K9.WebApplication.Services
 
         public int GetFundsReceivedToDate()
         {
-            return _donationRepository.List().Sum(d => (int) d.Amount);
+            return GetSuccessfulDonations().Sum(d => (int) d.Amount);
+        }
+
+        private List<Donation> GetSuccessfulDonations()
+        {
+            return _donationRepository.Find(d => d.Status == "successful").ToList();
         }
 
         private void SendEmailToBotf(Donation donation)
