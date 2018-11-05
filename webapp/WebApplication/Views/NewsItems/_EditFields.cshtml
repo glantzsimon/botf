@@ -1,6 +1,14 @@
 ﻿@using K9.Base.DataAccessLayer.Enums
+@using K9.Base.WebApplication.Extensions
 @using K9.Base.WebApplication.Helpers
+@using K9.SharedLibrary.Authentication
+
 @model NewsItem
+
+@{
+    var roles = this.GetRoles();
+}
+
 @Html.BootstrapEditorFor(model => model.PublishedOn)
 @Html.HiddenFor(model => model.PublishedBy)
 @Html.BootstrapEditorFor(model => model.Language)
@@ -17,22 +25,36 @@
 {
     IsHidden = !Model.IsDisplayUrl
 })
+@Html.BootstrapEditorFor(model => model.ImageUrl, new EditorOptions
+{
+    IsHidden = !Model.IsDisplayUrl
+})
 @Html.BootstrapEditorFor(model => model.Subject)
 @Html.BootstrapEditorFor(model => model.Body)
+
+@if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
+{
+    @Html.BootstrapEditorFor(model => model.AdditionalCssClasses)
+}
+
+@Html.BootstrapEditorFor(model => model.IsShowLocalOnly)
 
 <script type="text/javascript">
 
     function setInputVisibility() {
         var type = parseInt($("#Type").val());
         var isUrlVisible = type === @((int)ENewsItemType.Video) || type === @((int)ENewsItemType.Link);
+        var isImageUrlVisible = type === @((int)ENewsItemType.Link);
         var isImageFileSourceVisible = type === @((int)ENewsItemType.Article);
         var isVideoFileSourceVisible = type === @((int)ENewsItemType.Video);
         var urlField = $("div[data-input-id=Url]");
+        var imageUrlField = $("div[data-input-id=ImageUrl]");
         var imageFileSourceField = $("div[data-input-id=ImageFileSource]");
         var videoFileSourceField = $("div[data-input-id=VideoFileSource]");
         isUrlVisible ? urlField.show() : urlField.hide();
         isImageFileSourceVisible ? imageFileSourceField.show() : imageFileSourceField.hide();
         isVideoFileSourceVisible ? videoFileSourceField.show() : videoFileSourceField.hide();
+        isImageUrlVisible ? imageUrlField.show() : imageUrlField.hide();
     }
 
     function updateLinkMetaData(url) {
@@ -49,9 +71,30 @@
             });
     }
 
+    function updateDisplayLocalMessage() {
+        var language = $("#Language").val();
+        var $label = $("#IsShowLocalOnly").closest("label").find("span");
+        if (language === "@((int)ELanguage.French)") {
+            $label.html("@K9.Globalisation.Dictionary.ShowOnlyOnFrenchSite");
+        }
+        else
+        {
+            $label.html("@K9.Globalisation.Dictionary.ShowOnlyOnEnglishSite");
+        }
+    }
+
+    function init() {
+        updateDisplayLocalMessage();
+        setInputVisibility();
+    }
+
     $(function() {
         $("#Type").change(function() {
             setInputVisibility();
+        });
+
+        $("#Language").change(function () {
+            updateDisplayLocalMessage();
         });
 
         $("#Url").keyup(function() {
@@ -61,6 +104,8 @@
                 updateLinkMetaData(url);
             }
         });
+
+        window.setTimeout(init, 500);
     });
 
 </script>

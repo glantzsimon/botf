@@ -123,13 +123,20 @@
 	    };
 
 	    $.fn.loadLinkImagePreview = function($el) {
-	        var url = $el.attr("data-url");
-	        ajaxcontroller().get("@Url.Action("GetLinkPreview", "Archive")", { url: url }).done(
-	            function(result) {
-	                if (result.success && result.data) {
-	                    $el.attr("style", "background-image: url('" + result.data.ImageUrl + "');");
-	                }
-	            });
+	        var imageUrl = $el.attr("image-url");
+            if (imageUrl) {
+                $el.attr("style", "background-image: url('" + imageUrl + "');");
+            }
+            else
+	        {
+	            var url = $el.attr("data-url");
+	            ajaxcontroller().get("@Url.Action("GetLinkPreview", "Archive")", { url: url }).done(
+	                function(result) {
+	                    if (result.success && result.data) {
+                            $el.attr("style", "background-image: url('" + result.data.ImageUrl + "');");
+	                    }
+	                });
+	        }
 	    }
 
 	    $.fn.getFullPathTo = function(path)

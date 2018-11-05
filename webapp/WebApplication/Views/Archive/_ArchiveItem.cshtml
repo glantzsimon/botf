@@ -30,7 +30,9 @@
                 <br />
                 @Html.Partial("_LinkPreview", new LinkViewModel
                 {
-                    Url = Model.Url
+                    Url = Model.Url,
+                    ImageUrl = Model.ImageUrl,
+                    CssClasses = Model.AdditionalCssClasses
                 })
             }
             else if (Model.ArchiveItemType.GetLocalisedDescription() == Dictionary.Videos)

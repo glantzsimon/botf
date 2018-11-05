@@ -28,7 +28,9 @@
                 {
                     @Html.Partial("_LinkPreview", new LinkViewModel
                     {
-                        Url = newsItem.Url
+                        Url = newsItem.Url,
+                        ImageUrl = newsItem.ImageUrl,
+                        CssClasses = newsItem.AdditionalCssClasses
                     })
                 }
             </div>

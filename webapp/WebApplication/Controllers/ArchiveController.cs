@@ -79,7 +79,7 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                return Json(_linkPreviewer.GetPreview(url), JsonRequestBehavior.AllowGet);
+                return Json(_linkPreviewer.GetPreview(url, 600, 500), JsonRequestBehavior.AllowGet);
             }
             catch (Exception e)
             {
