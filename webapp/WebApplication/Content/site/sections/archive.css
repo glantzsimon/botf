@@ -29,3 +29,11 @@ audio, video {
     background-position: center center;
     background-repeat: no-repeat;
 }
+
+.link-image-preview.valign-top {
+    background-position-y: top;
+}
+
+    .link-image-preview.valign-bottom {
+        background-position-y: bottom;
+    }
