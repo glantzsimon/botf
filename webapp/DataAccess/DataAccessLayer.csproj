@@ -184,6 +184,10 @@
     <Compile Include="Migrations\201811050140017_NewsItemShowLocalOnly.Designer.cs">
       <DependentUpon>201811050140017_NewsItemShowLocalOnly.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201811050416214_AddImageUrl.cs" />
+    <Compile Include="Migrations\201811050416214_AddImageUrl.Designer.cs">
+      <DependentUpon>201811050416214_AddImageUrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\LocalMigrationsConfiguration.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\ProjectDetail.cs" />
@@ -225,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811050140017_NewsItemShowLocalOnly.resx">
       <DependentUpon>201811050140017_NewsItemShowLocalOnly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811050416214_AddImageUrl.resx">
+      <DependentUpon>201811050416214_AddImageUrl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
