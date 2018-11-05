@@ -1,0 +1,13 @@
+﻿
+
+#action-signup-button-container {
+    margin-top: -46px;
+    float: right;
+}
+
+@media(max-width:1000px) {
+    #action-signup-button-container {
+        margin-top: 40px;
+        float: none;
+    }
+}

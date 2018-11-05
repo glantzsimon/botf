@@ -283,6 +283,7 @@
     <Content Include="Content\site\desktop.css" />
     <Content Include="Content\site\elements.css" />
     <Content Include="Content\site\mobile.css" />
+    <Content Include="Content\site\sections\actions.css" />
     <Content Include="Content\site\sections\iboga.css" />
     <Content Include="Content\site\sections\cookies.css" />
     <Content Include="Content\site\sections\support.css" />
