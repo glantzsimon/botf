@@ -1,9 +1,9 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
-using System;
+using K9.SharedLibrary.Attributes;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -11,7 +11,14 @@ namespace K9.DataAccessLayer.Models
     [Name(ResourceType = typeof(K9.Globalisation.Dictionary), ListName = Globalisation.Strings.Names.Contacts, PluralName = Globalisation.Strings.Names.Contacts, Name = Globalisation.Strings.Names.Donation)]
     public class Contact : ObjectBase
 	{
-	    
+	    [ForeignKey("User")]
+	    public int UserId { get; set; }
+
+	    public virtual User User { get; set; }
+
+	    [LinkedColumn(LinkedTableName = "User", LinkedColumnName = "Username")]
+	    public string UserName { get; set; }
+
 	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.StripeCustomerIdLabel)]
 	    public string StripeCustomerId { get; set; }
 

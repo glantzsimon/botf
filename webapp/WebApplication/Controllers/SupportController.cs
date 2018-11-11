@@ -189,6 +189,7 @@ namespace K9.WebApplication.Controllers
                     DonationAmount = model.DonationAmount,
                     NumberOfIbogas = model.NumberOfTrees
                 });
+                _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
                 return RedirectToAction("SponsorSuccess");
             }
             catch (Exception ex)
