@@ -511,4 +511,49 @@
   <data name="StripeCustomerIdLabel" xml:space="preserve">
     <value>Identifiant Stripe</value>
   </data>
+  <data name="Annual" xml:space="preserve">
+    <value>Annuel</value>
+  </data>
+  <data name="MembershipLabel" xml:space="preserve">
+    <value>Abonnement</value>
+  </data>
+  <data name="MembershipOption" xml:space="preserve">
+    <value>Option d'Abonnement</value>
+  </data>
+  <data name="MembershipOptions" xml:space="preserve">
+    <value>Options d'Abonnement</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Mensuel</value>
+  </data>
+  <data name="SubscriptionCostLabel" xml:space="preserve">
+    <value>Prix d'Abonnement</value>
+  </data>
+  <data name="AnnualPlatinumMembership" xml:space="preserve">
+    <value>Abonnement Annuel Platinum</value>
+  </data>
+  <data name="AnnualStandardMembership" xml:space="preserve">
+    <value>Abonnement Annuel Standard</value>
+  </data>
+  <data name="MonthlyPlatinumMembership" xml:space="preserve">
+    <value>Abonnement Mensuel Platinum</value>
+  </data>
+  <data name="MonthlyStandardMembership" xml:space="preserve">
+    <value>Abonnement Mensuel Standard</value>
+  </data>
+  <data name="platinum_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\fr\platinum-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="standard_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\fr\standard-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SubscriptionDetailsLabel" xml:space="preserve">
+    <value>Subscription Details</value>
+  </data>
+  <data name="Subscribed" xml:space="preserve">
+    <value>Abonné(e)</value>
+  </data>
+  <data name="SubscribeNow" xml:space="preserve">
+    <value>S'inscrire Maintenant</value>
+  </data>
 </root>

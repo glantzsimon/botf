@@ -8,5 +8,6 @@ namespace K9.DataAccessLayer.Database
         public DbSet<Donation> Donations { get; set; }
         public DbSet<ProjectDetail> ProjectDetails { get; set; }
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<MembershipOption> MembershipOptions { get; set; }
     }
 }

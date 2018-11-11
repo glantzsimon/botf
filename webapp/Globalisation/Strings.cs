@@ -26,6 +26,9 @@
             public const string FundsReceivedSoFarLabel = "FundsReceivedSoFarLabel";
             public const string StatusLabel = "StatusLabel";
             public const string StripeCustomerIdLabel = "StripeCustomerIdLabel";
+            public const string MembershipLabel = "MembershipLabel";
+            public const string SubscriptionCostLabel = "SubscriptionCostLabel";
+            public const string SubscriptionDetailsLabel = "SubscriptionDetailsLabel";
         }
 
         public static class Names
@@ -35,6 +38,14 @@
             public const string ProjectStats = "ProjectStats";
             public const string Contact = "Contact";
             public const string Contacts = "Contacts";
+            public const string Monthly = "Monthly";
+            public const string Annual = "Annual";
+            public const string MonthlyStandardMembership = "MonthlyStandardMembership";
+            public const string AnnualStandardMembership = "AnnualStandardMembership";
+            public const string MonthlyPlatnumMembership = "MonthlyPlatnumMembership";
+            public const string AnnualPlatinumMembership = "AnnualPlatinumMembership";
+            public const string MembershipOptions = "MembershipOptions";
+            public const string MembershipOption = "MembershipOption";
         }
     }
 }

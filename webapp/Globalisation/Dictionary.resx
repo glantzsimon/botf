@@ -505,4 +505,49 @@
   <data name="StripeCustomerIdLabel" xml:space="preserve">
     <value>Stripe Customer Id</value>
   </data>
+  <data name="Annual" xml:space="preserve">
+    <value>Annual</value>
+  </data>
+  <data name="MembershipLabel" xml:space="preserve">
+    <value>Membership</value>
+  </data>
+  <data name="MembershipOption" xml:space="preserve">
+    <value>Membership Option</value>
+  </data>
+  <data name="MembershipOptions" xml:space="preserve">
+    <value>Membership Options</value>
+  </data>
+  <data name="Monthly" xml:space="preserve">
+    <value>Monthly</value>
+  </data>
+  <data name="SubscriptionCostLabel" xml:space="preserve">
+    <value>Subscription Cost</value>
+  </data>
+  <data name="AnnualPlatinumMembership" xml:space="preserve">
+    <value>Yearly Platinum Membership</value>
+  </data>
+  <data name="AnnualStandardMembership" xml:space="preserve">
+    <value>Annual Standard Membership</value>
+  </data>
+  <data name="MonthlyPlatinumMembership" xml:space="preserve">
+    <value>Monthly Platinum Membership</value>
+  </data>
+  <data name="MonthlyStandardMembership" xml:space="preserve">
+    <value>Monthly Standard Membership</value>
+  </data>
+  <data name="platinum_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\en-gb\platinum-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="standard_membership_description" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\en-gb\standard-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SubscriptionDetailsLabel" xml:space="preserve">
+    <value>Détails d'Abonnement</value>
+  </data>
+  <data name="Subscribed" xml:space="preserve">
+    <value>Subscribed</value>
+  </data>
+  <data name="SubscribeNow" xml:space="preserve">
+    <value>Join Now</value>
+  </data>
 </root>

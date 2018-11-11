@@ -88,6 +88,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Annual.
+        /// </summary>
+        public static string Annual {
+            get {
+                return ResourceManager.GetString("Annual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly Platinum Membership.
+        /// </summary>
+        public static string AnnualPlatinumMembership {
+            get {
+                return ResourceManager.GetString("AnnualPlatinumMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Annual Standard Membership.
+        /// </summary>
+        public static string AnnualStandardMembership {
+            get {
+                return ResourceManager.GetString("AnnualStandardMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Archive Item Types.
         /// </summary>
         public static string ArchiveItemTypes {
@@ -959,6 +986,33 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Membership.
+        /// </summary>
+        public static string MembershipLabel {
+            get {
+                return ResourceManager.GetString("MembershipLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Membership Option.
+        /// </summary>
+        public static string MembershipOption {
+            get {
+                return ResourceManager.GetString("MembershipOption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Membership Options.
+        /// </summary>
+        public static string MembershipOptions {
+            get {
+                return ResourceManager.GetString("MembershipOptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to These are our aims in relation to this plant considered as sacred by the Gabonese people.
         /// </summary>
         public static string mission_statement_and_aims_title1 {
@@ -996,6 +1050,33 @@ namespace K9.Globalisation {
         public static string mission_statement_and_aims2 {
             get {
                 return ResourceManager.GetString("mission_statement_and_aims2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monthly.
+        /// </summary>
+        public static string Monthly {
+            get {
+                return ResourceManager.GetString("Monthly", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monthly Platinum Membership.
+        /// </summary>
+        public static string MonthlyPlatinumMembership {
+            get {
+                return ResourceManager.GetString("MonthlyPlatinumMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Monthly Standard Membership.
+        /// </summary>
+        public static string MonthlyStandardMembership {
+            get {
+                return ResourceManager.GetString("MonthlyStandardMembership", resourceCulture);
             }
         }
         
@@ -1091,6 +1172,16 @@ namespace K9.Globalisation {
         public static string PhotographyBy {
             get {
                 return ResourceManager.GetString("PhotographyBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Platinum Membership, in addition to all the benefits of the Standard Membership, also offers you access to a hotline to Yann Guignon, one of the worlds leading epert on the Bwiti traditions and Gabonese culture.
+        ///&lt;p&gt;With the Platinum Membership, you will also be sponsoring two Iboga trees per month&lt;/p&gt;.
+        /// </summary>
+        public static string platinum_membership_description {
+            get {
+                return ResourceManager.GetString("platinum_membership_description", resourceCulture);
             }
         }
         
@@ -1326,6 +1417,17 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Standard Membership grants you full access to Blessings of The Forest&apos;s extensive library. 
+        ///This is perhaps the world&apos;s most comprehensive collection of material concerning Bwiti and the medicinal properties of Iboga
+        ///&lt;p&gt;With this membership, you will also be sponsoring one Iboga tree per month&lt;/p&gt;.
+        /// </summary>
+        public static string standard_membership_description {
+            get {
+                return ResourceManager.GetString("standard_membership_description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
         public static string StatusLabel {
@@ -1340,6 +1442,42 @@ namespace K9.Globalisation {
         public static string StripeCustomerIdLabel {
             get {
                 return ResourceManager.GetString("StripeCustomerIdLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subscribed.
+        /// </summary>
+        public static string Subscribed {
+            get {
+                return ResourceManager.GetString("Subscribed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Join Now.
+        /// </summary>
+        public static string SubscribeNow {
+            get {
+                return ResourceManager.GetString("SubscribeNow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subscription Cost.
+        /// </summary>
+        public static string SubscriptionCostLabel {
+            get {
+                return ResourceManager.GetString("SubscriptionCostLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Détails d&apos;Abonnement.
+        /// </summary>
+        public static string SubscriptionDetailsLabel {
+            get {
+                return ResourceManager.GetString("SubscriptionDetailsLabel", resourceCulture);
             }
         }
         

@@ -1,0 +1,41 @@
+﻿@using K9.Base.WebApplication.Helpers
+@model List<K9.WebApplication.Models.MembershipModel>
+
+@{
+    ViewBag.Title = @K9.Globalisation.Dictionary.MembershipOptions;
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="container">
+        <div>
+            @foreach (var membershipModel in Model)
+            {
+                <div class="col-md-4 col-sm-12 support-us-container">
+                    <div class="support-us-option shadow-light shadow-hover">
+                        <a href="@Url.Action("Details", "Membership")">
+                            <h4>@membershipModel.MembershipOption.Description</h4>
+                            <div class="support-item support-shop">
+                                @membershipModel.MembershipOption.SubscriptionDetailsLocal
+                            </div>
+                            <div>
+                                @membershipModel.MembershipOption.Price
+                            </div>
+                            <div>
+                                @membershipModel.UserMembership == null ? @K9.Globalisation.Dictionary.Subscribed : @K9.Globalisation.Dictionary.SubscribeNow
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+            <div class="clearfix">
+            </div>
+        </div>
+    </div>
+}
+
+<script language="javascript">
+
+
+</script>
