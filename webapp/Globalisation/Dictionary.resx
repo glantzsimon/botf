@@ -502,4 +502,7 @@
   <data name="StatusLabel" xml:space="preserve">
     <value>Status</value>
   </data>
+  <data name="StripeCustomerIdLabel" xml:space="preserve">
+    <value>Stripe Customer Id</value>
+  </data>
 </root>

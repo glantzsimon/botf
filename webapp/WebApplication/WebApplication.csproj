@@ -261,7 +261,10 @@
     <Compile Include="Helpers\Dynamic.cs" />
     <Compile Include="Helpers\Separator.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Models\StripeChargeResultModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ContactService.cs" />
+    <Compile Include="Services\IContactService.cs" />
     <Compile Include="Services\IShopService.cs" />
     <Compile Include="Services\IDonationService.cs" />
     <Compile Include="Services\CookieService.cs" />

@@ -16,7 +16,7 @@ namespace K9.WebApplication.Services.Stripe
             _stripeConfig = stripeConfig.Value;
         }
 
-        public string Charge(StripeModel model)
+        public StripeChargeResultModel Charge(StripeModel model)
         {
             var customers = new StripeCustomerService();
             var charges = new StripeChargeService();
@@ -27,6 +27,7 @@ namespace K9.WebApplication.Services.Stripe
                 SourceToken = model.StripeToken,
                 Description = model.Description
             });
+            
 
             var charge = charges.Create(new StripeChargeCreateOptions
             {
@@ -36,7 +37,7 @@ namespace K9.WebApplication.Services.Stripe
                 CustomerId = customer.Id
             });
 
-            return charge.Id;
+            return new StripeChargeResultModel(charge, customer);
         }
 
         public List<StripeCharge> GetCharges()

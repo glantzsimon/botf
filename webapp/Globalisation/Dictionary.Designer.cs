@@ -1335,6 +1335,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Stripe Customer Id.
+        /// </summary>
+        public static string StripeCustomerIdLabel {
+            get {
+                return ResourceManager.GetString("StripeCustomerIdLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thank you for your donation.
         /// </summary>
         public static string ThankyouForDonationEmailTitle {

@@ -12,6 +12,9 @@ namespace K9.DataAccessLayer.Models
     public class Contact : ObjectBase
 	{
 	    
+	    [Display(ResourceType = typeof(Globalisation.Dictionary), Name = K9.Globalisation.Strings.Labels.StripeCustomerIdLabel)]
+	    public string StripeCustomerId { get; set; }
+
 	    [Required(ErrorMessageResourceType = typeof(Dictionary), ErrorMessageResourceName = Strings.ErrorMessages.FieldIsRequired)]
 	    [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.NameLabel)]
         [StringLength(128)]

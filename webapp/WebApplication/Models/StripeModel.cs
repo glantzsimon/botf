@@ -47,24 +47,10 @@ namespace K9.WebApplication.Models
 
         public string StripeToken { get; set; }
 
-        public string StripeTokenType { get; set; }
-
         public string StripeEmail { get; set; }
 
         public string StripeBillingName { get; set; }
-
-        public string StripeBillingAddressCountry { get; set; }
-
-        public string StripeBillingAddressCountryCode { get; set; }
-
-        public string StripeBillingAddressZip { get; set; }
-
-        public string StripeBillingAddressLine1 { get; set; }
-
-        public string StripeBillingAddressCity { get; set; }
-
-        public string StripeBillingAddressState { get; set; }
-
+        
         public static string GetLocalisedCurrency()
         {
             try

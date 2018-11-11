@@ -112,28 +112,6 @@ namespace K9.WebApplication.Services
                 ImageUrl = _urlHelper.AbsoluteContent(_config.CompanyLogoUrl),
                 donation.NumberOfIbogas
             }), donation.CustomerEmail, donation.Customer, _config.SupportEmailAddress, _config.CompanyName);
-            AddCustomerToContacts(donation.CustomerName, donation.CustomerEmail, "");
-        }
-
-        private void AddCustomerToContacts(string name, string emailAddress, string companyName)
-        {
-            if (!string.IsNullOrEmpty(emailAddress))
-            {
-                try
-                {
-                    _contactsRepository.Create(new Contact
-                    {
-                        FullName = string.IsNullOrEmpty(name) ? emailAddress : name,
-                        EmailAddress = emailAddress,
-                        CompanyName = companyName
-                    });
-                }
-                catch (Exception e)
-                {
-                    _logger.Error($"DonationService => AddCustomerToContacts => {e.Message}");
-                    throw;
-                }
-            }
         }
     }
 }

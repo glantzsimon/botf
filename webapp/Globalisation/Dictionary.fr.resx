@@ -508,4 +508,7 @@
   <data name="StatusLabel" xml:space="preserve">
     <value>Résultat</value>
   </data>
+  <data name="StripeCustomerIdLabel" xml:space="preserve">
+    <value>Identifiant Stripe</value>
+  </data>
 </root>

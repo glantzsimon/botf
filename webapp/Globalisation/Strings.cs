@@ -25,6 +25,7 @@
             public const string CompanyLabel = "CompanyLabel";
             public const string FundsReceivedSoFarLabel = "FundsReceivedSoFarLabel";
             public const string StatusLabel = "StatusLabel";
+            public const string StripeCustomerIdLabel = "StripeCustomerIdLabel";
         }
 
         public static class Names

@@ -27,10 +27,11 @@ namespace K9.WebApplication.Controllers
         private readonly IStripeService _stripeService;
         private readonly IDonationService _donationService;
         private readonly IRepository<User> _userRepository;
+        private readonly IContactService _contactService;
         private readonly StripeConfiguration _stripeConfig;
         private readonly WebsiteConfiguration _config;
 
-        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService, IRepository<User> userRepository)
+        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService, IRepository<User> userRepository, IContactService contactService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
             _logger = logger;
@@ -38,6 +39,7 @@ namespace K9.WebApplication.Controllers
             _stripeService = stripeService;
             _donationService = donationService;
             _userRepository = userRepository;
+            _contactService = contactService;
             _stripeConfig = stripeConfig.Value;
             _config = config.Value;
         }
@@ -144,10 +146,10 @@ namespace K9.WebApplication.Controllers
             try
             {
                 model.Description = Dictionary.DonationToBOTF;
-                var transactionId = _stripeService.Charge(model);
+                var result = _stripeService.Charge(model);
                 _donationService.CreateDonation(new Donation
                 {
-                    StripeId = transactionId,
+                    StripeId = result.StripeCharge.Id,
                     Currency = model.LocalisedCurrencyThreeLetters,
                     Customer = model.StripeBillingName,
                     CustomerEmail = model.StripeEmail,
@@ -155,6 +157,7 @@ namespace K9.WebApplication.Controllers
                     DonatedOn = DateTime.Now,
                     DonationAmount = model.AmountToDonate
                 });
+                _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
                 return RedirectToAction("DonationSuccess");
             }
             catch (Exception ex)
@@ -174,10 +177,10 @@ namespace K9.WebApplication.Controllers
             try
             {
                 model.Description = Dictionary.SponsorIbogaTree;
-                var transactionId = _stripeService.Charge(model);
+                var result = _stripeService.Charge(model);
                 _donationService.CreateDonation(new Donation
                 {
-                    StripeId = transactionId,
+                    StripeId = result.StripeCharge.Id,
                     Currency = model.LocalisedCurrencyThreeLetters,
                     Customer = model.StripeBillingName,
                     CustomerEmail = model.StripeEmail,
