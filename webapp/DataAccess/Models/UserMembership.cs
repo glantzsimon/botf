@@ -22,7 +22,7 @@ namespace K9.DataAccessLayer.Models
         [Required]
         [ForeignKey("Role")]
         public int MembershipOptionId { get; set; }
-
+            
         public virtual User User { get; set; }
         public virtual MembershipOption MembershipOption { get; set; }
 

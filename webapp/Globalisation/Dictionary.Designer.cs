@@ -133,6 +133,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Become a member and benefactor of BOTF.
+        /// </summary>
+        public static string BecomeBenefactorTitle {
+            get {
+                return ResourceManager.GetString("BecomeBenefactorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blessings.
         /// </summary>
         public static string Blessings {

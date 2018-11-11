@@ -263,7 +263,7 @@
     <Compile Include="Helpers\Separator.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\MembershipModel.cs" />
-    <Compile Include="Models\MembershipOptionModel.cs" />
+    <Compile Include="Models\StripeChargeResultModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ContactService.cs" />
     <Compile Include="Services\IContactService.cs" />

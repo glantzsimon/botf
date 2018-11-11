@@ -31,7 +31,7 @@ namespace K9.WebApplication.Controllers
             var model = new List<MembershipModel>(membershipOptions.Select(membershipOption =>
                 {
                     return new MembershipModel(membershipOption,
-                        userMemberships.FirstOrDefault(_ => _.UserId == Authentication.CurrentUserId);
+                        userMemberships.FirstOrDefault(_ => _.UserId == Authentication.CurrentUserId));
                 }));
 
             return View(model);

@@ -544,6 +544,9 @@
   <data name="SubscriptionDetailsLabel" xml:space="preserve">
     <value>Détails d'Abonnement</value>
   </data>
+  <data name="BecomeBenefactorTitle" xml:space="preserve">
+    <value>Become a member and benefactor of BOTF</value>
+  </data>
   <data name="Subscribed" xml:space="preserve">
     <value>Subscribed</value>
   </data>
