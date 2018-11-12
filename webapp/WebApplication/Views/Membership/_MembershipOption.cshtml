@@ -5,9 +5,9 @@
     var isSelected = Model.ActiveSubscriptionId == Model.MembershipOption.Id;
 }
 
-<div class="shadow-light shadow-hover membership-option-container">
+<div class="shadow-light shadow-hover membership-option-container @Model.MembershipSelectedCssClass">
     <div class="membership-option-title">
-        <h5><strong>@Model.MembershipOption.SubscriptionTypeName</strong></h5>
+        <h5><strong>@Model.MembershipOption.SubscriptionTypeNameLocal</strong></h5>
     </div>
     <div class="membership-option">
         @Html.Partial("_MembershipMedal", Model.MembershipOption)
@@ -18,7 +18,8 @@
             }
             else
             {
-                @Html.BootstrapActionLinkButton(@K9.Globalisation.Dictionary.Select, "Purchase", "Membership")
+                var buttonText = Model.ActiveSubscriptionId > 0 ? K9.Globalisation.Dictionary.Switch : K9.Globalisation.Dictionary.Select;
+                @Html.BootstrapActionLinkButton(buttonText, "PurchaseStart", "Membership", new { id = Model.MembershipOption.Id })
             }
         </div>
     </div>

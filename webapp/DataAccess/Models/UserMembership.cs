@@ -11,7 +11,7 @@ namespace K9.DataAccessLayer.Models
 {
     [AutoGenerateName]
     [Grammar(ResourceType = typeof(Dictionary), DefiniteArticleName = Strings.Grammar.MasculineDefiniteArticle, IndefiniteArticleName = Strings.Grammar.MasculineIndefiniteArticle)]
-    [Name(ResourceType = typeof(Dictionary), Name = Globalisation.Strings.Names.MembershipOption, PluralName = Globalisation.Strings.Names.MembershipOptions)]
+    [Name(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Names.MembershipOption, PluralName = Globalisation.Strings.Names.MembershipOptions)]
     [DefaultPermissions(Role = RoleNames.DefaultUsers)]
     public class UserMembership : ObjectBase, IUserData
     {

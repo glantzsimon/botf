@@ -13,10 +13,8 @@ using K9.WebApplication.Services;
 using K9.WebApplication.Services.Stripe;
 using NLog;
 using System;
-using System.Linq;
 using System.Threading;
 using System.Web.Mvc;
-using WebMatrix.WebData;
 
 namespace K9.WebApplication.Controllers
 {
@@ -200,11 +198,11 @@ namespace K9.WebApplication.Controllers
 
             return View("SponsorIboga", model);
         }
-        
+
         public override string GetObjectName()
         {
             throw new NotImplementedException();
         }
-       
+
     }
 }

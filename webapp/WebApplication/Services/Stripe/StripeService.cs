@@ -31,7 +31,7 @@ namespace K9.WebApplication.Services.Stripe
 
             var charge = charges.Create(new StripeChargeCreateOptions
             {
-                Amount = (int)model.DonationAmountInCents,
+                Amount = (int)model.AmountInCents,
                 Description = model.Description,
                 Currency = model.LocalisedCurrencyThreeLetters,
                 CustomerId = customer.Id

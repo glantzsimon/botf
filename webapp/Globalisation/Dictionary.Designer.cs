@@ -133,7 +133,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Become a member and benefactor of Blessings of The Forest.
+        ///   Looks up a localized string similar to Become a benefactor.
         /// </summary>
         public static string BecomeBenefactorTitle {
             get {
@@ -1185,8 +1185,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Platinum Membership, in addition to all the benefits of the Standard Membership, also offers you access to a hotline to Yann Guignon, one of the worlds leading epert on the Bwiti traditions and Gabonese culture.
-        ///&lt;p&gt;With the Platinum Membership, you will also be sponsoring two Iboga trees per month&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;div&gt;The Platinum Membership, in addition to all the benefits of the Standard Membership, also offers you access to a hotline to Yann Guignon, one of the worlds leading epert on the Bwiti traditions and Gabonese culture.&lt;/div&gt;
+        ///&lt;br /&gt;
+        ///&lt;div&gt;With the Platinum Membership, you will also be sponsoring two Iboga trees per month&lt;/div&gt;.
         /// </summary>
         public static string platinum_membership_description {
             get {
@@ -1327,6 +1328,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You have selected the following Membership option.
+        /// </summary>
+        public static string SelectedPurchaseText {
+            get {
+                return ResourceManager.GetString("SelectedPurchaseText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shop.
         /// </summary>
         public static string Shop {
@@ -1444,9 +1454,10 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Standard Membership grants you full access to Blessings of The Forest&apos;s extensive library. 
-        ///This is perhaps the world&apos;s most comprehensive collection of material concerning Bwiti and the medicinal properties of Iboga
-        ///&lt;p&gt;With this membership, you will also be sponsoring one Iboga tree per month&lt;/p&gt;.
+        ///   Looks up a localized string similar to &lt;div&gt;The Standard Membership grants you full access to Blessings of The Forest&apos;s extensive library. 
+        ///    This is perhaps the world&apos;s most comprehensive collection of material concerning Bwiti and the medicinal properties of Iboga&lt;/div&gt;
+        ///&lt;br /&gt;
+        ///&lt;div&gt;With this membership, you will also be sponsoring one Iboga tree per month&lt;/div&gt;.
         /// </summary>
         public static string standard_membership_description {
             get {
@@ -1514,6 +1525,24 @@ namespace K9.Globalisation {
         public static string SubscriptionDetailsLabel {
             get {
                 return ResourceManager.GetString("SubscriptionDetailsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subscription Successful.
+        /// </summary>
+        public static string SubscriptionSuccessful {
+            get {
+                return ResourceManager.GetString("SubscriptionSuccessful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Switch.
+        /// </summary>
+        public static string Switch {
+            get {
+                return ResourceManager.GetString("Switch", resourceCulture);
             }
         }
         
@@ -1604,6 +1633,33 @@ namespace K9.Globalisation {
         public static string yann_title {
             get {
                 return ResourceManager.GetString("yann_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly Platinum Membership.
+        /// </summary>
+        public static string YearlyPlatinumMembership {
+            get {
+                return ResourceManager.GetString("YearlyPlatinumMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yearly Standard Membership.
+        /// </summary>
+        public static string YearlyStandardMembership {
+            get {
+                return ResourceManager.GetString("YearlyStandardMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your subscription was successful and you are now a member. Thank you!.
+        /// </summary>
+        public static string YouAreSignedUp {
+            get {
+                return ResourceManager.GetString("YouAreSignedUp", resourceCulture);
             }
         }
     }

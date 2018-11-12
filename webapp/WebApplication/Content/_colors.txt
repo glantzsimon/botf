@@ -11,4 +11,5 @@ deepBlue		#000080
 blue			#337ab7
 midBlue			#337ab7
 successGreen	#22BB44
+orange			#ff4500
 

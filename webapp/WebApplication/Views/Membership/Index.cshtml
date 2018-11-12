@@ -1,6 +1,7 @@
-﻿@using K9.Base.WebApplication.Helpers
+﻿@using System.Web.Mvc.Html
+@using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Helpers
-@model List<K9.WebApplication.Models.MembershipModel>
+@model K9.WebApplication.Models.MembershipViewModel
 
 @{
     ViewBag.Title = @K9.Globalisation.Dictionary.MembershipOptions;
@@ -21,7 +22,7 @@
     </div>
     <div class="container">
         <div class="text-center">
-            @foreach (var membershipModel in Model)
+            @foreach (var membershipModel in Model.Memberships)
             {
                 <div class="col-md-3 col-sm-12">
                     @Html.Partial("_MembershipOption", membershipModel)

@@ -11,6 +11,7 @@ namespace K9.WebApplication.Models
         public string PublishableKey { get; set; }
         private const string AutoLocale = "auto";
         private const int AmountPerTree = 10;
+        public int MembershipOptionId { get; set; }
 
         [Required]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DonationAmountLabel)]
@@ -38,6 +39,15 @@ namespace K9.WebApplication.Models
         public double AmountToDonate => DonationAmount;
 
         public double DonationAmountInCents => DonationAmount * 100;
+
+        [Required]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionCostLabel)]
+        [DataType(DataType.Currency)]
+        public double SubscriptionAmount { get; set; }
+
+        public double SubscriptionAmountInCents => SubscriptionAmount * 100;
+
+        public double AmountInCents => MembershipOptionId > 0 ? SubscriptionAmountInCents : DonationAmountInCents ;
         
         public string Locale => GetLocale();
 

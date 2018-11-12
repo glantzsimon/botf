@@ -551,7 +551,7 @@
     <value>Subscription Details</value>
   </data>
   <data name="BecomeBenefactorTitle" xml:space="preserve">
-    <value>Devenir membre et bienfaiteur de Blessings of The Forest</value>
+    <value>Devenir bienfaiteur</value>
   </data>
   <data name="Subscribed" xml:space="preserve">
     <value>Abonné(e)</value>
@@ -565,7 +565,19 @@
   <data name="Select" xml:space="preserve">
     <value>Choisir</value>
   </data>
+  <data name="SelectedPurchaseText" xml:space="preserve">
+    <value>Vous avez choisi l'option d'abonnement suivant</value>
+  </data>
   <data name="StandardMembership" xml:space="preserve">
     <value>Abonnement Standard</value>
+  </data>
+  <data name="SubscriptionSuccessful" xml:space="preserve">
+    <value>Abonnement Réussi</value>
+  </data>
+  <data name="YouAreSignedUp" xml:space="preserve">
+    <value>Votre abonnement a réussi et vous êtes desormais membre. Merci !</value>
+  </data>
+  <data name="Switch" xml:space="preserve">
+    <value>Changer</value>
   </data>
 </root>

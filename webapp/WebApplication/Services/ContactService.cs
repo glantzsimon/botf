@@ -2,6 +2,7 @@
 using K9.SharedLibrary.Models;
 using NLog;
 using System;
+using System.Linq;
 
 namespace K9.WebApplication.Services
 {
@@ -22,12 +23,36 @@ namespace K9.WebApplication.Services
             {
                 try
                 {
-                    _contactsRepository.Create(new Contact
+                    var existingCustomer = _contactsRepository.Find(_ => _.StripeCustomerId == stripeCustomerId).FirstOrDefault();
+                    if (existingCustomer == null)
                     {
-                        StripeCustomerId = stripeCustomerId,
-                        FullName = string.IsNullOrEmpty(fullName) ? emailAddress : fullName,
-                        EmailAddress = emailAddress
-                    });
+                        _contactsRepository.Create(new Contact
+                        {
+                            StripeCustomerId = stripeCustomerId,
+                            FullName = string.IsNullOrEmpty(fullName) ? emailAddress : fullName,
+                            EmailAddress = emailAddress
+                        });
+                    }
+                    else
+                    {
+                        var isUpdated = false;
+                        if (existingCustomer.FullName != fullName)
+                        {
+                            existingCustomer.FullName = fullName;
+                            isUpdated = true;
+                        }
+
+                        if (existingCustomer.EmailAddress != emailAddress)
+                        {
+                            existingCustomer.EmailAddress = emailAddress;
+                            isUpdated = true;
+                        }
+
+                        if (isUpdated)
+                        {
+                            _contactsRepository.Update(existingCustomer);
+                        }
+                    }
                 }
                 catch (Exception e)
                 {

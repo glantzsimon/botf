@@ -69,6 +69,18 @@
     background: url(../../../Images/membership/platinum-membership.jpg) no-repeat 0 0;
 }
 
+    .platinum .membership-element {
+        color: white;
+    }
+
 .standard {
     background: url(../../../Images/membership/standard-membership.jpg) no-repeat 0 0;
 }
+
+.membership-selected-image {
+    zoom: 50%;
+}
+
+.membership-selected {
+    border: 2px solid #ff4500;
+}   

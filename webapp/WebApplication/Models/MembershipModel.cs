@@ -6,7 +6,7 @@ namespace K9.WebApplication.Models
     {
         public MembershipOption MembershipOption { get; }
         public UserMembership UserMembership { get; }
-
+        
         public int ActiveSubscriptionId => UserMembership?.MembershipOptionId ?? 0;
 
         public string SubscriptionStatus => UserMembership != null
@@ -18,5 +18,7 @@ namespace K9.WebApplication.Models
             MembershipOption = membershipOption;
             UserMembership = userMembership;
         }
+
+        public string MembershipSelectedCssClass => ActiveSubscriptionId == MembershipOption.Id ? "membership-selected" : "";
     }
 }

@@ -1,15 +1,14 @@
 ﻿using K9.Base.DataAccessLayer.Attributes;
+using K9.Base.DataAccessLayer.Extensions;
 using K9.Base.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using System.ComponentModel.DataAnnotations;
-using System.Globalization;
 using System.Threading;
-using K9.Base.DataAccessLayer.Extensions;
 
 namespace K9.DataAccessLayer.Models
 {
-    [Grammar(ResourceType = typeof(Dictionary), DefiniteArticleName = Base.Globalisation.Strings.Grammar.DefiniteArticleWithApostrophe, IndefiniteArticleName = Base.Globalisation.Strings.Grammar.FeminineIndefiniteArticle)]
+    [Grammar(ResourceType = typeof(Base.Globalisation.Dictionary), DefiniteArticleName = Base.Globalisation.Strings.Grammar.DefiniteArticleWithApostrophe, IndefiniteArticleName = Base.Globalisation.Strings.Grammar.FeminineIndefiniteArticle)]
     [Name(ResourceType = typeof(Dictionary), ListName = Strings.Names.MembershipOptions, PluralName = Strings.Names.MembershipOptions, Name = Strings.Names.Donation)]
     [Description(UseLocalisedString = true, ResourceType = typeof(Dictionary))]
     [DefaultPermissions(Role = RoleNames.PowerUsers)]
@@ -32,7 +31,7 @@ namespace K9.DataAccessLayer.Models
         public ESubscriptionType SubscriptionType { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MembershipLabel)]
-        public string SubscriptionTypeName => SubscriptionType.GetLocalisedLanguageName();
+        public string SubscriptionTypeNameLocal => SubscriptionType.GetLocalisedLanguageName();
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionDetailsLabel)]
         [Required(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary), ErrorMessageResourceName = Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
