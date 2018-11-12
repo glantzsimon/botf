@@ -12,7 +12,7 @@ namespace K9.DataAccessLayer.Models
     public class Contact : ObjectBase
 	{
 	    [ForeignKey("User")]
-	    public int UserId { get; set; }
+	    public int? UserId { get; set; }
 
 	    public virtual User User { get; set; }
 

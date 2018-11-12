@@ -37,6 +37,16 @@ namespace K9.WebApplication.Controllers
             return View(model);
         }
 
+        public ActionResult Purchase(int id)
+        {
+            return View(new MembershipModel(
+                _membershipOptionRepository.Find(id),
+                new UserMembership
+                {
+                    MembershipOptionId = id
+                }));
+        }
+
         public override string GetObjectName()
         {
             return string.Empty;

@@ -1,0 +1,54 @@
+﻿.membership-option {
+    width: 200px;
+    height: 400px;
+    position: relative;
+}
+
+.membership-medal {
+    width: 200px;
+    height: 200px;
+    background-position-y: bottom !important;
+    background-position-x: center !important;
+    background-size: contain !important;
+}
+
+.membership-medal-item {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #e2e2e2;
+}
+
+.membership-price {
+    top: 52px;
+    font-size: 0.8em;
+}
+
+.membership-element {
+    top: 71px;
+    font-size: 1.1em;
+    line-height: 1.2em;
+    text-transform: uppercase;
+}
+
+.membership-period {
+    top: 133px;
+    font-size: 0.8em;
+    line-height: 1.2em;
+    text-transform: uppercase;
+}
+
+.membership-description {
+    font-size: 0.8em;
+    color: #888888;
+    margin-top: 5px;
+    text-align: justify;
+}
+
+.platinum {
+    background: url(../../../Images/membership/platinum-membership.jpg) no-repeat 0 0;
+}
+
+.standard {
+    background: url(../../../Images/membership/standard-membership.jpg) no-repeat 0 0;
+}

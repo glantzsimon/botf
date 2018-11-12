@@ -521,10 +521,10 @@
     <value>Monthly</value>
   </data>
   <data name="SubscriptionCostLabel" xml:space="preserve">
-    <value>Subscription Cost</value>
+    <value>Subscription Price</value>
   </data>
   <data name="AnnualPlatinumMembership" xml:space="preserve">
-    <value>Yearly Platinum Membership</value>
+    <value>Annual Platinum Membership</value>
   </data>
   <data name="AnnualStandardMembership" xml:space="preserve">
     <value>Annual Standard Membership</value>
@@ -542,15 +542,24 @@
     <value>text\en-gb\standard-membership-description.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="SubscriptionDetailsLabel" xml:space="preserve">
-    <value>Détails d'Abonnement</value>
+    <value>Subscription Details</value>
   </data>
   <data name="BecomeBenefactorTitle" xml:space="preserve">
-    <value>Become a member and benefactor of BOTF</value>
+    <value>Become a member and benefactor of Blessings of The Forest</value>
   </data>
   <data name="Subscribed" xml:space="preserve">
     <value>Subscribed</value>
   </data>
   <data name="SubscribeNow" xml:space="preserve">
     <value>Join Now</value>
+  </data>
+  <data name="PlatinumMembership" xml:space="preserve">
+    <value>Platinum Membership</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="StandardMembership" xml:space="preserve">
+    <value>Standard Membership</value>
   </data>
 </root>

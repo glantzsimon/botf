@@ -97,7 +97,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yearly Platinum Membership.
+        ///   Looks up a localized string similar to Annual Platinum Membership.
         /// </summary>
         public static string AnnualPlatinumMembership {
             get {
@@ -133,7 +133,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Become a member and benefactor of BOTF.
+        ///   Looks up a localized string similar to Become a member and benefactor of Blessings of The Forest.
         /// </summary>
         public static string BecomeBenefactorTitle {
             get {
@@ -1195,6 +1195,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Platinum Membership.
+        /// </summary>
+        public static string PlatinumMembership {
+            get {
+                return ResourceManager.GetString("PlatinumMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Projects.
         /// </summary>
         public static string Projects {
@@ -1305,6 +1314,15 @@ namespace K9.Globalisation {
         public static string rudy_title {
             get {
                 return ResourceManager.GetString("rudy_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select.
+        /// </summary>
+        public static string Select {
+            get {
+                return ResourceManager.GetString("Select", resourceCulture);
             }
         }
         
@@ -1437,6 +1455,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Standard Membership.
+        /// </summary>
+        public static string StandardMembership {
+            get {
+                return ResourceManager.GetString("StandardMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
         public static string StatusLabel {
@@ -1473,7 +1500,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Subscription Cost.
+        ///   Looks up a localized string similar to Subscription Price.
         /// </summary>
         public static string SubscriptionCostLabel {
             get {
@@ -1482,7 +1509,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Détails d&apos;Abonnement.
+        ///   Looks up a localized string similar to Subscription Details.
         /// </summary>
         public static string SubscriptionDetailsLabel {
             get {

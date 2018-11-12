@@ -1,0 +1,18 @@
+﻿@model K9.WebApplication.Models.MembershipModel
+@{
+    ViewBag.Title = K9.Globalisation.Dictionary.MembershipOptions;
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.BecomeBenefactorTitle;
+    Layout = "../Shared/_LayoutForm.cshtml";
+}
+
+@using (Html.BeginForm("Purchase", "Membership", FormMethod.Post))
+{
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.HiddenFor(model => model.MembershipOption.SubscriptionType)
+        @Html.HiddenFor(model => model.MembershipOption.Price)
+        @Html.BootstrapButton(Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
+
+        <hr />
+    }
+}

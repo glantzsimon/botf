@@ -10,10 +10,10 @@ namespace K9.DataAccessLayer.Database.Seeds
     {
         public static void Seed(DbContext context)
         {
-            AddMembershipOption(context, "MonthlyStandardMembership", "standard-membership-description", MembershipOption.ESubscriptionType.MonthlyStandard, 10);
-            AddMembershipOption(context, "YearlyStandardMembership", "standard-membership-description", MembershipOption.ESubscriptionType.AnnualStandard, 90);
-            AddMembershipOption(context, "MonthlyPlatinumMembership", "platinum-membership-description", MembershipOption.ESubscriptionType.MonthlyPlattinum, 20);
-            AddMembershipOption(context, "YearlyPlatninumMembership", "platinum-membership-description", MembershipOption.ESubscriptionType.AnnualPlatinum, 180);
+            AddMembershipOption(context, "MonthlyStandardMembership", "standard_membership_description", MembershipOption.ESubscriptionType.MonthlyStandard, 10);
+            AddMembershipOption(context, "YearlyStandardMembership", "standard_membership_description", MembershipOption.ESubscriptionType.AnnualStandard, 90);
+            AddMembershipOption(context, "MonthlyPlatinumMembership", "platinum_membership_description", MembershipOption.ESubscriptionType.MonthlyPlatinum, 20);
+            AddMembershipOption(context, "YearlyPlatninumMembership", "platinum_membership_description", MembershipOption.ESubscriptionType.AnnualPlatinum, 180);
 
             context.SaveChanges();
         }

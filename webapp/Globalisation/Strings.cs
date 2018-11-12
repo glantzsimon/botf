@@ -42,7 +42,7 @@
             public const string Annual = "Annual";
             public const string MonthlyStandardMembership = "MonthlyStandardMembership";
             public const string AnnualStandardMembership = "AnnualStandardMembership";
-            public const string MonthlyPlatnumMembership = "MonthlyPlatnumMembership";
+            public const string MonthlyPlatinumMembership = "MonthlyPlatinumMembership";
             public const string AnnualPlatinumMembership = "AnnualPlatinumMembership";
             public const string MembershipOptions = "MembershipOptions";
             public const string MembershipOption = "MembershipOption";

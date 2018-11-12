@@ -550,10 +550,22 @@
   <data name="SubscriptionDetailsLabel" xml:space="preserve">
     <value>Subscription Details</value>
   </data>
+  <data name="BecomeBenefactorTitle" xml:space="preserve">
+    <value>Devenir membre et bienfaiteur de Blessings of The Forest</value>
+  </data>
   <data name="Subscribed" xml:space="preserve">
     <value>Abonné(e)</value>
   </data>
   <data name="SubscribeNow" xml:space="preserve">
     <value>S'inscrire Maintenant</value>
+  </data>
+  <data name="PlatinumMembership" xml:space="preserve">
+    <value>Abonnement Platinum</value>
+  </data>
+  <data name="Select" xml:space="preserve">
+    <value>Choisir</value>
+  </data>
+  <data name="StandardMembership" xml:space="preserve">
+    <value>Abonnement Standard</value>
   </data>
 </root>
