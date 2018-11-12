@@ -1,4 +1,5 @@
 ﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
 @model List<K9.WebApplication.Models.MembershipModel>
 
 @{
@@ -14,7 +15,7 @@
     <div class="container">
         <div class="main-heading">
             <h3>@K9.Globalisation.Dictionary.MembershipLabel</h3>
-            <br/>
+            <br />
             <h4 class="text-black">@K9.Globalisation.Dictionary.BecomeBenefactorTitle</h4>
         </div>
     </div>
@@ -22,8 +23,26 @@
         <div class="text-center">
             @foreach (var membershipModel in Model)
             {
-                @Html.Partial("_MembershipOption", membershipModel)
+                <div class="col-md-3 col-sm-12">
+                    @Html.Partial("_MembershipOption", membershipModel)
+                </div>
             }
+        </div>
+        <div class="col-md-12 col-sm-12">
+            <div style="height: 20px;">&nbsp;</div>
+            @Html.Separator()
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div style="height: 7px;">&nbsp;</div>
+            <div class="membership-description">
+                @MvcHtmlString.Create(K9.Globalisation.Dictionary.standard_membership_description)
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <div style="height: 7px;">&nbsp;</div>
+            <div class="membership-description">
+                @MvcHtmlString.Create(K9.Globalisation.Dictionary.platinum_membership_description)
+            </div>
         </div>
     </div>
 </div>

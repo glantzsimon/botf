@@ -1,27 +1,25 @@
 ﻿@using K9.Base.WebApplication.Helpers
+@using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.MembershipModel
 @{
     var isSelected = Model.ActiveSubscriptionId == Model.MembershipOption.Id;
 }
 
-<div class="col-md-3 col-sm-12 support-us-container">
-    <div class="support-us-option shadow-light shadow-hover">
+<div class="shadow-light shadow-hover membership-option-container">
+    <div class="membership-option-title">
         <h5><strong>@Model.MembershipOption.SubscriptionTypeName</strong></h5>
-        <div class="membership-option">
-            @Html.Partial("_MembershipMedal", Model.MembershipOption)
-            @*<div class="membership-description">
-                    @Model.MembershipOption.SubscriptionDetailsLocal
-                </div>*@
-            <div>
-                @if (isSelected)
-                {
-                    @Html.Partial("_Selected")
-                }
-                else
-                {
-                    @Html.BootstrapActionLinkButton(@K9.Globalisation.Dictionary.Select, "Purchase", "Membership")
-                }
-            </div>
+    </div>
+    <div class="membership-option">
+        @Html.Partial("_MembershipMedal", Model.MembershipOption)
+        <div>
+            @if (isSelected)
+            {
+                @Html.Partial("_Selected")
+            }
+            else
+            {
+                @Html.BootstrapActionLinkButton(@K9.Globalisation.Dictionary.Select, "Purchase", "Membership")
+            }
         </div>
     </div>
 </div>

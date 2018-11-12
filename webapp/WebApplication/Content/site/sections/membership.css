@@ -1,6 +1,25 @@
-﻿.membership-option {
+﻿.membership-option-container {
+    display: table;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding: 0;
+    padding-bottom: 12px;
+    text-align: center;
+    width: 150px;
+    height: 200px;
+    border: 1px solid #a7a7a7;
+    border-radius: 6px;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}
+
+.membership-option-title {
+    margin-top: 8px;
+}
+
+.membership-option {
     width: 200px;
-    height: 400px;
     position: relative;
 }
 
@@ -42,7 +61,8 @@
     font-size: 0.8em;
     color: #888888;
     margin-top: 5px;
-    text-align: justify;
+    text-align: left;
+    padding: 5px;
 }
 
 .platinum {

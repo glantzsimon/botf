@@ -619,9 +619,9 @@ button.btn1:hover {
     margin: 0;
 }
 
-.captn-top p:nth-of-type(2) {
-    margin-top: 14px !important;
-}
+    .captn-top p:nth-of-type(2) {
+        margin-top: 14px !important;
+    }
 
 .team-agileimg:hover .captn {
     width: 100%;
@@ -785,15 +785,15 @@ article, p {
         height: 20px;
     }
 
-    .list-item-separator .mask:after {
-        content: '';
-        display: block;
-        margin: -25px auto 0;
-        max-width: 500px;
-        height: 25px;
-        border-radius: 125px / 12px;
-        box-shadow: 0 0 8px black;
-    }
+        .list-item-separator .mask:after {
+            content: '';
+            display: block;
+            margin: -25px auto 0;
+            max-width: 500px;
+            height: 25px;
+            border-radius: 125px / 12px;
+            box-shadow: 0 0 8px black;
+        }
 
     .list-item-separator span {
         width: 50px;
@@ -822,9 +822,13 @@ article, p {
             color: #999;
         }
 
-.list-item-separator:last-of-type {
-    display: none;
-}
+    .list-item-separator:last-of-type {
+        display: none;
+    }
+
+    .list-item-separator.show-last:last-of-type {
+        display: block;
+    }
 
 .news-ticker-item {
     white-space: nowrap;
