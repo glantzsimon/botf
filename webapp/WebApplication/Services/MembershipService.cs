@@ -1,0 +1,152 @@
+﻿using K9.DataAccessLayer.Models;
+using K9.SharedLibrary.Models;
+using K9.WebApplication.Config;
+using K9.WebApplication.Models;
+using K9.WebApplication.Services.Stripe;
+using NLog;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace K9.WebApplication.Services
+{
+    public class MembershipService : IMembershipService
+    {
+        private readonly ILogger _logger;
+        private readonly IAuthentication _authentication;
+        private readonly IRepository<MembershipOption> _membershipOptionRepository;
+        private readonly IRepository<UserMembership> _userMembershipRepository;
+        private readonly StripeConfiguration _stripeConfig;
+        private readonly IStripeService _stripeService;
+        private readonly IContactService _contactService;
+
+        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IOptions<StripeConfiguration> stripeConfig, IStripeService stripeService, IContactService contactService)
+        {
+            _logger = logger;
+            _authentication = authentication;
+            _membershipOptionRepository = membershipOptionRepository;
+            _userMembershipRepository = userMembershipRepository;
+            _stripeConfig = stripeConfig.Value;
+            _stripeService = stripeService;
+            _contactService = contactService;
+        }
+
+        public MembershipViewModel GetMembershipViewModel()
+        {
+            var membershipOptions = _membershipOptionRepository.List();
+            var userMemberships = GetActiveUserMemberships();
+            return new MembershipViewModel
+            {
+                Memberships = new List<MembershipModel>(membershipOptions.Select(membershipOption =>
+                {
+                    var userMembership = userMemberships.FirstOrDefault(_ =>
+                        _.UserId == _authentication.CurrentUserId & _.MembershipOptionId == membershipOption.Id);
+                    return new MembershipModel(
+                        membershipOption,
+                        userMembership != null,
+                        false,
+                        userMembership != null && userMembership.MembershipOption.SubscriptionType > membershipOption.SubscriptionType
+                    );
+                }))
+            };
+        }
+
+        public List<UserMembership> GetActiveUserMemberships(int? userId = null)
+        {
+            userId = userId ?? _authentication.CurrentUserId;
+            var userMemberships = _authentication.IsAuthenticated
+                ? _userMembershipRepository.Find(_ => _.UserId == userId).ToList().Where(_ => _.IsActive).ToList()
+                : new List<UserMembership>();
+            return userMemberships;
+        }
+
+        /// <summary>
+        /// Sometimes user memberships can overlap, when upgrading for example. This returns the primary membership.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public UserMembership GetPrimaryUserMembership(int? userId = null)
+        {
+            return GetActiveUserMemberships(userId).OrderByDescending(_ => _.MembershipOption.SubscriptionType)
+                .FirstOrDefault();
+        }
+
+        public MembershipModel GetSwitchMembershipModel(int id)
+        {
+            var userMemberships = GetActiveUserMemberships();
+            if (!userMemberships.Any())
+            {
+                throw new Exception(Globalisation.Dictionary.SwitchMembershipErrorNotSubscribed);
+            }
+
+            var primaryUserMembership = GetPrimaryUserMembership();
+            if (primaryUserMembership.MembershipOptionId == id)
+            {
+                throw new Exception(Globalisation.Dictionary.SwitchMembershipErrorAlreadySubscribed);
+            }
+
+            var membershipOption = _membershipOptionRepository.Find(id);
+            return new MembershipModel(
+                membershipOption, false, true,
+                membershipOption.SubscriptionType > primaryUserMembership.MembershipOption.SubscriptionType);
+        }
+
+        public MembershipModel GetPurchaseMembershipModel(int id)
+        {
+            if (GetPrimaryUserMembership()?.MembershipOptionId == id)
+            {
+                throw new Exception(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribed);
+            }
+
+            var membershipOption = _membershipOptionRepository.Find(id);
+            return new MembershipModel(
+                membershipOption, false, true, false);
+        }
+
+        public StripeModel GetPurchaseStripeModel(int id)
+        {
+            var membershipOption = _membershipOptionRepository.Find(id);
+            if (membershipOption == null)
+            {
+                _logger.Error($"MembershipService => GetPurchaseStripeModel => No MembershipOption with id {id} was found.");
+                throw new IndexOutOfRangeException();
+            }
+            return new StripeModel
+            {
+                PublishableKey = _stripeConfig.PublishableKey,
+                SubscriptionAmount = membershipOption.Price,
+                Description = membershipOption.SubscriptionTypeNameLocal,
+                MembershipOptionId = id,
+                LocalisedCurrencyThreeLetters = StripeModel.GetLocalisedCurrency()
+            };
+        }
+
+        public void ProcessPurchase(StripeModel model)
+        {
+            try
+            {
+                var membershipOption = _membershipOptionRepository.Find(model.MembershipOptionId);
+                if (membershipOption == null)
+                {
+                    throw new IndexOutOfRangeException("Invalid MembershipOptionId");
+                }
+
+                var result = _stripeService.Charge(model);
+                _userMembershipRepository.Create(new UserMembership
+                {
+                    UserId = _authentication.CurrentUserId,
+                    MembershipOptionId = model.MembershipOptionId,
+                    StartsOn = DateTime.Today,
+                    EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1)
+                });
+                _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"MembershipController => Purchase => Purchase failed: {ex.Message}");
+                throw ex;
+            }
+        }
+
+    }
+}

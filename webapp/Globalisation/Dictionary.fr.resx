@@ -580,4 +580,40 @@
   <data name="Switch" xml:space="preserve">
     <value>Changer</value>
   </data>
+  <data name="ChangeMembership" xml:space="preserve">
+    <value>Changer d'Abonnement</value>
+  </data>
+  <data name="EndsOnLabel" xml:space="preserve">
+    <value>Termine Le</value>
+  </data>
+  <data name="StartsOnLabel" xml:space="preserve">
+    <value>Commence Le</value>
+  </data>
+  <data name="Upgrade" xml:space="preserve">
+    <value>Surclasser</value>
+  </data>
+  <data name="UpgradeMembership" xml:space="preserve">
+    <value>Surclasser Votre Abonnement</value>
+  </data>
+  <data name="Here" xml:space="preserve">
+    <value>Ici</value>
+  </data>
+  <data name="NotRegisteredYet" xml:space="preserve">
+    <value>Vous n'êtes pas abonné?</value>
+  </data>
+  <data name="PurchaseMembershipErrorAlreadySubscribed" xml:space="preserve">
+    <value>Vous êtes déjà abonné.</value>
+  </data>
+  <data name="SwitchMembershipErrorAlreadySubscribed" xml:space="preserve">
+    <value>Il n'est pas possible de changer d'abonnement car vous êtes déjà abonné.</value>
+  </data>
+  <data name="SwitchMembershipErrorNotSubscribed" xml:space="preserve">
+    <value>Il n'est pas possible de changer d'abonnement car vous n'êtes pas encore abonné.</value>
+  </data>
+  <data name="SwitchSuccessful" xml:space="preserve">
+    <value>Votre abonnement a été mis à jour. Merci !</value>
+  </data>
+  <data name="SwitchSuccessfulTitle" xml:space="preserve">
+    <value>Mise à jour Réussie</value>
+  </data>
 </root>

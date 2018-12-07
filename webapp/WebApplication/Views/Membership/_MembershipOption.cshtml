@@ -1,25 +1,34 @@
 ﻿@using K9.Base.WebApplication.Helpers
 @using K9.WebApplication.Helpers
 @model K9.WebApplication.Models.MembershipModel
+
 @{
-    var isSelected = Model.ActiveSubscriptionId == Model.MembershipOption.Id;
+    var hoverClass = Model.IsSelected ? "" : "shadow-hover";
 }
 
-<div class="shadow-light shadow-hover membership-option-container @Model.MembershipSelectedCssClass">
+<div class="shadow-light @hoverClass membership-option-container @Model.MembershipDisplayCssClass">
     <div class="membership-option-title">
         <h5><strong>@Model.MembershipOption.SubscriptionTypeNameLocal</strong></h5>
     </div>
     <div class="membership-option">
         @Html.Partial("_MembershipMedal", Model.MembershipOption)
         <div>
-            @if (isSelected)
+            @if (Model.IsSelected)
             {
                 @Html.Partial("_Selected")
             }
-            else
+            @if (Model.IsUpgrade)
             {
-                var buttonText = Model.ActiveSubscriptionId > 0 ? K9.Globalisation.Dictionary.Switch : K9.Globalisation.Dictionary.Select;
-                @Html.BootstrapActionLinkButton(buttonText, "PurchaseStart", "Membership", new { id = Model.MembershipOption.Id })
+                @Html.Partial("_Upgrade")
+            }
+            @if (!Model.IsSelected)
+            {
+                var buttonText = Model.ActiveSubscriptionId > 0
+                    ? Model.IsUpgrade
+                            ? K9.Globalisation.Dictionary.Upgrade
+                            : K9.Globalisation.Dictionary.Switch
+                    : K9.Globalisation.Dictionary.Select;
+                @Html.BootstrapActionLinkButton(buttonText, Model.IsUpgrade ? "SwitchStart" : "PurchaseStart", "Membership", new { id = Model.MembershipOption.Id })
             }
         </div>
     </div>

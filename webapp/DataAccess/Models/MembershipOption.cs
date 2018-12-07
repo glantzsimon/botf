@@ -4,6 +4,7 @@ using K9.Base.DataAccessLayer.Models;
 using K9.Globalisation;
 using K9.SharedLibrary.Authentication;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Threading;
 
 namespace K9.DataAccessLayer.Models
@@ -17,13 +18,13 @@ namespace K9.DataAccessLayer.Models
         public enum ESubscriptionType
         {
             [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.MonthlyStandardMembership)]
-            MonthlyStandard,
+            MonthlyStandard = 1,
             [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.AnnualStandardMembership)]
-            AnnualStandard,
+            AnnualStandard = 2,
             [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.MonthlyPlatinumMembership)]
-            MonthlyPlatinum,
+            MonthlyPlatinum = 10,
             [EnumDescription(ResourceType = typeof(Dictionary), Name = Strings.Names.AnnualPlatinumMembership)]
-            AnnualPlatinum
+            AnnualPlatinum = 11
         }
 
         [Required]
@@ -31,7 +32,7 @@ namespace K9.DataAccessLayer.Models
         public ESubscriptionType SubscriptionType { get; set; }
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.MembershipLabel)]
-        public string SubscriptionTypeNameLocal => SubscriptionType.GetLocalisedLanguageName();
+        public string SubscriptionTypeNameLocal => SubscriptionType > 0 ? SubscriptionType.GetLocalisedLanguageName() : "";
 
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionDetailsLabel)]
         [Required(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary), ErrorMessageResourceName = Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
@@ -66,5 +67,11 @@ namespace K9.DataAccessLayer.Models
             : "Monthly";
 
         public string MembershipPeriodLocal => GetLocalisedPropertyValue(nameof(MembershipPeriod));
+
+        public bool IsMonthly =>
+            new[] { ESubscriptionType.MonthlyPlatinum, ESubscriptionType.MonthlyStandard }.Contains(SubscriptionType);
+
+        public bool IsAnnual =>
+            new[] { ESubscriptionType.AnnualPlatinum, ESubscriptionType.AnnualStandard }.Contains(SubscriptionType);
     }
 }

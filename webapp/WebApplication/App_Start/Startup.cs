@@ -61,6 +61,7 @@ namespace K9.WebApplication
             builder.RegisterType<StripeService>().As<IStripeService>().InstancePerRequest();
             builder.RegisterType<DonationService>().As<IDonationService>().InstancePerRequest();
             builder.RegisterType<ContactService>().As<IContactService>().InstancePerRequest();
+            builder.RegisterType<MembershipService>().As<IMembershipService>().InstancePerRequest();
             builder.RegisterType<LinkPreviewer>().As<ILinkPreviewer>().InstancePerRequest();
 
             RegisterConfiguration(builder);

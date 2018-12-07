@@ -8,13 +8,12 @@ using K9.WebApplication.Services;
 using K9.WebApplication.Services.Stripe;
 using NLog;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
+    [Authorize]
     public class MembershipController : BaseController
     {
         private readonly ILogger _logger;
@@ -22,9 +21,10 @@ namespace K9.WebApplication.Controllers
         private readonly IRepository<UserMembership> _userMembershipRepository;
         private readonly IStripeService _stripeService;
         private readonly IContactService _contactService;
+        private readonly IMembershipService _membershipService;
         private readonly StripeConfiguration _stripeConfig;
 
-        public MembershipController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IOptions<StripeConfiguration> stripeConfig, IStripeService stripeService, IContactService contactService)
+        public MembershipController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IOptions<StripeConfiguration> stripeConfig, IStripeService stripeService, IContactService contactService, IMembershipService membershipService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
             _logger = logger;
@@ -32,62 +32,29 @@ namespace K9.WebApplication.Controllers
             _userMembershipRepository = userMembershipRepository;
             _stripeService = stripeService;
             _contactService = contactService;
+            _membershipService = membershipService;
             _stripeConfig = stripeConfig.Value;
         }
 
         public ActionResult Index()
         {
-            var membershipOptions = _membershipOptionRepository.List();
-            var userMemberships = Authentication.IsAuthenticated
-                ? _userMembershipRepository.Find(_ => _.UserId == Authentication.CurrentUserId).ToList()
-                : new List<UserMembership>();
-            var model = new MembershipViewModel{Memberships  = new List<MembershipModel>(membershipOptions.Select(membershipOption =>
-                {
-                    return new MembershipModel(membershipOption,
-                        userMemberships.FirstOrDefault(_ => _.UserId == Authentication.CurrentUserId));
-                }))};
-            
-            return View(model);
+            return View(_membershipService.GetMembershipViewModel());
         }
-
-        [Authorize]
+        
         [Route("join")]
         public ActionResult PurchaseStart(int id)
         {
-            return View(new MembershipModel(
-                _membershipOptionRepository.Find(id),
-                new UserMembership
-                {
-                    MembershipOptionId = id
-                }));
+            return View(_membershipService.GetPurchaseMembershipModel(id));
         }
 
         [Route("join/purchase")]
-        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Purchase(int id)
         {
-            var membershipOption = _membershipOptionRepository.Find(id);
-            if (membershipOption == null)
-            {
-                _logger.Error($"MembershipController => Purchse => No MembershipOption with id {id} was found.");
-                throw new IndexOutOfRangeException();
-            }
-            var stripeModel = new StripeModel
-            {
-                PublishableKey = _stripeConfig.PublishableKey,
-                SubscriptionAmount = membershipOption.Price,
-                Description = membershipOption.SubscriptionTypeNameLocal,
-                MembershipOptionId = id,
-                LocalisedCurrencyThreeLetters = StripeModel.GetLocalisedCurrency()
-            };
-
-            _logger.Debug($"MembershipController => Purchase => Current UI Thread: {Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName}");
-            return View(stripeModel);
+            return View(_membershipService.GetPurchaseStripeModel(id));
         }
 
-        [Authorize]
         [HttpPost]
         [Route("join/processing")]
         [ValidateAntiForgeryToken]
@@ -95,18 +62,11 @@ namespace K9.WebApplication.Controllers
         {
             try
             {
-                var result = _stripeService.Charge(model);
-                _userMembershipRepository.Create(new UserMembership
-                {
-                    UserId = Authentication.CurrentUserId,
-                    MembershipOptionId = model.MembershipOptionId
-                });
-                _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
+                _membershipService.ProcessPurchase(model);
                 return RedirectToAction("PurchaseSuccess");
             }
             catch (Exception ex)
             {
-                _logger.Error($"MembershipController => Purchase => Purchase failed: {ex.Message}");
                 ModelState.AddModelError("", ex.Message);
             }
 
@@ -115,6 +75,44 @@ namespace K9.WebApplication.Controllers
 
         [Route("join/success")]
         public ActionResult PurchaseSuccess()
+        {
+            return View();
+        }
+
+        [Route("change")]
+        public ActionResult SwitchStart(int id)
+        {
+            return View(_membershipService.GetSwitchMembershipModel(id));
+        }
+
+        [Route("change/purchase")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Switch(int id)
+        {
+            return View(_membershipService.GetPurchaseStripeModel(id));
+        }
+
+        [HttpPost]
+        [Route("change/processing")]
+        [ValidateAntiForgeryToken]
+        public ActionResult SwitchProcess(StripeModel model)
+        {
+            try
+            {
+                _membershipService.ProcessPurchase(model);
+                return RedirectToAction("PurchaseSuccess");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+            }
+
+            return View("Purchase", model);
+        }
+
+        [Route("change/success")]
+        public ActionResult SwitchSuccess()
         {
             return View();
         }

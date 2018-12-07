@@ -1,0 +1,21 @@
+﻿@model K9.WebApplication.Models.MembershipModel
+@{
+    ViewBag.Title = K9.Globalisation.Dictionary.BecomeBenefactorTitle;
+    ViewBag.SubTitle = Model.IsUpgrade ? K9.Globalisation.Dictionary.Upgrade : K9.Globalisation.Dictionary.ChangeMembership;
+    Layout = "../Shared/_LayoutFormSmall.cshtml";
+}
+
+@using (Html.BeginForm("Switch", "Membership", FormMethod.Post))
+{
+    <p style="margin-bottom: 25px;">@K9.Globalisation.Dictionary.SelectedPurchaseText</p>
+
+    @Html.Partial("_MembershipOption")
+
+    using (Html.BeginBootstrapForm())
+    {
+        @Html.Hidden("Id", Model.MembershipOption.Id)
+        @Html.BootstrapButton(K9.Globalisation.Dictionary.Switch, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
+
+        <hr />
+    }
+}

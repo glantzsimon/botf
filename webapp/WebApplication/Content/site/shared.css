@@ -174,3 +174,7 @@
 .height-400 {
     height: 400px;
 }
+
+.zoom-50 {
+    zoom: 50%;
+}

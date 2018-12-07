@@ -227,6 +227,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Change Membership.
+        /// </summary>
+        public static string ChangeMembership {
+            get {
+                return ResourceManager.GetString("ChangeMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Our organisation has been set up to preserve, research and share knowledge about the medicinal plants and indigenous traditions of the Gabonese forest people for the benefit of all of humanity..
         /// </summary>
         public static string CompanyBlurbFooter {
@@ -532,6 +541,15 @@ namespace K9.Globalisation {
         public static string EmailAddressLabel {
             get {
                 return ResourceManager.GetString("EmailAddressLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ends On.
+        /// </summary>
+        public static string EndsOnLabel {
+            get {
+                return ResourceManager.GetString("EndsOnLabel", resourceCulture);
             }
         }
         
@@ -1099,6 +1117,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not yet signed up?.
+        /// </summary>
+        public static string NotRegisteredYet {
+            get {
+                return ResourceManager.GetString("NotRegisteredYet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number of Iboga plantations.
         /// </summary>
         public static string NumberOfIbogaPlantationsLabel {
@@ -1268,6 +1295,15 @@ namespace K9.Globalisation {
         public static string Publications {
             get {
                 return ResourceManager.GetString("Publications", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You cannot purchase the selected membership as you are already subscribed..
+        /// </summary>
+        public static string PurchaseMembershipErrorAlreadySubscribed {
+            get {
+                return ResourceManager.GetString("PurchaseMembershipErrorAlreadySubscribed", resourceCulture);
             }
         }
         
@@ -1475,6 +1511,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Starts On.
+        /// </summary>
+        public static string StartsOnLabel {
+            get {
+                return ResourceManager.GetString("StartsOnLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
         public static string StatusLabel {
@@ -1547,6 +1592,42 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You cannot switch memberships as you are already subscribed to the selected one..
+        /// </summary>
+        public static string SwitchMembershipErrorAlreadySubscribed {
+            get {
+                return ResourceManager.GetString("SwitchMembershipErrorAlreadySubscribed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You cannot switch memberships as you are not currently subscribed to any..
+        /// </summary>
+        public static string SwitchMembershipErrorNotSubscribed {
+            get {
+                return ResourceManager.GetString("SwitchMembershipErrorNotSubscribed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your successfully updated your subscription. Thank you!.
+        /// </summary>
+        public static string SwitchSuccessful {
+            get {
+                return ResourceManager.GetString("SwitchSuccessful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subscription Updated.
+        /// </summary>
+        public static string SwitchSuccessfulTitle {
+            get {
+                return ResourceManager.GetString("SwitchSuccessfulTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Thank you for your donation.
         /// </summary>
         public static string ThankyouForDonationEmailTitle {
@@ -1580,6 +1661,24 @@ namespace K9.Globalisation {
         public static string TreeDonationAmountLabel {
             get {
                 return ResourceManager.GetString("TreeDonationAmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade.
+        /// </summary>
+        public static string Upgrade {
+            get {
+                return ResourceManager.GetString("Upgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade Membership.
+        /// </summary>
+        public static string UpgradeMembership {
+            get {
+                return ResourceManager.GetString("UpgradeMembership", resourceCulture);
             }
         }
         

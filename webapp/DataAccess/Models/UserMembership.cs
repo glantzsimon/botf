@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Attributes;
+﻿using System;
+using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Models;
 using K9.Base.Globalisation;
 using K9.SharedLibrary.Attributes;
@@ -6,6 +7,7 @@ using K9.SharedLibrary.Authentication;
 using K9.SharedLibrary.Models;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using K9.SharedLibrary.Extensions;
 
 namespace K9.DataAccessLayer.Models
 {
@@ -22,6 +24,14 @@ namespace K9.DataAccessLayer.Models
         [Required]
         [ForeignKey("MembershipOption")]
         public int MembershipOptionId { get; set; }
+
+        [Required]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.StartsOnLabel)]
+        public DateTime StartsOn { get; set; }
+
+        [Required]
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.EndsOnLabel)]
+        public DateTime EndsOn { get; set; }
             
         public virtual User User { get; set; }
         public virtual MembershipOption MembershipOption { get; set; }
@@ -31,6 +41,8 @@ namespace K9.DataAccessLayer.Models
 
         [LinkedColumn(LinkedTableName = "MembershipOption", LinkedColumnName = "Description")]
         public string MembershipOptionName { get; set; }
+
+        public bool IsActive => DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date);
 
     }
 }
