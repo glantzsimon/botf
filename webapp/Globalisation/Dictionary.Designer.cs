@@ -1013,11 +1013,12 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;Your membership will also help to fund:&lt;/div&gt;
+        ///   Looks up a localized string similar to &lt;div&gt;&lt;strong&gt;Your membership will also help to fund:&lt;/strong&gt;&lt;/div&gt;
+        ///&lt;br /&gt;
         ///&lt;ul&gt;
         ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; The tools necessary for the upkeep of the village plantations (wheelbarrow, brush cutters, machetes, axes, watering cans, etc.),&lt;/li&gt;
         ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; The living wages of the villagers maintaining the plantations (15 euros per week per person)&lt;/li&gt;
-        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Proper administration of village asso [rest of string was truncated]&quot;;.
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Proper admin [rest of string was truncated]&quot;;.
         /// </summary>
         public static string membership_additional_information {
             get {
@@ -1225,9 +1226,9 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;The Platinum Membership, in addition to all the benefits of the Standard Membership, also offers you access to a hotline to Yann Guignon, one of the worlds leading epert on the Bwiti traditions and Gabonese culture.&lt;/div&gt;
+        ///   Looks up a localized string similar to &lt;div&gt;The &lt;strong&gt;Platinum Membership&lt;/strong&gt;, in addition to all the benefits of the &lt;strong&gt;Standard Membership&lt;/strong&gt;, also offers you access to a hotline to &lt;strong&gt;Yann Guignon&lt;/strong&gt;, one of the worlds leading epert on the Bwiti traditions and Gabonese culture.&lt;/div&gt;
         ///&lt;br /&gt;
-        ///&lt;div&gt;With the Platinum Membership, you will also be sponsoring two Iboga trees per month.&lt;/div&gt;.
+        ///&lt;div&gt;With the &lt;strong&gt;Platinum Membership&lt;/strong&gt;, you will also be sponsoring two Iboga trees per month.&lt;/div&gt;.
         /// </summary>
         public static string platinum_membership_description {
             get {
@@ -1503,10 +1504,11 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div&gt;The Standard Membership grants you full access to Blessings of The Forest&apos;s extensive library. 
-        ///    This is perhaps the world&apos;s most comprehensive collection of material concerning Bwiti and the medicinal properties of Iboga.&lt;/div&gt;
+        ///   Looks up a localized string similar to &lt;div&gt;The &lt;strong&gt;Standard Membership&lt;/strong&gt; grants you full access to Blessings of The Forest&apos;s extensive library.
+        ///    This is perhaps the world&apos;s most comprehensive collection of material concerning Bwiti and the medicinal properties of Iboga.
+        ///&lt;/div&gt;
         ///&lt;br /&gt;
-        ///&lt;div&gt;With this membership, you will also be sponsoring one Iboga tree per month.&lt;/div&gt;.
+        ///&lt;div&gt;With the &lt;strong&gt;Standard Membership&lt;/strong&gt;, you will also be sponsoring one Iboga tree per month.&lt;/div&gt;.
         /// </summary>
         public static string standard_membership_description {
             get {
@@ -1799,6 +1801,15 @@ namespace K9.Globalisation {
         public static string YouAreSignedUp {
             get {
                 return ResourceManager.GetString("YouAreSignedUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Current Subscription.
+        /// </summary>
+        public static string YourCurrentMembership {
+            get {
+                return ResourceManager.GetString("YourCurrentMembership", resourceCulture);
             }
         }
     }

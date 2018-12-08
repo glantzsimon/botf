@@ -18,6 +18,9 @@
     <div id="membership" class="tab-pane fade padding-20">
         @if (Model.Membership != null)
         {
+            <div class="text-center margin-top-minus-15 padding-10">
+                <h5>@K9.Globalisation.Dictionary.YourCurrentMembership</h5>
+            </div>
             @Html.Partial("../Membership/_MembershipDetails", Model.Membership)
             <div class="text-center">
                 @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.MembershipOptions, "Index", "Membership")

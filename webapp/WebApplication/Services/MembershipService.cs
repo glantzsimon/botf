@@ -176,6 +176,7 @@ namespace K9.WebApplication.Services
             foreach (var userMembership in userMemberships.Where(_ => _.MembershipOptionId != primaryUserMembershipId))
             {
                 userMembership.EndsOn = primaryUserMembership.StartsOn;
+                _userMembershipRepository.Update(userMembership);
             }
         }
 

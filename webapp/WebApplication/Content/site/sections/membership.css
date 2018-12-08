@@ -82,10 +82,14 @@
 
 .membership-description {
     font-size: 0.8em;
-    color: #888888;
+    color: #333333;
     margin-top: 5px;
     text-align: left;
     padding: 5px;
+}
+
+.membership-description ul li {
+    font-size: 1em;
 }
 
 .platinum {
