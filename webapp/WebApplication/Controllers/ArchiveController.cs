@@ -76,7 +76,7 @@ namespace K9.WebApplication.Controllers
                 } : null
             };
 
-            if (!GetArchiveItemCategories().Select(c => c.Id).Contains(categoryId ?? 0))
+            if (categoryId.HasValue && !GetArchiveItemCategories().Select(c => c.Id).Contains(categoryId.Value))
             {
                 return RedirectToAction("Index");
             }
