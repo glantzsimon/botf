@@ -631,4 +631,7 @@
   <data name="GoToMultimediaLibrary" xml:space="preserve">
     <value>Check out the Multimedia Library!</value>
   </data>
+  <data name="Here" xml:space="preserve">
+    <value>Here</value>
+  </data>
 </root>

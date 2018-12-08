@@ -36,7 +36,7 @@ namespace K9.WebApplication.Services
             userId = userId ?? _authentication.CurrentUserId;
             var membershipOptions = _membershipOptionRepository.List();
             var userMemberships = GetActiveUserMemberships();
-            var primaryMembership = GetPrimaryUserMembership(userId);
+            var primaryMembership = GetPrimaryActiveUserMembership(userId);
             return new MembershipViewModel
             {
                 Memberships = new List<MembershipModel>(membershipOptions.Select(membershipOption =>
@@ -73,7 +73,7 @@ namespace K9.WebApplication.Services
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        public UserMembership GetPrimaryUserMembership(int? userId = null)
+        public UserMembership GetPrimaryActiveUserMembership(int? userId = null)
         {
             return GetActiveUserMemberships(userId).OrderByDescending(_ => _.MembershipOption.SubscriptionType)
                 .FirstOrDefault();
@@ -87,7 +87,7 @@ namespace K9.WebApplication.Services
                 throw new Exception(Globalisation.Dictionary.SwitchMembershipErrorNotSubscribed);
             }
 
-            var primaryUserMembership = GetPrimaryUserMembership();
+            var primaryUserMembership = GetPrimaryActiveUserMembership();
             if (primaryUserMembership.MembershipOptionId == id)
             {
                 throw new Exception(Globalisation.Dictionary.SwitchMembershipErrorAlreadySubscribed);
@@ -102,7 +102,7 @@ namespace K9.WebApplication.Services
 
         public MembershipModel GetPurchaseMembershipModel(int id)
         {
-            var primaryUserMembership = GetPrimaryUserMembership();
+            var primaryUserMembership = GetPrimaryActiveUserMembership();
             if (primaryUserMembership?.MembershipOptionId == id)
             {
                 throw new Exception(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribed);
@@ -115,7 +115,7 @@ namespace K9.WebApplication.Services
 
         public StripeModel GetPurchaseStripeModel(int id)
         {
-            var primaryUserMembership = GetPrimaryUserMembership();
+            var primaryUserMembership = GetPrimaryActiveUserMembership();
             var membershipOption = _membershipOptionRepository.Find(id);
             if (membershipOption == null)
             {
