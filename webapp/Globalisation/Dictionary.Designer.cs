@@ -650,6 +650,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check out the Multimedia Library!.
+        /// </summary>
+        public static string GoToMultimediaLibrary {
+            get {
+                return ResourceManager.GetString("GoToMultimediaLibrary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to How can you help?.
         /// </summary>
         public static string HowToHelp {

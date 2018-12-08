@@ -628,4 +628,7 @@
   <data name="YourCurrentMembership" xml:space="preserve">
     <value>Your Current Subscription</value>
   </data>
+  <data name="GoToMultimediaLibrary" xml:space="preserve">
+    <value>Check out the Multimedia Library!</value>
+  </data>
 </root>

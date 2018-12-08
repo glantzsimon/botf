@@ -6,6 +6,11 @@
     Layout = "../Shared/_LayoutForm.cshtml";
 }
 @Html.Success(K9.Globalisation.Dictionary.YouAreSignedUp + " <i class='fa fa-smile-o'></i>")
+
+<div class="text-center padding-10">
+    @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.GoToMultimediaLibrary, "Index", "Archive")
+</div>
+
 <hr />
 <div class="picture-frame margin-bottom-30">
     <div>
