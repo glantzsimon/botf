@@ -601,6 +601,9 @@
   <data name="PurchaseMembershipErrorAlreadySubscribed" xml:space="preserve">
     <value>You cannot purchase the selected membership as you are already subscribed.</value>
   </data>
+  <data name="SubscriptionDiscountLabel" xml:space="preserve">
+    <value>Discount (for existing membership)</value>
+  </data>
   <data name="SwitchMembershipErrorAlreadySubscribed" xml:space="preserve">
     <value>You cannot switch memberships as you are already subscribed to the selected one.</value>
   </data>
@@ -612,5 +615,11 @@
   </data>
   <data name="SwitchSuccessfulTitle" xml:space="preserve">
     <value>Subscription Updated</value>
+  </data>
+  <data name="TotalLabel" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="ValidUntil" xml:space="preserve">
+    <value>Valid until:</value>
   </data>
 </root>

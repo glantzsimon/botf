@@ -1574,6 +1574,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Discount (for existing membership).
+        /// </summary>
+        public static string SubscriptionDiscountLabel {
+            get {
+                return ResourceManager.GetString("SubscriptionDiscountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subscription Successful.
         /// </summary>
         public static string SubscriptionSuccessful {
@@ -1646,6 +1655,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Total.
+        /// </summary>
+        public static string TotalLabel {
+            get {
+                return ResourceManager.GetString("TotalLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    The Iboga trees planted directly as a result of your donations in the heart of the community forests supported by BOTF are listed separately from those planted by the village communities who have taken the initiative to invest in the Iboga plantations as a result of our awareness campaigns and without our financial support, but who wish to participate in time in the agricultural cooperative programme labelled &quot;equitable &amp; sustainable&quot;, which is just as committed to the Gabonese national market as i [rest of string was truncated]&quot;;.
         /// </summary>
@@ -1679,6 +1697,15 @@ namespace K9.Globalisation {
         public static string UpgradeMembership {
             get {
                 return ResourceManager.GetString("UpgradeMembership", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valid until:.
+        /// </summary>
+        public static string ValidUntil {
+            get {
+                return ResourceManager.GetString("ValidUntil", resourceCulture);
             }
         }
         

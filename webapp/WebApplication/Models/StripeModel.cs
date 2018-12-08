@@ -45,7 +45,15 @@ namespace K9.WebApplication.Models
         [DataType(DataType.Currency)]
         public double SubscriptionAmount { get; set; }
 
-        public double SubscriptionAmountInCents => SubscriptionAmount * 100;
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.SubscriptionDiscountLabel)]
+        [DataType(DataType.Currency)]
+        public double SubscriptionDiscount { get; set; }
+
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.TotalLabel)]
+        [DataType(DataType.Currency)]
+        public double SubscriptionNetAmount => SubscriptionAmount - SubscriptionDiscount;
+
+        public double SubscriptionAmountInCents => SubscriptionNetAmount * 100;
 
         public double AmountInCents => MembershipOptionId > 0 ? SubscriptionAmountInCents : DonationAmountInCents ;
         
@@ -60,7 +68,7 @@ namespace K9.WebApplication.Models
         public string StripeEmail { get; set; }
 
         public string StripeBillingName { get; set; }
-        
+
         public static string GetLocalisedCurrency()
         {
             try

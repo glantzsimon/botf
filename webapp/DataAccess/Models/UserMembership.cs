@@ -44,5 +44,6 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsActive => DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date);
 
+        public TimeSpan Duration => EndsOn.Subtract(StartsOn);
     }
 }

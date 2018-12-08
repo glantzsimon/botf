@@ -21,7 +21,7 @@ function buttonBehaviours() {
             }
 
             var el = $(this);
-            if (!el.hasClass("carousel-control") && !el.attr("target")) {
+            if (!el.hasClass("carousel-control") && !el.attr("target") && !el.attr("data-toggle")) {
                 var href = (el.attr("href"));
                 if (href) {
                     if (href !== "#") {

@@ -31,21 +31,24 @@ namespace K9.WebApplication.Services
             _contactService = contactService;
         }
 
-        public MembershipViewModel GetMembershipViewModel()
+        public MembershipViewModel GetMembershipViewModel(int? userId = null)
         {
+            userId = userId ?? _authentication.CurrentUserId;
             var membershipOptions = _membershipOptionRepository.List();
             var userMemberships = GetActiveUserMemberships();
+            var primaryMembership = GetPrimaryUserMembership(userId);
             return new MembershipViewModel
             {
                 Memberships = new List<MembershipModel>(membershipOptions.Select(membershipOption =>
                 {
                     var userMembership = userMemberships.FirstOrDefault(_ =>
-                        _.UserId == _authentication.CurrentUserId & _.MembershipOptionId == membershipOption.Id);
+                        _.UserId == userId & _.MembershipOptionId == membershipOption.Id);
                     return new MembershipModel(
                         membershipOption,
                         userMembership != null,
                         false,
-                        userMembership != null && userMembership.MembershipOption.SubscriptionType > membershipOption.SubscriptionType
+                        primaryMembership != null && primaryMembership.MembershipOption.SubscriptionType < membershipOption.SubscriptionType,
+                        primaryMembership?.Id ?? 0
                     );
                 }))
             };
@@ -54,8 +57,13 @@ namespace K9.WebApplication.Services
         public List<UserMembership> GetActiveUserMemberships(int? userId = null)
         {
             userId = userId ?? _authentication.CurrentUserId;
+            var membershipOptions = _membershipOptionRepository.List();
             var userMemberships = _authentication.IsAuthenticated
-                ? _userMembershipRepository.Find(_ => _.UserId == userId).ToList().Where(_ => _.IsActive).ToList()
+                ? _userMembershipRepository.Find(_ => _.UserId == userId).ToList().Where(_ => _.IsActive).Select(userMembership =>
+                {
+                    userMembership.MembershipOption = membershipOptions.FirstOrDefault(m => m.Id == userMembership.MembershipOptionId);
+                    return userMembership;
+                }).ToList()
                 : new List<UserMembership>();
             return userMemberships;
         }
@@ -88,33 +96,38 @@ namespace K9.WebApplication.Services
             var membershipOption = _membershipOptionRepository.Find(id);
             return new MembershipModel(
                 membershipOption, false, true,
-                membershipOption.SubscriptionType > primaryUserMembership.MembershipOption.SubscriptionType);
+                membershipOption.SubscriptionType > primaryUserMembership.MembershipOption.SubscriptionType,
+                primaryUserMembership?.Id ?? 0);
         }
 
         public MembershipModel GetPurchaseMembershipModel(int id)
         {
-            if (GetPrimaryUserMembership()?.MembershipOptionId == id)
+            var primaryUserMembership = GetPrimaryUserMembership();
+            if (primaryUserMembership?.MembershipOptionId == id)
             {
                 throw new Exception(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribed);
             }
 
             var membershipOption = _membershipOptionRepository.Find(id);
             return new MembershipModel(
-                membershipOption, false, true, false);
+                membershipOption, false, true, false, primaryUserMembership?.Id ?? 0);
         }
 
         public StripeModel GetPurchaseStripeModel(int id)
         {
+            var primaryUserMembership = GetPrimaryUserMembership();
             var membershipOption = _membershipOptionRepository.Find(id);
             if (membershipOption == null)
             {
                 _logger.Error($"MembershipService => GetPurchaseStripeModel => No MembershipOption with id {id} was found.");
                 throw new IndexOutOfRangeException();
             }
+
             return new StripeModel
             {
                 PublishableKey = _stripeConfig.PublishableKey,
                 SubscriptionAmount = membershipOption.Price,
+                SubscriptionDiscount = GetDiscount(primaryUserMembership, membershipOption),
                 Description = membershipOption.SubscriptionTypeNameLocal,
                 MembershipOptionId = id,
                 LocalisedCurrencyThreeLetters = StripeModel.GetLocalisedCurrency()
@@ -128,6 +141,7 @@ namespace K9.WebApplication.Services
                 var membershipOption = _membershipOptionRepository.Find(model.MembershipOptionId);
                 if (membershipOption == null)
                 {
+                    _logger.Error($"MembershipService => ProcessPurchase => No MembershipOption with id {model.MembershipOptionId} was found.");
                     throw new IndexOutOfRangeException("Invalid MembershipOptionId");
                 }
 
@@ -146,6 +160,13 @@ namespace K9.WebApplication.Services
                 _logger.Error($"MembershipController => Purchase => Purchase failed: {ex.Message}");
                 throw ex;
             }
+        }
+
+        private double GetDiscount(UserMembership userMembership, MembershipOption membershipOption)
+        {
+            var timeRemaining = userMembership.EndsOn.Subtract(DateTime.Today);
+            var percentageRemaining = (double)timeRemaining.Ticks / (double)userMembership.Duration.Ticks;
+            return userMembership.MembershipOption.Price * percentageRemaining;
         }
 
     }

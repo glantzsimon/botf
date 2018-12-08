@@ -263,6 +263,7 @@
     </Compile>
     <Compile Include="Helpers\Dynamic.cs" />
     <Compile Include="Helpers\Separator.cs" />
+    <Compile Include="Models\MyAccountViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\MembershipViewModel.cs" />
     <Compile Include="Models\MembershipModel.cs" />
@@ -1078,6 +1079,9 @@
     <Content Include="Views\Shared\_Upgrade.cshtml" />
     <Content Include="Views\Membership\Switch.cshtml" />
     <Content Include="Views\Membership\SwitchSuccess.cshtml" />
+    <Content Include="Views\Account\_AccountDetails.cshtml" />
+    <Content Include="Views\Membership\_MembershipDetails.cshtml" />
+    <Content Include="Views\Membership\_MembershipValidUntil.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

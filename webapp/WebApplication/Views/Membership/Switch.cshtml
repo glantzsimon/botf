@@ -2,8 +2,8 @@
 @using K9.SharedLibrary.Extensions
 @model K9.WebApplication.Models.StripeModel
 @{
-    ViewBag.Title = K9.Globalisation.Dictionary.BecomeBenefactorTitle;
-    ViewBag.SubTitle = K9.Globalisation.Dictionary.BecomeBenefactorTitle;
+    ViewBag.Title = K9.Globalisation.Dictionary.UpgradeMembership;
+    ViewBag.SubTitle = K9.Globalisation.Dictionary.UpgradeMembership;
     ViewBag.BackgroundClass = "background-poaching1";
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
@@ -13,10 +13,21 @@
     using (Html.BeginBootstrapForm())
     {
         @Html.BootstrapDisplayFor(model => model.Description)
-        @Html.BootstrapDisplayFor(model => model.SubscriptionAmount)
+        if (Model.SubscriptionDiscount > 0)
+        {
+            @Html.BootstrapDisplayFor(model => model.SubscriptionAmount)
+            @Html.BootstrapDisplayFor(model => model.SubscriptionDiscount)
+            <hr />
+            @Html.BootstrapDisplayFor(model => model.SubscriptionNetAmount)
+        }
+        else
+        {
+            @Html.BootstrapDisplayFor(model => model.SubscriptionAmount)
+        }
+
         @Html.HiddenFor(model => model.MembershipOptionId)
         @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)
-        @Html.HiddenFor(model => model.SubscriptionAmount)
+        @Html.HiddenFor(model => model.SubscriptionNetAmount)
         @Html.HiddenFor(model => model.Description)
         <hr />
 

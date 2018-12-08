@@ -1,4 +1,5 @@
-﻿using K9.Base.DataAccessLayer.Attributes;
+﻿using System;
+using K9.Base.DataAccessLayer.Attributes;
 using K9.Base.DataAccessLayer.Extensions;
 using K9.Base.DataAccessLayer.Models;
 using K9.Globalisation;
@@ -73,5 +74,7 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsAnnual =>
             new[] { ESubscriptionType.AnnualPlatinum, ESubscriptionType.AnnualStandard }.Contains(SubscriptionType);
+
+        public bool IsUpgradable => SubscriptionType < ESubscriptionType.AnnualPlatinum;
     }
 }

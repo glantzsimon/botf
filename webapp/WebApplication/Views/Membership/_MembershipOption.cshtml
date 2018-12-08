@@ -12,23 +12,21 @@
     </div>
     <div class="membership-option">
         @Html.Partial("_MembershipMedal", Model.MembershipOption)
-        <div>
-            @if (Model.IsSelected)
+        <div class="membership-footer">
+            @if (!Model.IsSubscribed && !Model.IsSelected)
             {
-                @Html.Partial("_Selected")
-            }
-            @if (Model.IsUpgrade)
-            {
-                @Html.Partial("_Upgrade")
-            }
-            @if (!Model.IsSelected)
-            {
-                var buttonText = Model.ActiveSubscriptionId > 0
+                var buttonText = Model.PrimaryMembershipId > 0
                     ? Model.IsUpgrade
                             ? K9.Globalisation.Dictionary.Upgrade
                             : K9.Globalisation.Dictionary.Switch
                     : K9.Globalisation.Dictionary.Select;
                 @Html.BootstrapActionLinkButton(buttonText, Model.IsUpgrade ? "SwitchStart" : "PurchaseStart", "Membership", new { id = Model.MembershipOption.Id })
+            }
+            else
+            {
+                <div class="membership-selected-container">
+                    @Html.Partial("_Selected")
+                </div>
             }
         </div>
     </div>

@@ -27,15 +27,15 @@ namespace K9.WebApplication.Services.Stripe
                 SourceToken = model.StripeToken,
                 Description = model.Description
             });
-            
 
-            var charge = charges.Create(new StripeChargeCreateOptions
+            // Do not charge for zero amount
+            var charge = model.AmountInCents > 0 ? charges.Create(new StripeChargeCreateOptions
             {
                 Amount = (int)model.AmountInCents,
                 Description = model.Description,
                 Currency = model.LocalisedCurrencyThreeLetters,
                 CustomerId = customer.Id
-            });
+            }) : new StripeCharge();
 
             return new StripeChargeResultModel(charge, customer);
         }

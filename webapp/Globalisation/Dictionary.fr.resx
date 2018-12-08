@@ -604,6 +604,9 @@
   <data name="PurchaseMembershipErrorAlreadySubscribed" xml:space="preserve">
     <value>Vous êtes déjà abonné.</value>
   </data>
+  <data name="SubscriptionDiscountLabel" xml:space="preserve">
+    <value>Réduction (de l'abonnement actuel)</value>
+  </data>
   <data name="SwitchMembershipErrorAlreadySubscribed" xml:space="preserve">
     <value>Il n'est pas possible de changer d'abonnement car vous êtes déjà abonné.</value>
   </data>
@@ -615,5 +618,11 @@
   </data>
   <data name="SwitchSuccessfulTitle" xml:space="preserve">
     <value>Mise à jour Réussie</value>
+  </data>
+  <data name="TotalLabel" xml:space="preserve">
+    <value>Montant</value>
+  </data>
+  <data name="ValidUntil" xml:space="preserve">
+    <value>Valable jusqu'au :</value>
   </data>
 </root>

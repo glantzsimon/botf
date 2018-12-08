@@ -40,7 +40,7 @@ namespace K9.WebApplication.Controllers
         {
             return View(_membershipService.GetMembershipViewModel());
         }
-        
+
         [Route("join")]
         public ActionResult PurchaseStart(int id)
         {

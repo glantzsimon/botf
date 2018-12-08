@@ -28,9 +28,11 @@
             public const string StripeCustomerIdLabel = "StripeCustomerIdLabel";
             public const string MembershipLabel = "MembershipLabel";
             public const string SubscriptionCostLabel = "SubscriptionCostLabel";
+            public const string SubscriptionDiscountLabel = "SubscriptionDiscountLabel";
             public const string SubscriptionDetailsLabel = "SubscriptionDetailsLabel";
             public const string StartsOnLabel = "StartsOnLabel";
             public const string EndsOnLabel = "EndsOnLabel";
+            public const string TotalLabel = "TotalLabel";
         }
 
         public static class Names
