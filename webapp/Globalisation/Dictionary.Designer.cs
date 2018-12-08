@@ -1013,6 +1013,19 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;div&gt;Your membership will also help to fund:&lt;/div&gt;
+        ///&lt;ul&gt;
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; The tools necessary for the upkeep of the village plantations (wheelbarrow, brush cutters, machetes, axes, watering cans, etc.),&lt;/li&gt;
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; The living wages of the villagers maintaining the plantations (15 euros per week per person)&lt;/li&gt;
+        ///    &lt;li&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Proper administration of village asso [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string membership_additional_information {
+            get {
+                return ResourceManager.GetString("membership_additional_information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Membership.
         /// </summary>
         public static string MembershipLabel {
@@ -1214,7 +1227,7 @@ namespace K9.Globalisation {
         /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;The Platinum Membership, in addition to all the benefits of the Standard Membership, also offers you access to a hotline to Yann Guignon, one of the worlds leading epert on the Bwiti traditions and Gabonese culture.&lt;/div&gt;
         ///&lt;br /&gt;
-        ///&lt;div&gt;With the Platinum Membership, you will also be sponsoring two Iboga trees per month&lt;/div&gt;.
+        ///&lt;div&gt;With the Platinum Membership, you will also be sponsoring two Iboga trees per month.&lt;/div&gt;.
         /// </summary>
         public static string platinum_membership_description {
             get {
@@ -1491,9 +1504,9 @@ namespace K9.Globalisation {
         
         /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;The Standard Membership grants you full access to Blessings of The Forest&apos;s extensive library. 
-        ///    This is perhaps the world&apos;s most comprehensive collection of material concerning Bwiti and the medicinal properties of Iboga&lt;/div&gt;
+        ///    This is perhaps the world&apos;s most comprehensive collection of material concerning Bwiti and the medicinal properties of Iboga.&lt;/div&gt;
         ///&lt;br /&gt;
-        ///&lt;div&gt;With this membership, you will also be sponsoring one Iboga tree per month&lt;/div&gt;.
+        ///&lt;div&gt;With this membership, you will also be sponsoring one Iboga tree per month.&lt;/div&gt;.
         /// </summary>
         public static string standard_membership_description {
             get {
@@ -1781,7 +1794,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your subscription was successful and you are now a member. Thank you!.
+        ///   Looks up a localized string similar to Your subscription was successful. Thank you and welcome onboard!.
         /// </summary>
         public static string YouAreSignedUp {
             get {

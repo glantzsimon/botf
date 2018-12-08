@@ -575,7 +575,7 @@
     <value>Yearly Standard Membership</value>
   </data>
   <data name="YouAreSignedUp" xml:space="preserve">
-    <value>Your subscription was successful and you are now a member. Thank you!</value>
+    <value>Your subscription was successful. Thank you and welcome onboard!</value>
   </data>
   <data name="Switch" xml:space="preserve">
     <value>Switch</value>
@@ -621,5 +621,8 @@
   </data>
   <data name="ValidUntil" xml:space="preserve">
     <value>Valid until:</value>
+  </data>
+  <data name="membership_additional_information" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\en-gb\membership-additional-information.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

@@ -575,7 +575,7 @@
     <value>Abonnement Réussi</value>
   </data>
   <data name="YouAreSignedUp" xml:space="preserve">
-    <value>Votre abonnement a réussi et vous êtes desormais membre. Merci !</value>
+    <value>Votre abonnement a réussi. Merci et bienvenue !</value>
   </data>
   <data name="Switch" xml:space="preserve">
     <value>Changer</value>
@@ -624,5 +624,8 @@
   </data>
   <data name="ValidUntil" xml:space="preserve">
     <value>Valable jusqu'au :</value>
+  </data>
+  <data name="membership_additional_information" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>text\fr\membership-additional-information.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

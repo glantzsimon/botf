@@ -176,6 +176,7 @@
     <Content Include="Templates\fr\PasswordResetEmail.htm" />
     <Content Include="Templates\fr\WelcomeEmail.htm" />
     <Content Include="Text\en-gb\cookies-blurb.htm" />
+    <Content Include="Text\en-gb\membership-additional-information.htm" />
     <Content Include="Text\en-gb\platinum-membership-description.htm" />
     <Content Include="Text\en-gb\standard-membership-description.htm" />
     <Content Include="Text\en-gb\tree-counter-text.htm" />
@@ -187,6 +188,7 @@
     <Content Include="Text\fr\donations-text.htm" />
     <Content Include="Text\fr\Keywords.txt" />
     <Content Include="Text\fr\platinum-membership-description.htm" />
+    <Content Include="Text\fr\membership-additional-information.htm" />
     <Content Include="Text\fr\standard-membership-description.htm" />
     <Content Include="Text\fr\tree-counter-text.htm" />
   </ItemGroup>
