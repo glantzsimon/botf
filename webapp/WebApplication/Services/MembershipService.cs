@@ -127,7 +127,7 @@ namespace K9.WebApplication.Services
             {
                 PublishableKey = _stripeConfig.PublishableKey,
                 SubscriptionAmount = membershipOption.Price,
-                SubscriptionDiscount = GetDiscount(primaryUserMembership, membershipOption),
+                SubscriptionDiscount = primaryUserMembership != null ? GetDiscount(primaryUserMembership, membershipOption) : 0,
                 Description = membershipOption.SubscriptionTypeNameLocal,
                 MembershipOptionId = id,
                 LocalisedCurrencyThreeLetters = StripeModel.GetLocalisedCurrency()
@@ -153,12 +153,29 @@ namespace K9.WebApplication.Services
                     StartsOn = DateTime.Today,
                     EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1)
                 });
+                TerminateExistingMemberships(model.MembershipOptionId);
                 _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
             }
             catch (Exception ex)
             {
-                _logger.Error($"MembershipController => Purchase => Purchase failed: {ex.Message}");
+                _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.Message}");
                 throw ex;
+            }
+        }
+
+        private void TerminateExistingMemberships(int primaryUserMembershipId)
+        {
+            var userMemberships = GetActiveUserMemberships();
+            var primaryUserMembership =
+                userMemberships.FirstOrDefault(_ => _.MembershipOptionId == primaryUserMembershipId);
+            if (primaryUserMembership == null)
+            {
+                _logger.Error($"MembershipService => TerminateExistingMemberships => PrimaryMembership cannot be determined or does not exist");
+                throw new Exception("Primary membership not found");
+            }
+            foreach (var userMembership in userMemberships.Where(_ => _.MembershipOptionId != primaryUserMembershipId))
+            {
+                userMembership.EndsOn = primaryUserMembership.StartsOn;
             }
         }
 
