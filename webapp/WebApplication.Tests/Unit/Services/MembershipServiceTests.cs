@@ -170,7 +170,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(2, model.Memberships.Count(_ => _.IsUpgrade));
             Assert.Equal(1, model.Memberships.Count(_ => _.IsSubscribed));
             Assert.Equal(3, model.Memberships.Count(_ => _.IsSelectable));
-            Assert.Equal(0, model.Memberships.Count(_ => _.IsScheduledSwitch));
+            Assert.Equal(1, model.Memberships.Count(_ => _.IsScheduledSwitch));
         }
 
         [Fact]
@@ -202,7 +202,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(1, model.Memberships.Count(_ => _.IsUpgrade));
             Assert.Equal(1, model.Memberships.Count(_ => _.IsSubscribed));
             Assert.Equal(3, model.Memberships.Count(_ => _.IsSelectable));
-            Assert.Equal(0, model.Memberships.Count(_ => _.IsScheduledSwitch));
+            Assert.Equal(2, model.Memberships.Count(_ => _.IsScheduledSwitch));
         }
 
         [Fact]
@@ -235,7 +235,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(0, model.Memberships.Count(_ => _.IsUpgrade));
             Assert.Equal(1, model.Memberships.Count(_ => _.IsSubscribed));
             Assert.Equal(3, model.Memberships.Count(_ => _.IsSelectable));
-            Assert.Equal(0, model.Memberships.Count(_ => _.IsScheduledSwitch));
+            Assert.Equal(3, model.Memberships.Count(_ => _.IsScheduledSwitch));
             Assert.Equal(7, model.Memberships.First().ActiveUserMembershipId);
         }
 

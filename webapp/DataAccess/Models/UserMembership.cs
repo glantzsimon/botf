@@ -48,5 +48,14 @@ namespace K9.DataAccessLayer.Models
         public bool IsActive => DateTime.Today.IsBetween(StartsOn.Date, EndsOn.Date);
 
         public TimeSpan Duration => EndsOn.Subtract(StartsOn);
+
+        public double CostOfRemainingActiveSubscription => GetCostOfRemainingActiveSubscription();
+
+        private double GetCostOfRemainingActiveSubscription()
+        {   
+            var timeRemaining = EndsOn.Subtract(DateTime.Today);
+            var percentageRemaining = (double)timeRemaining.Ticks / (double)Duration.Ticks;
+            return MembershipOption.Price * percentageRemaining;
+        }
     }
 }

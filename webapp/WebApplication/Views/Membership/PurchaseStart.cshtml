@@ -14,7 +14,6 @@
     using (Html.BeginBootstrapForm())
     {
         @Html.Hidden("Id", Model.MembershipOption.Id)
-        @Html.BootstrapEditorFor(model => model.IsAutoRenew)
         @Html.BootstrapButton(Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
 
         <hr />

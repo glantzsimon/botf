@@ -77,7 +77,6 @@ namespace K9.DataAccessLayer.Models
 
         public bool IsUpgradable => SubscriptionType < ESubscriptionType.AnnualPlatinum;
 
-        public bool CanUpgradeFrom(MembershipOption membershipOption) =>
-            SubscriptionType > membershipOption.SubscriptionType;
+        public bool CanUpgradeFrom(MembershipOption membershipOption) => membershipOption != null && SubscriptionType > membershipOption?.SubscriptionType;
     }
 }

@@ -79,39 +79,84 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
-        [Route("change")]
+        [Route("switch")]
         public ActionResult SwitchStart(int id)
         {
-            return View(_membershipService.GetSwitchMembershipModel(id));
+            var switchMembershipModel = _membershipService.GetSwitchMembershipModel(id);
+            ViewBag.SubTitle = switchMembershipModel.IsUpgrade
+                ? Globalisation.Dictionary.UpgradeMembership
+                : Globalisation.Dictionary.ChangeMembership;
+
+            if (switchMembershipModel.IsScheduledSwitch)
+            {
+                return View("SwitchScheduleStart", switchMembershipModel);
+            }
+            return View("SwitchPurchaseStart", switchMembershipModel);
         }
 
-        [Route("change/purchase")]
+        [Route("switch/purchase")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Switch(int id)
+        public ActionResult SwitchPurchase(int id)
         {
+            var switchMembershipModel = _membershipService.GetSwitchMembershipModel(id);
+            ViewBag.SubTitle = switchMembershipModel.IsUpgrade
+                ? Globalisation.Dictionary.UpgradeMembership
+                : Globalisation.Dictionary.ChangeMembership;
+
             return View(_membershipService.GetPurchaseStripeModel(id));
         }
 
+        [Route("switch/schedule")]
         [HttpPost]
-        [Route("change/processing")]
         [ValidateAntiForgeryToken]
-        public ActionResult SwitchProcess(StripeModel model)
+        public ActionResult SwitchSchedule(int id)
+        {
+            var switchMembershipModel = _membershipService.GetSwitchMembershipModel(id);
+            ViewBag.SubTitle = switchMembershipModel.IsUpgrade
+                ? Globalisation.Dictionary.UpgradeMembership
+                : Globalisation.Dictionary.ChangeMembership;
+
+            return View(switchMembershipModel);
+        }
+
+        [HttpPost]
+        [Route("switch/processing")]
+        [ValidateAntiForgeryToken]
+        public ActionResult SwitchPurchaseProcess(StripeModel model)
         {
             try
             {
                 _membershipService.ProcessPurchase(model);
-                return RedirectToAction("PurchaseSuccess");
+                return RedirectToAction("SwitchSuccess");
             }
             catch (Exception ex)
             {
                 ModelState.AddModelError("", ex.Message);
             }
 
-            return View("Purchase", model);
+            return View("SwitchPurchase", model);
         }
 
-        [Route("change/success")]
+        [HttpPost]
+        [Route("switch/processing")]
+        [ValidateAntiForgeryToken]
+        public ActionResult SwitchScheduleProcess(int id)
+        {
+            try
+            {
+                _membershipService.ProcessSwitch(id);
+                return RedirectToAction("SwitchSuccess");
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+            }
+
+            return View("SwitchFree", id);
+        }
+
+        [Route("switch/success")]
         public ActionResult SwitchSuccess()
         {
             return View();

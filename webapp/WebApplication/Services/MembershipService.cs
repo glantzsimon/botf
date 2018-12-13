@@ -49,14 +49,10 @@ namespace K9.WebApplication.Services
                     var isSubscribed = activeUserMemberships.FirstOrDefault(_ =>
                                           _.UserId == userId & _.MembershipOptionId == membershipOption.Id) != null;
                     var isScheduledSwitch = scheduledMembership != null && membershipOption.SubscriptionType == scheduledMembership.MembershipOption.SubscriptionType;
-                    return new MembershipModel(membershipOption)
+                    return new MembershipModel(_authentication.CurrentUserId, membershipOption, activeUserMembership)
                     {
-                        IsSubscribed = isSubscribed,
-                        IsSelected = false,
-                        IsUpgrade = activeUserMembership != null && membershipOption.CanUpgradeFrom(activeUserMembership.MembershipOption),
-                        IsScheduledSwitch = isScheduledSwitch,
                         IsSelectable = !isScheduledSwitch && !isSubscribed,
-                        ActiveUserMembershipId = (int)activeUserMembership?.Id
+                        IsSubscribed = isSubscribed
                     };
                 }))
             };
@@ -119,16 +115,10 @@ namespace K9.WebApplication.Services
             }
 
             var membershipOption = _membershipOptionRepository.Find(id);
-            var isUpgrade = membershipOption.CanUpgradeFrom(activeUserMembership.MembershipOption);
 
-            return new MembershipModel(membershipOption)
+            return new MembershipModel(_authentication.CurrentUserId, membershipOption, activeUserMembership)
             {
-                IsSubscribed = false,
-                IsSelected = true,
-                IsUpgrade = isUpgrade,
-                IsScheduledSwitch = !isUpgrade,
-                IsSelectable = true,
-                ActiveUserMembershipId = (int)activeUserMembership?.Id
+                IsSelected = true
             };
         }
 
@@ -147,20 +137,14 @@ namespace K9.WebApplication.Services
             }
 
             var membershipOption = _membershipOptionRepository.Find(id);
-            return new MembershipModel(membershipOption)
+            return new MembershipModel(_authentication.CurrentUserId, membershipOption)
             {
-                IsSubscribed = false,
-                IsSelected = true,
-                IsUpgrade = false,
-                IsScheduledSwitch = false,
-                IsSelectable = true,
-                ActiveUserMembershipId = (int)activeUserMembership?.Id
+                IsSelected = true
             };
         }
 
         public StripeModel GetPurchaseStripeModel(int id)
         {
-            var activeUserMembership = GetActiveUserMembership();
             var membershipOption = _membershipOptionRepository.Find(id);
             if (membershipOption == null)
             {
@@ -172,7 +156,7 @@ namespace K9.WebApplication.Services
             {
                 PublishableKey = _stripeConfig.PublishableKey,
                 SubscriptionAmount = membershipOption.Price,
-                SubscriptionDiscount = activeUserMembership != null ? GetDiscount(activeUserMembership, membershipOption) : 0,
+                SubscriptionDiscount = GetCostOfRemainingActiveSubscription(),
                 Description = membershipOption.SubscriptionTypeNameLocal,
                 MembershipOptionId = id,
                 LocalisedCurrencyThreeLetters = StripeModel.GetLocalisedCurrency()
@@ -196,7 +180,8 @@ namespace K9.WebApplication.Services
                     UserId = _authentication.CurrentUserId,
                     MembershipOptionId = model.MembershipOptionId,
                     StartsOn = DateTime.Today,
-                    EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1)
+                    EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
+                    IsAutoRenew = true
                 });
                 TerminateExistingMemberships(model.MembershipOptionId);
                 _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
@@ -204,6 +189,34 @@ namespace K9.WebApplication.Services
             catch (Exception ex)
             {
                 _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.Message}");
+                throw ex;
+            }
+        }
+
+        public void ProcessSwitch(int id)
+        {
+            try
+            {
+                var membershipOption = _membershipOptionRepository.Find(id);
+                if (membershipOption == null)
+                {
+                    _logger.Error($"MembershipService => ProcessSwitch => No MembershipOption with id {id} was found.");
+                    throw new IndexOutOfRangeException("Invalid MembershipOptionId");
+                }
+
+                _userMembershipRepository.Create(new UserMembership
+                {
+                    UserId = _authentication.CurrentUserId,
+                    MembershipOptionId = id,
+                    StartsOn = DateTime.Today,
+                    EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
+                    IsAutoRenew = true
+                });
+                TerminateExistingMemberships(id);
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"MembershipService => ProcessSwitch => Switch failed: {ex.Message}");
                 throw ex;
             }
         }
@@ -225,11 +238,12 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private double GetDiscount(UserMembership userMembership, MembershipOption membershipOption)
+
+
+        private double GetCostOfRemainingActiveSubscription()
         {
-            var timeRemaining = userMembership.EndsOn.Subtract(DateTime.Today);
-            var percentageRemaining = (double)timeRemaining.Ticks / (double)userMembership.Duration.Ticks;
-            return userMembership.MembershipOption.Price * percentageRemaining;
+            var activeUserMembership = GetActiveUserMembership();
+            return activeUserMembership?.CostOfRemainingActiveSubscription ?? 0;
         }
 
     }

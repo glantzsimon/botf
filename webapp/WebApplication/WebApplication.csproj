@@ -1075,13 +1075,15 @@
     <Content Include="Views\Membership\Purchase.cshtml" />
     <Content Include="Views\Membership\PurchaseSuccess.cshtml" />
     <Content Include="Views\UserMemberships\Index.cshtml" />
-    <Content Include="Views\Membership\SwitchStart.cshtml" />
+    <Content Include="Views\Membership\SwitchScheduleStart.cshtml" />
     <Content Include="Views\Shared\_Upgrade.cshtml" />
-    <Content Include="Views\Membership\Switch.cshtml" />
     <Content Include="Views\Membership\SwitchSuccess.cshtml" />
     <Content Include="Views\Account\_AccountDetails.cshtml" />
     <Content Include="Views\Membership\_MembershipDetails.cshtml" />
     <Content Include="Views\Membership\_MembershipValidUntil.cshtml" />
+    <Content Include="Views\Membership\SwitchPurchase.cshtml" />
+    <Content Include="Views\Membership\SwitchPurchaseStart.cshtml" />
+    <Content Include="Views\Membership\SwitchSchedule.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

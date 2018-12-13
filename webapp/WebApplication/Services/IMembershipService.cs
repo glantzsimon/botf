@@ -11,6 +11,11 @@ namespace K9.WebApplication.Services
         MembershipModel GetPurchaseMembershipModel(int id);
         StripeModel GetPurchaseStripeModel(int id);
         void ProcessPurchase(StripeModel model);
+        /// <summary>
+        /// Switch memberships without processing payment (downgrade or scheduled switch)
+        /// </summary>
+        /// <param name="id"></param>
+        void ProcessSwitch(int id);
         List<UserMembership> GetActiveUserMemberships(int? userId = null, bool includeScheduled = false);
         UserMembership GetActiveUserMembership(int? userId = null);
         UserMembership GetScheduledSwitchUserMembership(int? userId = null);

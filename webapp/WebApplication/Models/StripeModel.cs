@@ -12,7 +12,6 @@ namespace K9.WebApplication.Models
         private const string AutoLocale = "auto";
         private const int AmountPerTree = 10;
         public int MembershipOptionId { get; set; }
-        public bool IsAutoRenew { get; set; }
 
         [Required]
         [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.DonationAmountLabel)]
