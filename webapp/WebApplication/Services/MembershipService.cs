@@ -56,7 +56,7 @@ namespace K9.WebApplication.Services
                         IsUpgrade = activeUserMembership != null && membershipOption.CanUpgradeFrom(activeUserMembership.MembershipOption),
                         IsScheduledSwitch = isScheduledSwitch,
                         IsSelectable = !isScheduledSwitch && !isSubscribed,
-                        ActiveUserMembershipId = activeUserMembership?.Id ?? 0
+                        ActiveUserMembershipId = (int)activeUserMembership?.Id
                     };
                 }))
             };
@@ -113,7 +113,7 @@ namespace K9.WebApplication.Services
             }
 
             var scheduledUserMembership = GetScheduledSwitchUserMembership();
-            if (scheduledUserMembership.MembershipOptionId == id)
+            if (scheduledUserMembership?.MembershipOptionId == id)
             {
                 throw new Exception(Globalisation.Dictionary.SwitchMembershipErrorAlreadySubscribed);
             }
@@ -128,7 +128,7 @@ namespace K9.WebApplication.Services
                 IsUpgrade = isUpgrade,
                 IsScheduledSwitch = !isUpgrade,
                 IsSelectable = true,
-                ActiveUserMembershipId = activeUserMembership?.Id ?? 0
+                ActiveUserMembershipId = (int)activeUserMembership?.Id
             };
         }
 
@@ -148,7 +148,7 @@ namespace K9.WebApplication.Services
                 IsUpgrade = false,
                 IsScheduledSwitch = false,
                 IsSelectable = true,
-                ActiveUserMembershipId = activeUserMembership?.Id ?? 0
+                ActiveUserMembershipId = (int)activeUserMembership?.Id
             };
         }
 

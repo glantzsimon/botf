@@ -94,6 +94,10 @@ namespace K9.WebApplication.Tests.Unit.Services
 
 
             _membershipOptionRepository.Setup(_ => _.List()).Returns(membershipOptions);
+            _membershipOptionRepository.Setup(_ => _.Find(_standardMonthlyMembership.Id)).Returns(_standardMonthlyMembership);
+            _membershipOptionRepository.Setup(_ => _.Find(_standardYearlyMembership.Id)).Returns(_standardYearlyMembership);
+            _membershipOptionRepository.Setup(_ => _.Find(_platinumMonthlyMembership.Id)).Returns(_platinumMonthlyMembership);
+            _membershipOptionRepository.Setup(_ => _.Find(_platinumYearlyMembership.Id)).Returns(_platinumYearlyMembership);
 
             _membershipService = new MembershipService(
                 _logger.Object,
@@ -356,6 +360,33 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             var ex = Assert.Throws<Exception>(() => _membershipService.GetSwitchMembershipModel(_standardYearlyMembership.Id));
             Assert.Equal(Globalisation.Dictionary.SwitchMembershipErrorAlreadySubscribed, ex.Message);
+        }
+
+        [Fact]
+        public void GetSwitchMembershipModel_isUpgrade()
+        {
+            AuthenticateUser();
+
+            var startsOn = DateTime.Today.AddDays(-7);
+            var userMemberships = new List<UserMembership>
+            {
+                new UserMembership
+                {
+                    Id = 7,
+                    UserId = _userId,
+                    MembershipOptionId = _standardMonthlyMembership.Id,
+                    MembershipOption = _standardMonthlyMembership,
+                    StartsOn = startsOn,
+                    EndsOn = startsOn.AddMonths(1)
+                }
+            };
+
+            _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
+                .Returns(userMemberships.AsQueryable());
+
+
+            var result = _membershipService.GetSwitchMembershipModel(_standardYearlyMembership.Id);
+            Assert.True(result.IsUpgrade);
         }
 
         private void AuthenticateUser()
