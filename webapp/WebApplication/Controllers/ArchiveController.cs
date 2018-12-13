@@ -104,9 +104,9 @@ namespace K9.WebApplication.Controllers
 
         private List<ArchiveItemCategory> GetArchiveItemCategories()
         {
-            var primaryActiveUserMembership = _membershipService.GetPrimaryActiveUserMembership();
+            var activeUserMembership = _membershipService.GetActiveUserMembership();
             var itemCategories = _archiveItemCategoryRepo.List();
-            if (primaryActiveUserMembership == null)
+            if (activeUserMembership == null)
             {
                 itemCategories = itemCategories.Where(_ => !_.IsSubscriptionOnly).ToList();
             }

@@ -124,6 +124,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Enable Auto-Renewal.
+        /// </summary>
+        public static string AutoRenewLabel {
+            get {
+                return ResourceManager.GetString("AutoRenewLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string Back {

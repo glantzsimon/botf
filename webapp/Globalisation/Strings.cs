@@ -33,6 +33,7 @@
             public const string StartsOnLabel = "StartsOnLabel";
             public const string EndsOnLabel = "EndsOnLabel";
             public const string TotalLabel = "TotalLabel";
+            public const string AutoRenewLabel = "AutoRenewLabel";
         }
 
         public static class Names

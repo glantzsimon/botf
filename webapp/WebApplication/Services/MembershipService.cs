@@ -38,31 +38,35 @@ namespace K9.WebApplication.Services
         {
             userId = userId ?? _authentication.CurrentUserId;
             var membershipOptions = _membershipOptionRepository.List();
-            var userMemberships = GetActiveUserMemberships();
-            var primaryMembership = GetPrimaryActiveUserMembership(userId);
+            var activeUserMemberships = GetActiveUserMemberships();
+            var activeUserMembership = GetActiveUserMembership(userId);
+            var scheduledMembership = GetScheduledDowngradeUserMembership(userId);
+
             return new MembershipViewModel
             {
                 Memberships = new List<MembershipModel>(membershipOptions.Select(membershipOption =>
                 {
-                    var userMembership = userMemberships.FirstOrDefault(_ =>
+                    var userMembership = activeUserMemberships.FirstOrDefault(_ =>
                         _.UserId == userId & _.MembershipOptionId == membershipOption.Id);
                     return new MembershipModel(
                         membershipOption,
                         userMembership != null,
                         false,
-                        primaryMembership != null && membershipOption.CanUpgradeFrom(primaryMembership.MembershipOption),
-                        primaryMembership?.Id ?? 0
+                        activeUserMembership != null && membershipOption.CanUpgradeFrom(activeUserMembership.MembershipOption),
+                        scheduledMembership != null && membershipOption.SubscriptionType == scheduledMembership.MembershipOption.SubscriptionType,
+                        scheduledMembership != null && userMembership != null,
+                        activeUserMembership?.Id ?? 0
                     );
                 }))
             };
         }
 
-        public List<UserMembership> GetActiveUserMemberships(int? userId = null)
+        public List<UserMembership> GetActiveUserMemberships(int? userId = null, bool includeScheduled = false)
         {
             userId = userId ?? _authentication.CurrentUserId;
             var membershipOptions = _membershipOptionRepository.List();
             var userMemberships = _authentication.IsAuthenticated
-                ? _userMembershipRepository.Find(_ => _.UserId == userId).ToList().Where(_ => _.IsActive).Select(userMembership =>
+                ? _userMembershipRepository.Find(_ => _.UserId == userId).ToList().Where(_ => _.IsActive || includeScheduled && _.EndsOn > DateTime.Today).Select(userMembership =>
                 {
                     userMembership.MembershipOption = membershipOptions.FirstOrDefault(m => m.Id == userMembership.MembershipOptionId);
                     return userMembership;
@@ -72,14 +76,25 @@ namespace K9.WebApplication.Services
         }
 
         /// <summary>
-        /// Sometimes user memberships can overlap, when upgrading for example. This returns the primary membership.
+        /// Sometimes user memberships can overlap, when upgrading for example. This returns the Active membership.
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        public UserMembership GetPrimaryActiveUserMembership(int? userId = null)
+        public UserMembership GetActiveUserMembership(int? userId = null)
         {
             return GetActiveUserMemberships(userId).OrderByDescending(_ => _.MembershipOption.SubscriptionType)
                 .FirstOrDefault();
+        }
+
+        /// <summary>
+        /// A user can opt to downgrade at the end of the current subscription. This returns the membership option that will auto renew when the active membership expires
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public UserMembership GetScheduledDowngradeUserMembership(int? userId = null)
+        {
+            var activeUserMembership = GetActiveUserMembership(userId);
+            return GetActiveUserMemberships(userId, true).FirstOrDefault(_ => _.StartsOn > activeUserMembership.EndsOn && _.IsAutoRenew.HasValue && _.IsAutoRenew.Value);
         }
 
         public MembershipModel GetSwitchMembershipModel(int id)
@@ -90,35 +105,53 @@ namespace K9.WebApplication.Services
                 throw new Exception(Globalisation.Dictionary.SwitchMembershipErrorNotSubscribed);
             }
 
-            var primaryUserMembership = GetPrimaryActiveUserMembership();
-            if (primaryUserMembership.MembershipOptionId == id)
+            var activeUserMembership = GetActiveUserMembership();
+            if (activeUserMembership.MembershipOptionId == id)
+            {
+                throw new Exception(Globalisation.Dictionary.SwitchMembershipErrorAlreadySubscribed);
+            }
+
+            var scheduledUserMembership = GetScheduledDowngradeUserMembership();
+            if (scheduledUserMembership.MembershipOptionId == id)
             {
                 throw new Exception(Globalisation.Dictionary.SwitchMembershipErrorAlreadySubscribed);
             }
 
             var membershipOption = _membershipOptionRepository.Find(id);
+            var isUpgrade = membershipOption.CanUpgradeFrom(activeUserMembership.MembershipOption);
+
             return new MembershipModel(
-                membershipOption, false, true,
-                membershipOption.CanUpgradeFrom(primaryUserMembership.MembershipOption),
-                primaryUserMembership?.Id ?? 0);
+                membershipOption,
+                false,
+                true,
+                isUpgrade,
+                !isUpgrade,
+                true,
+                activeUserMembership?.Id ?? 0);
         }
 
         public MembershipModel GetPurchaseMembershipModel(int id)
         {
-            var primaryUserMembership = GetPrimaryActiveUserMembership();
-            if (primaryUserMembership?.MembershipOptionId == id)
+            var activeUserMembership = GetActiveUserMembership();
+            if (activeUserMembership?.MembershipOptionId == id)
             {
                 throw new Exception(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribed);
             }
 
             var membershipOption = _membershipOptionRepository.Find(id);
             return new MembershipModel(
-                membershipOption, false, true, false, primaryUserMembership?.Id ?? 0);
+                membershipOption,
+                false,
+                true,
+                false,
+                false,
+                true,
+                activeUserMembership?.Id ?? 0);
         }
 
         public StripeModel GetPurchaseStripeModel(int id)
         {
-            var primaryUserMembership = GetPrimaryActiveUserMembership();
+            var activeUserMembership = GetActiveUserMembership();
             var membershipOption = _membershipOptionRepository.Find(id);
             if (membershipOption == null)
             {
@@ -130,7 +163,7 @@ namespace K9.WebApplication.Services
             {
                 PublishableKey = _stripeConfig.PublishableKey,
                 SubscriptionAmount = membershipOption.Price,
-                SubscriptionDiscount = primaryUserMembership != null ? GetDiscount(primaryUserMembership, membershipOption) : 0,
+                SubscriptionDiscount = activeUserMembership != null ? GetDiscount(activeUserMembership, membershipOption) : 0,
                 Description = membershipOption.SubscriptionTypeNameLocal,
                 MembershipOptionId = id,
                 LocalisedCurrencyThreeLetters = StripeModel.GetLocalisedCurrency()
@@ -166,19 +199,19 @@ namespace K9.WebApplication.Services
             }
         }
 
-        private void TerminateExistingMemberships(int primaryUserMembershipId)
+        private void TerminateExistingMemberships(int activeUserMembershipId)
         {
             var userMemberships = GetActiveUserMemberships();
-            var primaryUserMembership =
-                userMemberships.FirstOrDefault(_ => _.MembershipOptionId == primaryUserMembershipId);
-            if (primaryUserMembership == null)
+            var activeUserMembership =
+                userMemberships.FirstOrDefault(_ => _.MembershipOptionId == activeUserMembershipId);
+            if (activeUserMembership == null)
             {
-                _logger.Error($"MembershipService => TerminateExistingMemberships => PrimaryMembership cannot be determined or does not exist");
-                throw new Exception("Primary membership not found");
+                _logger.Error($"MembershipService => TerminateExistingMemberships => ActiveMembership cannot be determined or does not exist");
+                throw new Exception("Active membership not found");
             }
-            foreach (var userMembership in userMemberships.Where(_ => _.MembershipOptionId != primaryUserMembershipId))
+            foreach (var userMembership in userMemberships.Where(_ => _.MembershipOptionId != activeUserMembershipId))
             {
-                userMembership.EndsOn = primaryUserMembership.StartsOn;
+                userMembership.EndsOn = activeUserMembership.StartsOn;
                 _userMembershipRepository.Update(userMembership);
             }
         }

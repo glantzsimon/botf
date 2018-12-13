@@ -634,4 +634,7 @@
   <data name="Here" xml:space="preserve">
     <value>Here</value>
   </data>
+  <data name="AutoRenewLabel" xml:space="preserve">
+    <value>Enable Auto-Renewal</value>
+  </data>
 </root>

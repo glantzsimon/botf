@@ -11,7 +11,8 @@ namespace K9.WebApplication.Services
         MembershipModel GetPurchaseMembershipModel(int id);
         StripeModel GetPurchaseStripeModel(int id);
         void ProcessPurchase(StripeModel model);
-        List<UserMembership> GetActiveUserMemberships(int? userId = null);
-        UserMembership GetPrimaryActiveUserMembership(int? userId = null);
+        List<UserMembership> GetActiveUserMemberships(int? userId = null, bool includeScheduled = false);
+        UserMembership GetActiveUserMembership(int? userId = null);
+        UserMembership GetScheduledDowngradeUserMembership(int? userId = null);
     }
 }

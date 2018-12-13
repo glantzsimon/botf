@@ -634,4 +634,7 @@
   <data name="GoToMultimediaLibrary" xml:space="preserve">
     <value>Consultez notre Médiathèque !</value>
   </data>
+  <data name="AutoRenewLabel" xml:space="preserve">
+    <value>Activer Le Renouvellement Automaqitue</value>
+  </data>
 </root>

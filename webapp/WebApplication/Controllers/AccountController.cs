@@ -228,7 +228,7 @@ namespace K9.WebApplication.Controllers
             return View(new MyAccountViewModel
             {
                 User = user,
-                Membership = _membershipService.GetPrimaryActiveUserMembership(user?.Id)
+                Membership = _membershipService.GetActiveUserMembership(user?.Id)
             });
         }
 
@@ -267,7 +267,7 @@ namespace K9.WebApplication.Controllers
             return View("MyAccount", new MyAccountViewModel
             {
                 User = model,
-                Membership = _membershipService.GetPrimaryActiveUserMembership(model.Id)
+                Membership = _membershipService.GetActiveUserMembership(model.Id)
             });
         }
 

@@ -109,10 +109,9 @@ namespace K9.WebApplication.Tests.Unit.Services
         [Fact]
         public void GetMembershipModel_StandardMonthly_CanUpgradeThree()
         {
-            IsAuthenticated();
-
-
-
+            AuthenticateUser();
+            
+            var startsOn = DateTime.Today.AddDays(-7);  
             var userMemberships = new List<UserMembership>
             {
                 new UserMembership
@@ -120,35 +119,25 @@ namespace K9.WebApplication.Tests.Unit.Services
                     UserId = _userId,
                     MembershipOptionId = _standardMonthlyMembership.Id,
                     MembershipOption = _standardMonthlyMembership,
-                    StartsOn = new DateTime(2018, 1, 1),
-                    EndsOn = new DateTime(2018, 1, 1).AddMonths(1)
-
-                },
-                new UserMembership()
+                    StartsOn = startsOn,
+                    EndsOn = startsOn.AddMonths(1)
+                }
             };
 
             _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
                 .Returns(userMemberships.AsQueryable());
 
-            //    .Callback<Donation>(result => expectedDonation = result);
+            var model = _membershipService.GetMembershipViewModel();
 
-            //var actualDonation = new Donation
-            //{
-            //    Customer = "Simon Glantz",
-            //    CustomerEmail = "simon.glantz@mac.com",
-            //    DonationAmount = 50,
-            //    Currency = "USD",
-            //    NumberOfIbogas = 1
-
-            //};
-            //_membershipService.CreateDonation(actualDonation);
-
-            //_userMembershipRepository.Verify(_ => _.Create(It.IsAny<Donation>()), Times.Once);
-            //_mailer.Verify(_ => _.SendEmail(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>()), Times.Exactly(2));
-            //Assert.Equal(expectedDonation, actualDonation);
+            Assert.Equal(1, _membershipService.GetActiveUserMemberships().Count);
+            Assert.Equal(userMemberships.First(), _membershipService.GetActiveUserMembership());
+            Assert.Equal(0, model.Memberships.Count(_ => _.IsSelected));
+            Assert.Equal(3, model.Memberships.Count(_ => _.IsUpgrade));
+            Assert.Equal(1, model.Memberships.Count(_ => _.IsSubscribed));
+            Assert.Equal(3, model.Memberships.Count(_ => _.IsSelectable));
         }
 
-        private void IsAuthenticated()
+        private void AuthenticateUser()
         {
             _authentication.SetupGet(_ => _.IsAuthenticated).Returns(true);
             _authentication.SetupGet(_ => _.CurrentUserId).Returns(_userId);
