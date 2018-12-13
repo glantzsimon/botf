@@ -9,22 +9,22 @@ namespace K9.WebApplication.Models
         public bool IsSelected { get; set; }
         public bool IsSubscribed { get; set; }
         public bool IsUpgrade { get; set; }
-        public bool IsScheduledDowngrade { get; set; }
+        public bool IsScheduledSwitch { get; set; }
         public bool IsSelectable { get; set; }
-        public int ActiveMembershipId { get; set; }
+        public int ActiveUserMembershipId { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AutoRenewLabel)]
         public bool IsAutoRenew { get; set; }
 
-        public MembershipModel(MembershipOption membershipOption, bool isSubsribed, bool isSelected, bool isUpgrade, bool isScheduledDowngrade, bool isSelectable, int activeMembershipId)
+        public MembershipModel(MembershipOption membershipOption, bool isSubsribed, bool isSelected, bool isUpgrade, bool isScheduledSwitch, bool isSelectable, int activeUserMembershipId)
         {
             MembershipOption = membershipOption;
             IsSubscribed = isSubsribed;
             IsSelected = isSelected;
             IsUpgrade = isUpgrade;
-            IsScheduledDowngrade = isScheduledDowngrade;
+            IsScheduledSwitch = isScheduledSwitch;
             IsSelectable = isSelectable;
-            ActiveMembershipId = activeMembershipId;
+            ActiveUserMembershipId = activeUserMembershipId;
         }
 
         public string MembershipDisplayCssClass => IsSelected ? "membership-selected" : IsUpgrade ? "membership-upgrade" : "";

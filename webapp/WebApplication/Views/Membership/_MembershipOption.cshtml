@@ -17,7 +17,7 @@
             }
             else if (Model.IsSelectable)
             {
-                var buttonText = Model.ActiveMembershipId > 0
+                var buttonText = Model.ActiveUserMembershipId > 0
                     ? Model.IsUpgrade
                         ? K9.Globalisation.Dictionary.Upgrade
                         : K9.Globalisation.Dictionary.Switch
