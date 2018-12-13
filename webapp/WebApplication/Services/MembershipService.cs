@@ -38,9 +38,9 @@ namespace K9.WebApplication.Services
         {
             userId = userId ?? _authentication.CurrentUserId;
             var membershipOptions = _membershipOptionRepository.List();
-            var activeUserMemberships = GetActiveUserMemberships();
+            var activeUserMemberships = GetActiveUserMemberships(userId, true);
             var activeUserMembership = GetActiveUserMembership(userId);
-            var scheduledMembership = GetScheduledDowngradeUserMembership(userId);
+            var scheduledMembership = GetScheduledSwitchUserMembership(userId);
 
             return new MembershipViewModel
             {
@@ -48,16 +48,16 @@ namespace K9.WebApplication.Services
                 {
                     var isSubscribed = activeUserMemberships.FirstOrDefault(_ =>
                                           _.UserId == userId & _.MembershipOptionId == membershipOption.Id) != null;
-                    var isScheduledDowngrade = scheduledMembership != null && membershipOption.SubscriptionType == scheduledMembership.MembershipOption.SubscriptionType;
-                    return new MembershipModel(
-                        membershipOption,
-                        isSubscribed,
-                        false,
-                        activeUserMembership != null && membershipOption.CanUpgradeFrom(activeUserMembership.MembershipOption),
-                        isScheduledDowngrade,
-                        !isScheduledDowngrade && !isSubscribed,
-                        activeUserMembership?.Id ?? 0
-                    );
+                    var isScheduledSwitch = scheduledMembership != null && membershipOption.SubscriptionType == scheduledMembership.MembershipOption.SubscriptionType;
+                    return new MembershipModel(membershipOption)
+                    {
+                        IsSubscribed = isSubscribed,
+                        IsSelected = false,
+                        IsUpgrade = activeUserMembership != null && membershipOption.CanUpgradeFrom(activeUserMembership.MembershipOption),
+                        IsScheduledSwitch = isScheduledSwitch,
+                        IsSelectable = !isScheduledSwitch && !isSubscribed,
+                        ActiveUserMembershipId = activeUserMembership?.Id ?? 0
+                    };
                 }))
             };
         }
@@ -92,7 +92,7 @@ namespace K9.WebApplication.Services
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        public UserMembership GetScheduledDowngradeUserMembership(int? userId = null)
+        public UserMembership GetScheduledSwitchUserMembership(int? userId = null)
         {
             var activeUserMembership = GetActiveUserMembership(userId);
             return GetActiveUserMemberships(userId, true).FirstOrDefault(_ => _.StartsOn > activeUserMembership.EndsOn && _.IsAutoRenew);
@@ -112,7 +112,7 @@ namespace K9.WebApplication.Services
                 throw new Exception(Globalisation.Dictionary.SwitchMembershipErrorAlreadySubscribed);
             }
 
-            var scheduledUserMembership = GetScheduledDowngradeUserMembership();
+            var scheduledUserMembership = GetScheduledSwitchUserMembership();
             if (scheduledUserMembership.MembershipOptionId == id)
             {
                 throw new Exception(Globalisation.Dictionary.SwitchMembershipErrorAlreadySubscribed);
@@ -121,14 +121,15 @@ namespace K9.WebApplication.Services
             var membershipOption = _membershipOptionRepository.Find(id);
             var isUpgrade = membershipOption.CanUpgradeFrom(activeUserMembership.MembershipOption);
 
-            return new MembershipModel(
-                membershipOption,
-                false,
-                true,
-                isUpgrade,
-                !isUpgrade,
-                true,
-                activeUserMembership?.Id ?? 0);
+            return new MembershipModel(membershipOption)
+            {
+                IsSubscribed = false,
+                IsSelected = true,
+                IsUpgrade = isUpgrade,
+                IsScheduledSwitch = !isUpgrade,
+                IsSelectable = true,
+                ActiveUserMembershipId = activeUserMembership?.Id ?? 0
+            };
         }
 
         public MembershipModel GetPurchaseMembershipModel(int id)
@@ -140,14 +141,15 @@ namespace K9.WebApplication.Services
             }
 
             var membershipOption = _membershipOptionRepository.Find(id);
-            return new MembershipModel(
-                membershipOption,
-                false,
-                true,
-                false,
-                false,
-                true,
-                activeUserMembership?.Id ?? 0);
+            return new MembershipModel(membershipOption)
+            {
+                IsSubscribed = false,
+                IsSelected = true,
+                IsUpgrade = false,
+                IsScheduledSwitch = false,
+                IsSelectable = true,
+                ActiveUserMembershipId = activeUserMembership?.Id ?? 0
+            };
         }
 
         public StripeModel GetPurchaseStripeModel(int id)

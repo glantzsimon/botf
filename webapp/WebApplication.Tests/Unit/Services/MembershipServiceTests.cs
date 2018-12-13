@@ -110,8 +110,8 @@ namespace K9.WebApplication.Tests.Unit.Services
         public void GetMembershipModel_StandardMonthly_CanUpgradeThree()
         {
             AuthenticateUser();
-            
-            var startsOn = DateTime.Today.AddDays(-7);  
+
+            var startsOn = DateTime.Today.AddDays(-7);
             var userMemberships = new List<UserMembership>
             {
                 new UserMembership
@@ -141,8 +141,8 @@ namespace K9.WebApplication.Tests.Unit.Services
         public void GetMembershipModel_StandardYearly_CanUpgradeTwo()
         {
             AuthenticateUser();
-            
-            var startsOn = DateTime.Today.AddDays(-7);  
+
+            var startsOn = DateTime.Today.AddDays(-7);
             var userMemberships = new List<UserMembership>
             {
                 new UserMembership
@@ -170,11 +170,11 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Fact]
-        public void GetMembershipModel_StandardYearly_CanUpgradeOne()
+        public void GetMembershipModel_PlatinumMonthly_CanUpgradeOne()
         {
             AuthenticateUser();
-            
-            var startsOn = DateTime.Today.AddDays(-7);  
+
+            var startsOn = DateTime.Today.AddDays(-7);
             var userMemberships = new List<UserMembership>
             {
                 new UserMembership
@@ -183,7 +183,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                     MembershipOptionId = _platinumMonthlyMembership.Id,
                     MembershipOption = _platinumMonthlyMembership,
                     StartsOn = startsOn,
-                    EndsOn = startsOn.AddYears(1)
+                    EndsOn = startsOn.AddMonths(1)
                 }
             };
 
@@ -202,11 +202,11 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Fact]
-        public void GetMembershipModel_StandardYearly_CanUpgradeNone()
+        public void GetMembershipModel_PlatinumYearly_CanUpgradeNone()
         {
             AuthenticateUser();
-            
-            var startsOn = DateTime.Today.AddDays(-7);  
+
+            var startsOn = DateTime.Today.AddDays(-7);
             var userMemberships = new List<UserMembership>
             {
                 new UserMembership
@@ -233,6 +233,129 @@ namespace K9.WebApplication.Tests.Unit.Services
             Assert.Equal(3, model.Memberships.Count(_ => _.IsSelectable));
             Assert.Equal(0, model.Memberships.Count(_ => _.IsScheduledSwitch));
             Assert.Equal(7, model.Memberships.First().ActiveUserMembershipId);
+        }
+
+        [Fact]
+        public void GetMembershipModel_CanUpgradeOne_AndSwitchOne()
+        {
+            AuthenticateUser();
+
+            var startsOn = DateTime.Today.AddDays(-7);
+            var scheduledStartsOn = startsOn.AddMonths(1).AddDays(1);
+            var scheduledUserMembership = new UserMembership
+            {
+                Id = 8,
+                UserId = _userId,
+                MembershipOptionId = _standardMonthlyMembership.Id,
+                MembershipOption = _standardMonthlyMembership,
+                StartsOn = scheduledStartsOn,
+                EndsOn = scheduledStartsOn.AddMonths(1),
+                IsAutoRenew = true
+            };
+            var userMemberships = new List<UserMembership>
+            {
+                new UserMembership
+                {
+                    Id = 7,
+                    UserId = _userId,
+                    MembershipOptionId = _platinumMonthlyMembership.Id,
+                    MembershipOption = _platinumMonthlyMembership,
+                    StartsOn = startsOn,
+                    EndsOn = startsOn.AddMonths(1)
+                },
+                scheduledUserMembership
+            };
+
+            _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
+                .Returns(userMemberships.AsQueryable());
+
+            var model = _membershipService.GetMembershipViewModel();
+            var scheduledmembershipResult = _membershipService.GetScheduledSwitchUserMembership();
+
+            Assert.Equal(1, _membershipService.GetActiveUserMemberships().Count);
+            Assert.Equal(userMemberships.First(), _membershipService.GetActiveUserMembership());
+            Assert.Equal(0, model.Memberships.Count(_ => _.IsSelected));
+            Assert.Equal(1, model.Memberships.Count(_ => _.IsUpgrade));
+            Assert.Equal(2, model.Memberships.Count(_ => _.IsSubscribed));
+            Assert.Equal(2, model.Memberships.Count(_ => _.IsSelectable));
+            Assert.Equal(1, model.Memberships.Count(_ => _.IsScheduledSwitch));
+            Assert.Equal(7, model.Memberships.First().ActiveUserMembershipId);
+            Assert.Equal(scheduledUserMembership, scheduledmembershipResult);
+        }
+
+        [Fact]
+        public void GetSwitchMembershipModel_ShouldThrowError_NoSubscriptions()
+        {
+            AuthenticateUser();
+
+            var ex = Assert.Throws<Exception>(() => _membershipService.GetSwitchMembershipModel(1));
+            Assert.Equal(Globalisation.Dictionary.SwitchMembershipErrorNotSubscribed, ex.Message);
+        }
+
+        [Fact]
+        public void GetSwitchMembershipModel_ShouldThrowError_SameSubscriptionId()
+        {
+            AuthenticateUser();
+
+            var startsOn = DateTime.Today.AddDays(-7);
+            var userMemberships = new List<UserMembership>
+            {
+                new UserMembership
+                {
+                    Id = 7,
+                    UserId = _userId,
+                    MembershipOptionId = _standardMonthlyMembership.Id,
+                    MembershipOption = _standardMonthlyMembership,
+                    StartsOn = startsOn,
+                    EndsOn = startsOn.AddMonths(1)
+                }
+            };
+
+            _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
+                .Returns(userMemberships.AsQueryable());
+
+
+            var ex = Assert.Throws<Exception>(() => _membershipService.GetSwitchMembershipModel(_standardMonthlyMembership.Id));
+            Assert.Equal(Globalisation.Dictionary.SwitchMembershipErrorAlreadySubscribed, ex.Message);
+        }
+
+        [Fact]
+        public void GetSwitchMembershipModel_ShouldThrowError_ScheduledIsSameSubscriptionId()
+        {
+            AuthenticateUser();
+
+            var startsOn = DateTime.Today.AddDays(-7);
+            var scheduledStartsOn = startsOn.AddMonths(1).AddDays(1);
+            var scheduledUserMembership = new UserMembership
+            {
+                Id = 8,
+                UserId = _userId,
+                MembershipOptionId = _standardYearlyMembership.Id,
+                MembershipOption = _standardYearlyMembership,
+                StartsOn = scheduledStartsOn,
+                EndsOn = scheduledStartsOn.AddMonths(1),
+                IsAutoRenew = true
+            };
+            var userMemberships = new List<UserMembership>
+            {
+                new UserMembership
+                {
+                    Id = 7,
+                    UserId = _userId,
+                    MembershipOptionId = _platinumMonthlyMembership.Id,
+                    MembershipOption = _platinumMonthlyMembership,
+                    StartsOn = startsOn,
+                    EndsOn = startsOn.AddMonths(1)
+                },
+                scheduledUserMembership
+            };
+
+            _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
+                .Returns(userMemberships.AsQueryable());
+
+
+            var ex = Assert.Throws<Exception>(() => _membershipService.GetSwitchMembershipModel(_standardYearlyMembership.Id));
+            Assert.Equal(Globalisation.Dictionary.SwitchMembershipErrorAlreadySubscribed, ex.Message);
         }
 
         private void AuthenticateUser()

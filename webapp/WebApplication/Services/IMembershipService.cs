@@ -13,6 +13,6 @@ namespace K9.WebApplication.Services
         void ProcessPurchase(StripeModel model);
         List<UserMembership> GetActiveUserMemberships(int? userId = null, bool includeScheduled = false);
         UserMembership GetActiveUserMembership(int? userId = null);
-        UserMembership GetScheduledDowngradeUserMembership(int? userId = null);
+        UserMembership GetScheduledSwitchUserMembership(int? userId = null);
     }
 }
