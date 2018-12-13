@@ -197,6 +197,10 @@
     <Compile Include="Migrations\201811110744144_AddUserMembership.Designer.cs">
       <DependentUpon>201811110744144_AddUserMembership.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812130152412_Add_AutoRenew.cs" />
+    <Compile Include="Migrations\201812130152412_Add_AutoRenew.Designer.cs">
+      <DependentUpon>201812130152412_Add_AutoRenew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\LocalMigrationsConfiguration.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\UserMembership.cs" />
@@ -249,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201811110744144_AddUserMembership.resx">
       <DependentUpon>201811110744144_AddUserMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812130152412_Add_AutoRenew.resx">
+      <DependentUpon>201812130152412_Add_AutoRenew.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

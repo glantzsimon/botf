@@ -1,4 +1,5 @@
 ﻿using K9.DataAccessLayer.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace K9.WebApplication.Models
 {
@@ -11,6 +12,9 @@ namespace K9.WebApplication.Models
         public bool IsScheduledDowngrade { get; set; }
         public bool IsSelectable { get; set; }
         public int ActiveMembershipId { get; set; }
+
+        [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AutoRenewLabel)]
+        public bool IsAutoRenew { get; set; }
 
         public MembershipModel(MembershipOption membershipOption, bool isSubsribed, bool isSelected, bool isUpgrade, bool isScheduledDowngrade, bool isSelectable, int activeMembershipId)
         {

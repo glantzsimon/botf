@@ -46,15 +46,16 @@ namespace K9.WebApplication.Services
             {
                 Memberships = new List<MembershipModel>(membershipOptions.Select(membershipOption =>
                 {
-                    var userMembership = activeUserMemberships.FirstOrDefault(_ =>
-                        _.UserId == userId & _.MembershipOptionId == membershipOption.Id);
+                    var isSubscribed = activeUserMemberships.FirstOrDefault(_ =>
+                                          _.UserId == userId & _.MembershipOptionId == membershipOption.Id) != null;
+                    var isScheduledDowngrade = scheduledMembership != null && membershipOption.SubscriptionType == scheduledMembership.MembershipOption.SubscriptionType;
                     return new MembershipModel(
                         membershipOption,
-                        userMembership != null,
+                        isSubscribed,
                         false,
                         activeUserMembership != null && membershipOption.CanUpgradeFrom(activeUserMembership.MembershipOption),
-                        scheduledMembership != null && membershipOption.SubscriptionType == scheduledMembership.MembershipOption.SubscriptionType,
-                        scheduledMembership != null && userMembership != null,
+                        isScheduledDowngrade,
+                        !isScheduledDowngrade && !isSubscribed,
                         activeUserMembership?.Id ?? 0
                     );
                 }))
@@ -94,7 +95,7 @@ namespace K9.WebApplication.Services
         public UserMembership GetScheduledDowngradeUserMembership(int? userId = null)
         {
             var activeUserMembership = GetActiveUserMembership(userId);
-            return GetActiveUserMemberships(userId, true).FirstOrDefault(_ => _.StartsOn > activeUserMembership.EndsOn && _.IsAutoRenew.HasValue && _.IsAutoRenew.Value);
+            return GetActiveUserMemberships(userId, true).FirstOrDefault(_ => _.StartsOn > activeUserMembership.EndsOn && _.IsAutoRenew);
         }
 
         public MembershipModel GetSwitchMembershipModel(int id)

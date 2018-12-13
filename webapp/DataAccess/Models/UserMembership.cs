@@ -34,7 +34,7 @@ namespace K9.DataAccessLayer.Models
         public DateTime EndsOn { get; set; }
 
         [Display(ResourceType = typeof(Globalisation.Dictionary), Name = Globalisation.Strings.Labels.AutoRenewLabel)]
-        public bool? IsAutoRenew { get; set; }
+        public bool IsAutoRenew { get; set; }
 
         public virtual User User { get; set; }
         public virtual MembershipOption MembershipOption { get; set; }
