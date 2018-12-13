@@ -18,16 +18,14 @@ namespace K9.WebApplication.Services
         private readonly IRepository<Donation> _donationRepository;
         private readonly ILogger _logger;
         private readonly IMailer _mailer;
-        private readonly IRepository<Contact> _contactsRepository;
         private readonly WebsiteConfiguration _config;
         private readonly UrlHelper _urlHelper;
 
-        public DonationService(IRepository<Donation> donationRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> config, IRepository<Contact> contactsRepository)
+        public DonationService(IRepository<Donation> donationRepository, ILogger logger, IMailer mailer, IOptions<WebsiteConfiguration> config)
         {
             _donationRepository = donationRepository;
             _logger = logger;
             _mailer = mailer;
-            _contactsRepository = contactsRepository;
             _config = config.Value;
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }

@@ -18,7 +18,6 @@ namespace K9.WebApplication.Tests.Unit.Services
         private readonly Mock<ILogger> _logger = new Mock<ILogger>();
         private readonly Mock<IMailer> _mailer = new Mock<IMailer>();
         private readonly Mock<IOptions<WebsiteConfiguration>> _config = new Mock<IOptions<WebsiteConfiguration>>();
-        private readonly Mock<IRepository<Contact>> _contactRepository = new Mock<IRepository<Contact>>();
         private DonationService _donationService;
 
         public DonationServiceTests()
@@ -36,7 +35,7 @@ namespace K9.WebApplication.Tests.Unit.Services
             });
 
             _donationService = new DonationService(_donationRepository.Object, _logger.Object, _mailer.Object,
-                _config.Object, _contactRepository.Object);
+                _config.Object);
         }
 
         [Fact]

@@ -250,6 +250,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Unit\Controllers\SupportControllerTests.cs" />
+    <Compile Include="Unit\Services\MembershipServiceTests.cs" />
     <Compile Include="Unit\Services\DonationServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>

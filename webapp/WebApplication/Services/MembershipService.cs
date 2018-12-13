@@ -7,6 +7,7 @@ using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using K9.SharedLibrary.Helpers;
 
 namespace K9.WebApplication.Services
 {
@@ -19,8 +20,9 @@ namespace K9.WebApplication.Services
         private readonly StripeConfiguration _stripeConfig;
         private readonly IStripeService _stripeService;
         private readonly IContactService _contactService;
+        private readonly IMailer _mailer;
 
-        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IOptions<StripeConfiguration> stripeConfig, IStripeService stripeService, IContactService contactService)
+        public MembershipService(ILogger logger, IAuthentication authentication, IRepository<MembershipOption> membershipOptionRepository, IRepository<UserMembership> userMembershipRepository, IOptions<StripeConfiguration> stripeConfig, IStripeService stripeService, IContactService contactService, IMailer mailer)
         {
             _logger = logger;
             _authentication = authentication;
@@ -29,6 +31,7 @@ namespace K9.WebApplication.Services
             _stripeConfig = stripeConfig.Value;
             _stripeService = stripeService;
             _contactService = contactService;
+            _mailer = mailer;
         }
 
         public MembershipViewModel GetMembershipViewModel(int? userId = null)
@@ -47,7 +50,7 @@ namespace K9.WebApplication.Services
                         membershipOption,
                         userMembership != null,
                         false,
-                        primaryMembership != null && primaryMembership.MembershipOption.SubscriptionType < membershipOption.SubscriptionType,
+                        primaryMembership != null && membershipOption.CanUpgradeFrom(primaryMembership.MembershipOption),
                         primaryMembership?.Id ?? 0
                     );
                 }))
@@ -96,7 +99,7 @@ namespace K9.WebApplication.Services
             var membershipOption = _membershipOptionRepository.Find(id);
             return new MembershipModel(
                 membershipOption, false, true,
-                membershipOption.SubscriptionType > primaryUserMembership.MembershipOption.SubscriptionType,
+                membershipOption.CanUpgradeFrom(primaryUserMembership.MembershipOption),
                 primaryUserMembership?.Id ?? 0);
         }
 
