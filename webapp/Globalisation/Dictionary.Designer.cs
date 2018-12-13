@@ -1349,6 +1349,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You cannot purchase the selected membership as you have an existing subscription..
+        /// </summary>
+        public static string PurchaseMembershipErrorAlreadySubscribedToAnother {
+            get {
+                return ResourceManager.GetString("PurchaseMembershipErrorAlreadySubscribedToAnother", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Quevain is the liaison officer with the Village Communities
         ///&lt;/h5&gt;.

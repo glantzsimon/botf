@@ -637,4 +637,7 @@
   <data name="AutoRenewLabel" xml:space="preserve">
     <value>Activer Le Renouvellement Automaqitue</value>
   </data>
+  <data name="PurchaseMembershipErrorAlreadySubscribedToAnother" xml:space="preserve">
+    <value>Vous avez déjà un autre abonnement et ne pouvez pas vous inscrire à celui-ci.</value>
+  </data>
 </root>

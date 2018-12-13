@@ -637,4 +637,7 @@
   <data name="AutoRenewLabel" xml:space="preserve">
     <value>Enable Auto-Renewal</value>
   </data>
+  <data name="PurchaseMembershipErrorAlreadySubscribedToAnother" xml:space="preserve">
+    <value>You cannot purchase the selected membership as you have an existing subscription.</value>
+  </data>
 </root>

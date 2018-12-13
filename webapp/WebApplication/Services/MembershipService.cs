@@ -140,6 +140,12 @@ namespace K9.WebApplication.Services
                 throw new Exception(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribed);
             }
 
+            var userMemberships = GetActiveUserMemberships();
+            if (userMemberships.Any())
+            {
+                throw new Exception(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribedToAnother);
+            }
+
             var membershipOption = _membershipOptionRepository.Find(id);
             return new MembershipModel(membershipOption)
             {

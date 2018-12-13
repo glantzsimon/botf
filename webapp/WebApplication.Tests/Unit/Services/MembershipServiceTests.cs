@@ -363,7 +363,7 @@ namespace K9.WebApplication.Tests.Unit.Services
         }
 
         [Fact]
-        public void GetSwitchMembershipModel_isUpgrade()
+        public void GetSwitchMembershipModel_IsUpgrade()
         {
             AuthenticateUser();
 
@@ -387,6 +387,86 @@ namespace K9.WebApplication.Tests.Unit.Services
 
             var result = _membershipService.GetSwitchMembershipModel(_standardYearlyMembership.Id);
             Assert.True(result.IsUpgrade);
+        }
+
+        [Fact]
+        public void GetSwitchMembershipModel_IsNotUpgrade()
+        {
+            AuthenticateUser();
+
+            var startsOn = DateTime.Today.AddDays(-7);
+            var userMemberships = new List<UserMembership>
+            {
+                new UserMembership
+                {
+                    Id = 7,
+                    UserId = _userId,
+                    MembershipOptionId = _standardYearlyMembership.Id,
+                    MembershipOption = _standardYearlyMembership,
+                    StartsOn = startsOn,
+                    EndsOn = startsOn.AddMonths(1)
+                }
+            };
+
+            _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
+                .Returns(userMemberships.AsQueryable());
+
+
+            var result = _membershipService.GetSwitchMembershipModel(_standardMonthlyMembership.Id);
+            Assert.False(result.IsUpgrade);
+        }
+
+        
+        [Fact]
+        public void GetPurchaseMembershipModel_ShouldThrowError_IfAlreadySubscribed()
+        {
+            AuthenticateUser();
+
+            var startsOn = DateTime.Today.AddDays(-7);
+            var userMemberships = new List<UserMembership>
+            {
+                new UserMembership
+                {
+                    Id = 7,
+                    UserId = _userId,
+                    MembershipOptionId = _standardYearlyMembership.Id,
+                    MembershipOption = _standardYearlyMembership,
+                    StartsOn = startsOn,
+                    EndsOn = startsOn.AddMonths(1)
+                }
+            };
+
+            _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
+                .Returns(userMemberships.AsQueryable());
+
+            var ex = Assert.Throws<Exception>(() => _membershipService.GetPurchaseMembershipModel(_standardYearlyMembership.Id));
+            Assert.Equal(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribed, ex.Message);
+        }
+
+        [Fact]
+        public void GetPurchaseMembershipModel_ShouldThrowError_IfSubscriptionsAlreadyExist()
+        {
+            AuthenticateUser();
+
+            var startsOn = DateTime.Today.AddDays(-7);
+            var userMemberships = new List<UserMembership>
+            {
+                new UserMembership
+                {
+                    Id = 7,
+                    UserId = _userId,
+                    MembershipOptionId = _standardYearlyMembership.Id,
+                    MembershipOption = _standardYearlyMembership,
+                    StartsOn = startsOn,
+                    EndsOn = startsOn.AddMonths(1)
+                }
+            };
+
+            _userMembershipRepository.Setup(_ => _.Find(It.IsAny<System.Linq.Expressions.Expression<Func<UserMembership, bool>>>()))
+                .Returns(userMemberships.AsQueryable());
+
+            var ex = Assert.Throws<Exception>(() => _membershipService.GetPurchaseMembershipModel(_platinumYearlyMembership.Id));
+            Assert.Equal(Globalisation.Dictionary.PurchaseMembershipErrorAlreadySubscribedToAnother, ex.Message);
         }
 
         private void AuthenticateUser()
