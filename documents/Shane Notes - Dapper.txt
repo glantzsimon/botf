@@ -1,0 +1,59 @@
+Notes Shane:
+-----------------
+
+SqlQuery<> - Map sql queries to sql statements, with up to 7 virtual properties (single or lists)
+
+SqlQuery<> - Custom delegate to map object to custom property 
+
+SqlQuery<> - Auto mapping to properties and auto add filter if model maps to underlying entity that implements ICompany
+
+--------------------------
+
+Partner needs to hvae an email address in order to auto create account from client registration
+
+--------------------------
+
+ public IEnumerable<RatingPartialListViewModel> GetRatingsList() => SqlQuery<RatingPartialListViewModel, Company>($"SELECT r.Id, r.Name, c.Id, c.Name FROM Ratings r JOIN Companies c ON r.CompanyId = c.Id where r.CompanyId = {SessionInfo.CompanyId}");
+
+        public IEnumerable<RatingPartialListViewModel> GetRatingsList2() => SqlQuery<RatingPartialListViewModel, Company>($"SELECT r.Id, r.Name, c.Id, c.Name FROM Ratings r JOIN Companies c ON r.CompanyId = c.Id WHERE r.CompanyId = {SessionInfo.CompanyId}",
+            (rating, company) => { rating.Company = company; });
+
+        public IEnumerable<RatingPartialListViewModel> GetRatingsList3() => SqlQuery<RatingPartialListViewModel, Company>();
+
+        public IEnumerable<CompanyPartialListViewModel> GetCompaniesList() => SqlQuery<CompanyPartialListViewModel, User>();
+
+        public IEnumerable<CompanyPartialListViewModel> GetCompaniesList2() => SqlQueryMultiple(
+            "SELECT Id, CompanyId, Name FROM Users " +
+            "SELECT Id, Name FROM Companies",
+            reader =>
+            {
+                var users = reader.Read<User>();
+                var companies = reader.Read<CompanyPartialListViewModel>();
+
+                foreach (var company in companies)
+                {
+                    company.Users = users.Where(e => e.CompanyId == company.Id);
+                }
+
+                return companies;
+            });
+
+        public IEnumerable<Rating> GetCompaniesList3() => SqlQueryMultiple(
+            "SELECT Id, CompanyId, Name FROM Ratings " +
+            "SELECT Id, Name FROM Companies",
+            reader =>
+            {
+                var ratings = reader.Read<Rating>();
+                var companies = reader.Read<Company>();
+
+                foreach (var rating in ratings)
+                {
+                    rating.Company = companies.FirstOrDefault(e => e.Id == rating.CompanyId);
+                }
+
+                return ratings;
+            });
+
+
+
+

@@ -38,7 +38,7 @@
                         }
                         @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<MembershipOption>(Permissions.View))
                         {
-                            <li class="@ViewContext.GetActiveClass("Index", "MembershipOptions") sub-item"><a href="@Url.Action("Index", "MembershipOptions")">@K9.Globalisation.Dictionary.MembershipOptions</a></li>
+                            @*<li class="@ViewContext.GetActiveClass("Index", "MembershipOptions") sub-item"><a href="@Url.Action("Index", "MembershipOptions")">@K9.Globalisation.Dictionary.MembershipOptions</a></li>*@
                         }
                         @if (roles.CurrentUserIsInRoles(RoleNames.Administrators) || roles.CurrentUserHasPermissions<NewsItem>(Permissions.Create, Permissions.Edit, Permissions.Delete))
                         {
@@ -57,7 +57,7 @@
                             <li class="@ViewContext.GetActiveClass("Index", "RolePermissions") sub-item"><a href="@Url.Action("Index", "RolePermissions")">@Dictionary.Role @Dictionary.Permissions</a></li>
                             <li class="@ViewContext.GetActiveClass("Index", "Users") sub-item"><a href="@Url.Action("Index", "Users")">@Dictionary.Users</a></li>
                             <li class="@ViewContext.GetActiveClass("Index", "UserRoles") sub-item"><a href="@Url.Action("Index", "UserRoles")">@Dictionary.UserRoles</a></li>
-                            <li class="@ViewContext.GetActiveClass("Index", "UserMemberships") sub-item"><a href="@Url.Action("Index", "UserMemberships")">@Dictionary.User @K9.Globalisation.Dictionary.MembershipOptions</a></li>
+                            @*<li class="@ViewContext.GetActiveClass("Index", "UserMemberships") sub-item"><a href="@Url.Action("Index", "UserMemberships")">@Dictionary.User @K9.Globalisation.Dictionary.MembershipOptions</a></li>*@
                         }
                     </ul>
                 </li>
