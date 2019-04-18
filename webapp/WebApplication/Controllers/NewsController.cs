@@ -10,11 +10,11 @@ using System.Web.Mvc;
 
 namespace K9.WebApplication.Controllers
 {
-    public class ActionController : BaseController
+    public class NewsController : BaseController
 	{
 		private readonly IRepository<NewsItem> _newsRepository;
 
-		public ActionController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<NewsItem> newsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper)
+		public NewsController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IRepository<NewsItem> newsRepository, IAuthentication authentication, IFileSourceHelper fileSourceHelper)
 			: base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
 		{
 			_newsRepository = newsRepository;

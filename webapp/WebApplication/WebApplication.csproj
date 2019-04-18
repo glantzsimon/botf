@@ -246,7 +246,7 @@
     <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\ArchiveItemsController.cs" />
     <Compile Include="Controllers\NewsItemsController.cs" />
-    <Compile Include="Controllers\ActionController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\RolePermissionsController.cs" />
@@ -295,6 +295,7 @@
     <Content Include="Content\site\desktop.css" />
     <Content Include="Content\site\elements.css" />
     <Content Include="Content\site\mobile.css" />
+    <Content Include="Content\site\sections\aboutus.css" />
     <Content Include="Content\site\sections\membership.css" />
     <Content Include="Content\site\sections\actions.css" />
     <Content Include="Content\site\sections\iboga.css" />
@@ -897,7 +898,7 @@
     <Content Include="Views\Shared\_PopupAlert.cshtml" />
     <Content Include="Views\Shared\_BreadCrumbs.cshtml" />
     <Content Include="Config\appsettings.json" />
-    <Content Include="Views\Action\Index.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\Archive\Index.cshtml" />
     <Content Include="Views\Iboga\Index.cshtml" />
     <Content Include="Views\Shared\Controls\_Carousel.cshtml" />
@@ -936,7 +937,7 @@
     <Content Include="Views\Shared\EditorTemplates\Html.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Html.cshtml" />
     <Content Include="Views\Shared\Controls\_LanguageSelector.cshtml" />
-    <Content Include="Views\Action\_NewsSummary.cshtml" />
+    <Content Include="Views\News\_NewsSummary.cshtml" />
     <Content Include="Images\archive\upload\ArchiveItem\1\Copy-Angela Thomas Facilities and property management  CV 081117  V2 %281%29.doc" />
     <Content Include="Images\archive\upload\ArchiveItem\1\Copy-Angela Thomas Facilities and property management  CV 081117  V2.pdf" />
     <Content Include="Images\archive\upload\ArchiveItem\1\Dadaabc teaching profile.docx" />
@@ -1040,7 +1041,7 @@
     <Content Include="Views\Shared\_CookieWarning.cshtml" />
     <Content Include="Views\Support\Index.cshtml" />
     <Content Include="Views\Support\_SupportUs.cshtml" />
-    <Content Include="Views\Action\_News.cshtml" />
+    <Content Include="Views\News\_News.cshtml" />
     <Content Include="Views\Contacts\_DisplayFields.cshtml" />
     <Content Include="Views\Contacts\_EditFields.cshtml" />
     <Content Include="Views\Contacts\Create.cshtml" />

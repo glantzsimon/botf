@@ -1031,7 +1031,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Multimedia.
+        ///   Looks up a localized string similar to Media.
         /// </summary>
         public static string MediaTheque {
             get {
