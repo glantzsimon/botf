@@ -57,3 +57,12 @@ Partner needs to hvae an email address in order to auto create account from clie
 
 
 
+----------
+
+Check casting
+
+Check Ratings DONE
+
+Move list and find to DapperAgent (so they can be overriden) - use different method
+
+Clone - don't need it anymore

@@ -12,6 +12,7 @@
     {
         @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)
         @Html.BootstrapEditorFor(model => model.DonationAmount)
+        @Html.BootstrapEditorFor(model => model.StripeEmail)
         @Html.BootstrapButton(Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
 
         <hr />

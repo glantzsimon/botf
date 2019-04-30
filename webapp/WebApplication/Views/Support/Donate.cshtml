@@ -14,6 +14,7 @@
     {
         @Html.BootstrapDisplayFor(model => model.AmountToDonate)
         @Html.HiddenFor(model => model.DonationAmount)
+        @Html.HiddenFor(model => model.StripeEmail)
         @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)
         <hr />
 
@@ -23,7 +24,8 @@
                 data-name="@WebsiteConfiguration.Instance.CompanyName"
                 data-description="@K9.Globalisation.Dictionary.DonationTo @WebsiteConfiguration.Instance.CompanyName"
                 data-billing-address="true"
-                data-image="@Url.AbsoluteContent("Images/company/botf_med.png")"
+                data-email="@Model.StripeEmail"
+                data-image="@Url.AbsoluteContent("~/Images/company/botf_med.png")"
                 data-locale="@Model.Locale"
                 data-zip-code="false"
                 data-currency="@Model.LocalisedCurrencyThreeLetters">

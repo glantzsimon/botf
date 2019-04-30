@@ -65,6 +65,11 @@ namespace K9.WebApplication.Models
 
         public string StripeToken { get; set; }
 
+        [Required(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary), ErrorMessageResourceName = Base.Globalisation.Strings.ErrorMessages.FieldIsRequired)]
+        [DataType(DataType.EmailAddress, ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary), ErrorMessageResourceName = Base.Globalisation.Strings.ErrorMessages.InvalidEmailAddress)]
+        [EmailAddress(ErrorMessageResourceType = typeof(Base.Globalisation.Dictionary), ErrorMessageResourceName = Base.Globalisation.Strings.ErrorMessages.InvalidEmailAddress)]
+        [Display(ResourceType = typeof(Dictionary), Name = Strings.Labels.EmailAddressLabel)]
+        [StringLength(255)]
         public string StripeEmail { get; set; }
 
         public string StripeBillingName { get; set; }
