@@ -21,6 +21,7 @@
         })
         @Html.HiddenFor(model => model.NumberOfTrees)
         @Html.HiddenFor(model => model.DonationAmount)
+        @Html.HiddenFor(model => model.StripeEmail)
         @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)
         <hr />
 
@@ -30,6 +31,7 @@
                 data-name="@WebsiteConfiguration.Instance.CompanyName"
                 data-description="@K9.Globalisation.Dictionary.SponsorIbogaTree"
                 data-billing-address="true"
+                data-email="@Model.StripeEmail"
                 data-image="@Url.AbsoluteContent("~/Images/company/botf_med.png")"
                 data-locale="@Model.Locale"
                 data-zip-code="false"

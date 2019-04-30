@@ -22,6 +22,7 @@ namespace K9.WebApplication.Controllers
     {
         private readonly ILogger _logger;
         private readonly IMailer _mailer;
+        private readonly IAuthentication _authentication;
         private readonly IStripeService _stripeService;
         private readonly IDonationService _donationService;
         private readonly IRepository<User> _userRepository;
@@ -34,6 +35,7 @@ namespace K9.WebApplication.Controllers
         {
             _logger = logger;
             _mailer = mailer;
+            _authentication = authentication;
             _stripeService = stripeService;
             _donationService = donationService;
             _userRepository = userRepository;
@@ -87,7 +89,8 @@ namespace K9.WebApplication.Controllers
             return View(new StripeModel
             {
                 DonationAmount = 10,
-                LocalisedCurrencyThreeLetters = StripeModel.GetLocalisedCurrency()
+                LocalisedCurrencyThreeLetters = StripeModel.GetLocalisedCurrency(),
+                StripeEmail = _authentication.IsAuthenticated ? _userRepository.Find(_authentication.CurrentUserId)?.EmailAddress : string.Empty
             });
         }
 
@@ -97,7 +100,8 @@ namespace K9.WebApplication.Controllers
             return View(new StripeModel
             {
                 NumberOfTrees = 1,
-                LocalisedCurrencyThreeLetters = "EUR" // We need to fix the currency to sponsor a tree
+                LocalisedCurrencyThreeLetters = "EUR", // We need to fix the currency to sponsor a tree
+                StripeEmail = _authentication.IsAuthenticated ? _userRepository.Find(_authentication.CurrentUserId)?.EmailAddress : string.Empty
             });
         }
 
