@@ -26,7 +26,7 @@
                         foreach (var item in Model.SelectedArchive.Items)
                         {
                             <div class="list-item-container">
-                                @Html.Partial("_ArchiveItem", item)
+                                @Html.Partial("_ArchiveItemPreview", item)
                             </div>
                             @Html.Separator()
                         }

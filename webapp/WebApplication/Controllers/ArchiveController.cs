@@ -10,6 +10,8 @@ using System.Linq;
 using System.Threading;
 using System.Web.Mvc;
 using K9.DataAccessLayer.Models;
+using K9.WebApplication.Extensions;
+using K9.WebApplication.Models;
 using K9.WebApplication.Services;
 
 namespace K9.WebApplication.Controllers
@@ -35,6 +37,63 @@ namespace K9.WebApplication.Controllers
         [OutputCache(Duration = 30, VaryByParam = "categoryId")]
         public ActionResult Index(int? categoryId)
         {
+            if (categoryId.HasValue && !GetArchiveItemCategories().Select(c => c.Id).Contains(categoryId.Value))
+            {
+                return RedirectToAction("Index");
+            }
+
+            return View(GetArchiveViewModel(categoryId));
+        }
+
+        [Route("archive/{title}")]
+        public ActionResult Details(string title)
+        {
+            var archiveItem = _archiveItemRepo.Find(e => e.Title.StartsWith(
+                            title
+                                .Replace("~", ":")
+                                .Replace("-", " ")
+                            .ToLower())).FirstOrDefault();
+            if (archiveItem == null)
+            {
+                return HttpNotFound();
+            }
+
+            var archiveModel = GetArchiveViewModel(archiveItem.CategoryId);
+            var model = new ArchiveItemViewModel { ArchiveViewModel = archiveModel, SelectedItemId = archiveItem.Id };
+            return View(model);
+        }
+
+        public JsonResult GetLinkPreview(string url)
+        {
+            try
+            {
+                return Json(_linkPreviewer.GetPreview(url, 600, 500), JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                return Json(new LinkPreviewResult(url, string.Empty, string.Empty, string.Empty), JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        public override string GetObjectName()
+        {
+            return string.Empty;
+        }
+
+        private List<ArchiveItemCategory> GetArchiveItemCategories()
+        {
+            var activeUserMembership = _membershipService.GetActiveUserMembership();
+            var itemCategories = _archiveItemCategoryRepo.List();
+            if (activeUserMembership == null)
+            {
+                itemCategories = itemCategories.Where(_ => !_.IsSubscriptionOnly).ToList();
+            }
+
+            return itemCategories;
+        }
+
+        private ArchiveViewModel GetArchiveViewModel(int? categoryId)
+        {
             var archiveItemTypes = _archiveItemTypeRepo.List();
             var archiveItemsToDisplay = _archiveItemRepo.Find(item => item.CategoryId == categoryId).ToList().Where(item => !item.IsShowLocalOnly || item.IsShowLocalOnly && item.LanguageCode == Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName)
                 .Select(a =>
@@ -43,7 +102,7 @@ namespace K9.WebApplication.Controllers
                     a.ArchiveItemType = archiveItemTypes.FirstOrDefault(c => c.Id == a.TypeId);
                     return a;
                 }).OrderByDescending(a => a.PublishedOn).ToList();
-            
+
             var archiveModel = new ArchiveViewModel
             {
                 CategoryId = categoryId ?? 0,
@@ -76,42 +135,9 @@ namespace K9.WebApplication.Controllers
                 } : null
             };
 
-            if (categoryId.HasValue && !GetArchiveItemCategories().Select(c => c.Id).Contains(categoryId.Value))
-            {
-                return RedirectToAction("Index");
-            }
-
             archiveModel.SelectedArchive?.Items.ForEach(item => LoadUploadedFiles(item));
-            return View(archiveModel);
-        }
 
-        public JsonResult GetLinkPreview(string url)
-        {
-            try
-            {
-                return Json(_linkPreviewer.GetPreview(url, 600, 500), JsonRequestBehavior.AllowGet);
-            }
-            catch (Exception e)
-            {
-                return Json(new LinkPreviewResult(url, string.Empty, string.Empty, string.Empty), JsonRequestBehavior.AllowGet);
-            }
-        }
-
-        public override string GetObjectName()
-        {
-            return string.Empty;
-        }
-
-        private List<ArchiveItemCategory> GetArchiveItemCategories()
-        {
-            var activeUserMembership = _membershipService.GetActiveUserMembership();
-            var itemCategories = _archiveItemCategoryRepo.List();
-            if (activeUserMembership == null)
-            {
-                itemCategories = itemCategories.Where(_ => !_.IsSubscriptionOnly).ToList();
-            }
-
-            return itemCategories;
+            return archiveModel;
         }
     }
 }

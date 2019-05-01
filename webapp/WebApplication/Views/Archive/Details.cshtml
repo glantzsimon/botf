@@ -1,0 +1,33 @@
+﻿@using System.Web.Mvc.Html
+@model K9.WebApplication.Models.ArchiveItemViewModel
+@{
+    ViewBag.Title = K9.Globalisation.Dictionary.MediaTheque;
+}
+
+@Html.Partial("_SponsorIbogaBanner")
+<div id="main-banner" class="banner-default main-menu">
+    @Html.Partial("_Navbar")
+</div>
+<div class="main-section">
+    <div class="container">
+        <div class="main-heading">
+            <h4 class="text-black" style="font-size: 1.5em; margin-top: 20px;">@Model.SelectedArchiveItem.Title</h4>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <div class="col-md-3">
+                @Html.Partial("_ArchiveMenu", Model.ArchiveViewModel)
+            </div>
+            <div class="col-md-9">
+                <div>
+                    <div class="list-item-container">
+                        @Html.Partial("_ArchiveItem", Model.SelectedArchiveItem)
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+    </div>
+</div>

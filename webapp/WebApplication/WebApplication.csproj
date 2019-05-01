@@ -258,11 +258,13 @@
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\CountriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Extensions\Extensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Dynamic.cs" />
     <Compile Include="Helpers\Separator.cs" />
+    <Compile Include="Models\ArchiveItemViewModel.cs" />
     <Compile Include="Models\MyAccountViewModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\MembershipViewModel.cs" />
@@ -1085,6 +1087,11 @@
     <Content Include="Views\Membership\SwitchPurchase.cshtml" />
     <Content Include="Views\Membership\SwitchPurchaseStart.cshtml" />
     <Content Include="Views\Membership\SwitchSchedule.cshtml" />
+    <Content Include="Views\News\_NewsItem.cshtml" />
+    <Content Include="Views\News\Details.cshtml" />
+    <Content Include="Views\News\_NewsPreview.cshtml" />
+    <Content Include="Views\Archive\Details.cshtml" />
+    <Content Include="Views\Archive\_ArchiveItemPreview.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
