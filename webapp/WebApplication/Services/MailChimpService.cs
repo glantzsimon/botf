@@ -1,6 +1,7 @@
 ﻿using K9.SharedLibrary.Models;
 using MailChimp.Net;
 using MailChimp.Net.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using MailChimpConfiguration = K9.WebApplication.Config.MailChimpConfiguration;
@@ -20,6 +21,11 @@ namespace K9.WebApplication.Services
 
         public void AddContact(string firstName, string lastName, string emailAddress)
         {
+            if (string.IsNullOrEmpty(emailAddress))
+            {
+                throw new Exception("Email address cannot be empty");
+            }
+
             var mailChimpManager = new MailChimpManager(_mailChimpConfig.MailChimpApiKey);
 
             mailChimpManager.Members.AddOrUpdateAsync(_mailChimpConfig.MailChimpListId, new Member
