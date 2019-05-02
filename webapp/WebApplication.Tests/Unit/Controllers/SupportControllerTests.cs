@@ -32,6 +32,7 @@ namespace K9.WebApplication.Tests.Unit.Controllers
         private readonly Mock<IOptions<WebsiteConfiguration>> _config = new Mock<IOptions<WebsiteConfiguration>>();
         private readonly Mock<IOptions<StripeConfiguration>> _stripeConfig = new Mock<IOptions<StripeConfiguration>>();
         private readonly Mock<IRepository<User>> _userRepository = new Mock<IRepository<User>>();
+        private readonly Mock<IMailChimpService> _mailChimpService = new Mock<IMailChimpService>();
         private SupportController _supportController;
 
         public SupportControllerTests()
@@ -53,7 +54,8 @@ namespace K9.WebApplication.Tests.Unit.Controllers
                 _stripeConfig.Object,
                 _donationService.Object,
                 _userRepository.Object,
-                _contactService.Object);
+                _contactService.Object,
+                _mailChimpService.Object);
         }
 
         [Fact]
