@@ -314,6 +314,7 @@
     <Content Include="Content\site\sections\actions.css" />
     <Content Include="Content\site\sections\iboga.css" />
     <Content Include="Content\site\sections\cookies.css" />
+    <Content Include="Content\site\sections\socialmedia.css" />
     <Content Include="Content\site\sections\support.css" />
     <Content Include="Content\site\sections\shop.css" />
     <Content Include="Content\site\sections\archive.css" />
@@ -692,6 +693,7 @@
     <Content Include="Images\iboga\plant-a-tree.png" />
     <Content Include="Images\icons\facebook.png" />
     <Content Include="Images\icons\favicon.ico" />
+    <Content Include="Images\icons\instagram.png" />
     <Content Include="Images\icons\web.png" />
     <Content Include="Images\latest\full-size\image1.jpg" />
     <Content Include="Images\latest\full-size\image10.jpg" />
@@ -1105,6 +1107,7 @@
     <Content Include="Views\Archive\Details.cshtml" />
     <Content Include="Views\Archive\_ArchiveItemPreview.cshtml" />
     <Content Include="Views\Contacts\MailChimpImportSuccess.cshtml" />
+    <Content Include="Views\Shared\_SocialMediaBanner.cshtml" />
     <None Include="Web.Integration.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

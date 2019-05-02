@@ -1,0 +1,10 @@
+﻿#social-media-banner {
+    height: 60px;
+    border-top: 1px solid #888888;
+    border-bottom: 1px solid #888888;
+    background: #d9d9d9;
+}
+
+#social-media-banner a {
+    margin-right: 8px;
+}
