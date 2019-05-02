@@ -2,6 +2,7 @@
 using K9.SharedLibrary.Models;
 using NLog;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace K9.WebApplication.Services
@@ -60,6 +61,11 @@ namespace K9.WebApplication.Services
                     throw;
                 }
             }
+        }
+
+        public List<Contact> ListContacts()
+        {
+            return _contactsRepository.List().OrderBy(e => e.FullName).ToList();
         }
     }
 }

@@ -649,4 +649,10 @@
   <data name="IbogaDisclaimer" xml:space="preserve">
     <value>Blessings Of The Forest CIC wishes to point out that &lt;strong&gt;we are not selling iboga or guiding candidates for the consumption of iboga or even to promote the use of iboga&lt;/strong&gt;. BOTF only works in the conservation and study of iboga in its original natural environment, in Central Africa, mainly for the benefit of its local traditional users. If we work towards the establishment of a fair and sustainable pathway of iboga marketing, this is by no means current (horizon 2022) and must respect the Nagoya Protocol as well as all the laws in force at the time in Gabon and internationally.</value>
   </data>
+  <data name="MailChimpImport" xml:space="preserve">
+    <value>MailChimp Contact Import</value>
+  </data>
+  <data name="MailChimpImportSuccess" xml:space="preserve">
+    <value>Your contacts were successfully imported into MailChimp</value>
+  </data>
 </root>

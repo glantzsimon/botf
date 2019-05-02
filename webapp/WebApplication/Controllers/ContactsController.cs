@@ -1,16 +1,16 @@
-﻿using System;
-using System.Linq;
-using K9.Base.WebApplication.Controllers;
+﻿using K9.Base.WebApplication.Controllers;
+using K9.Base.WebApplication.Extensions;
 using K9.Base.WebApplication.Filters;
 using K9.Base.WebApplication.UnitsOfWork;
 using K9.DataAccessLayer.Models;
 using K9.SharedLibrary.Authentication;
-using System.Web.Mvc;
-using K9.Base.WebApplication.EventArgs;
-using K9.Base.WebApplication.Extensions;
 using K9.SharedLibrary.Extensions;
 using K9.SharedLibrary.Models;
 using NLog;
+using System;
+using System.Linq;
+using System.Web.Mvc;
+using K9.WebApplication.Services;
 
 namespace K9.WebApplication.Controllers
 {
@@ -20,11 +20,13 @@ namespace K9.WebApplication.Controllers
     {
         private readonly IRepository<Donation> _donationRepository;
         private readonly ILogger _logger;
+        private readonly IMailChimpService _mailChimpService;
 
-        public ContactsController(IControllerPackage<Contact> controllerPackage, IRepository<Donation> donationRepository, ILogger logger) : base(controllerPackage)
+        public ContactsController(IControllerPackage<Contact> controllerPackage, IRepository<Donation> donationRepository, ILogger logger, IMailChimpService mailChimpService) : base(controllerPackage)
         {
             _donationRepository = donationRepository;
             _logger = logger;
+            _mailChimpService = mailChimpService;
         }
 
         public ActionResult ImportContactsFromDonations()
@@ -79,6 +81,17 @@ namespace K9.WebApplication.Controllers
         }
 
         public ActionResult SignUpSuccess()
+        {
+            return View();
+        }
+
+        public ActionResult AddAllContactsToMailChimp()
+        {
+            _mailChimpService.AddAllContacts();
+            return RedirectToAction("MailChimpImportSuccess");
+        }
+
+        public ActionResult MailChimpImportSuccess()
         {
             return View();
         }

@@ -989,6 +989,24 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MailChimp Contact Import.
+        /// </summary>
+        public static string MailChimpImport {
+            get {
+                return ResourceManager.GetString("MailChimpImport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your contacts were successfully imported into MailChimp.
+        /// </summary>
+        public static string MailChimpImportSuccess {
+            get {
+                return ResourceManager.GetString("MailChimpImportSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Blessings.
         /// </summary>
         public static string MainTitleLeft {

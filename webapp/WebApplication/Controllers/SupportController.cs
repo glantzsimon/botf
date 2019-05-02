@@ -13,6 +13,7 @@ using K9.WebApplication.Services;
 using K9.WebApplication.Services.Stripe;
 using NLog;
 using System;
+using System.Linq;
 using System.Threading;
 using System.Web.Mvc;
 
@@ -27,10 +28,11 @@ namespace K9.WebApplication.Controllers
         private readonly IDonationService _donationService;
         private readonly IRepository<User> _userRepository;
         private readonly IContactService _contactService;
+        private readonly IMailChimpService _mailChimpService;
         private readonly StripeConfiguration _stripeConfig;
         private readonly WebsiteConfiguration _config;
 
-        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService, IRepository<User> userRepository, IContactService contactService)
+        public SupportController(ILogger logger, IDataSetsHelper dataSetsHelper, IRoles roles, IMailer mailer, IOptions<WebsiteConfiguration> config, IAuthentication authentication, IFileSourceHelper fileSourceHelper, IStripeService stripeService, IOptions<StripeConfiguration> stripeConfig, IDonationService donationService, IRepository<User> userRepository, IContactService contactService, IMailChimpService mailChimpService)
             : base(logger, dataSetsHelper, roles, authentication, fileSourceHelper)
         {
             _logger = logger;
@@ -40,6 +42,7 @@ namespace K9.WebApplication.Controllers
             _donationService = donationService;
             _userRepository = userRepository;
             _contactService = contactService;
+            _mailChimpService = mailChimpService;
             _stripeConfig = stripeConfig.Value;
             _config = config.Value;
         }
@@ -160,6 +163,10 @@ namespace K9.WebApplication.Controllers
                     DonationAmount = model.AmountToDonate
                 });
                 _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
+                
+                var names = model.StripeBillingName.Split(' '); 
+                _mailChimpService.AddContact(names.FirstOrDefault(), names.LastOrDefault(), model.StripeEmail);
+                
                 return RedirectToAction("DonationSuccess");
             }
             catch (Exception ex)
@@ -192,6 +199,10 @@ namespace K9.WebApplication.Controllers
                     NumberOfIbogas = model.NumberOfTrees
                 });
                 _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
+
+                var names = model.StripeBillingName.Split(' '); 
+                _mailChimpService.AddContact(names.FirstOrDefault(), names.LastOrDefault(), model.StripeEmail);
+
                 return RedirectToAction("SponsorSuccess");
             }
             catch (Exception ex)

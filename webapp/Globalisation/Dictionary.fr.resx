@@ -650,4 +650,10 @@
     <value>Blessings Of The Forest CIC tient à souligner que &lt;strong&gt;nous n'avons pas vocation à vendre de l'iboga, ni à orienter 
 les candidats à la consommation d'iboga ni même à faire la promotion de l'utilisation de l'iboga&lt;/strong&gt;. BOTF oeuvre uniquement dans la conservation et l'étude de l'iboga dans son milieu naturel originel, en Afrique Centrale, au profit principalement de ses utilisateurs traditionnels locaux. Si nous oeuvrons à la mise en place d'une filière équitable et durable de commercialisation d'iboga, cela n'est aucunement actuel (horizon 2022) et se doit de respecter le Protocole de Nagoya ainsi que l'ensemble des lois en vigueur au Gabon comme à l'international.</value>
   </data>
+  <data name="MailChimpImport" xml:space="preserve">
+    <value>MailChimp Contact Import</value>
+  </data>
+  <data name="MailChimpImportSuccess" xml:space="preserve">
+    <value>Vos contacts ont été importés dans MailChimp.</value>
+  </data>
 </root>

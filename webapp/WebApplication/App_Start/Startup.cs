@@ -62,6 +62,7 @@ namespace K9.WebApplication
             builder.RegisterType<DonationService>().As<IDonationService>().InstancePerRequest();
             builder.RegisterType<ContactService>().As<IContactService>().InstancePerRequest();
             builder.RegisterType<MembershipService>().As<IMembershipService>().InstancePerRequest();
+            builder.RegisterType<MailChimpService>().As<IMailChimpService>().InstancePerRequest();
             builder.RegisterType<LinkPreviewer>().As<ILinkPreviewer>().InstancePerRequest();
 
             RegisterConfiguration(builder);
@@ -92,6 +93,7 @@ namespace K9.WebApplication
             builder.Register(c => ConfigHelper.GetConfiguration<OAuthConfiguration>(json)).SingleInstance();
             builder.Register(c => ConfigHelper.GetConfiguration<TaskConfiguration>(json)).SingleInstance();
             builder.Register(c => ConfigHelper.GetConfiguration<StripeConfiguration>(ConfigurationManager.AppSettings)).SingleInstance();
+            builder.Register(c => ConfigHelper.GetConfiguration<MailChimpConfiguration>(ConfigurationManager.AppSettings)).SingleInstance();
 
             var websiteConfig = ConfigHelper.GetConfiguration<WebsiteConfiguration>(json);
             builder.Register(c => websiteConfig).SingleInstance();
