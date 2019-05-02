@@ -377,6 +377,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Disclaimer.
+        /// </summary>
+        public static string Disclaimer {
+            get {
+                return ResourceManager.GetString("Disclaimer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Donate.
         /// </summary>
         public static string Donate {
@@ -796,6 +805,15 @@ namespace K9.Globalisation {
         public static string iboga_title2 {
             get {
                 return ResourceManager.GetString("iboga_title2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Blessings Of The Forest CIC wishes to point out that &lt;strong&gt;we are not selling iboga or guiding candidates for the consumption of iboga or even to promote the use of iboga&lt;/strong&gt;. BOTF only works in the conservation and study of iboga in its original natural environment, in Central Africa, mainly for the benefit of its local traditional users. If we work towards the establishment of a fair and sustainable pathway of iboga marketing, this is by no means current (horizon 2022) and must respect the Nagoya P [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string IbogaDisclaimer {
+            get {
+                return ResourceManager.GetString("IbogaDisclaimer", resourceCulture);
             }
         }
         
