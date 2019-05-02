@@ -56,11 +56,7 @@ namespace K9.WebApplication.Services
         {
             foreach (var contact in _contactService.ListContacts())
             {
-                if (!string.IsNullOrEmpty(contact.EmailAddress))
-                {
-                    var nameParts = contact.FullName.Split(' ');
-                    AddContact(nameParts.FirstOrDefault(), nameParts.LastOrDefault(), contact.EmailAddress);
-                }
+                AddContact(contact.FullName, contact.EmailAddress);
             }
         }
     }
