@@ -163,10 +163,7 @@ namespace K9.WebApplication.Controllers
                     DonationAmount = model.AmountToDonate
                 });
                 _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
-                
-                var names = model.StripeBillingName.Split(' '); 
-                _mailChimpService.AddContact(names.FirstOrDefault(), names.LastOrDefault(), model.StripeEmail);
-                
+                _mailChimpService.AddContact(model.StripeBillingName, model.StripeEmail);
                 return RedirectToAction("DonationSuccess");
             }
             catch (Exception ex)
@@ -199,10 +196,7 @@ namespace K9.WebApplication.Controllers
                     NumberOfIbogas = model.NumberOfTrees
                 });
                 _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
-
-                var names = model.StripeBillingName.Split(' '); 
-                _mailChimpService.AddContact(names.FirstOrDefault(), names.LastOrDefault(), model.StripeEmail);
-
+                _mailChimpService.AddContact(model.StripeBillingName, model.StripeEmail);
                 return RedirectToAction("SponsorSuccess");
             }
             catch (Exception ex)
@@ -218,6 +212,5 @@ namespace K9.WebApplication.Controllers
         {
             throw new NotImplementedException();
         }
-
     }
 }

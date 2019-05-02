@@ -3,6 +3,7 @@
     public interface IMailChimpService
     {
         void AddContact(string firstName, string lastName, string emailAddress);
+        void AddContact(string name, string emailAddress);
         void AddAllContacts();
     }
 }

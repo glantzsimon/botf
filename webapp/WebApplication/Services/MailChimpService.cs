@@ -4,6 +4,7 @@ using MailChimp.Net.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using K9.SharedLibrary.Extensions;
 using MailChimpConfiguration = K9.WebApplication.Config.MailChimpConfiguration;
 
 namespace K9.WebApplication.Services
@@ -39,6 +40,16 @@ namespace K9.WebApplication.Services
                     {"LNAME", lastName},
                 }
             });
+        }
+
+        public void AddContact(string name, string emailAddress)
+        {
+            var names = name.Split(' ');
+            var firstName = names.FirstOrDefault().ToProperCase();
+            var lastName = names.LastOrDefault().ToProperCase();
+            lastName = lastName == firstName ? string.Empty : lastName;
+
+            AddContact(firstName, lastName, emailAddress);
         }
 
         public void AddAllContacts()
