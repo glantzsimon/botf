@@ -40,11 +40,7 @@ namespace K9.WebApplication.Controllers
         [Route("news/{subject}")]
         public ActionResult Details(string subject)
         {
-            var model = _newsRepository.Find(e => e.Subject.StartsWith(
-                        subject
-                            .Replace("~", ":")
-                            .Replace("-", " ")
-                        .ToLower())).FirstOrDefault();
+            var model = _newsRepository.Find(e => e.SeoFriendlyId == subject).FirstOrDefault();
             if (model == null)
             {
                 return HttpNotFound();

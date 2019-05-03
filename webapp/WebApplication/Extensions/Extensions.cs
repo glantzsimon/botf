@@ -1,14 +1,17 @@
-﻿using System.Web;
+﻿using System.Text.RegularExpressions;
 
 namespace K9.WebApplication.Extensions
 {
     public static class Extensions
     {
-        public static string ToHyphenatedString(this string value)
+        public static string ToSeoFriendlyString(this string value)
         {
-            return string.Join("-", value.Replace(":", "~").ToLower().Split(' '));
+            var regex = new Regex("[^a-zA-Z0-9 -]");
+            var alphaNumericString = regex.Replace(value, "");
+
+            return string.Join("-", alphaNumericString.ToLower().Split(' '));
         }
-        
+
         public static string ToPreviewText(this string value, int length = 100)
         {
             var valueLength = value.Length;

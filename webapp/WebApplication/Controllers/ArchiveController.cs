@@ -48,11 +48,7 @@ namespace K9.WebApplication.Controllers
         [Route("archive/{title}")]
         public ActionResult Details(string title)
         {
-            var archiveItem = _archiveItemRepo.Find(e => e.Title.StartsWith(
-                            title
-                                .Replace("~", ":")
-                                .Replace("-", " ")
-                            .ToLower())).FirstOrDefault();
+            var archiveItem = _archiveItemRepo.Find(e => e.SeoFriendlyId == title).FirstOrDefault();
             if (archiveItem == null)
             {
                 return HttpNotFound();

@@ -16,7 +16,7 @@
         </div>
     }
     <h5>
-        <a href="@Url.Action("Details", new {title = Model.Title.ToHyphenatedString()})">@MvcHtmlString.Create(Model.Title.ToUpper())</a>
+        <a href="@Url.Action("Details", new {title = Model.SeoFriendlyId ?? Model.Title.ToSeoFriendlyString()})">@MvcHtmlString.Create(Model.Title.ToUpper())</a>
     </h5>
     <article>
         <p>

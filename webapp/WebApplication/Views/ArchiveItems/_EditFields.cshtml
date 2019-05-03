@@ -24,6 +24,7 @@
 })
 
 @Html.BootstrapEditorFor(model => model.Title)
+@Html.BootstrapEditorFor(model => model.SeoFriendlyId)
 @Html.BootstrapEditorFor(model => model.DescriptionText)
 
 @if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
@@ -82,10 +83,24 @@
         }
     }
 
+    function updateSeoFriendlyIdFromTitle() {
+        $("#Title").change(function() {
+            var value = $("#Title").val();
+            ajaxcontroller().get("@Url.Action("GetSeoFriendlyName", "Shared")", { value: value }).done(
+                function(result) {
+                    if (result.success && result.data) {
+                        $("#SeoFriendlyId").val(result.data);
+                    }
+                    $("#pageSpinner").hide();
+                });
+        });
+    }
+
     function init() {
         setAcceptedFileExtensionsByType();
         setInputVisibility();
         updateDisplayLocalMessage();
+        updateSeoFriendlyIdFromTitle();
     }
 
     $(function() {

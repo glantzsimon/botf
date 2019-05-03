@@ -30,6 +30,7 @@
     IsHidden = !Model.IsDisplayUrl
 })
 @Html.BootstrapEditorFor(model => model.Subject)
+@Html.BootstrapEditorFor(model => model.SeoFriendlyId)
 @Html.BootstrapEditorFor(model => model.Body)
 
 @if (roles.CurrentUserIsInRoles(RoleNames.Administrators))
@@ -83,9 +84,23 @@
         }
     }
 
+    function updateSeoFriendlyIdFromTitle() {
+        $("#Subject").change(function() {
+            var value = $("#Subject").val();
+            ajaxcontroller().get("@Url.Action("GetSeoFriendlyName", "Shared")", { value: value }).done(
+                function(result) {
+                    if (result.success && result.data) {
+                        $("#SeoFriendlyId").val(result.data);
+                    }
+                    $("#pageSpinner").hide();
+                });
+        });
+    }
+
     function init() {
         updateDisplayLocalMessage();
         setInputVisibility();
+        updateSeoFriendlyIdFromTitle();
     }
 
     $(function() {

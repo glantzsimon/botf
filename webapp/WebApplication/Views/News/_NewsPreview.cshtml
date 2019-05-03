@@ -42,7 +42,7 @@
             }
         </div>
         <h5>
-            <a href="@Url.Action("Details", new {subject = Model.Subject.ToHyphenatedString()})">@MvcHtmlString.Create(Model.Subject)</a>
+            <a href="@Url.Action("Details", new {subject = Model.SeoFriendlyId ?? Model.Subject.ToSeoFriendlyString()})">@MvcHtmlString.Create(Model.Subject)</a>
         </h5>
         <article>
             <p>
