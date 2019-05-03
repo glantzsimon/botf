@@ -692,8 +692,11 @@
     <Content Include="Images\iboga\plant-a-tree-med.png" />
     <Content Include="Images\iboga\plant-a-tree-small.png" />
     <Content Include="Images\iboga\plant-a-tree.png" />
+    <Content Include="Images\icons\facebook-16.png" />
     <Content Include="Images\icons\facebook.png" />
     <Content Include="Images\icons\favicon.ico" />
+    <Content Include="Images\icons\instagram-16.png" />
+    <Content Include="Images\icons\instagram-24.png" />
     <Content Include="Images\icons\instagram.png" />
     <Content Include="Images\icons\web.png" />
     <Content Include="Images\latest\full-size\image1.jpg" />
