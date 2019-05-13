@@ -81,6 +81,7 @@
     <Content Include="Articles\en-gb\etats-des-lieux-iboga-title.htm" />
     <Content Include="Articles\en-gb\etats-des-lieux-iboga.htm" />
     <Content Include="Articles\en-gb\etats-des-lieux-title.htm" />
+    <Content Include="Articles\en-gb\gemma-title.htm" />
     <Content Include="Articles\en-gb\george-text.htm" />
     <Content Include="Articles\en-gb\hubert-text.htm" />
     <Content Include="Articles\en-gb\hubert-title.htm" />
@@ -88,7 +89,6 @@
     <Content Include="Articles\en-gb\hugues-title.htm" />
     <Content Include="Articles\en-gb\jeannoel-text.htm" />
     <Content Include="Articles\en-gb\jeannoel-title.htm" />
-    <Content Include="Articles\en-gb\josephine-title.htm" />
     <Content Include="Articles\en-gb\marie-text.htm" />
     <Content Include="Articles\en-gb\marie-title.htm" />
     <Content Include="Articles\en-gb\projects-long-term-title.htm" />
@@ -122,6 +122,7 @@
     <Content Include="Articles\en-gb\etats-des-lieux-forest-title.htm" />
     <Content Include="Articles\fr\etats-des-lieux-forest-title.htm" />
     <Content Include="Articles\fr\etats-des-lieux-forest.htm" />
+    <Content Include="Articles\fr\gemma-title.htm" />
     <Content Include="Articles\fr\george-text.htm" />
     <Content Include="Articles\fr\rudy-text.htm" />
     <Content Include="Articles\fr\rudy-title.htm" />
@@ -134,7 +135,6 @@
     <Content Include="Articles\fr\marie-title.htm" />
     <Content Include="Articles\fr\hubert-title.htm" />
     <Content Include="Articles\fr\jeannoel-text.htm" />
-    <Content Include="Articles\fr\josephine-title.htm" />
     <Content Include="Articles\fr\george-title.htm" />
     <Content Include="Articles\fr\jeannoel-title.htm" />
     <Content Include="Articles\fr\projects-long-term.htm" />
@@ -196,7 +196,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

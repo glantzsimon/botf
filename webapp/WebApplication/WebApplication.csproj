@@ -748,7 +748,7 @@
     <Content Include="Images\team\george.jpg" />
     <Content Include="Images\team\hubert.jpg" />
     <Content Include="Images\team\hugues.jpg" />
-    <Content Include="Images\team\josephine.jpg" />
+    <Content Include="Images\team\gemma.jpg" />
     <Content Include="Images\team\laurent.jpg" />
     <Content Include="Images\team\marie.jpg" />
     <Content Include="Images\team\quevain.jpg" />
@@ -1226,7 +1226,7 @@
   <Target Name="BeforeBuild">
     <TransformXml Source="Web.config" Transform="Web.$(Configuration).config" Destination="Web.config" />
   </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="AfterBuild">
   </Target> -->

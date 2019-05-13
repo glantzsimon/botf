@@ -10,8 +10,8 @@
 
 namespace K9.Globalisation {
     using System;
-    
-    
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -23,15 +23,15 @@ namespace K9.Globalisation {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Dictionary {
-        
+
         private static global::System.Resources.ResourceManager resourceMan;
-        
+
         private static global::System.Globalization.CultureInfo resourceCulture;
-        
+
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Dictionary() {
         }
-        
+
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -45,7 +45,7 @@ namespace K9.Globalisation {
                 return resourceMan;
             }
         }
-        
+
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -59,7 +59,7 @@ namespace K9.Globalisation {
                 resourceCulture = value;
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Actions.
         /// </summary>
@@ -68,7 +68,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Actions", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Amount Donated.
         /// </summary>
@@ -77,7 +77,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("AmountDonatedLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to You would like to donate:.
         /// </summary>
@@ -86,7 +86,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("AmountToDonateLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Annual.
         /// </summary>
@@ -95,7 +95,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Annual", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Annual Platinum Membership.
         /// </summary>
@@ -104,7 +104,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("AnnualPlatinumMembership", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Annual Standard Membership.
         /// </summary>
@@ -113,7 +113,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("AnnualStandardMembership", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Archive Item Types.
         /// </summary>
@@ -122,7 +122,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("ArchiveItemTypes", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Enable Auto-Renewal.
         /// </summary>
@@ -131,7 +131,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("AutoRenewLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
@@ -140,7 +140,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Back", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Become a benefactor.
         /// </summary>
@@ -149,7 +149,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("BecomeBenefactorTitle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Blessings.
         /// </summary>
@@ -158,7 +158,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Blessings", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///Blessings of the Forest C.I.C is a charity that was set up in October of 2015 in London. It is a &lt;a target=&quot;_blank&quot; href=&quot;https://www.gov.uk/government/publications/community-interest-companies-introduction&quot;&gt;community interest company (CIC)&lt;/a&gt; (Community Interest Company n° 9816364).
@@ -173,7 +173,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("blessings_of_the_forest", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
@@ -182,7 +182,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("blessings_of_the_forest_intro", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to LOCAL CONTEXT, GLOBAL IMPACT.
         /// </summary>
@@ -191,7 +191,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("botf_context_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    &lt;strong&gt; Gabon is situated at the very heart of Africa&lt;/strong&gt;, on the Atlantic coast with over 800km of coastline. It straddles the equator as does its neighbour The Republic of the Congo and The Democratic Republic of the Congo (formerly Zaire). In the northwest of the country, along the coastline and embedded within the Gabonese territory, is Equatorial Guinea. The northern border also separates Gabon from Cameroon. The rest of the country runs alongside the Congo, to the east and south. Apart  [rest of string was truncated]&quot;;.
@@ -201,7 +201,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("botf_context1", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    When the Bantu encountered the Pigmies, they discovered that this indigenous population of Africa practises the worship of animal spirits and is made up of “mediators of the sacred”, which change according to the rites.
@@ -212,7 +212,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("botf_context2", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    The arrival of the first Europeans in Gabon during the 15th century (the Portuguese followed by the Dutch) marked the beginning of the abandonment of the indigenous ancestral initiatory traditions due to the forced evangelisation of the Gabonese peoples as well as to the many consequences of the Slave Trade. The practice of Bwiti was then driven underground.
@@ -225,7 +225,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("botf_context3", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Change Amount.
         /// </summary>
@@ -234,7 +234,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("ChangeAmount", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Change Membership.
         /// </summary>
@@ -243,7 +243,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("ChangeMembership", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Our organisation has been set up to preserve, research and share knowledge about the medicinal plants and indigenous traditions of the Gabonese forest people for the benefit of all of humanity..
         /// </summary>
@@ -252,7 +252,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("CompanyBlurbFooter", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:09816364)..
         /// </summary>
@@ -261,7 +261,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("CompanyDescription", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Company Name.
         /// </summary>
@@ -270,7 +270,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("CompanyLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Blessings Of The Forest C.I.C is a Community Interest Company, a Social Enterprise registered in England in October 2015 as a Company limited by shares (Company No:09816364)..
         /// </summary>
@@ -279,7 +279,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("CompanyLegalDescription", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Charity comitted to preserving Gabon&apos;s heritage.
         /// </summary>
@@ -288,7 +288,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("CompanyShortDescription", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Contact.
         /// </summary>
@@ -297,7 +297,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Contact", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Contacts.
         /// </summary>
@@ -306,7 +306,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Contacts", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we&apos;ll assume that you are happy to receive all cookies from this website. If you would like to change your preferences you may do so by following the instructions &lt;a href=&quot;http://www.allaboutcookies.org/&quot; target=&quot;_blank&quot;&gt;here&lt;/a&gt;..
         /// </summary>
@@ -315,7 +315,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("cookies_blurb", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Use of Cookies.
         /// </summary>
@@ -324,7 +324,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("CookiesTitle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Currency.
         /// </summary>
@@ -333,7 +333,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("CurrencyLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Customer Email Address.
         /// </summary>
@@ -342,7 +342,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("CustomerEmailLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Customer.
         /// </summary>
@@ -351,7 +351,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("CustomerLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;David Nassim, co-director of “Blessings Of The Forest” is a practitioner of Chinese medicine and internal martial arts. Since 1999 his studies include shiatsu, acupuncture, nutrition and herbal medicine, Qi Gong and Tai Chi Chuan.&lt;/h5&gt;
         ///&lt;p&gt;
@@ -364,7 +364,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("david_text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Practitioner of Chinese medicine
         ///&lt;p&gt;&lt;strong&gt;Co-director of Blessings Of The Forest&lt;/strong&gt;&lt;/p&gt;
@@ -375,7 +375,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("david_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Disclaimer.
         /// </summary>
@@ -384,7 +384,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Disclaimer", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Donate.
         /// </summary>
@@ -393,7 +393,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Donate", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Donated On.
         /// </summary>
@@ -402,7 +402,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("DonatedOnLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Donation.
         /// </summary>
@@ -411,7 +411,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Donation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to How much would you like to donate?.
         /// </summary>
@@ -420,7 +420,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("DonationAmountLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Making a donation to Blessings of The Forest will make an enormous impact on our ability to sucessfully complete our mission. We are tremendously grateful for your support..
         /// </summary>
@@ -429,7 +429,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("DonationBlurb", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
@@ -460,7 +460,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("DonationReceivedEmail", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Donations.
         /// </summary>
@@ -469,7 +469,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Donations", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;&lt;strong&gt;Your generosity will help to fund:&lt;/strong&gt;&lt;/h4&gt;
         ///&lt;br /&gt;
@@ -484,7 +484,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("donations_text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Your donation was received. Thank you!.
         /// </summary>
@@ -493,7 +493,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("DonationSuccessful", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Donation Received.
         /// </summary>
@@ -502,7 +502,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("DonationSuccessfulTitle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;!doctype html&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
@@ -525,7 +525,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("DonationThankYouEmail", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Donation To.
         /// </summary>
@@ -534,7 +534,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("DonationTo", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Donation To Blessings Of The Forest.
         /// </summary>
@@ -543,7 +543,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("DonationToBOTF", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Sorry, a contact with that email address already exists..
         /// </summary>
@@ -552,7 +552,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("DuplicateContactError", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Email Address.
         /// </summary>
@@ -561,7 +561,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("EmailAddressLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Ends On.
         /// </summary>
@@ -570,18 +570,19 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("EndsOnLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
         ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Half of the planet’s forests were destroyed during the 20th century.&lt;/strong&gt;&lt;/li&gt;
-        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Due to the (often unpoliced) use of raw materials such as wood, diamond, gold and precious metals and also due to agriculture and livestock farming, &lt;strong&gt;two thirds of the Congo Basin Forest could be lost by 2040 if nothing is done.&lt;/strong&gt;&lt;/li&gt;        /// [rest of string was truncated]&quot;;.
+        ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Due to the (often unpoliced) use of raw materials such as wood, diamond, gold and precious metals and also due to agriculture and livestock farming, &lt;strong&gt;two thirds of the Congo Basin Forest could be lost by 2040 if nothing is done.&lt;/strong&gt;&lt;/li&gt;
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string etats_des_lieux_forest {
             get {
                 return ResourceManager.GetString("etats_des_lieux_forest", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to State of affairs regarding the community forests:.
         /// </summary>
@@ -590,7 +591,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("etats_des_lieux_forest_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
         ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Despite the public declaration of the late president of the Gabonese republic, El Hadj Omar Bongo Ondimba, made in the Council of Ministers on the 6th July 2000 which classified Iboga as a &lt;span class=&quot;italic bold&quot;&gt;&quot;national cultural heritage”&lt;/span&gt;  and &lt;span class=&quot;italic bold&quot;&gt;”strategic reserve”&lt;/span&gt;&lt;span class=&quot;italic&quot;&gt; (“to be protected from illegal exploitation”)&lt;/span&gt;, &lt;strong&gt;no legal texts&lt;/strong&gt; have bee [rest of string was truncated]&quot;;.
@@ -600,7 +601,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("etats_des_lieux_iboga", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to State of affairs regarding Iboga:.
         /// </summary>
@@ -609,7 +610,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("etats_des_lieux_iboga_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to STATE OF AFFAIRS.
         /// </summary>
@@ -618,7 +619,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("etats_des_lieux_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Find out what we have done.
         /// </summary>
@@ -627,7 +628,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("FollowOurActions", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Funds Received To Date.
         /// </summary>
@@ -636,7 +637,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("FundsReceivedSoFar", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Funds Received To Date.
         /// </summary>
@@ -645,7 +646,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("FundsReceivedSoFarLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;George Gassita is passionate about the area of environmental and heritage conservation.&lt;/h5&gt;
         ///&lt;p&gt;He is the grandson and spiritual heir of Professor Jean Noël Gassita, international authority on the scientific research on Iboga.&lt;/p&gt;.
@@ -655,7 +656,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("george_text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Environmental lawyer
         ///&lt;p&gt;&lt;strong&gt;In charge of Blessings of The Forest&apos;s legal studies in Gabon&lt;/strong&gt;&lt;/p&gt;
@@ -666,7 +667,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("george_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Check out the Multimedia Library!.
         /// </summary>
@@ -675,7 +676,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("GoToMultimediaLibrary", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Here.
         /// </summary>
@@ -684,7 +685,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Here", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to How can you help?.
         /// </summary>
@@ -693,7 +694,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("HowToHelp", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Hubert Bled ELIE NLOH is manager of a community forest of 14 000 hectares known for being the &quot;best managed in Gabon&quot;.&lt;/h5&gt;
         ///&lt;p&gt;
@@ -711,7 +712,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("hubert_text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to President of the Village Association A2E (Ogooué Ivindo - Gabon) - Agroforestry Expert
         ///&lt;p&gt;&lt;strong&gt;Partner of BOTF (in charge of the pilot plantation project)&lt;/strong&gt;&lt;/p&gt;
@@ -722,7 +723,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("hubert_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Hugues is Cultural Mediateur and sponsor/partner of Blessings Of The Forest
@@ -734,7 +735,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("hugues_text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Cultural Mediator - Founding president of the NGO &quot;Ebando&quot; (Gabon)
         ///&lt;p&gt;&lt;strong&gt;Honorary President of BOTF Gabon&lt;/strong&gt;&lt;/p&gt;
@@ -746,7 +747,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("hugues_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;h4&gt;&lt;strong&gt;Your donation enables Blessings of The Forest to finance several things:&lt;/strong&gt;&lt;/h4&gt;
         ///&lt;br /&gt;
@@ -764,7 +765,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("iboga_sponsor_text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Iboga has been sold in western world since 1901.
         ///						Today, more and more advertising touts iboga as a “miracle cure” without any apparent regard as to the sustainability of the resource.
@@ -776,7 +777,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("iboga_text1", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to In what can only be described as biopiracy, more than a dozen patents have been filed regarding the therapeutic use of iboga and its chemical derivatives in total disregard of the Nagoya Protocol protecting the people behind this plant and knowledge.
         ///The ivory trade and iboga trafficking are interlinked. Elephants love iboga fruit and the poachers track and kill them near the last wild reservations of iboga.
@@ -788,7 +789,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("iboga_text2", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Pygmies have used iboga for over 65,000 years before it was discovered in the west.
         ///					Now, due to over-consumption without any policy of sustainable management, this sacred plant will disappear from the public domain within 5 years.
@@ -798,7 +799,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("iboga_title1", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Blessings Of The Forest is committed to building a bridge between traditional Gabonese healers and researchers worldwide. We offer humanity the most sacred knowledge of the art of healing using one of the most sacred plants of our common historic origins..
         /// </summary>
@@ -807,7 +808,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("iboga_title2", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Blessings Of The Forest CIC wishes to point out that &lt;strong&gt;we are not selling iboga or guiding candidates for the consumption of iboga or even to promote the use of iboga&lt;/strong&gt;. BOTF only works in the conservation and study of iboga in its original natural environment, in Central Africa, mainly for the benefit of its local traditional users. If we work towards the establishment of a fair and sustainable pathway of iboga marketing, this is by no means current (horizon 2022) and must respect the Nagoya P [rest of string was truncated]&quot;;.
         /// </summary>
@@ -816,7 +817,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("IbogaDisclaimer", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 1 Iboga tree costs {0} to sponsor.
         /// </summary>
@@ -825,7 +826,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("IbogaPriceText", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Number of Iboga trees planted so far.
         /// </summary>
@@ -834,7 +835,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("IbogasPlantedSoFarText", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
         ///&lt;html lang=&quot;en&quot;&gt;
@@ -865,7 +866,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("IbogaSponsoredEmail", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Projected number of Iboga trees to be planted in {0}.
         /// </summary>
@@ -874,7 +875,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("IbogasProjectedToBePlantedThisYearText", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Projected number of Iboga trees to be planted by {0}.
         /// </summary>
@@ -883,7 +884,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("IbogasProjectedToBePlantedTwoYearsText", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Number of Iboga trees sponsored so far.
         /// </summary>
@@ -892,7 +893,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("IbogasSponsoredSoFarText", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Professor Jean Noël Gassita is senior pharmacist of Gabon and world authority on Iboga research&lt;/h5&gt;
         ///&lt;p&gt;
@@ -905,7 +906,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("jeannoel_text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Doctor of Pharmacy - World authority on Iboga research
         ///&lt;p&gt;&lt;strong&gt;Honorary President of Blessings of The Forest, Gabon&lt;/strong&gt;&lt;/p&gt;
@@ -916,18 +917,18 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("jeannoel_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Chartered Accountant
         ///&lt;p&gt;&lt;strong&gt;Financial Director of BOTF Gabon&lt;/strong&gt;&lt;/p&gt;
         ///.
         /// </summary>
-        public static string josephine_title {
+        public static string gemma_title {
             get {
-                return ResourceManager.GetString("josephine_title", resourceCulture);
+                return ResourceManager.GetString("gemma_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Iboga Gabon Medicine Healing Entheogen Ibogaine Addiction Transformation.
         /// </summary>
@@ -936,7 +937,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Keywords", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Laurent Sazy is a french photojournalist since 1991. He is covering news, wars( Balkans, Sarajevo and caucasus, Algeria, Libya (2011), also politics, economics and socials news and magazines features for photos agencies, magazines and newspapers/&lt;/h5&gt;
         ///&lt;p&gt;
@@ -949,7 +950,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("laurent_text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Photographer and French photojournalist
         ///&lt;p&gt;&lt;strong&gt;Head of Photography, BOTF&lt;/strong&gt;&lt;/p&gt;
@@ -960,7 +961,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("laurent_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Laurent Sazy.
         /// </summary>
@@ -969,7 +970,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("LaurentSazy", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Library.
         /// </summary>
@@ -978,7 +979,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Library", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Loading....
         /// </summary>
@@ -987,7 +988,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Loading", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to MailChimp Contact Import.
         /// </summary>
@@ -996,7 +997,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("MailChimpImport", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Your contacts were successfully imported into MailChimp.
         /// </summary>
@@ -1005,7 +1006,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("MailChimpImportSuccess", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Blessings.
         /// </summary>
@@ -1014,7 +1015,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("MainTitleLeft", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Of The Forest.
         /// </summary>
@@ -1023,7 +1024,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("MainTitleRight", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Make a Donation.
         /// </summary>
@@ -1032,7 +1033,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("MakeDonation", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Marie Lou Miboka is president of Blessings of The Forest, Gabon
@@ -1046,7 +1047,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("marie_text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Nurse
         ///&lt;p&gt;&lt;strong&gt;President of Blessings of The Forest, Gabon&lt;/strong&gt;&lt;/p&gt;.
@@ -1056,7 +1057,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("marie_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Public Media.
         /// </summary>
@@ -1065,7 +1066,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Media", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Media.
         /// </summary>
@@ -1074,7 +1075,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("MediaTheque", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;&lt;strong&gt;Your membership will also help to fund:&lt;/strong&gt;&lt;/div&gt;
         ///&lt;br /&gt;
@@ -1088,7 +1089,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("membership_additional_information", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Membership.
         /// </summary>
@@ -1097,7 +1098,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("MembershipLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Membership Option.
         /// </summary>
@@ -1106,7 +1107,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("MembershipOption", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Membership Options.
         /// </summary>
@@ -1115,7 +1116,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("MembershipOptions", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to These are our aims in relation to this plant considered as sacred by the Gabonese people.
         /// </summary>
@@ -1124,7 +1125,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("mission_statement_and_aims_title1", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to The following aims of Blessings of the Forest do not focus on iboga, but are equally important.
         /// </summary>
@@ -1133,7 +1134,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("mission_statement_and_aims_title2", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
         ///	&lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Providing a voice in the world to explain the impact of the growing international interest for iboga on Gabonese traditions as well as the flora and fauna of Gabon&lt;/li&gt;
@@ -1144,7 +1145,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("mission_statement_and_aims1", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
         ///	&lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; Creating an eco-village with zero environmental impact.
@@ -1156,7 +1157,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("mission_statement_and_aims2", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Monthly.
         /// </summary>
@@ -1165,7 +1166,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Monthly", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Monthly Platinum Membership.
         /// </summary>
@@ -1174,7 +1175,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("MonthlyPlatinumMembership", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Monthly Standard Membership.
         /// </summary>
@@ -1183,7 +1184,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("MonthlyStandardMembership", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Music.
         /// </summary>
@@ -1192,7 +1193,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Music", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to News.
         /// </summary>
@@ -1201,7 +1202,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("News", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Not yet signed up?.
         /// </summary>
@@ -1210,7 +1211,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("NotRegisteredYet", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Number of Iboga plantations.
         /// </summary>
@@ -1219,7 +1220,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("NumberOfIbogaPlantationsLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Number Of Iboga Trees Sponsored.
         /// </summary>
@@ -1228,7 +1229,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("NumberOfIbogasSponsoredLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Number of adult Iboga trees under the protection of BOTF.
         /// </summary>
@@ -1237,7 +1238,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("NumberOfIbogaTreesPreservedLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Preserved for the future and for their seeds.
         /// </summary>
@@ -1246,7 +1247,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("NumberOfIbogaTreesPreservedText", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to How many Iboga trees would you like to sponsor?.
         /// </summary>
@@ -1255,7 +1256,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("NumberOfTreesLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to On The Brink Of Extinction.
         /// </summary>
@@ -1264,7 +1265,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("OnTheBrinkOfExtinctionTitle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;!doctype html&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
@@ -1287,7 +1288,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("PasswordResetEmail", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Photos by.
         /// </summary>
@@ -1296,7 +1297,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("PhotographyBy", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;The &lt;strong&gt;Platinum Membership&lt;/strong&gt;, in addition to all the benefits of the &lt;strong&gt;Standard Membership&lt;/strong&gt;, also offers you access to a hotline to &lt;strong&gt;Yann Guignon&lt;/strong&gt;, one of the worlds leading epert on the Bwiti traditions and Gabonese culture.&lt;/div&gt;
         ///&lt;br /&gt;
@@ -1307,7 +1308,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("platinum_membership_description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Platinum Membership.
         /// </summary>
@@ -1316,7 +1317,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("PlatinumMembership", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Projects.
         /// </summary>
@@ -1325,7 +1326,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Projects", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
         ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; In collaboration with traditional practitioners, &lt;strong&gt;compiling and exchange of information on the best practices&lt;/strong&gt; that are an integral part of traditional culture and use of Iboga as well as other medicinal plants within the territory of Gabon.&lt;/li&gt;
@@ -1336,7 +1337,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("projects_long_term", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Medium to long-term vision:.
         /// </summary>
@@ -1345,7 +1346,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("projects_long_term_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;ul&gt;
         ///    &lt;li class=&quot;scrollFadeUp&quot;&gt;&lt;i class=&quot;fa fa-angle-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; &lt;strong&gt;Identification of Gabonese associations&lt;/strong&gt; who wish to develop agroforestry and permaculture projects focussing on the conservation of Iboga and &quot;useful plants” of Gabon (Non-Timber Forest Products (NTFPs) with significant food, cosmetic and therapeutic potential, as well as dwindling large trees), giving priority to those which are managing the Gabonese community forests.&lt;/li&gt;
@@ -1356,7 +1357,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("projects_short_term", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Short-term vision:.
         /// </summary>
@@ -1365,7 +1366,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("projects_short_term_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Project Stats.
         /// </summary>
@@ -1374,7 +1375,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("ProjectStats", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Publications.
         /// </summary>
@@ -1383,7 +1384,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Publications", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to You cannot purchase the selected membership as you are already subscribed..
         /// </summary>
@@ -1392,7 +1393,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("PurchaseMembershipErrorAlreadySubscribed", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to You cannot purchase the selected membership as you have an existing subscription..
         /// </summary>
@@ -1401,7 +1402,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("PurchaseMembershipErrorAlreadySubscribedToAnother", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Quevain is the liaison officer with the Village Communities
@@ -1412,7 +1413,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("quevain_text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Project Coordinator of NGO &quot;Conservation Justice&quot; (Partner of BOTF, Gabon)
         ///&lt;p&gt;&lt;strong&gt;Correspondant between BOTF and village associations&lt;/strong&gt;&lt;/p&gt;
@@ -1423,7 +1424,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("quevain_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;
         ///    Rudy is Treasurer of the NGO Ebando (Gabon)
@@ -1437,7 +1438,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("rudy_text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Fisherman and herbalist
         ///&lt;p&gt;&lt;strong&gt;Advisor &amp; Planter, BOTF Gabon&lt;/strong&gt;&lt;/p&gt;
@@ -1448,7 +1449,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("rudy_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Select.
         /// </summary>
@@ -1457,7 +1458,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Select", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to You have selected the following Membership option.
         /// </summary>
@@ -1466,7 +1467,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SelectedPurchaseText", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Shop.
         /// </summary>
@@ -1475,7 +1476,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Shop", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Show on English version of the site only.
         /// </summary>
@@ -1484,7 +1485,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("ShowOnlyOnEnglishSite", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Show on French version of the site only.
         /// </summary>
@@ -1493,7 +1494,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("ShowOnlyOnFrenchSite", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Thank you for signing up to our newsletter!.
         /// </summary>
@@ -1502,7 +1503,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SignUpSuccessTitle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Sign up to our newsletter.
         /// </summary>
@@ -1511,7 +1512,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SignUpToNewsLetter", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Simon Glantz is a holistic nutritionist, musician and software developer&lt;/h5&gt;
         ///&lt;p&gt;
@@ -1522,7 +1523,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("simon_text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Software developer and nutritionist
         ///&lt;p&gt;&lt;strong&gt;Webmaster, BOTF&lt;/strong&gt;&lt;/p&gt;
@@ -1533,7 +1534,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("simon_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Sponsor an Iboga Tree.
         /// </summary>
@@ -1542,7 +1543,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SponsorIbogaTree", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Sponsor Iboga Tree(s).
         /// </summary>
@@ -1551,7 +1552,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SponsorIbogaTrees", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to 10 euros = 1 Iboga sponsored.
         /// </summary>
@@ -1560,7 +1561,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SponsorIbogaTreeSubTitle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;!doctype html&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
@@ -1583,7 +1584,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SponsorThankYouEmail", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;div&gt;The &lt;strong&gt;Standard Membership&lt;/strong&gt; grants you full access to Blessings of The Forest&apos;s extensive library.
         ///    This is perhaps the world&apos;s most comprehensive collection of material concerning Bwiti and the medicinal properties of Iboga.
@@ -1596,7 +1597,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("standard_membership_description", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Standard Membership.
         /// </summary>
@@ -1605,7 +1606,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("StandardMembership", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Starts On.
         /// </summary>
@@ -1614,7 +1615,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("StartsOnLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Status.
         /// </summary>
@@ -1623,7 +1624,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("StatusLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Stripe Customer Id.
         /// </summary>
@@ -1632,7 +1633,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("StripeCustomerIdLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Subscribed.
         /// </summary>
@@ -1641,7 +1642,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Subscribed", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Join Now.
         /// </summary>
@@ -1650,7 +1651,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SubscribeNow", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Subscription Price.
         /// </summary>
@@ -1659,7 +1660,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SubscriptionCostLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Subscription Details.
         /// </summary>
@@ -1668,7 +1669,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SubscriptionDetailsLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Discount (for existing membership).
         /// </summary>
@@ -1677,7 +1678,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SubscriptionDiscountLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Subscription Successful.
         /// </summary>
@@ -1686,7 +1687,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SubscriptionSuccessful", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Switch.
         /// </summary>
@@ -1695,7 +1696,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Switch", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to You cannot switch memberships as you are already subscribed to the selected one..
         /// </summary>
@@ -1704,7 +1705,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SwitchMembershipErrorAlreadySubscribed", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to You cannot switch memberships as you are not currently subscribed to any..
         /// </summary>
@@ -1713,7 +1714,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SwitchMembershipErrorNotSubscribed", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Your successfully updated your subscription. Thank you!.
         /// </summary>
@@ -1722,7 +1723,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SwitchSuccessful", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Subscription Updated.
         /// </summary>
@@ -1731,7 +1732,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("SwitchSuccessfulTitle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Thank you for your donation.
         /// </summary>
@@ -1740,7 +1741,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("ThankyouForDonationEmailTitle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Thank you for helping to save the Iboga tree.
         /// </summary>
@@ -1749,7 +1750,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("ThankyouForSponorEmailTitle", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Total.
         /// </summary>
@@ -1758,7 +1759,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("TotalLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;p&gt;
         ///    The Iboga trees planted directly as a result of your donations in the heart of the community forests supported by BOTF are listed separately from those planted by the village communities who have taken the initiative to invest in the Iboga plantations as a result of our awareness campaigns and without our financial support, but who wish to participate in time in the agricultural cooperative programme labelled &quot;equitable &amp; sustainable&quot;, which is just as committed to the Gabonese national market as i [rest of string was truncated]&quot;;.
@@ -1768,7 +1769,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("tree_counter_text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to You would like to contribute:.
         /// </summary>
@@ -1777,7 +1778,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("TreeDonationAmountLabel", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Upgrade.
         /// </summary>
@@ -1786,7 +1787,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Upgrade", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Upgrade Membership.
         /// </summary>
@@ -1795,7 +1796,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("UpgradeMembership", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Valid until:.
         /// </summary>
@@ -1804,7 +1805,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("ValidUntil", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Vision.
         /// </summary>
@@ -1813,7 +1814,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("Vision", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;!doctype html&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
@@ -1836,7 +1837,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("WelcomeEmail", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to &lt;h5&gt;Yann Guignon is the founder of “Blessings Of The Forest” and the main driver of our strategic direction, managing all our activities in Gabon.&lt;/h5&gt;
         ///&lt;p&gt;
@@ -1847,7 +1848,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("yann_text", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Intercultural mediation and sustainable development consultant
         ///&lt;p&gt;&lt;strong&gt;Director and founder of Blessings Of The Forest&lt;/strong&gt;&lt;/p&gt;.
@@ -1857,7 +1858,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("yann_title", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Yearly Platinum Membership.
         /// </summary>
@@ -1866,7 +1867,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("YearlyPlatinumMembership", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Yearly Standard Membership.
         /// </summary>
@@ -1875,7 +1876,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("YearlyStandardMembership", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Your subscription was successful. Thank you and welcome onboard!.
         /// </summary>
@@ -1884,7 +1885,7 @@ namespace K9.Globalisation {
                 return ResourceManager.GetString("YouAreSignedUp", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to Your Current Subscription.
         /// </summary>

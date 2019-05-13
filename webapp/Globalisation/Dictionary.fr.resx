@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -328,8 +328,8 @@
   <data name="hubert_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>articles\fr\hubert-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="josephine_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>articles\fr\josephine-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="gemma_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>articles\fr\gemma-title.htm;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Back" xml:space="preserve">
     <value>Précédent</value>
@@ -647,7 +647,7 @@
     <value>Avertissement</value>
   </data>
   <data name="IbogaDisclaimer" xml:space="preserve">
-    <value>Blessings Of The Forest CIC tient à souligner que &lt;strong&gt;nous n'avons pas vocation à vendre de l'iboga, ni à orienter 
+    <value>Blessings Of The Forest CIC tient à souligner que &lt;strong&gt;nous n'avons pas vocation à vendre de l'iboga, ni à orienter
 les candidats à la consommation d'iboga ni même à faire la promotion de l'utilisation de l'iboga&lt;/strong&gt;. BOTF oeuvre uniquement dans la conservation et l'étude de l'iboga dans son milieu naturel originel, en Afrique Centrale, au profit principalement de ses utilisateurs traditionnels locaux. Si nous oeuvrons à la mise en place d'une filière équitable et durable de commercialisation d'iboga, cela n'est aucunement actuel (horizon 2022) et se doit de respecter le Protocole de Nagoya ainsi que l'ensemble des lois en vigueur au Gabon comme à l'international.</value>
   </data>
   <data name="MailChimpImport" xml:space="preserve">
