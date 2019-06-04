@@ -160,7 +160,8 @@ namespace K9.WebApplication.Controllers
                     CustomerEmail = model.StripeEmail,
                     DonationDescription = model.Description,
                     DonatedOn = DateTime.Now,
-                    DonationAmount = model.AmountToDonate
+                    DonationAmount = model.AmountToDonate,
+                    Status = result.StripeCharge.Status
                 });
                 _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
                 _mailChimpService.AddContact(model.StripeBillingName, model.StripeEmail);
@@ -193,7 +194,8 @@ namespace K9.WebApplication.Controllers
                     DonationDescription = model.Description,
                     DonatedOn = DateTime.Now,
                     DonationAmount = model.DonationAmount,
-                    NumberOfIbogas = model.NumberOfTrees
+                    NumberOfIbogas = model.NumberOfTrees,
+                    Status = result.StripeCharge.Status
                 });
                 _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
                 _mailChimpService.AddContact(model.StripeBillingName, model.StripeEmail);
