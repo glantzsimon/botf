@@ -79,11 +79,29 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Amount.
+        /// </summary>
+        public static string AmountLabel {
+            get {
+                return ResourceManager.GetString("AmountLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You would like to donate:.
         /// </summary>
         public static string AmountToDonateLabel {
             get {
                 return ResourceManager.GetString("AmountToDonateLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amount to Pay.
+        /// </summary>
+        public static string AmountToPayLabel {
+            get {
+                return ResourceManager.GetString("AmountToPayLabel", resourceCulture);
             }
         }
         
@@ -223,6 +241,15 @@ namespace K9.Globalisation {
         public static string botf_context3 {
             get {
                 return ResourceManager.GetString("botf_context3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Card Details.
+        /// </summary>
+        public static string CardDetails {
+            get {
+                return ResourceManager.GetString("CardDetails", resourceCulture);
             }
         }
         
@@ -1265,6 +1292,15 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Or enter your card details below.
+        /// </summary>
+        public static string OrEnterYourCardDetails {
+            get {
+                return ResourceManager.GetString("OrEnterYourCardDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!doctype html&gt;
         ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; xmlns:v=&quot;urn:schemas-microsoft-com:vml&quot; xmlns:o=&quot;urn:schemas-microsoft-com:office:office&quot;&gt;
         ///&lt;head&gt;
@@ -1284,6 +1320,24 @@ namespace K9.Globalisation {
         public static string PasswordResetEmail {
             get {
                 return ResourceManager.GetString("PasswordResetEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Payment Complete.
+        /// </summary>
+        public static string PaymentCompleted {
+            get {
+                return ResourceManager.GetString("PaymentCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pay Now.
+        /// </summary>
+        public static string PayNow {
+            get {
+                return ResourceManager.GetString("PayNow", resourceCulture);
             }
         }
         
@@ -1552,7 +1606,7 @@ namespace K9.Globalisation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 30 euros = 1 Iboga sponsored.
+        ///   Looks up a localized string similar to 30 dollars = 1 Iboga sponsored.
         /// </summary>
         public static string SponsorIbogaTreeSubTitle {
             get {

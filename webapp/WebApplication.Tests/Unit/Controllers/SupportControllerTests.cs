@@ -58,62 +58,6 @@ namespace K9.WebApplication.Tests.Unit.Controllers
                 _mailChimpService.Object);
         }
 
-        [Fact]
-        public void DonateProcess_ChargesStripe_CreatesDonation_And_CreatesCustomer()
-        {
-            StripeModel expectedModel = null;
-            Donation expectedDonation = null;
-            var stripeCustomer = new StripeCustomer
-            {
-                Id = "cus_1234"
-            };
-            _stripeService.Setup(_ => _.Charge(It.IsAny<StripeModel>()))
-                .Returns(new StripeChargeResultModel(new StripeCharge
-                {
-                    Amount = 50
-                }, stripeCustomer))
-                .Callback<StripeModel>(result => expectedModel = result);
-
-            _donationService.Setup(_ => _.CreateDonation(It.IsAny<Donation>()))
-                .Callback<Donation>(result => expectedDonation = result);
-
-            var actualModel = new StripeModel { DonationAmount = 20, StripeBillingName = "Simon Glantz", StripeEmail = "simon.glantz@mac.com" };
-            _supportController.DonateProcess(actualModel);
-
-            _stripeService.Verify(_ => _.Charge(It.IsAny<StripeModel>()), Times.Once);
-            _donationService.Verify(_ => _.CreateDonation(It.IsAny<Donation>()), Times.Once);
-            _contactService.Verify(_ => _.CreateCustomer(stripeCustomer.Id, actualModel.StripeBillingName, actualModel.StripeEmail), Times.Once);
-
-            Assert.Equal(expectedDonation.DonationDescription, "Donation To Blessings Of The Forest");
-        }
-
-        [Fact]
-        public void SponsorProcess_ChargesStripe_CreatesDonation_And_CreatesCustomer()
-        {
-            StripeModel expectedModel = null;
-            Donation expectedDonation = null;
-            var stripeCustomer = new StripeCustomer
-            {
-                Id = "cus_1234"
-            };
-            _stripeService.Setup(_ => _.Charge(It.IsAny<StripeModel>()))
-                .Returns(new StripeChargeResultModel(new StripeCharge
-                {
-                    Amount = 50
-                }, stripeCustomer))
-                .Callback<StripeModel>(result => expectedModel = result);
-
-            _donationService.Setup(_ => _.CreateDonation(It.IsAny<Donation>()))
-                .Callback<Donation>(result => expectedDonation = result);
-
-            var actualModel = new StripeModel { DonationAmount = 20, StripeBillingName = "Simon Glantz", StripeEmail = "simon.glantz@mac.com" };
-            _supportController.SponsorProcess(actualModel);
-
-            _stripeService.Verify(_ => _.Charge(It.IsAny<StripeModel>()), Times.Once);
-            _donationService.Verify(_ => _.CreateDonation(It.IsAny<Donation>()), Times.Once);
-            _contactService.Verify(_ => _.CreateCustomer(stripeCustomer.Id, actualModel.StripeBillingName, actualModel.StripeEmail), Times.Once);
-
-            Assert.Equal(expectedDonation.DonationDescription, "Sponsor an Iboga Tree");
-        }
+       
     }
 }

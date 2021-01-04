@@ -5,8 +5,10 @@
         public static class Labels
         {
             public const string DonationAmountLabel = "DonationAmountLabel";
+            public const string AmountToPayLabel = "AmountToPayLabel";
             public const string TreeDonationAmountLabel = "TreeDonationAmountLabel";
             public const string NumberOfTreesLabel = "NumberOfTreesLabel";
+            public const string AmountLabel = "AmountLabel";
             public const string NumberOfIbogasSponsoredLabel = "NumberOfIbogasSponsoredLabel";
             public const string AmountDonatedLabel = "AmountDonatedLabel";
             public const string AmountToDonateLabel = "AmountToDonateLabel";

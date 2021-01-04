@@ -152,45 +152,11 @@ namespace K9.WebApplication.Services
                 throw new IndexOutOfRangeException();
             }
 
-            return new StripeModel
-            {
-                PublishableKey = _stripeConfig.PublishableKey,
-                SubscriptionAmount = membershipOption.Price,
-                SubscriptionDiscount = GetCostOfRemainingActiveSubscription(),
-                Description = membershipOption.SubscriptionTypeNameLocal,
-                MembershipOptionId = id,
-                LocalisedCurrencyThreeLetters = StripeModel.GetLocalisedCurrency()
-            };
+            return new StripeModel();
         }
 
         public void ProcessPurchase(StripeModel model)
         {
-            try
-            {
-                var membershipOption = _membershipOptionRepository.Find(model.MembershipOptionId);
-                if (membershipOption == null)
-                {
-                    _logger.Error($"MembershipService => ProcessPurchase => No MembershipOption with id {model.MembershipOptionId} was found.");
-                    throw new IndexOutOfRangeException("Invalid MembershipOptionId");
-                }
-
-                var result = _stripeService.Charge(model);
-                _userMembershipRepository.Create(new UserMembership
-                {
-                    UserId = _authentication.CurrentUserId,
-                    MembershipOptionId = model.MembershipOptionId,
-                    StartsOn = DateTime.Today,
-                    EndsOn = membershipOption.IsAnnual ? DateTime.Today.AddYears(1) : DateTime.Today.AddMonths(1),
-                    IsAutoRenew = true
-                });
-                TerminateExistingMemberships(model.MembershipOptionId);
-                _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
-            }
-            catch (Exception ex)
-            {
-                _logger.Error($"MembershipService => ProcessPurchase => Purchase failed: {ex.Message}");
-                throw ex;
-            }
         }
 
         public void ProcessSwitch(int id)
@@ -237,8 +203,6 @@ namespace K9.WebApplication.Services
                 _userMembershipRepository.Update(userMembership);
             }
         }
-
-
 
         private double GetCostOfRemainingActiveSubscription()
         {

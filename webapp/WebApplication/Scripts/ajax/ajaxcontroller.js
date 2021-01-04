@@ -4,7 +4,7 @@ function ajaxcontroller() {
         var deferred = $.Deferred();
 
         $.ajax({
-            type: method == null ? "GET" : method,
+            type: method === null ? "GET" : method,
             url: url,
             dataType: "json",
             data: args,
@@ -37,7 +37,8 @@ function ajaxcontroller() {
 
     return {
         get: get,
-        post: post
+        post: post,
+        send: send
     };
 
 }

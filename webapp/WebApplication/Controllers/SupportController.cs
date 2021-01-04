@@ -13,7 +13,6 @@ using K9.WebApplication.Services;
 using K9.WebApplication.Services.Stripe;
 using NLog;
 using System;
-using System.Linq;
 using System.Threading;
 using System.Web.Mvc;
 
@@ -89,46 +88,42 @@ namespace K9.WebApplication.Controllers
         [Route("donate/start")]
         public ActionResult DonateStart()
         {
-            return View(new StripeModel
+            return View(new Donation
             {
                 DonationAmount = 10,
-                LocalisedCurrencyThreeLetters = StripeModel.GetLocalisedCurrency(),
-                StripeEmail = _authentication.IsAuthenticated ? _userRepository.Find(_authentication.CurrentUserId)?.EmailAddress : string.Empty
+                DonationDescription = Dictionary.DonationToBOTF
             });
         }
 
         [Route("sponsor-iboga/start")]
         public ActionResult SponsorIbogaStart()
         {
-            return View(new StripeModel
+            return View(new Donation
             {
-                NumberOfTrees = 1,
-                LocalisedCurrencyThreeLetters = "EUR", // We need to fix the currency to sponsor a tree
-                StripeEmail = _authentication.IsAuthenticated ? _userRepository.Find(_authentication.CurrentUserId)?.EmailAddress : string.Empty
+                NumberOfIbogas = 1,
+                DonationDescription = Dictionary.SponsorIbogaTree
             });
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Donate(StripeModel model)
+        public ActionResult Donate(Donation donation)
         {
-            _logger.Debug($"SupportController => Donate => Current UI Thread: {Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName}");
-            model.PublishableKey = _stripeConfig.PublishableKey;
-            return View(model);
+            ViewBag.PublishableKey = _stripeConfig.PublishableKey;
+            return View(donation);
         }
 
         [Route("sponsor-iboga")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SponsorIboga(StripeModel model)
+        public ActionResult SponsorIboga(Donation donation)
         {
-            if (model.NumberOfTrees < 1)
+            if (donation.NumberOfIbogas < 1)
             {
                 // Silly, but you never know - may as well procedd with minimum one
-                model.NumberOfTrees = 1;
+                donation.NumberOfIbogas = 1;
             }
-            model.PublishableKey = _stripeConfig.PublishableKey;
-            return View(model);
+            return View(donation);
         }
 
         [Route("donate/success")]
@@ -137,77 +132,68 @@ namespace K9.WebApplication.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult ProcessDonation(PaymentModel paymentModel)
+        {
+            try
+            {
+                var contact = _contactService.Find(paymentModel.ContactId);
+                _mailChimpService.AddContact(contact.Name, contact.EmailAddress);
+
+                _donationService.CreateDonation(new Donation
+                {
+                    Currency = paymentModel.Currency,
+                    Customer = paymentModel.CustomerName,
+                    CustomerEmail = paymentModel.CustomerEmailAddress,
+                    DonationDescription = paymentModel.Description,
+                    DonatedOn = DateTime.Now,
+                    DonationAmount = paymentModel.Amount,
+                    Status = paymentModel.Status
+                }, contact);
+
+                return Json(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                _logger.Error($"SupportController => ProcessDonation => Error: {ex.GetFullErrorMessage()}");
+                return Json(new { success = false, error = ex.Message });
+            }
+        }
+
         [Route("sponsor-iboga/success")]
         public ActionResult SponsorSuccess()
         {
             return View();
         }
-
+        
         [HttpPost]
-        [Route("donate/processing")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DonateProcess(StripeModel model)
+          public ActionResult ProcessSponsor(PaymentModel paymentModel)
         {
             try
             {
-                model.Description = Dictionary.DonationToBOTF;
-                var result = _stripeService.Charge(model);
+                var contact = _contactService.Find(paymentModel.ContactId);
+                _mailChimpService.AddContact(contact.Name, contact.EmailAddress);
+                paymentModel.Description = Dictionary.SponsorIbogaTree;
+                
                 _donationService.CreateDonation(new Donation
                 {
-                    StripeId = result.StripeCharge.Id,
-                    Currency = model.LocalisedCurrencyThreeLetters,
-                    Customer = model.StripeBillingName,
-                    CustomerEmail = model.StripeEmail,
-                    DonationDescription = model.Description,
+                    Currency = paymentModel.Currency,
+                    Customer = paymentModel.CustomerName,
+                    CustomerEmail = paymentModel.CustomerEmailAddress,
+                    DonationDescription = paymentModel.Description,
                     DonatedOn = DateTime.Now,
-                    DonationAmount = model.AmountToDonate,
-                    Status = result.StripeCharge.Status
-                });
-                _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
-                _mailChimpService.AddContact(model.StripeBillingName, model.StripeEmail);
-                return RedirectToAction("DonationSuccess");
-            }
-            catch (Exception ex)
-            {
-                _logger.Error($"SupportController => Donate => Donation failed: {ex.Message}");
-                ModelState.AddModelError("", ex.Message);
-            }
+                    DonationAmount = paymentModel.Amount,
+                    NumberOfIbogas = paymentModel.Quantity,
+                    Status = paymentModel.Status
+                }, contact);
 
-            return View("Donate", model);
-        }
-
-        [HttpPost]
-        [Route("sponsor-iboga/processing")]
-        [ValidateAntiForgeryToken]
-        public ActionResult SponsorProcess(StripeModel model)
-        {
-            try
-            {
-                model.Description = Dictionary.SponsorIbogaTree;
-                var result = _stripeService.Charge(model);
-                _donationService.CreateDonation(new Donation
-                {
-                    StripeId = result.StripeCharge.Id,
-                    Currency = model.LocalisedCurrencyThreeLetters,
-                    Customer = model.StripeBillingName,
-                    CustomerEmail = model.StripeEmail,
-                    DonationDescription = model.Description,
-                    DonatedOn = DateTime.Now,
-                    DonationAmount = model.DonationAmount,
-                    NumberOfIbogas = model.NumberOfTrees,
-                    Status = result.StripeCharge.Status
-                });
-                _contactService.CreateCustomer(result.StripeCustomer.Id, model.StripeBillingName, model.StripeEmail);
-                _mailChimpService.AddContact(model.StripeBillingName, model.StripeEmail);
-                return RedirectToAction("SponsorSuccess");
+                return Json(new { success = true });
             }
             catch (Exception ex)
             {
                 _logger.Error($"SupportController => Sponsor => Sponsor failed: {ex.Message}");
-                ModelState.AddModelError("", ex.Message);
+                return Json(new { success = false, error = ex.Message });
             }
-
-            return View("SponsorIboga", model);
         }
 
         public override string GetObjectName()

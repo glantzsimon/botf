@@ -5,7 +5,8 @@ namespace K9.WebApplication.Services
 {
     public interface IContactService
     {
-        void CreateCustomer(string stripeCustomerId, string fullName, string emailAddress);
+        Contact GetOrCreateContact(string stripeCustomerId, string fullName, string emailAddress);
+        Contact Find(int id);
         List<Contact> ListContacts();
     }
 }

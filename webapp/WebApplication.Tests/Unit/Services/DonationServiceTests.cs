@@ -55,7 +55,7 @@ namespace K9.WebApplication.Tests.Unit.Services
                 NumberOfIbogas = 1
 
             };
-            _donationService.CreateDonation(actualDonation);
+            _donationService.CreateDonation(actualDonation, new Contact());
 
             _donationRepository.Verify(_ => _.Create(It.IsAny<Donation>()), Times.Once);
             _mailer.Verify(_ => _.SendEmail(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>()), Times.Exactly(2));

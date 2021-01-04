@@ -1,7 +1,5 @@
-﻿@using K9.Base.WebApplication.Config
-@using K9.SharedLibrary.Extensions
-@using K9.SharedLibrary.Helpers
-@model K9.WebApplication.Models.StripeModel
+﻿@using K9.WebApplication.Options
+@model Donation
 @{
     ViewBag.Title = K9.Globalisation.Dictionary.SponsorIbogaTree;
     ViewBag.SubTitle = K9.Globalisation.Dictionary.SponsorIbogaTree;
@@ -9,36 +7,14 @@
     Layout = "../Shared/_LayoutFormSmall.cshtml";
 }
 
-<h3>@K9.Globalisation.Dictionary.SponsorIbogaTreeSubTitle</h3>
-
-@using (Html.BeginForm("SponsorProcess", "Support", FormMethod.Post))
-{
-    using (Html.BeginBootstrapForm())
-    {
-        @Html.BootstrapDisplayFor(model => model.TreeDonationAmount, new EditorOptions
-        {
-            CultureInfo = CurrencyTools.GetCultureInfoFromIso(Model.LocalisedCurrencyThreeLetters)
-        })
-        @Html.HiddenFor(model => model.NumberOfTrees)
-        @Html.HiddenFor(model => model.DonationAmount)
-        @Html.HiddenFor(model => model.StripeEmail)
-        @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)
-        <hr />
-
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="@Model.PublishableKey"
-                data-amount="@Model.DonationAmountInCents"
-                data-name="@WebsiteConfiguration.Instance.CompanyName"
-                data-description="@K9.Globalisation.Dictionary.SponsorIbogaTree"
-                data-billing-address="true"
-                data-email="@Model.StripeEmail"
-                data-image="@Url.AbsoluteContent("~/Images/company/botf_med.png")"
-                data-locale="@Model.Locale"
-                data-zip-code="false"
-                data-currency="@Model.LocalisedCurrencyThreeLetters">
-        </script>
-
-        <hr />
-        @Html.BootstrapActionLinkButton(K9.Globalisation.Dictionary.Back, "SponsorIbogaStart", "Support", null, "fa-chevron-left")
-    }
-}
+@Html.Partial("_PaymentsForm", new PaymentsOptions(
+    0,
+    Model.NumberOfIbogas,
+    Model.Amount,
+    Model.DonationDescription,
+    K9.Globalisation.Dictionary.NumberOfIbogasSponsoredLabel,
+    "SponsorIbogaStart", "Support",
+    Url.Action("SponsorSuccess"),
+    Url.Action("Index", "Error"),
+    Url.Action("ProcessSponsor", "Support")
+    ))

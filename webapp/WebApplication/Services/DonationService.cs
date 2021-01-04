@@ -30,13 +30,16 @@ namespace K9.WebApplication.Services
             _urlHelper = new UrlHelper(HttpContext.Current.Request.RequestContext);
         }
 
-        public void CreateDonation(Donation donation)
+        public void CreateDonation(Donation donation, Contact contact)
         {
             try
             {
                 _donationRepository.Create(donation);
                 SendEmailToBotf(donation);
-                SendEmailToCustomer(donation);
+                if (contact != null && !contact.IsUnsubscribed)
+                {
+                    SendEmailToCustomer(donation);
+                }
             }
             catch (Exception ex)
             {

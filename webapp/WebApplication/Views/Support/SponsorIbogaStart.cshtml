@@ -1,7 +1,5 @@
-﻿@using K9.SharedLibrary.Extensions
-@using K9.SharedLibrary.Helpers
-@using K9.WebApplication.Helpers
-@model K9.WebApplication.Models.StripeModel
+﻿@using K9.SharedLibrary.Helpers
+@model Donation
 @{
     ViewBag.Title = K9.Globalisation.Dictionary.SponsorIbogaTree;
     ViewBag.SubTitle = K9.Globalisation.Dictionary.SponsorIbogaTree;
@@ -25,15 +23,12 @@
 
         <hr />
 
-        @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)
-        @Html.BootstrapEditorFor(model => model.NumberOfTrees)
-        @Html.BootstrapEditorFor(model => model.StripeEmail)
+        @Html.BootstrapEditorFor(model => model.NumberOfIbogas)
+        @Html.HiddenFor(model => model.DonationDescription)
 
-        <p>@String.Format(K9.Globalisation.Dictionary.IbogaPriceText, 30.ToString("C2", CurrencyTools.GetCultureInfoFromIso("EUR")))</p>
+        <p>@String.Format(K9.Globalisation.Dictionary.IbogaPriceText, 30.ToString("C2", CurrencyTools.GetCultureInfoFromIso("USD")))</p>
 
         <hr />
-        <div class="text-right">
-            @Html.BootstrapButton(Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
-        </div>
+        @Html.BootstrapButton(Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
     }
 }

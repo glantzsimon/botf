@@ -4,7 +4,7 @@ namespace K9.WebApplication.Services
 {
     public interface IDonationService
     {
-        void CreateDonation(Donation donation);
+        void CreateDonation(Donation donation, Contact contact);
         int GetNumberOfIbogasSponsoredToDate();
         int GetNumberOfIbogasSponsoredLast30Days();
         int GetProjectedNumberOfIbogasSponsoredPerYear();

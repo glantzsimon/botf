@@ -1,13 +1,9 @@
-﻿using K9.DataAccessLayer.Models;
-using K9.SharedLibrary.Models;
+﻿using K9.SharedLibrary.Models;
 using K9.WebApplication.Config;
 using K9.WebApplication.Services.Stripe;
 using System;
-using System.Linq;
 using System.Threading;
 using System.Web.Hosting;
-using K9.Base.DataAccessLayer.Respositories;
-using K9.DataAccessLayer.Database;
 
 namespace K9.WebApplication
 {
@@ -45,29 +41,29 @@ namespace K9.WebApplication
 
         private void UpdateDonations()
         {
-            using (var dbContext = new LocalDb())
-            {
-                var repository = new BaseRepository<Donation>(dbContext);
-                var existingDonations = repository.List();
-                var newDonations = _stripeService.GetDonations();
+            //using (var dbContext = new LocalDb())
+            //{
+            //    var repository = new BaseRepository<Donation>(dbContext);
+            //    var existingDonations = repository.List();
+            //    var newDonations = _stripeService.GetDonations();
                 
-                foreach (var donation in newDonations)
-                {
-                    if (!existingDonations.Exists(d => d.StripeId == donation.StripeId))
-                    {
-                        repository.Create(donation);
-                    }
-                    else
-                    {
-                        var entity = repository.Find(e => e.StripeId == donation.StripeId).FirstOrDefault();
-                        if (entity != null)
-                        {
-                            entity.Status = donation.Status;
-                            repository.Update(entity);
-                        }
-                    }
-                }
-            }
+            //    foreach (var donation in newDonations)
+            //    {
+            //        if (!existingDonations.Exists(d => d.StripeId == donation.StripeId))
+            //        {
+            //            repository.Create(donation);
+            //        }
+            //        else
+            //        {
+            //            var entity = repository.Find(e => e.StripeId == donation.StripeId).FirstOrDefault();
+            //            if (entity != null)
+            //            {
+            //                entity.Status = donation.Status;
+            //                repository.Update(entity);
+            //            }
+            //        }
+            //    }
+            //}
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model K9.WebApplication.Models.StripeModel
+﻿@model Donation
 @{
     ViewBag.Title = K9.Globalisation.Dictionary.Donate;
     ViewBag.SubTitle = K9.Globalisation.Dictionary.MakeDonation;
@@ -10,9 +10,10 @@
 {
     using (Html.BeginBootstrapForm())
     {
-        @Html.HiddenFor(model => model.LocalisedCurrencyThreeLetters)
         @Html.BootstrapEditorFor(model => model.DonationAmount)
-        @Html.BootstrapEditorFor(model => model.StripeEmail)
+        @Html.HiddenFor(model => model.DonationDescription)
+
+        <hr />
         @Html.BootstrapButton(Dictionary.Next, EButtonType.Submit, "fa-chevron-right", EButtonClass.IconRight)
 
         <hr />
