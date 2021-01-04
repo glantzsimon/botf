@@ -205,6 +205,10 @@
     <Compile Include="Migrations\201905031421063_Add-SeoFriendlyId.Designer.cs">
       <DependentUpon>201905031421063_Add-SeoFriendlyId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101041918290_K9UpdateJan01.cs" />
+    <Compile Include="Migrations\202101041918290_K9UpdateJan01.Designer.cs">
+      <DependentUpon>202101041918290_K9UpdateJan01.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\LocalMigrationsConfiguration.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\UserMembership.cs" />
@@ -262,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905031421063_Add-SeoFriendlyId.resx">
       <DependentUpon>201905031421063_Add-SeoFriendlyId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101041918290_K9UpdateJan01.resx">
+      <DependentUpon>202101041918290_K9UpdateJan01.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
